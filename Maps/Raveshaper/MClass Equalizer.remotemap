@@ -1,0 +1,29 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	MClass Equalizer				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	MClass Equalizer			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Low Cut Enable		Low Cut Enable		
+Map	Low Shelf Enable		Low Shelf Enable		
+Map	Low Shelf Gain		Low Shelf Gain		
+Map	Low Shelf Q		Low Shelf Q		
+Map	Parametric 1 Enable		Parametric 1 Enable		
+Map	Parametric 1 Gain		Parametric 1 Gain		
+Map	Parametric 1 Q		Parametric 1 Q		
+Map	Parametric 2 Enable		Parametric 2 Enable		
+Map	Parametric 2 Gain		Parametric 2 Gain		
+Map	Parametric 2 Q		Parametric 2 Q		
+Map	Hi Shelf Enable		Hi Shelf Enable		
+Map	Hi Shelf Gain		Hi Shelf Gain		
+Map	Hi Shelf Q		Hi Shelf Q		
+Map	Peak Meter		Peak Meter		
+Map	Low Shelf Frequency		Low Shelf Frequency		
+Map	Parametric 1 Frequency		Parametric 1 Frequency		
+Map	Parametric 2 Frequency		Parametric 2 Frequency		
+Map	Hi Shelf Frequency		Hi Shelf Frequency		
+Map	Data Terminal		Device Name

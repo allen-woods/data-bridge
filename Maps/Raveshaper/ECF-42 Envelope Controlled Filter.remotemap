@@ -1,0 +1,22 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	ECF-42 Envelope Controlled Filter				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	ECF-42 Envelope Controlled Filter			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Attack		Attack		
+Map	Decay		Decay		
+Map	Sustain		Sustain		
+Map	Release		Release		
+Map	Frequency		Frequency		
+Map	Resonance		Resonance		
+Map	Env Amount		Env Amount		
+Map	Mode		Mode		
+Map	Velocity		Velocity		
+Map	Peak Meter		Peak Meter		
+Map	Trigger		Trigger		
+Map	Data Terminal		Device Name

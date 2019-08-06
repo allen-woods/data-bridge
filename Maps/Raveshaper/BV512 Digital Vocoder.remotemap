@@ -1,0 +1,85 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	Raveshaper		
+Control Surface Model	BV512 Digital Vocoder		
+Map Version	1.0.0		
+			
+			
+Scope	Propellerheads	BV512 Digital Vocoder	
+//	Control Surface Item	Key	Remotable Item
+Map	Data Terminal		Device Name
+Map	Enabled		Enabled
+Map	Band Count		Band Count
+Map	Vocoder/Equalizer		Vocoder/Equalizer
+Map	HF Emphasis		HF Emphasis
+Map	Shift		Shift
+Map	Attack		Attack
+Map	Decay		Decay
+Map	Hold		Hold
+Map	Dry/Wet		Dry/Wet
+Map	Band Level 1		Band Level 1
+Map	Band Level 2		Band Level 2
+Map	Band Level 3		Band Level 3
+Map	Band Level 4		Band Level 4
+Map	Band Level 5		Band Level 5
+Map	Band Level 6		Band Level 6
+Map	Band Level 7		Band Level 7
+Map	Band Level 8		Band Level 8
+Map	Band Level 9		Band Level 9
+Map	Band Level 10		Band Level 10
+Map	Band Level 11		Band Level 11
+Map	Band Level 12		Band Level 12
+Map	Band Level 13		Band Level 13
+Map	Band Level 14		Band Level 14
+Map	Band Level 15		Band Level 15
+Map	Band Level 16		Band Level 16
+Map	Band Level 17		Band Level 17
+Map	Band Level 18		Band Level 18
+Map	Band Level 19		Band Level 19
+Map	Band Level 20		Band Level 20
+Map	Band Level 21		Band Level 21
+Map	Band Level 22		Band Level 22
+Map	Band Level 23		Band Level 23
+Map	Band Level 24		Band Level 24
+Map	Band Level 25		Band Level 25
+Map	Band Level 26		Band Level 26
+Map	Band Level 27		Band Level 27
+Map	Band Level 28		Band Level 28
+Map	Band Level 29		Band Level 29
+Map	Band Level 30		Band Level 30
+Map	Band Level 31		Band Level 31
+Map	Band Level 32		Band Level 32
+Map	Mod Level 1		Mod Level 1
+Map	Mod Level 2		Mod Level 2
+Map	Mod Level 3		Mod Level 3
+Map	Mod Level 4		Mod Level 4
+Map	Mod Level 5		Mod Level 5
+Map	Mod Level 6		Mod Level 6
+Map	Mod Level 7		Mod Level 7
+Map	Mod Level 8		Mod Level 8
+Map	Mod Level 9		Mod Level 9
+Map	Mod Level 10		Mod Level 10
+Map	Mod Level 11		Mod Level 11
+Map	Mod Level 12		Mod Level 12
+Map	Mod Level 13		Mod Level 13
+Map	Mod Level 14		Mod Level 14
+Map	Mod Level 15		Mod Level 15
+Map	Mod Level 16		Mod Level 16
+Map	Mod Level 17		Mod Level 17
+Map	Mod Level 18		Mod Level 18
+Map	Mod Level 19		Mod Level 19
+Map	Mod Level 20		Mod Level 20
+Map	Mod Level 21		Mod Level 21
+Map	Mod Level 22		Mod Level 22
+Map	Mod Level 23		Mod Level 23
+Map	Mod Level 24		Mod Level 24
+Map	Mod Level 25		Mod Level 25
+Map	Mod Level 26		Mod Level 26
+Map	Mod Level 27		Mod Level 27
+Map	Mod Level 28		Mod Level 28
+Map	Mod Level 29		Mod Level 29
+Map	Mod Level 30		Mod Level 30
+Map	Mod Level 31		Mod Level 31
+Map	Mod Level 32		Mod Level 32
+Map	Source Peak Meter		Source Peak Meter
+Map	Modulator Peak Meter		Modulator Peak Meter

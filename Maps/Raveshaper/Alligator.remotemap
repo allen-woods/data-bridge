@@ -1,0 +1,72 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	Alligator				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Alligator			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Pattern Enable		Pattern Enable		
+Map	Shift		Shift		
+Map	Resolution		Resolution		
+Map	Pattern		Pattern		
+Map	Shuffle		Shuffle		
+Map	Gate 1 Trig		Gate 1 Trig		
+Map	Gate 2 Trig		Gate 2 Trig		
+Map	Gate 3 Trig		Gate 3 Trig		
+Map	Amp Env Attack		Amp Env Attack		
+Map	Amp Env Decay		Amp Env Decay		
+Map	Amp Env Release		Amp Env Release		
+Map	High Pass Filter On		High Pass Filter On		
+Map	High Pass Frequency		High Pass Frequency		
+Map	High Pass Resonance		High Pass Resonance		
+Map	High Pass Env Amount		High Pass Env Amount		
+Map	High Pass LFO Amount		High Pass LFO Amount		
+Map	Band Pass Filter On		Band Pass Filter On		
+Map	Band Pass Frequency		Band Pass Frequency		
+Map	Band Pass Resonance		Band Pass Resonance		
+Map	Band Pass Env Amount		Band Pass Env Amount		
+Map	Band Pass LFO Amount		Band Pass LFO Amount		
+Map	Low Pass Filter On		Low Pass Filter On		
+Map	Low Pass Frequency		Low Pass Frequency		
+Map	Low Pass Resonance		Low Pass Resonance		
+Map	Low Pass Env Amount		Low Pass Env Amount		
+Map	Low Pass LFO Amount		Low Pass LFO Amount		
+Map	Filter Env Attack		Filter Env Attack		
+Map	Filter Env Decay		Filter Env Decay		
+Map	Filter Env Release		Filter Env Release		
+Map	LFO Freq		LFO Freq		
+Map	LFO Waveform		LFO Waveform		
+Map	LFOSync		LFOSync		
+Map	High Pass Drive Amount		High Pass Drive Amount		
+Map	High Pass Phaser Amount		High Pass Phaser Amount		
+Map	High Pass Delay Amount		High Pass Delay Amount		
+Map	Band Pass Drive Amount		Band Pass Drive Amount		
+Map	Band Pass Phaser Amount		Band Pass Phaser Amount		
+Map	Band Pass Delay Amount		Band Pass Delay Amount		
+Map	Low Pass Drive Amount		Low Pass Drive Amount		
+Map	Low Pass Phaser Amount		Low Pass Phaser Amount		
+Map	Low Pass Delay Amount		Low Pass Delay Amount		
+Map	Delay Time		Delay Time		
+Map	Delay Feedback		Delay Feedback		
+Map	DelaySync		DelaySync		
+Map	Delay Pan		Delay Pan		
+Map	Phaser Rate		Phaser Rate		
+Map	Phaser Feedback		Phaser Feedback		
+Map	High Pass Volume		High Pass Volume		
+Map	High Pass Pan		High Pass Pan		
+Map	Band Pass Volume		Band Pass Volume		
+Map	Band Pass Pan		Band Pass Pan		
+Map	Low Pass Volume		Low Pass Volume		
+Map	Low Pass Pan		Low Pass Pan		
+Map	Dry Volume		Dry Volume		
+Map	Dry Pan		Dry Pan		
+Map	Ducking		Ducking		
+Map	Master Volume		Master Volume		
+Map	Enabled		Enabled		
+Map	Gate 3 Open		Gate 3 Open		
+Map	Input Peak Meter		Input Peak Meter		
+Map	Gate 2 Open		Gate 2 Open		
+Map	Gate 1 Open		Gate 1 Open		
+Map	Data Terminal		Device Name

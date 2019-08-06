@@ -1,0 +1,27 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	Scream 4 Distortion				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Scream 4 Distortion			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Damage On/Off		Damage On/Off		
+Map	Damage Control		Damage Control		
+Map	Damage Type		Damage Type		
+Map	Parameter 1		Parameter 1		
+Map	Parameter 2		Parameter 2		
+Map	Cut On/Off		Cut On/Off		
+Map	Cut Lo		Cut Lo		
+Map	Cut Mid		Cut Mid		
+Map	Cut Hi		Cut Hi		
+Map	Body On/Off		Body On/Off		
+Map	Body Resonance		Body Resonance		
+Map	Body Scale		Body Scale		
+Map	Body Auto		Body Auto		
+Map	Body Type		Body Type		
+Map	Master Level		Master Level		
+Map	Input Peak Meter		Input Peak Meter		
+Map	Data Terminal		Device Name

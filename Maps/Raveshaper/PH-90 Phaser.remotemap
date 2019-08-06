@@ -1,0 +1,19 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	PH-90 Phaser				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	PH-90 Phaser			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Frequency		Frequency		
+Map	Split		Split		
+Map	Width		Width		
+Map	Rate		Rate		
+Map	Frequency Modulation		Frequency Modulation		
+Map	Feedback		Feedback		
+Map	LFO Sync Enable		LFO Sync Enable		
+Map	Peak Meter		Peak Meter		
+Map	Data Terminal		Device Name

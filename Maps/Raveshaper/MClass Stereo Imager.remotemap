@@ -1,0 +1,21 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	MClass Stereo Imager				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	MClass Stereo Imager			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Low Width		Low Width		
+Map	High Width		High Width		
+Map	X-Over Frequency		X-Over Frequency		
+Map	Solo Mode		Solo Mode		
+Map	Separate Out Mode		Separate Out Mode		
+Map	Peak Meter		Peak Meter		
+Map	Low Width Meter		Low Width Meter		
+Map	High Width Meter		High Width Meter		
+Map	Low Band Active		Low Band Active		
+Map	High Band Active		High Band Active		
+Map	Data Terminal		Device Name

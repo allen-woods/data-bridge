@@ -1,0 +1,19 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	DDL-1 Digital Delay Line				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	DDL-1 Digital Delay Line			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Unit		Unit		
+Map	Step Length		Step Length		
+Map	DelayTime (steps)		DelayTime (steps)		
+Map	Feedback		Feedback		
+Map	Pan		Pan		
+Map	Dry/Wet Balance		Dry/Wet Balance		
+Map	Peak Meter		Peak Meter		
+Map	DelayTime (ms)		DelayTime (ms)		
+Map	Data Terminal		Device Name

@@ -1,0 +1,104 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	Raveshaper		
+Control Surface Model	Subtractor Analog Synthesizer		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+
+Scope	Propellerheads	SubTractor Analog Synthesizer	
+//	Control Surface Item	Key	Remotable Item
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Amp Env Attack		Amp Env Attack
+Map	Amp Env Decay		Amp Env Decay
+Map	Amp Env Sustain		Amp Env Sustain
+Map	Amp Env Release		Amp Env Release
+Map	Master Level		Master Level
+Map	Mod Env Attack		Mod Env Attack
+Map	Mod Env Decay		Mod Env Decay
+Map	Mod Env Sustain		Mod Env Sustain
+Map	Mod Env Release		Mod Env Release
+Map	Mod Env Gain		Mod Env Gain
+Map	Mod Env Dest		Mod Env Dest
+Map	Mod Env Invert		Mod Env Invert
+Map	Filter Env Attack		Filter Env Attack
+Map	Filter Env Decay		Filter Env Decay
+Map	Filter Env Sustain		Filter Env Sustain
+Map	Filter Env Release		Filter Env Release
+Map	Filter Env Amount		Filter Env Amount
+Map	Filter Env Invert		Filter Env Invert
+Map	Filter Freq		Filter Freq
+Map	Filter Res		Filter Res
+Map	Filter Kbd Track		Filter Kbd Track
+Map	Filter Type		Filter Type
+Map	Filter Link Freq On/Off		Filter Link Freq On/Off
+Map	Filter2 On/Off		Filter2 On/Off
+Map	Filter2 Freq		Filter2 Freq
+Map	Filter2 Res		Filter2 Res
+Map	Osc1 Wave		Osc1 Wave
+Map	Osc1 Octave		Osc1 Octave
+Map	Osc1 Semitone		Osc1 Semitone
+Map	Osc1 Fine Tune		Osc1 Fine Tune
+Map	Osc1 Phase Mode		Osc1 Phase Mode
+Map	Osc1 Phase Diff		Osc1 Phase Diff
+Map	Osc1 Kbd Track		Osc1 Kbd Track
+Map	Osc2 On/Off		Osc2 On/Off
+Map	Osc2 Wave		Osc2 Wave
+Map	Osc2 Octave		Osc2 Octave
+Map	Osc2 Semitone		Osc2 Semitone
+Map	Osc2 Fine Tune		Osc2 Fine Tune
+Map	Osc2 Phase Mode		Osc2 Phase Mode
+Map	Osc2 Phase Diff		Osc2 Phase Diff
+Map	Osc2 Kbd Track		Osc2 Kbd Track
+Map	Osc Mix		Osc Mix
+Map	FM Amount		FM Amount
+Map	Ring Mod		Ring Mod
+Map	LFO1 Rate		LFO1 Rate
+Map	LFO1 Amount		LFO1 Amount
+Map	LFO1 Wave		LFO1 Wave
+Map	LFO1 Dest		LFO1 Dest
+Map	LFO2 Rate		LFO2 Rate
+Map	LFO2 Amount		LFO2 Amount
+Map	LFO2 Delay		LFO2 Delay
+Map	LFO2 Dest		LFO2 Dest
+Map	LFO2 Kbd Track		LFO2 Kbd Track
+Map	Portamento		Portamento
+Map	Polyphony		Polyphony
+Map	Key Mode		Key Mode
+Map	Low Bandwidth On/Off		Low Bandwidth On/Off
+Map	Filter Freq Mod Wheel Amount		Filter Freq Mod Wheel Amount
+Map	Filter Res Mod Wheel Amount		Filter Res Mod Wheel Amount
+Map	FM Mod Wheel Amount		FM Mod Wheel Amount
+Map	Phase Diff Mod Wheel Amount		Phase Diff Mod Wheel Amount
+Map	LFO1 Mod Wheel Amount		LFO1 Mod Wheel Amount
+Map	Pitch Bend Range		Pitch Bend Range
+Map	Filter Freq Ext Mod		Filter Freq Ext Mod
+Map	LFO1 Ext Mod		LFO1 Ext Mod
+Map	Amp Ext Mod		Amp Ext Mod
+Map	FM Ext Mod		FM Ext Mod
+Map	Ext Mod Select		Ext Mod Select
+Map	Noise On/Off		Noise On/Off
+Map	Noise Level		Noise Level
+Map	Noise Decay		Noise Decay
+Map	Noise Color		Noise Color
+Map	Amp Vel Amount		Amp Vel Amount
+Map	FM Vel Amount		FM Vel Amount
+Map	Mod Env Vel Amount		Mod Env Vel Amount
+Map	Phase Vel Amount		Phase Vel Amount
+Map	Filter2 Freq Vel Amount		Filter2 Freq Vel Amount
+Map	Filter Env Vel Amount		Filter Env Vel Amount
+Map	Filter Decay Vel Amount		Filter Decay Vel Amount
+Map	Mix Vel Amount		Mix Vel Amount
+Map	Amp Attack Vel Amount		Amp Attack Vel Amount
+Map	LFO Sync Enable		LFO Sync Enable
+Map	Note On Indicator		Note On Indicator
+Map	Data Terminal		Device Name

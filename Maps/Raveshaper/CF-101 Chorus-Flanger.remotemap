@@ -1,0 +1,18 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	CF-101 Chorus-Flanger				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	CF-101 Chorus/Flanger			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Delay		Delay		
+Map	Feedback		Feedback		
+Map	Rate		Rate		
+Map	Modulation Amount		Modulation Amount		
+Map	Send/Insert Mode		Send/Insert Mode		
+Map	LFO Sync Enable		LFO Sync Enable		
+Map	Peak Meter		Peak Meter		
+Map	Data Terminal		Device Name

@@ -1,0 +1,70 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	Raveshaper		
+Control Surface Model	RPG-8 Monophonic Arpeggiator		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+
+Scope	Propellerheads	RPG-8 Monophonic Arpeggiator	
+//	Control Surface Item	Key	Remotable Item
+Map	Mod Wheel		Mod Wheel
+Map	Aftertouch		Aftertouch
+Map	Expression		Expression
+Map	Breath		Breath
+Map	Sustain Pedal		Sustain Pedal
+Map	Arpeggiator Enable		Arpeggiator Enable
+Map	Mode		Mode
+Map	Insert		Insert
+Map	Octave		Octave
+Map	Gate Length		Gate Length
+Map	Single Note Repeat		Single Note Repeat
+Map	Sync		Sync
+Map	Shuffle		Shuffle
+Map	Hold		Hold
+Map	Manual Velocity		Manual Velocity
+Map	Octave Shift		Octave Shift
+Map	MIDI Indicator		MIDI Indicator
+Map	Rate Indicator		Rate Indicator
+Map	Pattern Enable		Pattern Enable
+Map	Pattern Step Count		Pattern Step Count
+Map	Velocity/Manual		Velocity/Manual
+Map	Rate		Rate
+Map	Octave 1		Octave 1
+Map	Octave 2		Octave 2
+Map	Octave 3		Octave 3
+Map	Octave 4		Octave 4
+Map	Insert Off		Insert Off
+Map	Insert Low		Insert Low
+Map	Insert High		Insert High
+Map	Insert 3-1		Insert 3-1
+Map	Insert 4-2		Insert 4-2
+Map	Pattern Step 1		Pattern Step 1
+Map	Pattern Step 2		Pattern Step 2
+Map	Pattern Step 3		Pattern Step 3
+Map	Pattern Step 4		Pattern Step 4
+Map	Pattern Step 5		Pattern Step 5
+Map	Pattern Step 6		Pattern Step 6
+Map	Pattern Step 7		Pattern Step 7
+Map	Pattern Step 8		Pattern Step 8
+Map	Pattern Step 9		Pattern Step 9
+Map	Pattern Step 10		Pattern Step 10
+Map	Pattern Step 11		Pattern Step 11
+Map	Pattern Step 12		Pattern Step 12
+Map	Pattern Step 13		Pattern Step 13
+Map	Pattern Step 14		Pattern Step 14
+Map	Pattern Step 15		Pattern Step 15
+Map	Pattern Step 16		Pattern Step 16
+Map	Octave Shift Up		Octave Shift Up
+Map	Octave Shift Down		Octave Shift Down
+Map	Pattern Length Up		Pattern Length Up
+Map	Pattern Length Down		Pattern Length Down
+Map	Data Terminal		Device Name

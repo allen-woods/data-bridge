@@ -1,0 +1,19 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	PEQ-2 Two Band Parametric EQ				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	PEQ-2 Two Band Parametric EQ			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Filter A Freq		Filter A Freq		
+Map	Filter A Q		Filter A Q		
+Map	Filter A Gain		Filter A Gain		
+Map	Filter B Freq		Filter B Freq		
+Map	Filter B Q		Filter B Q		
+Map	Filter B Gain		Filter B Gain		
+Map	Filter B On/Off		Filter B On/Off		
+Map	Peak Meter		Peak Meter		
+Map	Data Terminal		Device Name

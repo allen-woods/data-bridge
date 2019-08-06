@@ -1,0 +1,78 @@
+version={1,0,0}
+
+function remote_supported_control_surfaces()
+  local rtfm_str = "To get started, consult the manual or visit ReasonTalk.com. This Donationware can be supported at: paypal.me/raveshaper"
+  local surfaces = {}
+  local names = {
+  --// device name                       // has keyboard
+    {"Alligator",                         false},
+    {"BV512 Digital Vocoder",             false},
+    {"CF-101 Chorus-Flanger",             false},
+    {"Combinator",                        true},
+    {"COMP-01 Compressor-Limiter",        false},
+    {"D-11 Foldback Distortion",          false},
+    {"DDL-1 Digital Delay Line",          false},
+    {"Dr REX Loop Player",                true},
+    {"ECF-42 Envelope Controlled Filter", false},
+    {"ID8 Instrument Device",             true},
+    {"Kong Drum Designer",                true},
+    {"Line Mixer 6-2",                    false},
+    {"Malstrom Graintable Synthesizer",   true},
+    {"Matrix Pattern Sequencer",          false},
+    {"MClass Compressor",                 false},
+    {"MClass Equalizer",                  false},
+    {"MClass Maximizer",                  false},
+    {"MClass Stereo Imager",              false},
+    {"Mix Channel",                       false},
+    {"Mixer 14-2",                        false},
+    {"Neptune Pitch Adjuster",            true},
+    {"NN19 Digital Sampler",              true},
+    {"NN-XT Advanced Sampler",            true},
+    {"PEQ-2 Two Band Parametric EQ",      false},
+    {"PH-90 Phaser",                      false},
+    {"Pulveriser",                        false},
+    {"Reason Document",                   false},
+    {"Reason Main Mixer",                 false},
+    {"Reason Master Section",             false},
+    {"Redrum Drum Computer",              true},
+    {"ReGroove Mixer",                    false},
+    {"RPG-8 Monophonic Arpeggiator",      true},
+    {"RV-7 Digital Reverb",               false},
+    {"RV7000 Advanced Reverb",            false},
+    {"Scream 4 Distortion",               false},
+    {"Spider Audio Merger-Splitter",      false},
+    {"Spider CV Merger-Splitter",         false},
+    {"Subtractor Analog Synthesizer",     true},
+    {"The Echo",                          false},
+    {"Thor Polysonic Synthesizer",        true},
+    {"UN-16 Unison",                      false}
+  }
+
+  --// virtual output add-on for devices and gui elements
+
+  for n=1,#names do
+    surfaces[#surfaces+1]={
+      manufacturer="Raveshaper",
+      model=names[n][1],
+      source="DataBridge.lua",
+      in_ports={
+        {description="Loopback Input"},
+        {description="UI Input", optional=true}
+      },
+      out_ports={
+        {description="Loopback Output"}
+      },
+      setup_info_text=nil,
+      has_keyboard=names[n][2]
+    }
+    if names[n][1]=="Reason Document" then
+        surfaces[#surfaces].setup_info_text = "This surface unlocks the remote items of Transport as virtual outputs in the form of assignable Remote Overrides. It must either be locked directly to the Transport track or locked to \"Hardware Interface II\" using the \"Options > Surface Locking...\" drop-down menu to operate."
+    elseif names[n][1]=="Reason Main Mixer" then
+        surfaces[#surfaces].setup_info_text = "This surface unlocks the remote items of the entire SSL Mixing Desk as virtual outputs in the form of assignable Remote Overrides. It must be locked directly to the Master Section via right-click or the \"Options > Surface Locking...\" drop-down menu to operate."
+    else
+        surfaces[#surfaces].setup_info_text = "This surface unlocks the remote items of "..names[n][1].." as virtual outputs in the form of assignable Remote Overrides. It must be directly locked to the desired "..names[n][1].." device via right-click or the \"Options > Surface Locking...\" drop-down menu in order to operate."
+    end
+    surfaces[#surfaces].setup_info_text = surfaces[#surfaces].setup_info_text.."\n\n"..rtfm_str
+  end
+  return surfaces
+end

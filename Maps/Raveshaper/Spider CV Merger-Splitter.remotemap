@@ -1,0 +1,16 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	Spider CV Merger-Splitter				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Spider CV Merger & Splitter			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Merge Input 1 Activity		Merge Input 1 Activity		
+Map	Merge Input 2 Activity		Merge Input 2 Activity		
+Map	Merge Input 3 Activity		Merge Input 3 Activity		
+Map	Merge Input 4 Activity		Merge Input 4 Activity		
+Map	Split A Input Activity		Split A Input Activity		
+Map	Split B Input Activity		Split B Input Activity		
+Map	Data Terminal		Device Name

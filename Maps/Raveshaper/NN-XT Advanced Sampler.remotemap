@@ -1,0 +1,34 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	Raveshaper		
+Control Surface Model	NN-XT Advanced Sampler		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+
+Scope	Propellerheads	NN-XT Advanced Sampler	
+//	Control Surface Item	Key	Remotable Item
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	External Controller		External Controller
+Map	Note On Indicator		Note On Indicator
+Map	External Controller Source		External Controller Source
+Map	High Quality Interpolation		High Quality Interpolation
+Map	Filter Freq		Filter Freq
+Map	Filter Res		Filter Res
+Map	Amp Env Attack		Amp Env Attack
+Map	Amp Env Decay		Amp Env Decay
+Map	Amp Env Release		Amp Env Release
+Map	Mod Env Decay		Mod Env Decay
+Map	Master Volume		Master Volume
+Map	Sample Loading Progress		Sample Loading Progress
+Map	Sample		Sample
+Map	Data Terminal		Device Name

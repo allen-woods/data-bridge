@@ -1,0 +1,51 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	Line Mixer 6-2				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Line Mixer 6:2			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Master Level		Master Level		
+Map	Channel 1 Level		Channel 1 Level		
+Map	Channel 2 Level		Channel 2 Level		
+Map	Channel 3 Level		Channel 3 Level		
+Map	Channel 4 Level		Channel 4 Level		
+Map	Channel 5 Level		Channel 5 Level		
+Map	Channel 6 Level		Channel 6 Level		
+Map	Channel 1 Pan		Channel 1 Pan		
+Map	Channel 2 Pan		Channel 2 Pan		
+Map	Channel 3 Pan		Channel 3 Pan		
+Map	Channel 4 Pan		Channel 4 Pan		
+Map	Channel 5 Pan		Channel 5 Pan		
+Map	Channel 6 Pan		Channel 6 Pan		
+Map	Channel 1 Solo		Channel 1 Solo		
+Map	Channel 2 Solo		Channel 2 Solo		
+Map	Channel 3 Solo		Channel 3 Solo		
+Map	Channel 4 Solo		Channel 4 Solo		
+Map	Channel 5 Solo		Channel 5 Solo		
+Map	Channel 6 Solo		Channel 6 Solo		
+Map	Channel 1 Mute		Channel 1 Mute		
+Map	Channel 2 Mute		Channel 2 Mute		
+Map	Channel 3 Mute		Channel 3 Mute		
+Map	Channel 4 Mute		Channel 4 Mute		
+Map	Channel 5 Mute		Channel 5 Mute		
+Map	Channel 6 Mute		Channel 6 Mute		
+Map	Channel 1 Aux Send		Channel 1 Aux Send		
+Map	Channel 2 Aux Send		Channel 2 Aux Send		
+Map	Channel 3 Aux Send		Channel 3 Aux Send		
+Map	Channel 4 Aux Send		Channel 4 Aux Send		
+Map	Channel 5 Aux Send		Channel 5 Aux Send		
+Map	Channel 6 Aux Send		Channel 6 Aux Send		
+Map	Aux Return Level		Aux Return Level		
+Map	Channel 1 Peak Meter		Channel 1 Peak Meter		
+Map	Channel 2 Peak Meter		Channel 2 Peak Meter		
+Map	Channel 3 Peak Meter		Channel 3 Peak Meter		
+Map	Channel 4 Peak Meter		Channel 4 Peak Meter		
+Map	Channel 5 Peak Meter		Channel 5 Peak Meter		
+Map	Channel 6 Peak Meter		Channel 6 Peak Meter		
+Map	Master Left Peak Meter		Master Left Peak Meter		
+Map	Master Right Peak Meter		Master Right Peak Meter		
+Map	Aux Pre/Post		Aux Pre/Post		
+Map	Data Terminal		Device Name

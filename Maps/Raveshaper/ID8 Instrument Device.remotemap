@@ -1,0 +1,33 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	Raveshaper		
+Control Surface Model	ID8 Instrument Device		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+
+Scope	Propellerheads	ID8 Instrument Device	
+//	Control Surface Item	Key	Remotable Item
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Note On Indicator		Note On Indicator
+Map	Parameter 1		Parameter 1
+Map	Parameter 2		Parameter 2
+Map	Volume		Volume
+Map	Sample Loading Progress		Sample Loading Progress
+Map	Category		Category
+Map	Sound		Sound
+Map	Sound A		Sound A
+Map	Sound B		Sound B
+Map	Sound C		Sound C
+Map	Sound D		Sound D
+Map	Preset		Preset
+Map	Data Terminal		Device Name

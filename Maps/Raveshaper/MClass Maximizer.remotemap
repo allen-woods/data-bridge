@@ -1,0 +1,24 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	Raveshaper				
+Control Surface Model	MClass Maximizer				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	MClass Maximizer			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Input Gain		Input Gain		
+Map	Limiter Enable		Limiter Enable		
+Map	Look Ahead Enable		Look Ahead Enable		
+Map	Attack Speed		Attack Speed		
+Map	Release Speed		Release Speed		
+Map	Output Gain		Output Gain		
+Map	Soft Clip Enable		Soft Clip Enable		
+Map	Soft Clip Amount		Soft Clip Amount		
+Map	Output Level Meter Mode		Output Level Meter Mode		
+Map	Peak Meter		Peak Meter		
+Map	Gain Meter		Gain Meter		
+Map	Output Level Left		Output Level Left		
+Map	Output Level Right		Output Level Right		
+Map	Data Terminal		Device Name
