@@ -1,3 +1,15 @@
+--[=[
+  Description:
+
+  The following code isolates the core data handling
+  functions used within Data Bridge.
+
+  It is provided here to allow for a better understanding
+  of the design, abstracted away from the I/O in the final
+  build.
+  
+]=]
+
 -- data network data write
 -- written: 04/05/2016
 function process_network(event)
