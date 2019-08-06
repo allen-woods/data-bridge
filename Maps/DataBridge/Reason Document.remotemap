@@ -1,0 +1,78 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	Reason Document				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Reason Document			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Click On/Off		Click On/Off		
+Map	Click Level		Click Level		
+Map	Tempo		Tempo		
+Map	Tempo BPM		Tempo BPM		
+Map	Tempo Decimal		Tempo Decimal		
+Map	Play		Play		
+Map	Stop		Stop		
+Map	Rewind		Rewind		
+Map	Fast Forward		Fast Forward		
+Map	Record		Record		
+Map	Song Position		Song Position		
+Map	Subticks		Subticks		
+Map	Clear Subticks		Clear Subticks		
+Map	Loop On/Off		Loop On/Off		
+Map	Left Loop		Left Loop		
+Map	Left Loop Subticks		Left Loop Subticks		
+Map	Clear Left Loop Subticks		Clear Left Loop Subticks		
+Map	Right Loop		Right Loop		
+Map	Right Loop Subticks		Right Loop Subticks		
+Map	Clear Right Loop Subticks		Clear Right Loop Subticks		
+Map	Punched-In		Punched-In		
+Map	Reset Automation Override		Reset Automation Override		
+Map	Undo		Undo		
+Map	Auto-quantize		Auto-quantize		
+Map	Redo		Redo		
+Map	Target Track Solo		Target Track Solo		
+Map	Target Track Mute		Target Track Mute		
+Map	Any Track Solo		Any Track Solo		
+Map	Any Track Mute		Any Track Mute		
+Map	Return To Zero		Return To Zero		
+Map	Audio Left Peak Meter		Audio Left Peak Meter		
+Map	Audio Right Peak Meter		Audio Right Peak Meter		
+Map	New Overdub		New Overdub		
+Map	New Alternative Take		New Alternative Take		
+Map	Precount On/Off		Precount On/Off		
+Map	Time Position		Time Position		
+Map	Automation As Performance Controllers		Automation As Performance Controllers		
+Map	Target Track Enable Automation Recording		Target Track Enable Automation Recording		
+Map	Tap Tempo		Tap Tempo		
+Map	Pre Count Bars		Pre Count Bars		
+Map	Move Loop Left		Move Loop Left		
+Map	Move Loop Right		Move Loop Right		
+Map	Move Loop One bar Left		Move Loop One bar Left		
+Map	Move Loop One bar Right		Move Loop One bar Right		
+Map	Big Meter Left		Big Meter Left		
+Map	Big Meter Right		Big Meter Right		
+Map	Big Meter Left Peak		Big Meter Left Peak		
+Map	Big Meter Right Peak		Big Meter Right Peak		
+Map	Big Meter Left Clipping		Big Meter Left Clipping		
+Map	Big Meter Right Clipping		Big Meter Right Clipping		
+Map	Select Big Meter Channels		Select Big Meter Channels		
+Map	Meter Mode		Meter Mode		
+Map	Peak Hold		Peak Hold		
+Map	Reset Meter Clipping		Reset Meter Clipping		
+Map	Target Track Enable Monitoring		Target Track Enable Monitoring		
+Map	Target Track Meter Left		Target Track Meter Left		
+Map	Target Track Meter Right		Target Track Meter Right		
+Map	Target Track Meter Left Peak		Target Track Meter Left Peak		
+Map	Target Track Meter Right Peak		Target Track Meter Right Peak		
+Map	Target Track Meter Left Clipping		Target Track Meter Left Clipping		
+Map	Target Track Meter Right Clipping		Target Track Meter Right Clipping		
+Map	Target Track Reset Meter Clipping		Target Track Reset Meter Clipping		
+Map	Target Track Enable Tuner		Target Track Enable Tuner		
+Map	Target Track Tuner Pitch Detected		Target Track Tuner Pitch Detected		
+Map	Target Track Tuner Note		Target Track Tuner Note		
+Map	Target Track Tuner Cents		Target Track Tuner Cents		
+Map	Audio Input Peak Meter		Audio Input Peak Meter		
+Map	Audio Output Peak Meter		Audio Output Peak Meter		
+Map	Send All Notes Off		Send All Notes Off

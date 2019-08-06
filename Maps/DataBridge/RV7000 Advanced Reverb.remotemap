@@ -1,0 +1,28 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	RV7000 Advanced Reverb				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	RV7000 Advanced Reverb			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Enabled		Enabled		
+Map	Dry/Wet		Dry/Wet		
+Map	Decay		Decay		
+Map	HF Damp		HF Damp		
+Map	Hi EQ		Hi EQ		
+Map	Gate On/Off		Gate On/Off		
+Map	EQ On/Off		EQ On/Off		
+Map	Edit Mode		Edit Mode		
+Map	Input Peak Meter		Input Peak Meter		
+Map	Soft Knob 1		Soft Knob 1		
+Map	Soft Knob 2		Soft Knob 2		
+Map	Soft Knob 3		Soft Knob 3		
+Map	Soft Knob 4		Soft Knob 4		
+Map	Soft Knob 5		Soft Knob 5		
+Map	Soft Knob 6		Soft Knob 6		
+Map	Soft Knob 7		Soft Knob 7		
+Map	Soft Knob 8		Soft Knob 8		
+Map	Sample		Sample			
+Map	Data Terminal		Device Name

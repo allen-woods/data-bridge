@@ -1,0 +1,36 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	Pulveriser				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Pulveriser			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Squash		Squash		
+Map	Release		Release		
+Map	Dirt		Dirt		
+Map	Tone		Tone		
+Map	Routing		Routing		
+Map	Filter Frequency		Filter Frequency		
+Map	Peak		Peak		
+Map	Filter Mode		Filter Mode		
+Map	Tremor to Frequency		Tremor to Frequency		
+Map	Follower to Frequency		Follower to Frequency		
+Map	Follower Trig		Follower Trig		
+Map	Follower Threshold		Follower Threshold		
+Map	Follower Attack		Follower Attack		
+Map	Follower Release		Follower Release		
+Map	Tremor Rate		Tremor Rate		
+Map	Tremor Waveform		Tremor Waveform		
+Map	Sync		Sync		
+Map	Tremor Spread		Tremor Spread		
+Map	Tremor Lag		Tremor Lag		
+Map	Follower to Rate		Follower to Rate		
+Map	Blend		Blend		
+Map	Tremor to Volume		Tremor to Volume		
+Map	Volume		Volume		
+Map	Enabled		Enabled		
+Map	Follow		Follow		
+Map	Input Peak Meter		Input Peak Meter		
+Map	Data Terminal		Device Name

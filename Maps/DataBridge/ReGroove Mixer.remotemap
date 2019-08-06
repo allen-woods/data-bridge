@@ -1,0 +1,204 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	ReGroove Mixer				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	ReGroove Mixer			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Pattern Shuffle		Pattern Shuffle		
+Map	A1 Groove Ch On		A1 Groove Ch On		
+Map	A1 Groove Amount		A1 Groove Amount		
+Map	A1 Slide		A1 Slide		
+Map	A1 Shuffle		A1 Shuffle		
+Map	A1 Pre-Align		A1 Pre-Align		
+Map	A1 Use Global Shuffle		A1 Use Global Shuffle		
+Map	A2 Groove Ch On		A2 Groove Ch On		
+Map	A2 Groove Amount		A2 Groove Amount		
+Map	A2 Slide		A2 Slide		
+Map	A2 Shuffle		A2 Shuffle		
+Map	A2 Pre-Align		A2 Pre-Align		
+Map	A2 Use Global Shuffle		A2 Use Global Shuffle		
+Map	A3 Groove Ch On		A3 Groove Ch On		
+Map	A3 Groove Amount		A3 Groove Amount		
+Map	A3 Slide		A3 Slide		
+Map	A3 Shuffle		A3 Shuffle		
+Map	A3 Pre-Align		A3 Pre-Align		
+Map	A3 Use Global Shuffle		A3 Use Global Shuffle		
+Map	A4 Groove Ch On		A4 Groove Ch On		
+Map	A4 Groove Amount		A4 Groove Amount		
+Map	A4 Slide		A4 Slide		
+Map	A4 Shuffle		A4 Shuffle		
+Map	A4 Pre-Align		A4 Pre-Align		
+Map	A4 Use Global Shuffle		A4 Use Global Shuffle		
+Map	A5 Groove Ch On		A5 Groove Ch On		
+Map	A5 Groove Amount		A5 Groove Amount		
+Map	A5 Slide		A5 Slide		
+Map	A5 Shuffle		A5 Shuffle		
+Map	A5 Pre-Align		A5 Pre-Align		
+Map	A5 Use Global Shuffle		A5 Use Global Shuffle		
+Map	A6 Groove Ch On		A6 Groove Ch On		
+Map	A6 Groove Amount		A6 Groove Amount		
+Map	A6 Slide		A6 Slide		
+Map	A6 Shuffle		A6 Shuffle		
+Map	A6 Pre-Align		A6 Pre-Align		
+Map	A6 Use Global Shuffle		A6 Use Global Shuffle		
+Map	A7 Groove Ch On		A7 Groove Ch On		
+Map	A7 Groove Amount		A7 Groove Amount		
+Map	A7 Slide		A7 Slide		
+Map	A7 Shuffle		A7 Shuffle		
+Map	A7 Pre-Align		A7 Pre-Align		
+Map	A7 Use Global Shuffle		A7 Use Global Shuffle		
+Map	A8 Groove Ch On		A8 Groove Ch On		
+Map	A8 Groove Amount		A8 Groove Amount		
+Map	A8 Slide		A8 Slide		
+Map	A8 Shuffle		A8 Shuffle		
+Map	A8 Pre-Align		A8 Pre-Align		
+Map	A8 Use Global Shuffle		A8 Use Global Shuffle		
+Map	B1 Groove Ch On		B1 Groove Ch On		
+Map	B1 Groove Amount		B1 Groove Amount		
+Map	B1 Slide		B1 Slide		
+Map	B1 Shuffle		B1 Shuffle		
+Map	B1 Pre-Align		B1 Pre-Align		
+Map	B1 Use Global Shuffle		B1 Use Global Shuffle		
+Map	B2 Groove Ch On		B2 Groove Ch On		
+Map	B2 Groove Amount		B2 Groove Amount		
+Map	B2 Slide		B2 Slide		
+Map	B2 Shuffle		B2 Shuffle		
+Map	B2 Pre-Align		B2 Pre-Align		
+Map	B2 Use Global Shuffle		B2 Use Global Shuffle		
+Map	B3 Groove Ch On		B3 Groove Ch On		
+Map	B3 Groove Amount		B3 Groove Amount		
+Map	B3 Slide		B3 Slide		
+Map	B3 Shuffle		B3 Shuffle		
+Map	B3 Pre-Align		B3 Pre-Align		
+Map	B3 Use Global Shuffle		B3 Use Global Shuffle		
+Map	B4 Groove Ch On		B4 Groove Ch On		
+Map	B4 Groove Amount		B4 Groove Amount		
+Map	B4 Slide		B4 Slide		
+Map	B4 Shuffle		B4 Shuffle		
+Map	B4 Pre-Align		B4 Pre-Align		
+Map	B4 Use Global Shuffle		B4 Use Global Shuffle		
+Map	B5 Groove Ch On		B5 Groove Ch On		
+Map	B5 Groove Amount		B5 Groove Amount		
+Map	B5 Slide		B5 Slide		
+Map	B5 Shuffle		B5 Shuffle		
+Map	B5 Pre-Align		B5 Pre-Align		
+Map	B5 Use Global Shuffle		B5 Use Global Shuffle		
+Map	B6 Groove Ch On		B6 Groove Ch On		
+Map	B6 Groove Amount		B6 Groove Amount		
+Map	B6 Slide		B6 Slide		
+Map	B6 Shuffle		B6 Shuffle		
+Map	B6 Pre-Align		B6 Pre-Align		
+Map	B6 Use Global Shuffle		B6 Use Global Shuffle		
+Map	B7 Groove Ch On		B7 Groove Ch On		
+Map	B7 Groove Amount		B7 Groove Amount		
+Map	B7 Slide		B7 Slide		
+Map	B7 Shuffle		B7 Shuffle		
+Map	B7 Pre-Align		B7 Pre-Align		
+Map	B7 Use Global Shuffle		B7 Use Global Shuffle		
+Map	B8 Groove Ch On		B8 Groove Ch On		
+Map	B8 Groove Amount		B8 Groove Amount		
+Map	B8 Slide		B8 Slide		
+Map	B8 Shuffle		B8 Shuffle		
+Map	B8 Pre-Align		B8 Pre-Align		
+Map	B8 Use Global Shuffle		B8 Use Global Shuffle		
+Map	C1 Groove Ch On		C1 Groove Ch On		
+Map	C1 Groove Amount		C1 Groove Amount		
+Map	C1 Slide		C1 Slide		
+Map	C1 Shuffle		C1 Shuffle		
+Map	C1 Pre-Align		C1 Pre-Align		
+Map	C1 Use Global Shuffle		C1 Use Global Shuffle		
+Map	C2 Groove Ch On		C2 Groove Ch On		
+Map	C2 Groove Amount		C2 Groove Amount		
+Map	C2 Slide		C2 Slide		
+Map	C2 Shuffle		C2 Shuffle		
+Map	C2 Pre-Align		C2 Pre-Align		
+Map	C2 Use Global Shuffle		C2 Use Global Shuffle		
+Map	C3 Groove Ch On		C3 Groove Ch On		
+Map	C3 Groove Amount		C3 Groove Amount		
+Map	C3 Slide		C3 Slide		
+Map	C3 Shuffle		C3 Shuffle		
+Map	C3 Pre-Align		C3 Pre-Align		
+Map	C3 Use Global Shuffle		C3 Use Global Shuffle		
+Map	C4 Groove Ch On		C4 Groove Ch On		
+Map	C4 Groove Amount		C4 Groove Amount		
+Map	C4 Slide		C4 Slide		
+Map	C4 Shuffle		C4 Shuffle		
+Map	C4 Pre-Align		C4 Pre-Align		
+Map	C4 Use Global Shuffle		C4 Use Global Shuffle		
+Map	C5 Groove Ch On		C5 Groove Ch On		
+Map	C5 Groove Amount		C5 Groove Amount		
+Map	C5 Slide		C5 Slide		
+Map	C5 Shuffle		C5 Shuffle		
+Map	C5 Pre-Align		C5 Pre-Align		
+Map	C5 Use Global Shuffle		C5 Use Global Shuffle		
+Map	C6 Groove Ch On		C6 Groove Ch On		
+Map	C6 Groove Amount		C6 Groove Amount		
+Map	C6 Slide		C6 Slide		
+Map	C6 Shuffle		C6 Shuffle		
+Map	C6 Pre-Align		C6 Pre-Align		
+Map	C6 Use Global Shuffle		C6 Use Global Shuffle		
+Map	C7 Groove Ch On		C7 Groove Ch On		
+Map	C7 Groove Amount		C7 Groove Amount		
+Map	C7 Slide		C7 Slide		
+Map	C7 Shuffle		C7 Shuffle		
+Map	C7 Pre-Align		C7 Pre-Align		
+Map	C7 Use Global Shuffle		C7 Use Global Shuffle		
+Map	C8 Groove Ch On		C8 Groove Ch On		
+Map	C8 Groove Amount		C8 Groove Amount		
+Map	C8 Slide		C8 Slide		
+Map	C8 Shuffle		C8 Shuffle		
+Map	C8 Pre-Align		C8 Pre-Align		
+Map	C8 Use Global Shuffle		C8 Use Global Shuffle		
+Map	D1 Groove Ch On		D1 Groove Ch On		
+Map	D1 Groove Amount		D1 Groove Amount		
+Map	D1 Slide		D1 Slide		
+Map	D1 Shuffle		D1 Shuffle		
+Map	D1 Pre-Align		D1 Pre-Align		
+Map	D1 Use Global Shuffle		D1 Use Global Shuffle		
+Map	D2 Groove Ch On		D2 Groove Ch On		
+Map	D2 Groove Amount		D2 Groove Amount		
+Map	D2 Slide		D2 Slide		
+Map	D2 Shuffle		D2 Shuffle		
+Map	D2 Pre-Align		D2 Pre-Align		
+Map	D2 Use Global Shuffle		D2 Use Global Shuffle		
+Map	D3 Groove Ch On		D3 Groove Ch On		
+Map	D3 Groove Amount		D3 Groove Amount		
+Map	D3 Slide		D3 Slide		
+Map	D3 Shuffle		D3 Shuffle		
+Map	D3 Pre-Align		D3 Pre-Align		
+Map	D3 Use Global Shuffle		D3 Use Global Shuffle		
+Map	D4 Groove Ch On		D4 Groove Ch On		
+Map	D4 Groove Amount		D4 Groove Amount		
+Map	D4 Slide		D4 Slide		
+Map	D4 Shuffle		D4 Shuffle		
+Map	D4 Pre-Align		D4 Pre-Align		
+Map	D4 Use Global Shuffle		D4 Use Global Shuffle		
+Map	D5 Groove Ch On		D5 Groove Ch On		
+Map	D5 Groove Amount		D5 Groove Amount		
+Map	D5 Slide		D5 Slide		
+Map	D5 Shuffle		D5 Shuffle		
+Map	D5 Pre-Align		D5 Pre-Align		
+Map	D5 Use Global Shuffle		D5 Use Global Shuffle		
+Map	D6 Groove Ch On		D6 Groove Ch On		
+Map	D6 Groove Amount		D6 Groove Amount		
+Map	D6 Slide		D6 Slide		
+Map	D6 Shuffle		D6 Shuffle		
+Map	D6 Pre-Align		D6 Pre-Align		
+Map	D6 Use Global Shuffle		D6 Use Global Shuffle		
+Map	D7 Groove Ch On		D7 Groove Ch On		
+Map	D7 Groove Amount		D7 Groove Amount		
+Map	D7 Slide		D7 Slide		
+Map	D7 Shuffle		D7 Shuffle		
+Map	D7 Pre-Align		D7 Pre-Align		
+Map	D7 Use Global Shuffle		D7 Use Global Shuffle		
+Map	D8 Groove Ch On		D8 Groove Ch On		
+Map	D8 Groove Amount		D8 Groove Amount		
+Map	D8 Slide		D8 Slide		
+Map	D8 Shuffle		D8 Shuffle		
+Map	D8 Pre-Align		D8 Pre-Align		
+Map	D8 Use Global Shuffle		D8 Use Global Shuffle		
+					
+					

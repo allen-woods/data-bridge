@@ -1,5 +1,7 @@
 # Data Bridge
+
 ---
+
 ## Overview
 
 Data Bridge is an advanced MIDI control surface designed to provide a scalable, modular network of responsive feedback connections between rack devices in Propellerhead Reason 7+.
@@ -21,18 +23,20 @@ Data Bridge is so-named because it allows the state of a given device's control 
 
 Applying MIDI data as a distributed network allows for unprecedented expressive control, as well as organically random auto-modulation.
 
+---
+
 ## Installation
 
 1. Attach a physical MIDI 5-pin In and Out port to your computer.
 2. Physically loop these ports with a MIDI cable (Out to In).
 3. If **Reason** is running, exit the program.
 4. Download this package locally.
-5. Move the `Raveshaper` folder in `Codecs/Lua Codecs` to the local `Codecs/Lua Codecs` folder used by your install of **Reason**.
-6. Move the `Raveshaper` folder in `Maps` to the local `Maps` folder used by your install of **Reason**.
+5. Move the `DataBridge` folder in `Codecs/Lua Codecs` to the local `Codecs/Lua Codecs` folder used by your install of **Reason**.
+6. Move the `DataBridge` folder in `Maps` to the local `Maps` folder used by your install of **Reason**.
     * For Help with 3 and 4, Please See:
     https://www.propellerheads.com/blog/control-remote
 7. Start **Reason**.
-8. Navigate to **Preferences > Control Surfaces > Add** and confirm that `Raveshaper` appears as a manufacturer.
+8. Navigate to **Preferences > Control Surfaces > Add** and confirm that `DataBridge` appears as a manufacturer.
     * If this step fails, confirm folders were copied to the correct locations and restart **Reason**.
 9. Exit **Preferences**.
 10. Open the `Local Workspace` song project from the `Templates and Patches` folder in this package.
@@ -42,9 +46,11 @@ Applying MIDI data as a distributed network allows for unprecedented expressive 
 13. Save the song project where you would like, then close the file and open a new blank project.
 14. Navigate to **Preferences > General** and set the template song project you saved in step 13 as your default template for new projects.
 
+---
+
 ## Basic Usage
 
-Upon successful installation, simply load a stock device and lock its dedicated control surface to it from the `Raveshaper` list of surfaces.
+Upon successful installation, simply load a stock device and lock its dedicated control surface to it from the `DataBridge` list of surfaces.
 >**NOTE:** If the lock option isn't available, you will need to select _Disable Master Keyboard_ first.
 
 Once this initial surface is locked, you can bind its outputs to any other rack unit by selecting them from the list when assigning **Remote Overrides**.
@@ -57,7 +63,7 @@ You can scale this process to create control chains of arbitrary length accordin
 
 Once all **Remote Overrides** have been mapped, you must prime the system by disconnecting your looped MIDI port, then plugging it back in.
 
-Now simply activate the Clock button on the **Combinator** and adjust the control(s) whose outputs you mapped to a destination device.
+Now simply activate the `Clock On/Off` button on the **Combinator** and adjust the control(s) whose outputs you mapped to a destination device.
 
 You should see both controls moving even though you have only selected one.
 

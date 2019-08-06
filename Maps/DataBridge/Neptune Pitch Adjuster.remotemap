@@ -1,0 +1,44 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	DataBridge		
+Control Surface Model	Neptune Pitch Adjuster		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+
+Scope	Propellerheads	Neptune Pitch Adjuster	
+//	Control Surface Item	Key	Remotable Item
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Enabled		Enabled
+Map	Pitch Bend Range		Pitch Bend Range
+Map	Vibrato Rate		Vibrato Rate
+Map	Low Freq Input		Low Freq Input
+Map	Wide Vibrato		Wide Vibrato
+Map	Live Mode		Live Mode
+Map	MIDI Destination		MIDI Destination
+Map	Pitch Adjust On/Off		Pitch Adjust On/Off
+Map	Scale Memory		Scale Memory
+Map	Correction Speed		Correction Speed
+Map	Preserve Expression		Preserve Expression
+Map	Transpose On/Off		Transpose On/Off
+Map	Semitones		Semitones
+Map	Cent		Cent
+Map	Formant On/Off		Formant On/Off
+Map	Formant Shift		Formant Shift
+Map	Pitched Signal Level		Pitched Signal Level
+Map	Voice Synth Level		Voice Synth Level
+Map	Input Peak Meter		Input Peak Meter
+Map	MIDI Input		MIDI Input
+Map	Catch Zone		Catch Zone
+Map	Target Note		Target Note
+Map	Pitch Adjust Amount		Pitch Adjust Amount
+Map	Data Terminal		Device Name

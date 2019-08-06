@@ -1,0 +1,97 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	Mix Channel				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Reason Main Mixer Channel			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Width		Width		
+Map	Mute		Mute		
+Map	Solo		Solo		
+Map	Input Gain		Input Gain		
+Map	Invert Phase		Invert Phase		
+Map	Insert Pre		Insert Pre		
+Map	Dyn Post EQ		Dyn Post EQ		
+Map	LPF On		LPF On		
+Map	HPF On		HPF On		
+Map	Filters Dyn S/C		Filters Dyn S/C		
+Map	EQ On		EQ On		
+Map	EQ E Mode		EQ E Mode		
+Map	HF Gain		HF Gain		
+Map	HF Bell		HF Bell		
+Map	HF On		HF On		
+Map	HMF Gain		HMF Gain		
+Map	HMF Q		HMF Q		
+Map	HMF On		HMF On		
+Map	LMF Gain		LMF Gain		
+Map	LMF Q		LMF Q		
+Map	LMF On		LMF On		
+Map	LF Gain		LF Gain		
+Map	LF Bell		LF Bell		
+Map	LF On		LF On		
+Map	Bypass Insert FX		Bypass Insert FX		
+Map	Rotary 1		Rotary 1		
+Map	Rotary 2		Rotary 2		
+Map	Rotary 3		Rotary 3		
+Map	Rotary 4		Rotary 4		
+Map	Button 1		Button 1		
+Map	Button 2		Button 2		
+Map	Button 3		Button 3		
+Map	Button 4		Button 4		
+Map	To Insert FX Peak Meter		To Insert FX Peak Meter		
+Map	From Insert FX Peak Meter		From Insert FX Peak Meter		
+Map	Comp On		Comp On		
+Map	C Threshold		C Threshold		
+Map	C Release		C Release		
+Map	C Ratio		C Ratio		
+Map	C Peak		C Peak		
+Map	C Fast Atk		C Fast Atk		
+Map	Comp Gain Reduction		Comp Gain Reduction		
+Map	Gate On		Gate On		
+Map	G Threshold		G Threshold		
+Map	G Hold		G Hold		
+Map	G Release		G Release		
+Map	G Range		G Range		
+Map	G Fast Atk		G Fast Atk		
+Map	Expander		Expander		
+Map	Gate Gain Reduction		Gate Gain Reduction		
+Map	Key On		Key On		
+Map	FX1 Send On		FX1 Send On		
+Map	FX1 Send Level		FX1 Send Level		
+Map	FX1 Pre Fader		FX1 Pre Fader		
+Map	FX2 Send On		FX2 Send On		
+Map	FX2 Send Level		FX2 Send Level		
+Map	FX2 Pre Fader		FX2 Pre Fader		
+Map	FX3 Send On		FX3 Send On		
+Map	FX3 Send Level		FX3 Send Level		
+Map	FX3 Pre Fader		FX3 Pre Fader		
+Map	FX4 Send On		FX4 Send On		
+Map	FX4 Send Level		FX4 Send Level		
+Map	FX4 Pre Fader		FX4 Pre Fader		
+Map	FX5 Send On		FX5 Send On		
+Map	FX5 Send Level		FX5 Send Level		
+Map	FX5 Pre Fader		FX5 Pre Fader		
+Map	FX6 Send On		FX6 Send On		
+Map	FX6 Send Level		FX6 Send Level		
+Map	FX6 Pre Fader		FX6 Pre Fader		
+Map	FX7 Send On		FX7 Send On		
+Map	FX7 Send Level		FX7 Send Level		
+Map	FX7 Pre Fader		FX7 Pre Fader		
+Map	FX8 Send On		FX8 Send On		
+Map	FX8 Send Level		FX8 Send Level		
+Map	FX8 Pre Fader		FX8 Pre Fader		
+Map	VU Meter		VU Meter		
+Map	VU Meter L		VU Meter L		
+Map	VU Meter R		VU Meter R		
+Map	LPF Frequency		LPF Frequency		
+Map	HPF Frequency		HPF Frequency		
+Map	HF Frequency		HF Frequency		
+Map	HMF Frequency		HMF Frequency		
+Map	LMF Frequency		LMF Frequency		
+Map	LF Frequency		LF Frequency		
+Map	Level		Level		
+Map	Pan		Pan		
+Map	Inserts Connected		Inserts Connected		
+Map	Data Terminal		Channel Name

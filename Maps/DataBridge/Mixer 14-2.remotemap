@@ -1,0 +1,199 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	Mixer 14-2				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Mixer 14:2			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Master Level		Master Level		
+Map	Channel 1 Level		Channel 1 Level		
+Map	Channel 2 Level		Channel 2 Level		
+Map	Channel 3 Level		Channel 3 Level		
+Map	Channel 4 Level		Channel 4 Level		
+Map	Channel 5 Level		Channel 5 Level		
+Map	Channel 6 Level		Channel 6 Level		
+Map	Channel 7 Level		Channel 7 Level		
+Map	Channel 8 Level		Channel 8 Level		
+Map	Channel 9 Level		Channel 9 Level		
+Map	Channel 10 Level		Channel 10 Level		
+Map	Channel 11 Level		Channel 11 Level		
+Map	Channel 12 Level		Channel 12 Level		
+Map	Channel 13 Level		Channel 13 Level		
+Map	Channel 14 Level		Channel 14 Level		
+Map	Channel 1 Pan		Channel 1 Pan		
+Map	Channel 2 Pan		Channel 2 Pan		
+Map	Channel 3 Pan		Channel 3 Pan		
+Map	Channel 4 Pan		Channel 4 Pan		
+Map	Channel 5 Pan		Channel 5 Pan		
+Map	Channel 6 Pan		Channel 6 Pan		
+Map	Channel 7 Pan		Channel 7 Pan		
+Map	Channel 8 Pan		Channel 8 Pan		
+Map	Channel 9 Pan		Channel 9 Pan		
+Map	Channel 10 Pan		Channel 10 Pan		
+Map	Channel 11 Pan		Channel 11 Pan		
+Map	Channel 12 Pan		Channel 12 Pan		
+Map	Channel 13 Pan		Channel 13 Pan		
+Map	Channel 14 Pan		Channel 14 Pan		
+Map	Channel 1 EQ On/Off		Channel 1 EQ On/Off		
+Map	Channel 2 EQ On/Off		Channel 2 EQ On/Off		
+Map	Channel 3 EQ On/Off		Channel 3 EQ On/Off		
+Map	Channel 4 EQ On/Off		Channel 4 EQ On/Off		
+Map	Channel 5 EQ On/Off		Channel 5 EQ On/Off		
+Map	Channel 6 EQ On/Off		Channel 6 EQ On/Off		
+Map	Channel 7 EQ On/Off		Channel 7 EQ On/Off		
+Map	Channel 8 EQ On/Off		Channel 8 EQ On/Off		
+Map	Channel 9 EQ On/Off		Channel 9 EQ On/Off		
+Map	Channel 10 EQ On/Off		Channel 10 EQ On/Off		
+Map	Channel 11 EQ On/Off		Channel 11 EQ On/Off		
+Map	Channel 12 EQ On/Off		Channel 12 EQ On/Off		
+Map	Channel 13 EQ On/Off		Channel 13 EQ On/Off		
+Map	Channel 14 EQ On/Off		Channel 14 EQ On/Off		
+Map	Channel 1 Bass Amount		Channel 1 Bass Amount		
+Map	Channel 2 Bass Amount		Channel 2 Bass Amount		
+Map	Channel 3 Bass Amount		Channel 3 Bass Amount		
+Map	Channel 4 Bass Amount		Channel 4 Bass Amount		
+Map	Channel 5 Bass Amount		Channel 5 Bass Amount		
+Map	Channel 6 Bass Amount		Channel 6 Bass Amount		
+Map	Channel 7 Bass Amount		Channel 7 Bass Amount		
+Map	Channel 8 Bass Amount		Channel 8 Bass Amount		
+Map	Channel 9 Bass Amount		Channel 9 Bass Amount		
+Map	Channel 10 Bass Amount		Channel 10 Bass Amount		
+Map	Channel 11 Bass Amount		Channel 11 Bass Amount		
+Map	Channel 12 Bass Amount		Channel 12 Bass Amount		
+Map	Channel 13 Bass Amount		Channel 13 Bass Amount		
+Map	Channel 14 Bass Amount		Channel 14 Bass Amount		
+Map	Channel 1 Treble Amount		Channel 1 Treble Amount		
+Map	Channel 2 Treble Amount		Channel 2 Treble Amount		
+Map	Channel 3 Treble Amount		Channel 3 Treble Amount		
+Map	Channel 4 Treble Amount		Channel 4 Treble Amount		
+Map	Channel 5 Treble Amount		Channel 5 Treble Amount		
+Map	Channel 6 Treble Amount		Channel 6 Treble Amount		
+Map	Channel 7 Treble Amount		Channel 7 Treble Amount		
+Map	Channel 8 Treble Amount		Channel 8 Treble Amount		
+Map	Channel 9 Treble Amount		Channel 9 Treble Amount		
+Map	Channel 10 Treble Amount		Channel 10 Treble Amount		
+Map	Channel 11 Treble Amount		Channel 11 Treble Amount		
+Map	Channel 12 Treble Amount		Channel 12 Treble Amount		
+Map	Channel 13 Treble Amount		Channel 13 Treble Amount		
+Map	Channel 14 Treble Amount		Channel 14 Treble Amount		
+Map	Channel 1 Solo		Channel 1 Solo		
+Map	Channel 2 Solo		Channel 2 Solo		
+Map	Channel 3 Solo		Channel 3 Solo		
+Map	Channel 4 Solo		Channel 4 Solo		
+Map	Channel 5 Solo		Channel 5 Solo		
+Map	Channel 6 Solo		Channel 6 Solo		
+Map	Channel 7 Solo		Channel 7 Solo		
+Map	Channel 8 Solo		Channel 8 Solo		
+Map	Channel 9 Solo		Channel 9 Solo		
+Map	Channel 10 Solo		Channel 10 Solo		
+Map	Channel 11 Solo		Channel 11 Solo		
+Map	Channel 12 Solo		Channel 12 Solo		
+Map	Channel 13 Solo		Channel 13 Solo		
+Map	Channel 14 Solo		Channel 14 Solo		
+Map	Channel 1 Mute		Channel 1 Mute		
+Map	Channel 2 Mute		Channel 2 Mute		
+Map	Channel 3 Mute		Channel 3 Mute		
+Map	Channel 4 Mute		Channel 4 Mute		
+Map	Channel 5 Mute		Channel 5 Mute		
+Map	Channel 6 Mute		Channel 6 Mute		
+Map	Channel 7 Mute		Channel 7 Mute		
+Map	Channel 8 Mute		Channel 8 Mute		
+Map	Channel 9 Mute		Channel 9 Mute		
+Map	Channel 10 Mute		Channel 10 Mute		
+Map	Channel 11 Mute		Channel 11 Mute		
+Map	Channel 12 Mute		Channel 12 Mute		
+Map	Channel 13 Mute		Channel 13 Mute		
+Map	Channel 14 Mute		Channel 14 Mute		
+Map	Channel 1 Aux 1 Send		Channel 1 Aux 1 Send		
+Map	Channel 2 Aux 1 Send		Channel 2 Aux 1 Send		
+Map	Channel 3 Aux 1 Send		Channel 3 Aux 1 Send		
+Map	Channel 4 Aux 1 Send		Channel 4 Aux 1 Send		
+Map	Channel 5 Aux 1 Send		Channel 5 Aux 1 Send		
+Map	Channel 6 Aux 1 Send		Channel 6 Aux 1 Send		
+Map	Channel 7 Aux 1 Send		Channel 7 Aux 1 Send		
+Map	Channel 8 Aux 1 Send		Channel 8 Aux 1 Send		
+Map	Channel 9 Aux 1 Send		Channel 9 Aux 1 Send		
+Map	Channel 10 Aux 1 Send		Channel 10 Aux 1 Send		
+Map	Channel 11 Aux 1 Send		Channel 11 Aux 1 Send		
+Map	Channel 12 Aux 1 Send		Channel 12 Aux 1 Send		
+Map	Channel 13 Aux 1 Send		Channel 13 Aux 1 Send		
+Map	Channel 14 Aux 1 Send		Channel 14 Aux 1 Send		
+Map	Channel 1 Aux 2 Send		Channel 1 Aux 2 Send		
+Map	Channel 2 Aux 2 Send		Channel 2 Aux 2 Send		
+Map	Channel 3 Aux 2 Send		Channel 3 Aux 2 Send		
+Map	Channel 4 Aux 2 Send		Channel 4 Aux 2 Send		
+Map	Channel 5 Aux 2 Send		Channel 5 Aux 2 Send		
+Map	Channel 6 Aux 2 Send		Channel 6 Aux 2 Send		
+Map	Channel 7 Aux 2 Send		Channel 7 Aux 2 Send		
+Map	Channel 8 Aux 2 Send		Channel 8 Aux 2 Send		
+Map	Channel 9 Aux 2 Send		Channel 9 Aux 2 Send		
+Map	Channel 10 Aux 2 Send		Channel 10 Aux 2 Send		
+Map	Channel 11 Aux 2 Send		Channel 11 Aux 2 Send		
+Map	Channel 12 Aux 2 Send		Channel 12 Aux 2 Send		
+Map	Channel 13 Aux 2 Send		Channel 13 Aux 2 Send		
+Map	Channel 14 Aux 2 Send		Channel 14 Aux 2 Send		
+Map	Channel 1 Aux 3 Send		Channel 1 Aux 3 Send		
+Map	Channel 2 Aux 3 Send		Channel 2 Aux 3 Send		
+Map	Channel 3 Aux 3 Send		Channel 3 Aux 3 Send		
+Map	Channel 4 Aux 3 Send		Channel 4 Aux 3 Send		
+Map	Channel 5 Aux 3 Send		Channel 5 Aux 3 Send		
+Map	Channel 6 Aux 3 Send		Channel 6 Aux 3 Send		
+Map	Channel 7 Aux 3 Send		Channel 7 Aux 3 Send		
+Map	Channel 8 Aux 3 Send		Channel 8 Aux 3 Send		
+Map	Channel 9 Aux 3 Send		Channel 9 Aux 3 Send		
+Map	Channel 10 Aux 3 Send		Channel 10 Aux 3 Send		
+Map	Channel 11 Aux 3 Send		Channel 11 Aux 3 Send		
+Map	Channel 12 Aux 3 Send		Channel 12 Aux 3 Send		
+Map	Channel 13 Aux 3 Send		Channel 13 Aux 3 Send		
+Map	Channel 14 Aux 3 Send		Channel 14 Aux 3 Send		
+Map	Channel 1 Aux 4 Send		Channel 1 Aux 4 Send		
+Map	Channel 2 Aux 4 Send		Channel 2 Aux 4 Send		
+Map	Channel 3 Aux 4 Send		Channel 3 Aux 4 Send		
+Map	Channel 4 Aux 4 Send		Channel 4 Aux 4 Send		
+Map	Channel 5 Aux 4 Send		Channel 5 Aux 4 Send		
+Map	Channel 6 Aux 4 Send		Channel 6 Aux 4 Send		
+Map	Channel 7 Aux 4 Send		Channel 7 Aux 4 Send		
+Map	Channel 8 Aux 4 Send		Channel 8 Aux 4 Send		
+Map	Channel 9 Aux 4 Send		Channel 9 Aux 4 Send		
+Map	Channel 10 Aux 4 Send		Channel 10 Aux 4 Send		
+Map	Channel 11 Aux 4 Send		Channel 11 Aux 4 Send		
+Map	Channel 12 Aux 4 Send		Channel 12 Aux 4 Send		
+Map	Channel 13 Aux 4 Send		Channel 13 Aux 4 Send		
+Map	Channel 14 Aux 4 Send		Channel 14 Aux 4 Send		
+Map	Aux 1 Return Level		Aux 1 Return Level		
+Map	Aux 2 Return Level		Aux 2 Return Level		
+Map	Aux 3 Return Level		Aux 3 Return Level		
+Map	Aux 4 Return Level		Aux 4 Return Level		
+Map	Channel 1 Peak Meter		Channel 1 Peak Meter		
+Map	Channel 2 Peak Meter		Channel 2 Peak Meter		
+Map	Channel 3 Peak Meter		Channel 3 Peak Meter		
+Map	Channel 4 Peak Meter		Channel 4 Peak Meter		
+Map	Channel 5 Peak Meter		Channel 5 Peak Meter		
+Map	Channel 6 Peak Meter		Channel 6 Peak Meter		
+Map	Channel 7 Peak Meter		Channel 7 Peak Meter		
+Map	Channel 8 Peak Meter		Channel 8 Peak Meter		
+Map	Channel 9 Peak Meter		Channel 9 Peak Meter		
+Map	Channel 10 Peak Meter		Channel 10 Peak Meter		
+Map	Channel 11 Peak Meter		Channel 11 Peak Meter		
+Map	Channel 12 Peak Meter		Channel 12 Peak Meter		
+Map	Channel 13 Peak Meter		Channel 13 Peak Meter		
+Map	Channel 14 Peak Meter		Channel 14 Peak Meter		
+Map	Master Left Peak Meter		Master Left Peak Meter		
+Map	Master Right Peak Meter		Master Right Peak Meter		
+Map	Channel 1 Aux 4 Pre Fader On/Off		Channel 1 Aux 4 Pre Fader On/Off		
+Map	Channel 2 Aux 4 Pre Fader On/Off		Channel 2 Aux 4 Pre Fader On/Off		
+Map	Channel 3 Aux 4 Pre Fader On/Off		Channel 3 Aux 4 Pre Fader On/Off		
+Map	Channel 4 Aux 4 Pre Fader On/Off		Channel 4 Aux 4 Pre Fader On/Off		
+Map	Channel 5 Aux 4 Pre Fader On/Off		Channel 5 Aux 4 Pre Fader On/Off		
+Map	Channel 6 Aux 4 Pre Fader On/Off		Channel 6 Aux 4 Pre Fader On/Off		
+Map	Channel 7 Aux 4 Pre Fader On/Off		Channel 7 Aux 4 Pre Fader On/Off		
+Map	Channel 8 Aux 4 Pre Fader On/Off		Channel 8 Aux 4 Pre Fader On/Off		
+Map	Channel 9 Aux 4 Pre Fader On/Off		Channel 9 Aux 4 Pre Fader On/Off		
+Map	Channel 10 Aux 4 Pre Fader On/Off		Channel 10 Aux 4 Pre Fader On/Off		
+Map	Channel 11 Aux 4 Pre Fader On/Off		Channel 11 Aux 4 Pre Fader On/Off		
+Map	Channel 12 Aux 4 Pre Fader On/Off		Channel 12 Aux 4 Pre Fader On/Off		
+Map	Channel 13 Aux 4 Pre Fader On/Off		Channel 13 Aux 4 Pre Fader On/Off		
+Map	Channel 14 Aux 4 Pre Fader On/Off		Channel 14 Aux 4 Pre Fader On/Off		
+Map	Data Terminal		Device Name

@@ -1,0 +1,93 @@
+Propellerhead Remote Mapping File					
+File Format Version	1.0.0				
+Control Surface Manufacturer	DataBridge				
+Control Surface Model	Reason Master Section				
+Map Version	1.0.0				
+					
+					
+Scope	Propellerheads	Reason Master Section			
+//	Control Surface Item	Key	Remotable Item	Scale	Mode
+Map	Inserts Pre		Inserts Pre		
+Map	Rotary 1		Rotary 1		
+Map	Rotary 2		Rotary 2		
+Map	Rotary 3		Rotary 3		
+Map	Rotary 4		Rotary 4		
+Map	Button 1		Button 1		
+Map	Button 2		Button 2		
+Map	Button 3		Button 3		
+Map	Button 4		Button 4		
+Map	To Insert FX Peak Meter		To Insert FX Peak Meter		
+Map	From Insert FX Peak Meter		From Insert FX Peak Meter		
+Map	Threshold		Threshold		
+Map	Ratio		Ratio		
+Map	Attack		Attack		
+Map	Release		Release		
+Map	Make-Up Gain		Make-Up Gain		
+Map	Compressor On		Compressor On		
+Map	Key On		Key On		
+Map	Gain Reduction		Gain Reduction		
+Map	FX1 Send Level Meter		FX1 Send Level Meter		
+Map	FX1 Send Level		FX1 Send Level		
+Map	FX1 Return Level Meter		FX1 Return Level Meter		
+Map	FX1 Return Level		FX1 Return Level		
+Map	FX1 Mute		FX1 Mute		
+Map	FX2 Send Level Meter		FX2 Send Level Meter		
+Map	FX2 Send Level		FX2 Send Level		
+Map	FX2 Return Level Meter		FX2 Return Level Meter		
+Map	FX2 Return Level		FX2 Return Level		
+Map	FX2 Mute		FX2 Mute		
+Map	FX3 Send Level Meter		FX3 Send Level Meter		
+Map	FX3 Send Level		FX3 Send Level		
+Map	FX3 Return Level Meter		FX3 Return Level Meter		
+Map	FX3 Return Level		FX3 Return Level		
+Map	FX3 Mute		FX3 Mute		
+Map	FX4 Send Level Meter		FX4 Send Level Meter		
+Map	FX4 Send Level		FX4 Send Level		
+Map	FX4 Return Level Meter		FX4 Return Level Meter		
+Map	FX4 Return Level		FX4 Return Level		
+Map	FX4 Mute		FX4 Mute		
+Map	FX5 Send Level Meter		FX5 Send Level Meter		
+Map	FX5 Send Level		FX5 Send Level		
+Map	FX5 Return Level Meter		FX5 Return Level Meter		
+Map	FX5 Return Level		FX5 Return Level		
+Map	FX5 Mute		FX5 Mute		
+Map	FX6 Send Level Meter		FX6 Send Level Meter		
+Map	FX6 Send Level		FX6 Send Level		
+Map	FX6 Return Level Meter		FX6 Return Level Meter		
+Map	FX6 Return Level		FX6 Return Level		
+Map	FX6 Mute		FX6 Mute		
+Map	FX7 Send Level Meter		FX7 Send Level Meter		
+Map	FX7 Send Level		FX7 Send Level		
+Map	FX7 Return Level Meter		FX7 Return Level Meter		
+Map	FX7 Return Level		FX7 Return Level		
+Map	FX7 Mute		FX7 Mute		
+Map	FX8 Send Level Meter		FX8 Send Level Meter		
+Map	FX8 Send Level		FX8 Send Level		
+Map	FX8 Return Level Meter		FX8 Return Level Meter		
+Map	FX8 Return Level		FX8 Return Level		
+Map	FX8 Mute		FX8 Mute		
+Map	Dim -20dB		Dim -20dB		
+Map	Master Level Meter Left		Master Level Meter Left		
+Map	Master Level Meter Right		Master Level Meter Right		
+Map	Master Level Left Peak		Master Level Left Peak		
+Map	Master Level Right Peak		Master Level Right Peak		
+Map	Clip Indicator Left		Clip Indicator Left		
+Map	Clip Indicator Right		Clip Indicator Right		
+Map	Ctrl Room Source		Ctrl Room Source		
+Map	Ctrl Room FX Select		Ctrl Room FX Select		
+Map	Ctrl Room Level		Ctrl Room Level		
+Map	Bypass Insert FX		Bypass Insert FX		
+Map	FX1 Pan		FX1 Pan		
+Map	FX2 Pan		FX2 Pan		
+Map	FX3 Pan		FX3 Pan		
+Map	FX4 Pan		FX4 Pan		
+Map	FX5 Pan		FX5 Pan		
+Map	FX6 Pan		FX6 Pan		
+Map	FX7 Pan		FX7 Pan		
+Map	FX8 Pan		FX8 Pan		
+Map	Master Level		Master Level		
+Map	Inserts Connected		Inserts Connected		
+Map	All Mutes Off		All Mutes Off		
+Map	All Solo Off		All Solo Off		
+Map	Reset Clip		Reset Clip		
+Map	Remote Base Channel		Remote Base Channel		

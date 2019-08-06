@@ -1,0 +1,766 @@
+Propellerhead Remote Mapping File	
+File Format Version	1.0.0
+Control Surface Manufacturer	DataBridge		
+Control Surface Model	Redrum Drum Computer		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+
+Scope	Propellerheads	Redrum Drum Computer	
+//	Control Surface Item	Key	Remotable Item
+Map	Master Level		Master Level
+Map	Drum 1 Mute		Drum 1 Mute
+Map	Drum 2 Mute		Drum 2 Mute
+Map	Drum 3 Mute		Drum 3 Mute
+Map	Drum 4 Mute		Drum 4 Mute
+Map	Drum 5 Mute		Drum 5 Mute
+Map	Drum 6 Mute		Drum 6 Mute
+Map	Drum 7 Mute		Drum 7 Mute
+Map	Drum 8 Mute		Drum 8 Mute
+Map	Drum 9 Mute		Drum 9 Mute
+Map	Drum 10 Mute		Drum 10 Mute
+Map	Drum 1 is playing		Drum 1 is playing
+Map	Drum 2 is playing		Drum 2 is playing
+Map	Drum 3 is playing		Drum 3 is playing
+Map	Drum 4 is playing		Drum 4 is playing
+Map	Drum 5 is playing		Drum 5 is playing
+Map	Drum 6 is playing		Drum 6 is playing
+Map	Drum 7 is playing		Drum 7 is playing
+Map	Drum 8 is playing		Drum 8 is playing
+Map	Drum 9 is playing		Drum 9 is playing
+Map	Drum 10 is playing		Drum 10 is playing
+Map	Drum 1 Send 1 Amount		Drum 1 Send 1 Amount
+Map	Drum 2 Send 1 Amount		Drum 2 Send 1 Amount
+Map	Drum 3 Send 1 Amount		Drum 3 Send 1 Amount
+Map	Drum 4 Send 1 Amount		Drum 4 Send 1 Amount
+Map	Drum 5 Send 1 Amount		Drum 5 Send 1 Amount
+Map	Drum 6 Send 1 Amount		Drum 6 Send 1 Amount
+Map	Drum 7 Send 1 Amount		Drum 7 Send 1 Amount
+Map	Drum 8 Send 1 Amount		Drum 8 Send 1 Amount
+Map	Drum 9 Send 1 Amount		Drum 9 Send 1 Amount
+Map	Drum 10 Send 1 Amount		Drum 10 Send 1 Amount
+Map	Drum 1 Send 2 Amount		Drum 1 Send 2 Amount
+Map	Drum 2 Send 2 Amount		Drum 2 Send 2 Amount
+Map	Drum 3 Send 2 Amount		Drum 3 Send 2 Amount
+Map	Drum 4 Send 2 Amount		Drum 4 Send 2 Amount
+Map	Drum 5 Send 2 Amount		Drum 5 Send 2 Amount
+Map	Drum 6 Send 2 Amount		Drum 6 Send 2 Amount
+Map	Drum 7 Send 2 Amount		Drum 7 Send 2 Amount
+Map	Drum 8 Send 2 Amount		Drum 8 Send 2 Amount
+Map	Drum 9 Send 2 Amount		Drum 9 Send 2 Amount
+Map	Drum 10 Send 2 Amount		Drum 10 Send 2 Amount
+Map	Drum 1 Pan		Drum 1 Pan
+Map	Drum 2 Pan		Drum 2 Pan
+Map	Drum 3 Pan		Drum 3 Pan
+Map	Drum 4 Pan		Drum 4 Pan
+Map	Drum 5 Pan		Drum 5 Pan
+Map	Drum 6 Pan		Drum 6 Pan
+Map	Drum 7 Pan		Drum 7 Pan
+Map	Drum 8 Pan		Drum 8 Pan
+Map	Drum 9 Pan		Drum 9 Pan
+Map	Drum 10 Pan		Drum 10 Pan
+Map	Drum 1 Level		Drum 1 Level
+Map	Drum 2 Level		Drum 2 Level
+Map	Drum 3 Level		Drum 3 Level
+Map	Drum 4 Level		Drum 4 Level
+Map	Drum 5 Level		Drum 5 Level
+Map	Drum 6 Level		Drum 6 Level
+Map	Drum 7 Level		Drum 7 Level
+Map	Drum 8 Level		Drum 8 Level
+Map	Drum 9 Level		Drum 9 Level
+Map	Drum 10 Level		Drum 10 Level
+Map	Drum 1 Vel to Level		Drum 1 Vel to Level
+Map	Drum 2 Vel to Level		Drum 2 Vel to Level
+Map	Drum 3 Vel to Level		Drum 3 Vel to Level
+Map	Drum 4 Vel to Level		Drum 4 Vel to Level
+Map	Drum 5 Vel to Level		Drum 5 Vel to Level
+Map	Drum 6 Vel to Level		Drum 6 Vel to Level
+Map	Drum 7 Vel to Level		Drum 7 Vel to Level
+Map	Drum 8 Vel to Level		Drum 8 Vel to Level
+Map	Drum 9 Vel to Level		Drum 9 Vel to Level
+Map	Drum 10 Vel to Level		Drum 10 Vel to Level
+Map	Drum 1 Length		Drum 1 Length
+Map	Drum 2 Length		Drum 2 Length
+Map	Drum 3 Length		Drum 3 Length
+Map	Drum 4 Length		Drum 4 Length
+Map	Drum 5 Length		Drum 5 Length
+Map	Drum 6 Length		Drum 6 Length
+Map	Drum 7 Length		Drum 7 Length
+Map	Drum 8 Length		Drum 8 Length
+Map	Drum 9 Length		Drum 9 Length
+Map	Drum 10 Length		Drum 10 Length
+Map	Drum 1 Decay/Gate Mode		Drum 1 Decay/Gate Mode
+Map	Drum 2 Decay/Gate Mode		Drum 2 Decay/Gate Mode
+Map	Drum 3 Decay/Gate Mode		Drum 3 Decay/Gate Mode
+Map	Drum 4 Decay/Gate Mode		Drum 4 Decay/Gate Mode
+Map	Drum 5 Decay/Gate Mode		Drum 5 Decay/Gate Mode
+Map	Drum 6 Decay/Gate Mode		Drum 6 Decay/Gate Mode
+Map	Drum 7 Decay/Gate Mode		Drum 7 Decay/Gate Mode
+Map	Drum 8 Decay/Gate Mode		Drum 8 Decay/Gate Mode
+Map	Drum 9 Decay/Gate Mode		Drum 9 Decay/Gate Mode
+Map	Drum 10 Decay/Gate Mode		Drum 10 Decay/Gate Mode
+Map	Drum 1 Pitch		Drum 1 Pitch
+Map	Drum 2 Pitch		Drum 2 Pitch
+Map	Drum 3 Pitch		Drum 3 Pitch
+Map	Drum 4 Pitch		Drum 4 Pitch
+Map	Drum 5 Pitch		Drum 5 Pitch
+Map	Drum 6 Pitch		Drum 6 Pitch
+Map	Drum 7 Pitch		Drum 7 Pitch
+Map	Drum 8 Pitch		Drum 8 Pitch
+Map	Drum 9 Pitch		Drum 9 Pitch
+Map	Drum 10 Pitch		Drum 10 Pitch
+Map	Drum 6 Pitch Bend Amount		Drum 6 Pitch Bend Amount
+Map	Drum 7 Pitch Bend Amount		Drum 7 Pitch Bend Amount
+Map	Drum 6 Vel to Pitch Bend		Drum 6 Vel to Pitch Bend
+Map	Drum 7 Vel to Pitch Bend		Drum 7 Vel to Pitch Bend
+Map	Drum 6 Pitch Bend Rate		Drum 6 Pitch Bend Rate
+Map	Drum 7 Pitch Bend Rate		Drum 7 Pitch Bend Rate
+Map	Drum 1 Tone		Drum 1 Tone
+Map	Drum 2 Tone		Drum 2 Tone
+Map	Drum 10 Tone		Drum 10 Tone
+Map	Drum 1 Vel to Tone		Drum 1 Vel to Tone
+Map	Drum 2 Vel to Tone		Drum 2 Vel to Tone
+Map	Drum 10 Vel to Tone		Drum 10 Vel to Tone
+Map	Drum 3 Sample Start		Drum 3 Sample Start
+Map	Drum 4 Sample Start		Drum 4 Sample Start
+Map	Drum 5 Sample Start		Drum 5 Sample Start
+Map	Drum 8 Sample Start		Drum 8 Sample Start
+Map	Drum 9 Sample Start		Drum 9 Sample Start
+Map	Drum 3 Vel to Sample Start		Drum 3 Vel to Sample Start
+Map	Drum 4 Vel to Sample Start		Drum 4 Vel to Sample Start
+Map	Drum 5 Vel to Sample Start		Drum 5 Vel to Sample Start
+Map	Drum 8 Vel to Sample Start		Drum 8 Vel to Sample Start
+Map	Drum 9 Vel to Sample Start		Drum 9 Vel to Sample Start
+Map	Channel 8 and 9 Exclusive		Channel 8 and 9 Exclusive
+Map	High Quality Interpolation		High Quality Interpolation
+Map	Enable Pattern Section Playback		Enable Pattern Section Playback
+Map	Pattern Enable		Pattern Enable
+Map	Selected Pattern		Selected Pattern
+Map	Step Playing		Step Playing
+Map	Flam Amount		Flam Amount
+Map	Drum 1 Solo		Drum 1 Solo
+Map	Drum 2 Solo		Drum 2 Solo
+Map	Drum 3 Solo		Drum 3 Solo
+Map	Drum 4 Solo		Drum 4 Solo
+Map	Drum 5 Solo		Drum 5 Solo
+Map	Drum 6 Solo		Drum 6 Solo
+Map	Drum 7 Solo		Drum 7 Solo
+Map	Drum 8 Solo		Drum 8 Solo
+Map	Drum 9 Solo		Drum 9 Solo
+Map	Drum 10 Solo		Drum 10 Solo
+Map	Sample Loading Progress		Sample Loading Progress
+Map	Pattern Select in Bank		Pattern Select in Bank
+Map	Bank Select		Bank Select
+Map	Pattern 1		Pattern 1
+Map	Pattern 2		Pattern 2
+Map	Pattern 3		Pattern 3
+Map	Pattern 4		Pattern 4
+Map	Pattern 5		Pattern 5
+Map	Pattern 6		Pattern 6
+Map	Pattern 7		Pattern 7
+Map	Pattern 8		Pattern 8
+Map	Bank A		Bank A
+Map	Bank B		Bank B
+Map	Bank C		Bank C
+Map	Bank D		Bank D
+Map	Run		Run
+Map	Resolution		Resolution
+Map	Channel 1 Play		Channel 1 Play
+Map	Channel 2 Play		Channel 2 Play
+Map	Channel 3 Play		Channel 3 Play
+Map	Channel 4 Play		Channel 4 Play
+Map	Channel 5 Play		Channel 5 Play
+Map	Channel 6 Play		Channel 6 Play
+Map	Channel 7 Play		Channel 7 Play
+Map	Channel 8 Play		Channel 8 Play
+Map	Channel 9 Play		Channel 9 Play
+Map	Channel 10 Play		Channel 10 Play
+Map	Channel 1 Sample		Channel 1 Sample
+Map	Channel 2 Sample		Channel 2 Sample
+Map	Channel 3 Sample		Channel 3 Sample
+Map	Channel 4 Sample		Channel 4 Sample
+Map	Channel 5 Sample		Channel 5 Sample
+Map	Channel 6 Sample		Channel 6 Sample
+Map	Channel 7 Sample		Channel 7 Sample
+Map	Channel 8 Sample		Channel 8 Sample
+Map	Channel 9 Sample		Channel 9 Sample
+Map	Channel 10 Sample		Channel 10 Sample
+Map	Steps		Steps
+Map	Shuffle		Shuffle
+Map	Edit Steps		Edit Steps
+Map	Edit Accent		Edit Accent
+Map	Edit Flam		Edit Flam
+Map	Selected Drum		Selected Drum
+Map	Select Drum 1		Select Drum 1
+Map	Select Drum 2		Select Drum 2
+Map	Select Drum 3		Select Drum 3
+Map	Select Drum 4		Select Drum 4
+Map	Select Drum 5		Select Drum 5
+Map	Select Drum 6		Select Drum 6
+Map	Select Drum 7		Select Drum 7
+Map	Select Drum 8		Select Drum 8
+Map	Select Drum 9		Select Drum 9
+Map	Select Drum 10		Select Drum 10
+Map	Playing Step		Playing Step
+Map	Step 1 Playing		Step 1 Playing
+Map	Step 2 Playing		Step 2 Playing
+Map	Step 3 Playing		Step 3 Playing
+Map	Step 4 Playing		Step 4 Playing
+Map	Step 5 Playing		Step 5 Playing
+Map	Step 6 Playing		Step 6 Playing
+Map	Step 7 Playing		Step 7 Playing
+Map	Step 8 Playing		Step 8 Playing
+Map	Step 9 Playing		Step 9 Playing
+Map	Step 10 Playing		Step 10 Playing
+Map	Step 11 Playing		Step 11 Playing
+Map	Step 12 Playing		Step 12 Playing
+Map	Step 13 Playing		Step 13 Playing
+Map	Step 14 Playing		Step 14 Playing
+Map	Step 15 Playing		Step 15 Playing
+Map	Step 16 Playing		Step 16 Playing
+Map	Selected Drum Toggle Step 1		Selected Drum Toggle Step 1
+Map	Selected Drum Toggle Step 2		Selected Drum Toggle Step 2
+Map	Selected Drum Toggle Step 3		Selected Drum Toggle Step 3
+Map	Selected Drum Toggle Step 4		Selected Drum Toggle Step 4
+Map	Selected Drum Toggle Step 5		Selected Drum Toggle Step 5
+Map	Selected Drum Toggle Step 6		Selected Drum Toggle Step 6
+Map	Selected Drum Toggle Step 7		Selected Drum Toggle Step 7
+Map	Selected Drum Toggle Step 8		Selected Drum Toggle Step 8
+Map	Selected Drum Toggle Step 9		Selected Drum Toggle Step 9
+Map	Selected Drum Toggle Step 10		Selected Drum Toggle Step 10
+Map	Selected Drum Toggle Step 11		Selected Drum Toggle Step 11
+Map	Selected Drum Toggle Step 12		Selected Drum Toggle Step 12
+Map	Selected Drum Toggle Step 13		Selected Drum Toggle Step 13
+Map	Selected Drum Toggle Step 14		Selected Drum Toggle Step 14
+Map	Selected Drum Toggle Step 15		Selected Drum Toggle Step 15
+Map	Selected Drum Toggle Step 16		Selected Drum Toggle Step 16
+Map	Drum 1 Toggle Step 1		Drum 1 Toggle Step 1
+Map	Drum 1 Toggle Step 2		Drum 1 Toggle Step 2
+Map	Drum 1 Toggle Step 3		Drum 1 Toggle Step 3
+Map	Drum 1 Toggle Step 4		Drum 1 Toggle Step 4
+Map	Drum 1 Toggle Step 5		Drum 1 Toggle Step 5
+Map	Drum 1 Toggle Step 6		Drum 1 Toggle Step 6
+Map	Drum 1 Toggle Step 7		Drum 1 Toggle Step 7
+Map	Drum 1 Toggle Step 8		Drum 1 Toggle Step 8
+Map	Drum 1 Toggle Step 9		Drum 1 Toggle Step 9
+Map	Drum 1 Toggle Step 10		Drum 1 Toggle Step 10
+Map	Drum 1 Toggle Step 11		Drum 1 Toggle Step 11
+Map	Drum 1 Toggle Step 12		Drum 1 Toggle Step 12
+Map	Drum 1 Toggle Step 13		Drum 1 Toggle Step 13
+Map	Drum 1 Toggle Step 14		Drum 1 Toggle Step 14
+Map	Drum 1 Toggle Step 15		Drum 1 Toggle Step 15
+Map	Drum 1 Toggle Step 16		Drum 1 Toggle Step 16
+Map	Drum 2 Toggle Step 1		Drum 2 Toggle Step 1
+Map	Drum 2 Toggle Step 2		Drum 2 Toggle Step 2
+Map	Drum 2 Toggle Step 3		Drum 2 Toggle Step 3
+Map	Drum 2 Toggle Step 4		Drum 2 Toggle Step 4
+Map	Drum 2 Toggle Step 5		Drum 2 Toggle Step 5
+Map	Drum 2 Toggle Step 6		Drum 2 Toggle Step 6
+Map	Drum 2 Toggle Step 7		Drum 2 Toggle Step 7
+Map	Drum 2 Toggle Step 8		Drum 2 Toggle Step 8
+Map	Drum 2 Toggle Step 9		Drum 2 Toggle Step 9
+Map	Drum 2 Toggle Step 10		Drum 2 Toggle Step 10
+Map	Drum 2 Toggle Step 11		Drum 2 Toggle Step 11
+Map	Drum 2 Toggle Step 12		Drum 2 Toggle Step 12
+Map	Drum 2 Toggle Step 13		Drum 2 Toggle Step 13
+Map	Drum 2 Toggle Step 14		Drum 2 Toggle Step 14
+Map	Drum 2 Toggle Step 15		Drum 2 Toggle Step 15
+Map	Drum 2 Toggle Step 16		Drum 2 Toggle Step 16
+Map	Drum 3 Toggle Step 1		Drum 3 Toggle Step 1
+Map	Drum 3 Toggle Step 2		Drum 3 Toggle Step 2
+Map	Drum 3 Toggle Step 3		Drum 3 Toggle Step 3
+Map	Drum 3 Toggle Step 4		Drum 3 Toggle Step 4
+Map	Drum 3 Toggle Step 5		Drum 3 Toggle Step 5
+Map	Drum 3 Toggle Step 6		Drum 3 Toggle Step 6
+Map	Drum 3 Toggle Step 7		Drum 3 Toggle Step 7
+Map	Drum 3 Toggle Step 8		Drum 3 Toggle Step 8
+Map	Drum 3 Toggle Step 9		Drum 3 Toggle Step 9
+Map	Drum 3 Toggle Step 10		Drum 3 Toggle Step 10
+Map	Drum 3 Toggle Step 11		Drum 3 Toggle Step 11
+Map	Drum 3 Toggle Step 12		Drum 3 Toggle Step 12
+Map	Drum 3 Toggle Step 13		Drum 3 Toggle Step 13
+Map	Drum 3 Toggle Step 14		Drum 3 Toggle Step 14
+Map	Drum 3 Toggle Step 15		Drum 3 Toggle Step 15
+Map	Drum 3 Toggle Step 16		Drum 3 Toggle Step 16
+Map	Drum 4 Toggle Step 1		Drum 4 Toggle Step 1
+Map	Drum 4 Toggle Step 2		Drum 4 Toggle Step 2
+Map	Drum 4 Toggle Step 3		Drum 4 Toggle Step 3
+Map	Drum 4 Toggle Step 4		Drum 4 Toggle Step 4
+Map	Drum 4 Toggle Step 5		Drum 4 Toggle Step 5
+Map	Drum 4 Toggle Step 6		Drum 4 Toggle Step 6
+Map	Drum 4 Toggle Step 7		Drum 4 Toggle Step 7
+Map	Drum 4 Toggle Step 8		Drum 4 Toggle Step 8
+Map	Drum 4 Toggle Step 9		Drum 4 Toggle Step 9
+Map	Drum 4 Toggle Step 10		Drum 4 Toggle Step 10
+Map	Drum 4 Toggle Step 11		Drum 4 Toggle Step 11
+Map	Drum 4 Toggle Step 12		Drum 4 Toggle Step 12
+Map	Drum 4 Toggle Step 13		Drum 4 Toggle Step 13
+Map	Drum 4 Toggle Step 14		Drum 4 Toggle Step 14
+Map	Drum 4 Toggle Step 15		Drum 4 Toggle Step 15
+Map	Drum 4 Toggle Step 16		Drum 4 Toggle Step 16
+Map	Drum 5 Toggle Step 1		Drum 5 Toggle Step 1
+Map	Drum 5 Toggle Step 2		Drum 5 Toggle Step 2
+Map	Drum 5 Toggle Step 3		Drum 5 Toggle Step 3
+Map	Drum 5 Toggle Step 4		Drum 5 Toggle Step 4
+Map	Drum 5 Toggle Step 5		Drum 5 Toggle Step 5
+Map	Drum 5 Toggle Step 6		Drum 5 Toggle Step 6
+Map	Drum 5 Toggle Step 7		Drum 5 Toggle Step 7
+Map	Drum 5 Toggle Step 8		Drum 5 Toggle Step 8
+Map	Drum 5 Toggle Step 9		Drum 5 Toggle Step 9
+Map	Drum 5 Toggle Step 10		Drum 5 Toggle Step 10
+Map	Drum 5 Toggle Step 11		Drum 5 Toggle Step 11
+Map	Drum 5 Toggle Step 12		Drum 5 Toggle Step 12
+Map	Drum 5 Toggle Step 13		Drum 5 Toggle Step 13
+Map	Drum 5 Toggle Step 14		Drum 5 Toggle Step 14
+Map	Drum 5 Toggle Step 15		Drum 5 Toggle Step 15
+Map	Drum 5 Toggle Step 16		Drum 5 Toggle Step 16
+Map	Drum 6 Toggle Step 1		Drum 6 Toggle Step 1
+Map	Drum 6 Toggle Step 2		Drum 6 Toggle Step 2
+Map	Drum 6 Toggle Step 3		Drum 6 Toggle Step 3
+Map	Drum 6 Toggle Step 4		Drum 6 Toggle Step 4
+Map	Drum 6 Toggle Step 5		Drum 6 Toggle Step 5
+Map	Drum 6 Toggle Step 6		Drum 6 Toggle Step 6
+Map	Drum 6 Toggle Step 7		Drum 6 Toggle Step 7
+Map	Drum 6 Toggle Step 8		Drum 6 Toggle Step 8
+Map	Drum 6 Toggle Step 9		Drum 6 Toggle Step 9
+Map	Drum 6 Toggle Step 10		Drum 6 Toggle Step 10
+Map	Drum 6 Toggle Step 11		Drum 6 Toggle Step 11
+Map	Drum 6 Toggle Step 12		Drum 6 Toggle Step 12
+Map	Drum 6 Toggle Step 13		Drum 6 Toggle Step 13
+Map	Drum 6 Toggle Step 14		Drum 6 Toggle Step 14
+Map	Drum 6 Toggle Step 15		Drum 6 Toggle Step 15
+Map	Drum 6 Toggle Step 16		Drum 6 Toggle Step 16
+Map	Drum 7 Toggle Step 1		Drum 7 Toggle Step 1
+Map	Drum 7 Toggle Step 2		Drum 7 Toggle Step 2
+Map	Drum 7 Toggle Step 3		Drum 7 Toggle Step 3
+Map	Drum 7 Toggle Step 4		Drum 7 Toggle Step 4
+Map	Drum 7 Toggle Step 5		Drum 7 Toggle Step 5
+Map	Drum 7 Toggle Step 6		Drum 7 Toggle Step 6
+Map	Drum 7 Toggle Step 7		Drum 7 Toggle Step 7
+Map	Drum 7 Toggle Step 8		Drum 7 Toggle Step 8
+Map	Drum 7 Toggle Step 9		Drum 7 Toggle Step 9
+Map	Drum 7 Toggle Step 10		Drum 7 Toggle Step 10
+Map	Drum 7 Toggle Step 11		Drum 7 Toggle Step 11
+Map	Drum 7 Toggle Step 12		Drum 7 Toggle Step 12
+Map	Drum 7 Toggle Step 13		Drum 7 Toggle Step 13
+Map	Drum 7 Toggle Step 14		Drum 7 Toggle Step 14
+Map	Drum 7 Toggle Step 15		Drum 7 Toggle Step 15
+Map	Drum 7 Toggle Step 16		Drum 7 Toggle Step 16
+Map	Drum 8 Toggle Step 1		Drum 8 Toggle Step 1
+Map	Drum 8 Toggle Step 2		Drum 8 Toggle Step 2
+Map	Drum 8 Toggle Step 3		Drum 8 Toggle Step 3
+Map	Drum 8 Toggle Step 4		Drum 8 Toggle Step 4
+Map	Drum 8 Toggle Step 5		Drum 8 Toggle Step 5
+Map	Drum 8 Toggle Step 6		Drum 8 Toggle Step 6
+Map	Drum 8 Toggle Step 7		Drum 8 Toggle Step 7
+Map	Drum 8 Toggle Step 8		Drum 8 Toggle Step 8
+Map	Drum 8 Toggle Step 9		Drum 8 Toggle Step 9
+Map	Drum 8 Toggle Step 10		Drum 8 Toggle Step 10
+Map	Drum 8 Toggle Step 11		Drum 8 Toggle Step 11
+Map	Drum 8 Toggle Step 12		Drum 8 Toggle Step 12
+Map	Drum 8 Toggle Step 13		Drum 8 Toggle Step 13
+Map	Drum 8 Toggle Step 14		Drum 8 Toggle Step 14
+Map	Drum 8 Toggle Step 15		Drum 8 Toggle Step 15
+Map	Drum 8 Toggle Step 16		Drum 8 Toggle Step 16
+Map	Drum 9 Toggle Step 1		Drum 9 Toggle Step 1
+Map	Drum 9 Toggle Step 2		Drum 9 Toggle Step 2
+Map	Drum 9 Toggle Step 3		Drum 9 Toggle Step 3
+Map	Drum 9 Toggle Step 4		Drum 9 Toggle Step 4
+Map	Drum 9 Toggle Step 5		Drum 9 Toggle Step 5
+Map	Drum 9 Toggle Step 6		Drum 9 Toggle Step 6
+Map	Drum 9 Toggle Step 7		Drum 9 Toggle Step 7
+Map	Drum 9 Toggle Step 8		Drum 9 Toggle Step 8
+Map	Drum 9 Toggle Step 9		Drum 9 Toggle Step 9
+Map	Drum 9 Toggle Step 10		Drum 9 Toggle Step 10
+Map	Drum 9 Toggle Step 11		Drum 9 Toggle Step 11
+Map	Drum 9 Toggle Step 12		Drum 9 Toggle Step 12
+Map	Drum 9 Toggle Step 13		Drum 9 Toggle Step 13
+Map	Drum 9 Toggle Step 14		Drum 9 Toggle Step 14
+Map	Drum 9 Toggle Step 15		Drum 9 Toggle Step 15
+Map	Drum 9 Toggle Step 16		Drum 9 Toggle Step 16
+Map	Drum 10 Toggle Step 1		Drum 10 Toggle Step 1
+Map	Drum 10 Toggle Step 2		Drum 10 Toggle Step 2
+Map	Drum 10 Toggle Step 3		Drum 10 Toggle Step 3
+Map	Drum 10 Toggle Step 4		Drum 10 Toggle Step 4
+Map	Drum 10 Toggle Step 5		Drum 10 Toggle Step 5
+Map	Drum 10 Toggle Step 6		Drum 10 Toggle Step 6
+Map	Drum 10 Toggle Step 7		Drum 10 Toggle Step 7
+Map	Drum 10 Toggle Step 8		Drum 10 Toggle Step 8
+Map	Drum 10 Toggle Step 9		Drum 10 Toggle Step 9
+Map	Drum 10 Toggle Step 10		Drum 10 Toggle Step 10
+Map	Drum 10 Toggle Step 11		Drum 10 Toggle Step 11
+Map	Drum 10 Toggle Step 12		Drum 10 Toggle Step 12
+Map	Drum 10 Toggle Step 13		Drum 10 Toggle Step 13
+Map	Drum 10 Toggle Step 14		Drum 10 Toggle Step 14
+Map	Drum 10 Toggle Step 15		Drum 10 Toggle Step 15
+Map	Drum 10 Toggle Step 16		Drum 10 Toggle Step 16
+Map	Selected Drum Step 1		Selected Drum Step 1
+Map	Selected Drum Step 2		Selected Drum Step 2
+Map	Selected Drum Step 3		Selected Drum Step 3
+Map	Selected Drum Step 4		Selected Drum Step 4
+Map	Selected Drum Step 5		Selected Drum Step 5
+Map	Selected Drum Step 6		Selected Drum Step 6
+Map	Selected Drum Step 7		Selected Drum Step 7
+Map	Selected Drum Step 8		Selected Drum Step 8
+Map	Selected Drum Step 9		Selected Drum Step 9
+Map	Selected Drum Step 10		Selected Drum Step 10
+Map	Selected Drum Step 11		Selected Drum Step 11
+Map	Selected Drum Step 12		Selected Drum Step 12
+Map	Selected Drum Step 13		Selected Drum Step 13
+Map	Selected Drum Step 14		Selected Drum Step 14
+Map	Selected Drum Step 15		Selected Drum Step 15
+Map	Selected Drum Step 16		Selected Drum Step 16
+Map	Drum 1 Step 1		Drum 1 Step 1
+Map	Drum 1 Step 2		Drum 1 Step 2
+Map	Drum 1 Step 3		Drum 1 Step 3
+Map	Drum 1 Step 4		Drum 1 Step 4
+Map	Drum 1 Step 5		Drum 1 Step 5
+Map	Drum 1 Step 6		Drum 1 Step 6
+Map	Drum 1 Step 7		Drum 1 Step 7
+Map	Drum 1 Step 8		Drum 1 Step 8
+Map	Drum 1 Step 9		Drum 1 Step 9
+Map	Drum 1 Step 10		Drum 1 Step 10
+Map	Drum 1 Step 11		Drum 1 Step 11
+Map	Drum 1 Step 12		Drum 1 Step 12
+Map	Drum 1 Step 13		Drum 1 Step 13
+Map	Drum 1 Step 14		Drum 1 Step 14
+Map	Drum 1 Step 15		Drum 1 Step 15
+Map	Drum 1 Step 16		Drum 1 Step 16
+Map	Drum 2 Step 1		Drum 2 Step 1
+Map	Drum 2 Step 2		Drum 2 Step 2
+Map	Drum 2 Step 3		Drum 2 Step 3
+Map	Drum 2 Step 4		Drum 2 Step 4
+Map	Drum 2 Step 5		Drum 2 Step 5
+Map	Drum 2 Step 6		Drum 2 Step 6
+Map	Drum 2 Step 7		Drum 2 Step 7
+Map	Drum 2 Step 8		Drum 2 Step 8
+Map	Drum 2 Step 9		Drum 2 Step 9
+Map	Drum 2 Step 10		Drum 2 Step 10
+Map	Drum 2 Step 11		Drum 2 Step 11
+Map	Drum 2 Step 12		Drum 2 Step 12
+Map	Drum 2 Step 13		Drum 2 Step 13
+Map	Drum 2 Step 14		Drum 2 Step 14
+Map	Drum 2 Step 15		Drum 2 Step 15
+Map	Drum 2 Step 16		Drum 2 Step 16
+Map	Drum 3 Step 1		Drum 3 Step 1
+Map	Drum 3 Step 2		Drum 3 Step 2
+Map	Drum 3 Step 3		Drum 3 Step 3
+Map	Drum 3 Step 4		Drum 3 Step 4
+Map	Drum 3 Step 5		Drum 3 Step 5
+Map	Drum 3 Step 6		Drum 3 Step 6
+Map	Drum 3 Step 7		Drum 3 Step 7
+Map	Drum 3 Step 8		Drum 3 Step 8
+Map	Drum 3 Step 9		Drum 3 Step 9
+Map	Drum 3 Step 10		Drum 3 Step 10
+Map	Drum 3 Step 11		Drum 3 Step 11
+Map	Drum 3 Step 12		Drum 3 Step 12
+Map	Drum 3 Step 13		Drum 3 Step 13
+Map	Drum 3 Step 14		Drum 3 Step 14
+Map	Drum 3 Step 15		Drum 3 Step 15
+Map	Drum 3 Step 16		Drum 3 Step 16
+Map	Drum 4 Step 1		Drum 4 Step 1
+Map	Drum 4 Step 2		Drum 4 Step 2
+Map	Drum 4 Step 3		Drum 4 Step 3
+Map	Drum 4 Step 4		Drum 4 Step 4
+Map	Drum 4 Step 5		Drum 4 Step 5
+Map	Drum 4 Step 6		Drum 4 Step 6
+Map	Drum 4 Step 7		Drum 4 Step 7
+Map	Drum 4 Step 8		Drum 4 Step 8
+Map	Drum 4 Step 9		Drum 4 Step 9
+Map	Drum 4 Step 10		Drum 4 Step 10
+Map	Drum 4 Step 11		Drum 4 Step 11
+Map	Drum 4 Step 12		Drum 4 Step 12
+Map	Drum 4 Step 13		Drum 4 Step 13
+Map	Drum 4 Step 14		Drum 4 Step 14
+Map	Drum 4 Step 15		Drum 4 Step 15
+Map	Drum 4 Step 16		Drum 4 Step 16
+Map	Drum 5 Step 1		Drum 5 Step 1
+Map	Drum 5 Step 2		Drum 5 Step 2
+Map	Drum 5 Step 3		Drum 5 Step 3
+Map	Drum 5 Step 4		Drum 5 Step 4
+Map	Drum 5 Step 5		Drum 5 Step 5
+Map	Drum 5 Step 6		Drum 5 Step 6
+Map	Drum 5 Step 7		Drum 5 Step 7
+Map	Drum 5 Step 8		Drum 5 Step 8
+Map	Drum 5 Step 9		Drum 5 Step 9
+Map	Drum 5 Step 10		Drum 5 Step 10
+Map	Drum 5 Step 11		Drum 5 Step 11
+Map	Drum 5 Step 12		Drum 5 Step 12
+Map	Drum 5 Step 13		Drum 5 Step 13
+Map	Drum 5 Step 14		Drum 5 Step 14
+Map	Drum 5 Step 15		Drum 5 Step 15
+Map	Drum 5 Step 16		Drum 5 Step 16
+Map	Drum 6 Step 1		Drum 6 Step 1
+Map	Drum 6 Step 2		Drum 6 Step 2
+Map	Drum 6 Step 3		Drum 6 Step 3
+Map	Drum 6 Step 4		Drum 6 Step 4
+Map	Drum 6 Step 5		Drum 6 Step 5
+Map	Drum 6 Step 6		Drum 6 Step 6
+Map	Drum 6 Step 7		Drum 6 Step 7
+Map	Drum 6 Step 8		Drum 6 Step 8
+Map	Drum 6 Step 9		Drum 6 Step 9
+Map	Drum 6 Step 10		Drum 6 Step 10
+Map	Drum 6 Step 11		Drum 6 Step 11
+Map	Drum 6 Step 12		Drum 6 Step 12
+Map	Drum 6 Step 13		Drum 6 Step 13
+Map	Drum 6 Step 14		Drum 6 Step 14
+Map	Drum 6 Step 15		Drum 6 Step 15
+Map	Drum 6 Step 16		Drum 6 Step 16
+Map	Drum 7 Step 1		Drum 7 Step 1
+Map	Drum 7 Step 2		Drum 7 Step 2
+Map	Drum 7 Step 3		Drum 7 Step 3
+Map	Drum 7 Step 4		Drum 7 Step 4
+Map	Drum 7 Step 5		Drum 7 Step 5
+Map	Drum 7 Step 6		Drum 7 Step 6
+Map	Drum 7 Step 7		Drum 7 Step 7
+Map	Drum 7 Step 8		Drum 7 Step 8
+Map	Drum 7 Step 9		Drum 7 Step 9
+Map	Drum 7 Step 10		Drum 7 Step 10
+Map	Drum 7 Step 11		Drum 7 Step 11
+Map	Drum 7 Step 12		Drum 7 Step 12
+Map	Drum 7 Step 13		Drum 7 Step 13
+Map	Drum 7 Step 14		Drum 7 Step 14
+Map	Drum 7 Step 15		Drum 7 Step 15
+Map	Drum 7 Step 16		Drum 7 Step 16
+Map	Drum 8 Step 1		Drum 8 Step 1
+Map	Drum 8 Step 2		Drum 8 Step 2
+Map	Drum 8 Step 3		Drum 8 Step 3
+Map	Drum 8 Step 4		Drum 8 Step 4
+Map	Drum 8 Step 5		Drum 8 Step 5
+Map	Drum 8 Step 6		Drum 8 Step 6
+Map	Drum 8 Step 7		Drum 8 Step 7
+Map	Drum 8 Step 8		Drum 8 Step 8
+Map	Drum 8 Step 9		Drum 8 Step 9
+Map	Drum 8 Step 10		Drum 8 Step 10
+Map	Drum 8 Step 11		Drum 8 Step 11
+Map	Drum 8 Step 12		Drum 8 Step 12
+Map	Drum 8 Step 13		Drum 8 Step 13
+Map	Drum 8 Step 14		Drum 8 Step 14
+Map	Drum 8 Step 15		Drum 8 Step 15
+Map	Drum 8 Step 16		Drum 8 Step 16
+Map	Drum 9 Step 1		Drum 9 Step 1
+Map	Drum 9 Step 2		Drum 9 Step 2
+Map	Drum 9 Step 3		Drum 9 Step 3
+Map	Drum 9 Step 4		Drum 9 Step 4
+Map	Drum 9 Step 5		Drum 9 Step 5
+Map	Drum 9 Step 6		Drum 9 Step 6
+Map	Drum 9 Step 7		Drum 9 Step 7
+Map	Drum 9 Step 8		Drum 9 Step 8
+Map	Drum 9 Step 9		Drum 9 Step 9
+Map	Drum 9 Step 10		Drum 9 Step 10
+Map	Drum 9 Step 11		Drum 9 Step 11
+Map	Drum 9 Step 12		Drum 9 Step 12
+Map	Drum 9 Step 13		Drum 9 Step 13
+Map	Drum 9 Step 14		Drum 9 Step 14
+Map	Drum 9 Step 15		Drum 9 Step 15
+Map	Drum 9 Step 16		Drum 9 Step 16
+Map	Drum 10 Step 1		Drum 10 Step 1
+Map	Drum 10 Step 2		Drum 10 Step 2
+Map	Drum 10 Step 3		Drum 10 Step 3
+Map	Drum 10 Step 4		Drum 10 Step 4
+Map	Drum 10 Step 5		Drum 10 Step 5
+Map	Drum 10 Step 6		Drum 10 Step 6
+Map	Drum 10 Step 7		Drum 10 Step 7
+Map	Drum 10 Step 8		Drum 10 Step 8
+Map	Drum 10 Step 9		Drum 10 Step 9
+Map	Drum 10 Step 10		Drum 10 Step 10
+Map	Drum 10 Step 11		Drum 10 Step 11
+Map	Drum 10 Step 12		Drum 10 Step 12
+Map	Drum 10 Step 13		Drum 10 Step 13
+Map	Drum 10 Step 14		Drum 10 Step 14
+Map	Drum 10 Step 15		Drum 10 Step 15
+Map	Drum 10 Step 16		Drum 10 Step 16
+Map	Selected Drum Step Out 1		Selected Drum Step Out 1
+Map	Selected Drum Step Out 2		Selected Drum Step Out 2
+Map	Selected Drum Step Out 3		Selected Drum Step Out 3
+Map	Selected Drum Step Out 4		Selected Drum Step Out 4
+Map	Selected Drum Step Out 5		Selected Drum Step Out 5
+Map	Selected Drum Step Out 6		Selected Drum Step Out 6
+Map	Selected Drum Step Out 7		Selected Drum Step Out 7
+Map	Selected Drum Step Out 8		Selected Drum Step Out 8
+Map	Selected Drum Step Out 9		Selected Drum Step Out 9
+Map	Selected Drum Step Out 10		Selected Drum Step Out 10
+Map	Selected Drum Step Out 11		Selected Drum Step Out 11
+Map	Selected Drum Step Out 12		Selected Drum Step Out 12
+Map	Selected Drum Step Out 13		Selected Drum Step Out 13
+Map	Selected Drum Step Out 14		Selected Drum Step Out 14
+Map	Selected Drum Step Out 15		Selected Drum Step Out 15
+Map	Selected Drum Step Out 16		Selected Drum Step Out 16
+Map	Drum 1 Step Out 1		Drum 1 Step Out 1
+Map	Drum 1 Step Out 2		Drum 1 Step Out 2
+Map	Drum 1 Step Out 3		Drum 1 Step Out 3
+Map	Drum 1 Step Out 4		Drum 1 Step Out 4
+Map	Drum 1 Step Out 5		Drum 1 Step Out 5
+Map	Drum 1 Step Out 6		Drum 1 Step Out 6
+Map	Drum 1 Step Out 7		Drum 1 Step Out 7
+Map	Drum 1 Step Out 8		Drum 1 Step Out 8
+Map	Drum 1 Step Out 9		Drum 1 Step Out 9
+Map	Drum 1 Step Out 10		Drum 1 Step Out 10
+Map	Drum 1 Step Out 11		Drum 1 Step Out 11
+Map	Drum 1 Step Out 12		Drum 1 Step Out 12
+Map	Drum 1 Step Out 13		Drum 1 Step Out 13
+Map	Drum 1 Step Out 14		Drum 1 Step Out 14
+Map	Drum 1 Step Out 15		Drum 1 Step Out 15
+Map	Drum 1 Step Out 16		Drum 1 Step Out 16
+Map	Drum 2 Step Out 1		Drum 2 Step Out 1
+Map	Drum 2 Step Out 2		Drum 2 Step Out 2
+Map	Drum 2 Step Out 3		Drum 2 Step Out 3
+Map	Drum 2 Step Out 4		Drum 2 Step Out 4
+Map	Drum 2 Step Out 5		Drum 2 Step Out 5
+Map	Drum 2 Step Out 6		Drum 2 Step Out 6
+Map	Drum 2 Step Out 7		Drum 2 Step Out 7
+Map	Drum 2 Step Out 8		Drum 2 Step Out 8
+Map	Drum 2 Step Out 9		Drum 2 Step Out 9
+Map	Drum 2 Step Out 10		Drum 2 Step Out 10
+Map	Drum 2 Step Out 11		Drum 2 Step Out 11
+Map	Drum 2 Step Out 12		Drum 2 Step Out 12
+Map	Drum 2 Step Out 13		Drum 2 Step Out 13
+Map	Drum 2 Step Out 14		Drum 2 Step Out 14
+Map	Drum 2 Step Out 15		Drum 2 Step Out 15
+Map	Drum 2 Step Out 16		Drum 2 Step Out 16
+Map	Drum 3 Step Out 1		Drum 3 Step Out 1
+Map	Drum 3 Step Out 2		Drum 3 Step Out 2
+Map	Drum 3 Step Out 3		Drum 3 Step Out 3
+Map	Drum 3 Step Out 4		Drum 3 Step Out 4
+Map	Drum 3 Step Out 5		Drum 3 Step Out 5
+Map	Drum 3 Step Out 6		Drum 3 Step Out 6
+Map	Drum 3 Step Out 7		Drum 3 Step Out 7
+Map	Drum 3 Step Out 8		Drum 3 Step Out 8
+Map	Drum 3 Step Out 9		Drum 3 Step Out 9
+Map	Drum 3 Step Out 10		Drum 3 Step Out 10
+Map	Drum 3 Step Out 11		Drum 3 Step Out 11
+Map	Drum 3 Step Out 12		Drum 3 Step Out 12
+Map	Drum 3 Step Out 13		Drum 3 Step Out 13
+Map	Drum 3 Step Out 14		Drum 3 Step Out 14
+Map	Drum 3 Step Out 15		Drum 3 Step Out 15
+Map	Drum 3 Step Out 16		Drum 3 Step Out 16
+Map	Drum 4 Step Out 1		Drum 4 Step Out 1
+Map	Drum 4 Step Out 2		Drum 4 Step Out 2
+Map	Drum 4 Step Out 3		Drum 4 Step Out 3
+Map	Drum 4 Step Out 4		Drum 4 Step Out 4
+Map	Drum 4 Step Out 5		Drum 4 Step Out 5
+Map	Drum 4 Step Out 6		Drum 4 Step Out 6
+Map	Drum 4 Step Out 7		Drum 4 Step Out 7
+Map	Drum 4 Step Out 8		Drum 4 Step Out 8
+Map	Drum 4 Step Out 9		Drum 4 Step Out 9
+Map	Drum 4 Step Out 10		Drum 4 Step Out 10
+Map	Drum 4 Step Out 11		Drum 4 Step Out 11
+Map	Drum 4 Step Out 12		Drum 4 Step Out 12
+Map	Drum 4 Step Out 13		Drum 4 Step Out 13
+Map	Drum 4 Step Out 14		Drum 4 Step Out 14
+Map	Drum 4 Step Out 15		Drum 4 Step Out 15
+Map	Drum 4 Step Out 16		Drum 4 Step Out 16
+Map	Drum 5 Step Out 1		Drum 5 Step Out 1
+Map	Drum 5 Step Out 2		Drum 5 Step Out 2
+Map	Drum 5 Step Out 3		Drum 5 Step Out 3
+Map	Drum 5 Step Out 4		Drum 5 Step Out 4
+Map	Drum 5 Step Out 5		Drum 5 Step Out 5
+Map	Drum 5 Step Out 6		Drum 5 Step Out 6
+Map	Drum 5 Step Out 7		Drum 5 Step Out 7
+Map	Drum 5 Step Out 8		Drum 5 Step Out 8
+Map	Drum 5 Step Out 9		Drum 5 Step Out 9
+Map	Drum 5 Step Out 10		Drum 5 Step Out 10
+Map	Drum 5 Step Out 11		Drum 5 Step Out 11
+Map	Drum 5 Step Out 12		Drum 5 Step Out 12
+Map	Drum 5 Step Out 13		Drum 5 Step Out 13
+Map	Drum 5 Step Out 14		Drum 5 Step Out 14
+Map	Drum 5 Step Out 15		Drum 5 Step Out 15
+Map	Drum 5 Step Out 16		Drum 5 Step Out 16
+Map	Drum 6 Step Out 1		Drum 6 Step Out 1
+Map	Drum 6 Step Out 2		Drum 6 Step Out 2
+Map	Drum 6 Step Out 3		Drum 6 Step Out 3
+Map	Drum 6 Step Out 4		Drum 6 Step Out 4
+Map	Drum 6 Step Out 5		Drum 6 Step Out 5
+Map	Drum 6 Step Out 6		Drum 6 Step Out 6
+Map	Drum 6 Step Out 7		Drum 6 Step Out 7
+Map	Drum 6 Step Out 8		Drum 6 Step Out 8
+Map	Drum 6 Step Out 9		Drum 6 Step Out 9
+Map	Drum 6 Step Out 10		Drum 6 Step Out 10
+Map	Drum 6 Step Out 11		Drum 6 Step Out 11
+Map	Drum 6 Step Out 12		Drum 6 Step Out 12
+Map	Drum 6 Step Out 13		Drum 6 Step Out 13
+Map	Drum 6 Step Out 14		Drum 6 Step Out 14
+Map	Drum 6 Step Out 15		Drum 6 Step Out 15
+Map	Drum 6 Step Out 16		Drum 6 Step Out 16
+Map	Drum 7 Step Out 1		Drum 7 Step Out 1
+Map	Drum 7 Step Out 2		Drum 7 Step Out 2
+Map	Drum 7 Step Out 3		Drum 7 Step Out 3
+Map	Drum 7 Step Out 4		Drum 7 Step Out 4
+Map	Drum 7 Step Out 5		Drum 7 Step Out 5
+Map	Drum 7 Step Out 6		Drum 7 Step Out 6
+Map	Drum 7 Step Out 7		Drum 7 Step Out 7
+Map	Drum 7 Step Out 8		Drum 7 Step Out 8
+Map	Drum 7 Step Out 9		Drum 7 Step Out 9
+Map	Drum 7 Step Out 10		Drum 7 Step Out 10
+Map	Drum 7 Step Out 11		Drum 7 Step Out 11
+Map	Drum 7 Step Out 12		Drum 7 Step Out 12
+Map	Drum 7 Step Out 13		Drum 7 Step Out 13
+Map	Drum 7 Step Out 14		Drum 7 Step Out 14
+Map	Drum 7 Step Out 15		Drum 7 Step Out 15
+Map	Drum 7 Step Out 16		Drum 7 Step Out 16
+Map	Drum 8 Step Out 1		Drum 8 Step Out 1
+Map	Drum 8 Step Out 2		Drum 8 Step Out 2
+Map	Drum 8 Step Out 3		Drum 8 Step Out 3
+Map	Drum 8 Step Out 4		Drum 8 Step Out 4
+Map	Drum 8 Step Out 5		Drum 8 Step Out 5
+Map	Drum 8 Step Out 6		Drum 8 Step Out 6
+Map	Drum 8 Step Out 7		Drum 8 Step Out 7
+Map	Drum 8 Step Out 8		Drum 8 Step Out 8
+Map	Drum 8 Step Out 9		Drum 8 Step Out 9
+Map	Drum 8 Step Out 10		Drum 8 Step Out 10
+Map	Drum 8 Step Out 11		Drum 8 Step Out 11
+Map	Drum 8 Step Out 12		Drum 8 Step Out 12
+Map	Drum 8 Step Out 13		Drum 8 Step Out 13
+Map	Drum 8 Step Out 14		Drum 8 Step Out 14
+Map	Drum 8 Step Out 15		Drum 8 Step Out 15
+Map	Drum 8 Step Out 16		Drum 8 Step Out 16
+Map	Drum 9 Step Out 1		Drum 9 Step Out 1
+Map	Drum 9 Step Out 2		Drum 9 Step Out 2
+Map	Drum 9 Step Out 3		Drum 9 Step Out 3
+Map	Drum 9 Step Out 4		Drum 9 Step Out 4
+Map	Drum 9 Step Out 5		Drum 9 Step Out 5
+Map	Drum 9 Step Out 6		Drum 9 Step Out 6
+Map	Drum 9 Step Out 7		Drum 9 Step Out 7
+Map	Drum 9 Step Out 8		Drum 9 Step Out 8
+Map	Drum 9 Step Out 9		Drum 9 Step Out 9
+Map	Drum 9 Step Out 10		Drum 9 Step Out 10
+Map	Drum 9 Step Out 11		Drum 9 Step Out 11
+Map	Drum 9 Step Out 12		Drum 9 Step Out 12
+Map	Drum 9 Step Out 13		Drum 9 Step Out 13
+Map	Drum 9 Step Out 14		Drum 9 Step Out 14
+Map	Drum 9 Step Out 15		Drum 9 Step Out 15
+Map	Drum 9 Step Out 16		Drum 9 Step Out 16
+Map	Drum 10 Step Out 1		Drum 10 Step Out 1
+Map	Drum 10 Step Out 2		Drum 10 Step Out 2
+Map	Drum 10 Step Out 3		Drum 10 Step Out 3
+Map	Drum 10 Step Out 4		Drum 10 Step Out 4
+Map	Drum 10 Step Out 5		Drum 10 Step Out 5
+Map	Drum 10 Step Out 6		Drum 10 Step Out 6
+Map	Drum 10 Step Out 7		Drum 10 Step Out 7
+Map	Drum 10 Step Out 8		Drum 10 Step Out 8
+Map	Drum 10 Step Out 9		Drum 10 Step Out 9
+Map	Drum 10 Step Out 10		Drum 10 Step Out 10
+Map	Drum 10 Step Out 11		Drum 10 Step Out 11
+Map	Drum 10 Step Out 12		Drum 10 Step Out 12
+Map	Drum 10 Step Out 13		Drum 10 Step Out 13
+Map	Drum 10 Step Out 14		Drum 10 Step Out 14
+Map	Drum 10 Step Out 15		Drum 10 Step Out 15
+Map	Drum 10 Step Out 16		Drum 10 Step Out 16
+Map	Remote Start Step		Remote Start Step
+Map	Next Remote Start Step		Next Remote Start Step
+Map	Previous Remote Start Step		Previous Remote Start Step
+Map	Next 4 Remote Start Step		Next 4 Remote Start Step
+Map	Previous 4 Remote Start Step		Previous 4 Remote Start Step
+Map	Next 8 Remote Start Step		Next 8 Remote Start Step
+Map	Previous 8 Remote Start Step		Previous 8 Remote Start Step
+Map	Next 16 Remote Start Step		Next 16 Remote Start Step
+Map	Previous 16 Remote Start Step		Previous 16 Remote Start Step
+Map	Data Terminal		Device Name

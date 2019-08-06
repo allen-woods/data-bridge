@@ -1,0 +1,355 @@
+Propellerhead Remote Mapping File			
+File Format Version	1.0.0		
+Control Surface Manufacturer	DataBridge		
+Control Surface Model	Thor Polysonic Synthesizer		
+Map Version	1.0.0		
+			
+Scope	Propellerheads	Master Keyboard	
+//	Control Surface Item	Key	Remotable Item
+Map	Keyboard		Keyboard
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Channel Pressure		Channel Pressure
+Map	Expression		Expression
+Map	Damper Pedal		Damper Pedal
+Map	Breath		Breath
+			
+Scope	Propellerheads	Thor Polysonic Synthesizer	
+//	Control Surface Item	Key	Remotable Item
+Map	Pitch Bend		Pitch Bend
+Map	Mod Wheel		Mod Wheel
+Map	Pitch Bend Range		Pitch Bend Range
+Map	Polyphony		Polyphony
+Map	Release Polyphony		Release Polyphony
+Map	Key Mode		Key Mode
+Map	Portamento		Portamento
+Map	Portamento Mode		Portamento Mode
+Map	Note On Indicator		Note On Indicator
+Map	Note Trigger MIDI		Note Trigger MIDI
+Map	Note Trigger Step Seq		Note Trigger Step Seq
+Map	Rotary 1		Rotary 1
+Map	Rotary 2		Rotary 2
+Map	Button 1		Button 1
+Map	Button 1 MIDI Key On		Button 1 MIDI Key On
+Map	Button 2		Button 2
+Map	Button 2 MIDI Key On		Button 2 MIDI Key On
+Map	Master Level		Master Level
+Map	Osc 1 Type		Osc 1 Type
+Map	Osc 1 Oct		Osc 1 Oct
+Map	Osc 1 Semi		Osc 1 Semi
+Map	Osc 1 Tune		Osc 1 Tune
+Map	Osc 1 Kbd		Osc 1 Kbd
+Map	Osc 1 Mod		Osc 1 Mod
+Map	Osc 2 Type		Osc 2 Type
+Map	Osc 2 Oct		Osc 2 Oct
+Map	Osc 2 Semi		Osc 2 Semi
+Map	Osc 2 Tune		Osc 2 Tune
+Map	Osc 2 Kbd		Osc 2 Kbd
+Map	Osc 2 Mod		Osc 2 Mod
+Map	Osc 3 Type		Osc 3 Type
+Map	Osc 3 Oct		Osc 3 Oct
+Map	Osc 3 Semi		Osc 3 Semi
+Map	Osc 3 Tune		Osc 3 Tune
+Map	Osc 3 Kbd		Osc 3 Kbd
+Map	Osc 3 Mod		Osc 3 Mod
+Map	Osc 1 AM From Osc 2		Osc 1 AM From Osc 2
+Map	Osc 2 Sync To Osc 1		Osc 2 Sync To Osc 1
+Map	Osc 2 Sync BW		Osc 2 Sync BW
+Map	Osc 3 Sync To Osc 1		Osc 3 Sync To Osc 1
+Map	Osc 3 Sync BW		Osc 3 Sync BW
+Map	Osc 1 And 2 Level		Osc 1 And 2 Level
+Map	Osc 1 And 2 Balance		Osc 1 And 2 Balance
+Map	Osc 3 Level		Osc 3 Level
+Map	Osc 1 To Filter 1 Enable		Osc 1 To Filter 1 Enable
+Map	Osc 2 To Filter 1 Enable		Osc 2 To Filter 1 Enable
+Map	Osc 3 To Filter 1 Enable		Osc 3 To Filter 1 Enable
+Map	Osc 1 To Filter 2 Enable		Osc 1 To Filter 2 Enable
+Map	Osc 2 To Filter 2 Enable		Osc 2 To Filter 2 Enable
+Map	Osc 3 To Filter 2 Enable		Osc 3 To Filter 2 Enable
+Map	Filter 1 Type		Filter 1 Type
+Map	Filter 1 Env Amount		Filter 1 Env Amount
+Map	Filter 1 Env Invert		Filter 1 Env Invert
+Map	Filter 1 Velocity		Filter 1 Velocity
+Map	Filter 1 Kbd		Filter 1 Kbd
+Map	Filter 1 Drive		Filter 1 Drive
+Map	Filter 1 Self Osc		Filter 1 Self Osc
+Map	Filter 1 Freq		Filter 1 Freq
+Map	Filter 1 Res		Filter 1 Res
+Map	Filter 2 Type		Filter 2 Type
+Map	Filter 2 Env Amount		Filter 2 Env Amount
+Map	Filter 2 Env Invert		Filter 2 Env Invert
+Map	Filter 2 Velocity		Filter 2 Velocity
+Map	Filter 2 Kbd		Filter 2 Kbd
+Map	Filter 2 Drive		Filter 2 Drive
+Map	Filter 2 Self Osc		Filter 2 Self Osc
+Map	Filter 2 Freq		Filter 2 Freq
+Map	Filter 2 Res		Filter 2 Res
+Map	Filter 3 Type		Filter 3 Type
+Map	Filter 3 Global Env Amount		Filter 3 Global Env Amount
+Map	Filter 3 Global Env Invert		Filter 3 Global Env Invert
+Map	Filter 3 Velocity		Filter 3 Velocity
+Map	Filter 3 Kbd		Filter 3 Kbd
+Map	Filter 3 Drive		Filter 3 Drive
+Map	Filter 3 Self Osc		Filter 3 Self Osc
+Map	Filter 3 Freq		Filter 3 Freq
+Map	Filter 3 Res		Filter 3 Res
+Map	Shaper On		Shaper On
+Map	Shaper Type		Shaper Type
+Map	Shaper Drive		Shaper Drive
+Map	Shaper Output Dest		Shaper Output Dest
+Map	Filter2ToAmplifier Enable		Filter2ToAmplifier Enable
+Map	LFO 1 Key Sync		LFO 1 Key Sync
+Map	LFO 1 Tempo Sync		LFO 1 Tempo Sync
+Map	LFO 1 Waveform		LFO 1 Waveform
+Map	LFO 1 Rate		LFO 1 Rate
+Map	LFO 1 Delay		LFO 1 Delay
+Map	LFO 1 KbdFollow		LFO 1 KbdFollow
+Map	Mod Env Gate Trig On		Mod Env Gate Trig On
+Map	Mod Env Delay		Mod Env Delay
+Map	Mod Env Attack		Mod Env Attack
+Map	Mod Env Decay		Mod Env Decay
+Map	Mod Env Release		Mod Env Release
+Map	Mod Env Tempo Sync		Mod Env Tempo Sync
+Map	Mod Env Loop		Mod Env Loop
+Map	Filter Env Gate Trig On		Filter Env Gate Trig On
+Map	Filter Env Attack		Filter Env Attack
+Map	Filter Env Decay		Filter Env Decay
+Map	Filter Env Sustain		Filter Env Sustain
+Map	Filter Env Release		Filter Env Release
+Map	Amp Env Gate Trig On		Amp Env Gate Trig On
+Map	Amp Env Attack		Amp Env Attack
+Map	Amp Env Decay		Amp Env Decay
+Map	Amp Env Sustain		Amp Env Sustain
+Map	Amp Env Release		Amp Env Release
+Map	Amplifier Gain		Amplifier Gain
+Map	Amplifier Velocity		Amplifier Velocity
+Map	Amplifier Pan		Amplifier Pan
+Map	Global Env Gate Trig On		Global Env Gate Trig On
+Map	Global Env Delay		Global Env Delay
+Map	Global Env Attack		Global Env Attack
+Map	Global Env Hold		Global Env Hold
+Map	Global Env Decay		Global Env Decay
+Map	Global Env Sustain		Global Env Sustain
+Map	Global Env Release		Global Env Release
+Map	Global Env Tempo Sync		Global Env Tempo Sync
+Map	Global Env Loop		Global Env Loop
+Map	LFO 2 Key Sync		LFO 2 Key Sync
+Map	LFO 2 Tempo Sync		LFO 2 Tempo Sync
+Map	LFO 2 Waveform		LFO 2 Waveform
+Map	LFO 2 Rate		LFO 2 Rate
+Map	LFO 2 Delay		LFO 2 Delay
+Map	Chorus On		Chorus On
+Map	Chorus Rate		Chorus Rate
+Map	Chorus Amt		Chorus Amt
+Map	Chorus Delay		Chorus Delay
+Map	Chorus Feedback		Chorus Feedback
+Map	Chorus Dry Wet		Chorus Dry Wet
+Map	Delay On		Delay On
+Map	Delay Rate		Delay Rate
+Map	Delay Amt		Delay Amt
+Map	Delay Time		Delay Time
+Map	Delay Feedback		Delay Feedback
+Map	Delay Sync		Delay Sync
+Map	Delay Dry Wet		Delay Dry Wet
+Map	Step Sequencer Run Mode		Step Sequencer Run Mode
+Map	Step Sequencer Synced		Step Sequencer Synced
+Map	Step Sequencer Direction		Step Sequencer Direction
+Map	Step Sequencer Step Count		Step Sequencer Step Count
+Map	Step Sequencer Step Index		Step Sequencer Step Index
+Map	Mute		Mute
+Map	Mod 1 Dest Amount		Mod 1 Dest Amount
+Map	Mod 1 Scale Amount		Mod 1 Scale Amount
+Map	Mod 2 Dest Amount		Mod 2 Dest Amount
+Map	Mod 2 Scale Amount		Mod 2 Scale Amount
+Map	Mod 3 Dest Amount		Mod 3 Dest Amount
+Map	Mod 3 Scale Amount		Mod 3 Scale Amount
+Map	Mod 4 Dest Amount		Mod 4 Dest Amount
+Map	Mod 4 Scale Amount		Mod 4 Scale Amount
+Map	Mod 5 Dest Amount		Mod 5 Dest Amount
+Map	Mod 5 Scale Amount		Mod 5 Scale Amount
+Map	Mod 6 Dest Amount		Mod 6 Dest Amount
+Map	Mod 6 Scale Amount		Mod 6 Scale Amount
+Map	Mod 7 Dest Amount		Mod 7 Dest Amount
+Map	Mod 7 Scale Amount		Mod 7 Scale Amount
+Map	Mod 8 Dest Amount		Mod 8 Dest Amount
+Map	Mod 8 Dest 2 Amount		Mod 8 Dest 2 Amount
+Map	Mod 8 Scale Amount		Mod 8 Scale Amount
+Map	Mod 9 Dest Amount		Mod 9 Dest Amount
+Map	Mod 9 Dest 2 Amount		Mod 9 Dest 2 Amount
+Map	Mod 9 Scale Amount		Mod 9 Scale Amount
+Map	Mod 10 Dest Amount		Mod 10 Dest Amount
+Map	Mod 10 Dest 2 Amount		Mod 10 Dest 2 Amount
+Map	Mod 10 Scale Amount		Mod 10 Scale Amount
+Map	Mod 11 Dest Amount		Mod 11 Dest Amount
+Map	Mod 11 Dest 2 Amount		Mod 11 Dest 2 Amount
+Map	Mod 11 Scale Amount		Mod 11 Scale Amount
+Map	Mod 12 Dest Amount		Mod 12 Dest Amount
+Map	Mod 12 Scale Amount		Mod 12 Scale Amount
+Map	Mod 12 Scale 2 Amount		Mod 12 Scale 2 Amount
+Map	Mod 13 Dest Amount		Mod 13 Dest Amount
+Map	Mod 13 Scale Amount		Mod 13 Scale Amount
+Map	Mod 13 Scale 2 Amount		Mod 13 Scale 2 Amount
+Map	Button 1 MIDI Key		Button 1 MIDI Key
+Map	Button 2 MIDI Key		Button 2 MIDI Key
+Map	Osc 1 Param B		Osc 1 Param B
+Map	Osc 1 Param C		Osc 1 Param C
+Map	Osc 2 Param B		Osc 2 Param B
+Map	Osc 2 Param C		Osc 2 Param C
+Map	Osc 3 Param B		Osc 3 Param B
+Map	Osc 3 Param C		Osc 3 Param C
+Map	Filter 1 Param X		Filter 1 Param X
+Map	Filter 1 Param Y		Filter 1 Param Y
+Map	Filter 2 Param X		Filter 2 Param X
+Map	Filter 2 Param Y		Filter 2 Param Y
+Map	Filter 3 Param X		Filter 3 Param X
+Map	Filter 3 Param Y		Filter 3 Param Y
+Map	Step Sequencer Run		Step Sequencer Run
+Map	Step Sequencer Rate		Step Sequencer Rate
+Map	Step Sequencer Edit Mode		Step Sequencer Edit Mode
+Map	Pattern Step Value		Pattern Step Value
+Map	Step Sequencer Octave Range		Step Sequencer Octave Range
+Map	Pattern Step LED 1		Pattern Step LED 1
+Map	Pattern Step LED 2		Pattern Step LED 2
+Map	Pattern Step LED 3		Pattern Step LED 3
+Map	Pattern Step LED 4		Pattern Step LED 4
+Map	Pattern Step LED 5		Pattern Step LED 5
+Map	Pattern Step LED 6		Pattern Step LED 6
+Map	Pattern Step LED 7		Pattern Step LED 7
+Map	Pattern Step LED 8		Pattern Step LED 8
+Map	Pattern Step LED 9		Pattern Step LED 9
+Map	Pattern Step LED 10		Pattern Step LED 10
+Map	Pattern Step LED 11		Pattern Step LED 11
+Map	Pattern Step LED 12		Pattern Step LED 12
+Map	Pattern Step LED 13		Pattern Step LED 13
+Map	Pattern Step LED 14		Pattern Step LED 14
+Map	Pattern Step LED 15		Pattern Step LED 15
+Map	Pattern Step LED 16		Pattern Step LED 16
+Map	Pattern Step Knob 1		Pattern Step Knob 1
+Map	Pattern Step Knob 2		Pattern Step Knob 2
+Map	Pattern Step Knob 3		Pattern Step Knob 3
+Map	Pattern Step Knob 4		Pattern Step Knob 4
+Map	Pattern Step Knob 5		Pattern Step Knob 5
+Map	Pattern Step Knob 6		Pattern Step Knob 6
+Map	Pattern Step Knob 7		Pattern Step Knob 7
+Map	Pattern Step Knob 8		Pattern Step Knob 8
+Map	Pattern Step Knob 9		Pattern Step Knob 9
+Map	Pattern Step Knob 10		Pattern Step Knob 10
+Map	Pattern Step Knob 11		Pattern Step Knob 11
+Map	Pattern Step Knob 12		Pattern Step Knob 12
+Map	Pattern Step Knob 13		Pattern Step Knob 13
+Map	Pattern Step Knob 14		Pattern Step Knob 14
+Map	Pattern Step Knob 15		Pattern Step Knob 15
+Map	Pattern Step Knob 16		Pattern Step Knob 16
+Map	Pattern Step Gate 1		Pattern Step Gate 1
+Map	Pattern Step Gate 2		Pattern Step Gate 2
+Map	Pattern Step Gate 3		Pattern Step Gate 3
+Map	Pattern Step Gate 4		Pattern Step Gate 4
+Map	Pattern Step Gate 5		Pattern Step Gate 5
+Map	Pattern Step Gate 6		Pattern Step Gate 6
+Map	Pattern Step Gate 7		Pattern Step Gate 7
+Map	Pattern Step Gate 8		Pattern Step Gate 8
+Map	Pattern Step Gate 9		Pattern Step Gate 9
+Map	Pattern Step Gate 10		Pattern Step Gate 10
+Map	Pattern Step Gate 11		Pattern Step Gate 11
+Map	Pattern Step Gate 12		Pattern Step Gate 12
+Map	Pattern Step Gate 13		Pattern Step Gate 13
+Map	Pattern Step Gate 14		Pattern Step Gate 14
+Map	Pattern Step Gate 15		Pattern Step Gate 15
+Map	Pattern Step Gate 16		Pattern Step Gate 16
+Map	Pattern Step Note 1		Pattern Step Note 1
+Map	Pattern Step Note 2		Pattern Step Note 2
+Map	Pattern Step Note 3		Pattern Step Note 3
+Map	Pattern Step Note 4		Pattern Step Note 4
+Map	Pattern Step Note 5		Pattern Step Note 5
+Map	Pattern Step Note 6		Pattern Step Note 6
+Map	Pattern Step Note 7		Pattern Step Note 7
+Map	Pattern Step Note 8		Pattern Step Note 8
+Map	Pattern Step Note 9		Pattern Step Note 9
+Map	Pattern Step Note 10		Pattern Step Note 10
+Map	Pattern Step Note 11		Pattern Step Note 11
+Map	Pattern Step Note 12		Pattern Step Note 12
+Map	Pattern Step Note 13		Pattern Step Note 13
+Map	Pattern Step Note 14		Pattern Step Note 14
+Map	Pattern Step Note 15		Pattern Step Note 15
+Map	Pattern Step Note 16		Pattern Step Note 16
+Map	Pattern Step Vel 1		Pattern Step Vel 1
+Map	Pattern Step Vel 2		Pattern Step Vel 2
+Map	Pattern Step Vel 3		Pattern Step Vel 3
+Map	Pattern Step Vel 4		Pattern Step Vel 4
+Map	Pattern Step Vel 5		Pattern Step Vel 5
+Map	Pattern Step Vel 6		Pattern Step Vel 6
+Map	Pattern Step Vel 7		Pattern Step Vel 7
+Map	Pattern Step Vel 8		Pattern Step Vel 8
+Map	Pattern Step Vel 9		Pattern Step Vel 9
+Map	Pattern Step Vel 10		Pattern Step Vel 10
+Map	Pattern Step Vel 11		Pattern Step Vel 11
+Map	Pattern Step Vel 12		Pattern Step Vel 12
+Map	Pattern Step Vel 13		Pattern Step Vel 13
+Map	Pattern Step Vel 14		Pattern Step Vel 14
+Map	Pattern Step Vel 15		Pattern Step Vel 15
+Map	Pattern Step Vel 16		Pattern Step Vel 16
+Map	Pattern Step Gate Length 1		Pattern Step Gate Length 1
+Map	Pattern Step Gate Length 2		Pattern Step Gate Length 2
+Map	Pattern Step Gate Length 3		Pattern Step Gate Length 3
+Map	Pattern Step Gate Length 4		Pattern Step Gate Length 4
+Map	Pattern Step Gate Length 5		Pattern Step Gate Length 5
+Map	Pattern Step Gate Length 6		Pattern Step Gate Length 6
+Map	Pattern Step Gate Length 7		Pattern Step Gate Length 7
+Map	Pattern Step Gate Length 8		Pattern Step Gate Length 8
+Map	Pattern Step Gate Length 9		Pattern Step Gate Length 9
+Map	Pattern Step Gate Length 10		Pattern Step Gate Length 10
+Map	Pattern Step Gate Length 11		Pattern Step Gate Length 11
+Map	Pattern Step Gate Length 12		Pattern Step Gate Length 12
+Map	Pattern Step Gate Length 13		Pattern Step Gate Length 13
+Map	Pattern Step Gate Length 14		Pattern Step Gate Length 14
+Map	Pattern Step Gate Length 15		Pattern Step Gate Length 15
+Map	Pattern Step Gate Length 16		Pattern Step Gate Length 16
+Map	Pattern Step Duration 1		Pattern Step Duration 1
+Map	Pattern Step Duration 2		Pattern Step Duration 2
+Map	Pattern Step Duration 3		Pattern Step Duration 3
+Map	Pattern Step Duration 4		Pattern Step Duration 4
+Map	Pattern Step Duration 5		Pattern Step Duration 5
+Map	Pattern Step Duration 6		Pattern Step Duration 6
+Map	Pattern Step Duration 7		Pattern Step Duration 7
+Map	Pattern Step Duration 8		Pattern Step Duration 8
+Map	Pattern Step Duration 9		Pattern Step Duration 9
+Map	Pattern Step Duration 10		Pattern Step Duration 10
+Map	Pattern Step Duration 11		Pattern Step Duration 11
+Map	Pattern Step Duration 12		Pattern Step Duration 12
+Map	Pattern Step Duration 13		Pattern Step Duration 13
+Map	Pattern Step Duration 14		Pattern Step Duration 14
+Map	Pattern Step Duration 15		Pattern Step Duration 15
+Map	Pattern Step Duration 16		Pattern Step Duration 16
+Map	Pattern Step Curve 1 1		Pattern Step Curve 1 1
+Map	Pattern Step Curve 1 2		Pattern Step Curve 1 2
+Map	Pattern Step Curve 1 3		Pattern Step Curve 1 3
+Map	Pattern Step Curve 1 4		Pattern Step Curve 1 4
+Map	Pattern Step Curve 1 5		Pattern Step Curve 1 5
+Map	Pattern Step Curve 1 6		Pattern Step Curve 1 6
+Map	Pattern Step Curve 1 7		Pattern Step Curve 1 7
+Map	Pattern Step Curve 1 8		Pattern Step Curve 1 8
+Map	Pattern Step Curve 1 9		Pattern Step Curve 1 9
+Map	Pattern Step Curve 1 10		Pattern Step Curve 1 10
+Map	Pattern Step Curve 1 11		Pattern Step Curve 1 11
+Map	Pattern Step Curve 1 12		Pattern Step Curve 1 12
+Map	Pattern Step Curve 1 13		Pattern Step Curve 1 13
+Map	Pattern Step Curve 1 14		Pattern Step Curve 1 14
+Map	Pattern Step Curve 1 15		Pattern Step Curve 1 15
+Map	Pattern Step Curve 1 16		Pattern Step Curve 1 16
+Map	Pattern Step Curve 2 1		Pattern Step Curve 2 1
+Map	Pattern Step Curve 2 2		Pattern Step Curve 2 2
+Map	Pattern Step Curve 2 3		Pattern Step Curve 2 3
+Map	Pattern Step Curve 2 4		Pattern Step Curve 2 4
+Map	Pattern Step Curve 2 5		Pattern Step Curve 2 5
+Map	Pattern Step Curve 2 6		Pattern Step Curve 2 6
+Map	Pattern Step Curve 2 7		Pattern Step Curve 2 7
+Map	Pattern Step Curve 2 8		Pattern Step Curve 2 8
+Map	Pattern Step Curve 2 9		Pattern Step Curve 2 9
+Map	Pattern Step Curve 2 10		Pattern Step Curve 2 10
+Map	Pattern Step Curve 2 11		Pattern Step Curve 2 11
+Map	Pattern Step Curve 2 12		Pattern Step Curve 2 12
+Map	Pattern Step Curve 2 13		Pattern Step Curve 2 13
+Map	Pattern Step Curve 2 14		Pattern Step Curve 2 14
+Map	Pattern Step Curve 2 15		Pattern Step Curve 2 15
+Map	Pattern Step Curve 2 16		Pattern Step Curve 2 16
+Map	Data Terminal		Device Name
