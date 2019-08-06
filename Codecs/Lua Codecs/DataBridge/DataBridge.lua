@@ -422,16 +422,16 @@ function _p(d_src,io_type,arg_1,arg_2,arg_3)
   local io_n = i_count * o_count
   local o_n = o_count
   local n_c = 3
-	if d_src~=nil then
-		if type(d_src)=="string" then
-			local io_n = i_count * o_count
-			local io_idx = nil
-			for i,v in ipairs(g_names) do
-				if v==d_src then
-					io_idx = i
-					break
-				end
-			end
+  if d_src~=nil then
+    if type(d_src)=="string" then
+      local io_n = i_count * o_count
+      local io_idx = nil
+      for i,v in ipairs(g_names) do
+        if v==d_src then
+          io_idx = i
+          break
+        end
+      end
       if midi_controller then
         n_c = 0
         io_idx = io_idx~=nil and (io_idx - n_c) or nil
