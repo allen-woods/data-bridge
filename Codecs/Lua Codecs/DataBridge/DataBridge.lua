@@ -211,10 +211,10 @@ function round(num, numDecimalPlaces)
 end
 
 function build_terminal()
-	-- might not need latch
+ -- might not need latch
 	_G["this_terminal"] = nil
 	_G["last_terminal"] = nil
-	-- _G["terminal_latch"] = 0
+ -- _G["terminal_latch"] = 0
 	_G["sys_resume_state"] = nil
 end
 
@@ -268,7 +268,7 @@ function restore_defaults()
       step[i] = 127
     end
   end
-	-- restore the functional state of the system prior to suspension
+ -- restore the functional state of the system prior to suspension
 	if sys_resume_state==false then
 		ui[17] = sys_resume_state
 	end
@@ -1614,7 +1614,7 @@ end
 
 --[[	//////////////////	]]
 
--- -- BEGIN MIDI CONTROLLER SECTION 	-- --
+-- -- BEGIN MIDI CONTROLLER SECTION -- --
 
 --[[	LEGACY CODE
 function build_midi_decay()
@@ -1663,7 +1663,7 @@ function rotary_speed(ms, dir)
   local floor = math.floor -- local refs to globals
   local min_ms = min_ms
   local max_ms = max_ms
-  local rs_a = 0.00220482283294	-- folded constant, 127 / 57601
+  local rs_a = 0.00220482283294 -- folded constant, 127 / 57601
   ms = ms < min_ms and min_ms or ms
   ms = ms > max_ms and max_ms or ms
   local rate = math.floor(rs_a * ((ms-max_ms)*(ms-max_ms)) + 1)
@@ -1715,19 +1715,19 @@ function process_controller(event)
         if m_event.x > 143 and m_event.x <= 159 then -- look for "90" thru "9f"
           x_byte = x_byte:sub(1,1).."?"
           idx_n = idx[x_byte.." "..y_byte.." xx"]
-        elseif m_event.x > 159 and m_event.x <= 175 then	-- look for "a0" thru "af"
+        elseif m_event.x > 159 and m_event.x <= 175 then -- look for "a0" thru "af"
           x_byte = x_byte:sub(1,1).."?"
           idx_n = idx[x_byte.." "..y_byte.." xx"]
-        elseif m_event.x > 175 and m_event.x <= 191 then	-- look for "b0" thru "bf"
+        elseif m_event.x > 175 and m_event.x <= 191 then -- look for "b0" thru "bf"
           x_byte = x_byte:sub(1,1).."?"
           idx_n = idx[x_byte.." "..y_byte.." xx"]
-        elseif m_event.x > 223 and m_event.x <= 239 then	-- look for "e0" thru "ef"
+        elseif m_event.x > 223 and m_event.x <= 239 then -- look for "e0" thru "ef"
  -- ignore y because this is a pitch bend
           idx_n = idx[x_byte.." xx yy"]
         end
  -- if we have found an index we can use for this data
         if idx_n~=nil then
-          local m_data = 0	-- placeholders
+          local m_data = 0 -- placeholders
           local is_encoder = false
           if idx_n==pitch_idx then
  -- create pitch bend data
@@ -1938,7 +1938,7 @@ function read_controller(t)
   end
 end
 
--- -- END MIDI CONTROLLER SECTION 	-- --
+-- -- END MIDI CONTROLLER SECTION  -- --
 _G["define_reason_master_section"] = function()
   local rdi = remote.define_items
 
@@ -2086,7 +2086,7 @@ _G["define_reason_master_section"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -2400,7 +2400,7 @@ _G["define_reason_main_mixer"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -2636,7 +2636,7 @@ _G["define_kong_drum_designer"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -2694,7 +2694,7 @@ _G["define_redrum_drum_computer"] = function()
   local outputs = {}
 
   names[#names+1] = "Keyboard"
-  names[#names+1] = "Pitch Bend"	-- might do nothing
+  names[#names+1] = "Pitch Bend" -- might do nothing
   names[#names+1] = "Mod Wheel"
   names[#names+1] = "Channel Pressure"
   names[#names+1] = "Expression"
@@ -2946,7 +2946,7 @@ _G["define_redrum_drum_computer"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -3417,7 +3417,7 @@ _G["define_thor_polysonic_synthesizer"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -3725,7 +3725,7 @@ _G["define_subtractor_analog_synthesizer"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -4023,7 +4023,7 @@ _G["define_malstrom_graintable_synthesizer"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -4189,7 +4189,7 @@ _G["define_id8_instrument_device"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -4431,7 +4431,7 @@ _G["define_dr_rex_loop_player"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -4599,7 +4599,7 @@ _G["define_nn_xt_advanced_sampler"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -4847,7 +4847,7 @@ _G["define_nn19_digital_sampler"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -4986,7 +4986,7 @@ _G["define_scream_4_distortion"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5108,7 +5108,7 @@ _G["define_bv512_digital_vocoder"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5222,7 +5222,7 @@ _G["define_rv7000_advanced_reverb"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5393,7 +5393,7 @@ _G["define_neptune_pitch_adjuster"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -5536,7 +5536,7 @@ _G["define_mclass_equalizer"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5650,7 +5650,7 @@ _G["define_mclass_compressor"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5766,7 +5766,7 @@ _G["define_mclass_maximizer"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5876,7 +5876,7 @@ _G["define_mclass_stereo_imager"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -5978,7 +5978,7 @@ _G["define_rv_7_digital_reverb"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6084,7 +6084,7 @@ _G["define_ddl_1_digital_delay_line"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6180,7 +6180,7 @@ _G["define_d_11_foldback_distortion"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6292,7 +6292,7 @@ _G["define_ecf_42_envelope_controlled_filter"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6396,7 +6396,7 @@ _G["define_cf_101_chorus_flanger"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6502,7 +6502,7 @@ _G["define_ph_90_phaser"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6600,7 +6600,7 @@ _G["define_un_16_unison"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6702,7 +6702,7 @@ _G["define_comp_01_compressor_limiter"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6808,7 +6808,7 @@ _G["define_peq_2_two_band_parametric_eq"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -6849,7 +6849,7 @@ _G["define_rpg_8_monophonic_arpeggiator"] = function()
   local outputs = {}
 
   names[#names+1] = "Keyboard"
-  names[#names+1] = "Pitch Bend"	-- might do nothing
+  names[#names+1] = "Pitch Bend" -- might do nothing
   names[#names+1] = "Mod Wheel"
   names[#names+1] = "Channel Pressure"
   names[#names+1] = "Damper Pedal"
@@ -6984,7 +6984,7 @@ _G["define_rpg_8_monophonic_arpeggiator"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -7114,7 +7114,7 @@ _G["define_matrix_pattern_sequencer"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -7265,7 +7265,7 @@ _G["define_combinator"] = function()
         "level output",
         "output level",
         "progress",
-        "peak",	-- remove inside of pulveriser, condition inside document
+        "peak", -- remove inside of pulveriser, condition inside document
         "indicat",
         "connected",
         "playing",
@@ -7386,7 +7386,7 @@ _G["define_spider_audio_merger_splitter"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -7484,7 +7484,7 @@ _G["define_spider_cv_merger_splitter"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -7616,7 +7616,7 @@ _G["define_mixer_14_2"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -7730,7 +7730,7 @@ _G["define_line_mixer_6_2"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -7950,7 +7950,7 @@ _G["define_mix_channel"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -8370,7 +8370,7 @@ _G["define_the_echo"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -8582,7 +8582,7 @@ _G["define_alligator"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
@@ -8693,7 +8693,7 @@ _G["define_regroove_mixer"] = function()
       "level output",
       "output level",
       "progress",
-      "peak",	-- remove inside of pulveriser, condition inside document
+      "peak", -- remove inside of pulveriser, condition inside document
       "indicat",
       "connected",
       "playing",
