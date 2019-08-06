@@ -436,88 +436,88 @@ function _p(d_src,io_type,arg_1,arg_2,arg_3)
         n_c = 0
         io_idx = io_idx~=nil and (io_idx - n_c) or nil
       end
-			if io_idx~=nil then
-				if io_type~=nil then
-					if type(io_type)=="string" then
-						if io_type:sub(1,1)=="s" then
-							if io_type:sub(2,2)=="v" then
-								if arg_1~=nil then
-									if type(arg_1)=="number" then
-										if arg_1 >= 0 and arg_1 <= midi_max_val then
-											min[io_n+n_c+io_idx] = (arg_1 * midi_rat) * def_dlt[io_n+n_c+io_idx]
+      if io_idx~=nil then
+        if io_type~=nil then
+          if type(io_type)=="string" then
+            if io_type:sub(1,1)=="s" then
+              if io_type:sub(2,2)=="v" then
+                if arg_1~=nil then
+                  if type(arg_1)=="number" then
+                    if arg_1 >= 0 and arg_1 <= midi_max_val then
+                      min[io_n+n_c+io_idx] = (arg_1 * midi_rat) * def_dlt[io_n+n_c+io_idx]
                       dlt[io_n+n_c+io_idx] = max[io_n+n_c+io_idx] - min[io_n+n_c+io_idx]
                       rat[io_n+n_c+io_idx] = (1 / dlt[io_n+n_c+io_idx])
-										end
-									end
-								end
-								if arg_2~=nil then
-									if type(arg_2)=="number" then
-										if arg_2 >= 0 and arg_2 <= midi_max_val then
+                    end
+                  end
+                end
+                if arg_2~=nil then
+                  if type(arg_2)=="number" then
+                    if arg_2 >= 0 and arg_2 <= midi_max_val then
                       max[io_n+n_c+io_idx] = (arg_2 * midi_rat) * def_dlt[io_n+n_c+io_idx]
                       dlt[io_n+n_c+io_idx] = max[io_n+n_c+io_idx] - min[io_n+n_c+io_idx]
                       rat[io_n+n_c+io_idx] = (1 / dlt[io_n+n_c+io_idx])
-										end
-									end
-								end
-							elseif io_type:sub(2,2)=="t" then
-								if arg_1~=nil then
-									if type(arg_1)=="string" then
-										if arg_1=="abs" or arg_1=="enc" then
-											data_type[io_n+n_c+io_idx] = arg_1
-										end
-									end
-								end
-							end
-						elseif io_type:sub(1,1)=="o" then
-							if arg_1~=nil then
-								if type(arg_1)=="number" then
-									if arg_1 >= 1 and arg_1 <= o_count then
-										io_idx = ((io_idx - 1)*o_count) + arg_1
-										if arg_2~=nil then
-											if type(arg_2)=="number" then
-												if io_type:sub(2,2)=="v" then
-													if arg_2 >= 0 and arg_2 <= midi_max_val then
-														min[io_idx] = (arg_2 * midi_rat) * def_dlt[io_idx]
+                    end
+                  end
+                end
+              elseif io_type:sub(2,2)=="t" then
+                if arg_1~=nil then
+                  if type(arg_1)=="string" then
+                    if arg_1=="abs" or arg_1=="enc" then
+                      data_type[io_n+n_c+io_idx] = arg_1
+                    end
+                  end
+                end
+              end
+            elseif io_type:sub(1,1)=="o" then
+              if arg_1~=nil then
+                if type(arg_1)=="number" then
+                  if arg_1 >= 1 and arg_1 <= o_count then
+                    io_idx = ((io_idx - 1)*o_count) + arg_1
+                    if arg_2~=nil then
+                      if type(arg_2)=="number" then
+                        if io_type:sub(2,2)=="v" then
+                          if arg_2 >= 0 and arg_2 <= midi_max_val then
+                            min[io_idx] = (arg_2 * midi_rat) * def_dlt[io_idx]
                             dlt[io_idx] = max[io_idx] - min[io_idx]
                             rat[io_idx] = (1 / dlt[io_idx])
-													end
-												elseif io_type:sub(2,2)=="i" then
-													if arg_2 >= 1 and arg_2 <= midi_max_val+1 then
-														int[io_idx] = arg_2
-													end
-												end
-											elseif type(arg_2)=="string" then
-												if io_type:sub(2,2)=="t" then
-													if arg_2=="abs" or arg_2=="enc" then
-														  data_type[io_idx] = arg_2
-													end
-												end
-											end
-										end
-										if arg_3~=nil then
-											if type(arg_3)=="number" then
-												if io_type:sub(2,2)=="v" then
-													if arg_3 >= 0 and arg_2 <= midi_max_val then
-														max[io_idx] = (arg_3 * midi_rat) * def_dlt[io_idx]
+                          end
+                        elseif io_type:sub(2,2)=="i" then
+                          if arg_2 >= 1 and arg_2 <= midi_max_val+1 then
+                            int[io_idx] = arg_2
+                          end
+                        end
+                      elseif type(arg_2)=="string" then
+                        if io_type:sub(2,2)=="t" then
+                          if arg_2=="abs" or arg_2=="enc" then
+                            data_type[io_idx] = arg_2
+                          end
+                        end
+                      end
+                    end
+                    if arg_3~=nil then
+                      if type(arg_3)=="number" then
+                        if io_type:sub(2,2)=="v" then
+                          if arg_3 >= 0 and arg_2 <= midi_max_val then
+                            max[io_idx] = (arg_3 * midi_rat) * def_dlt[io_idx]
                             dlt[io_idx] = max[io_idx] - min[io_idx]
                             rat[io_idx] = (1 / dlt[io_idx])
-													end
-												elseif io_type:sub(2,2)=="i" then
-													if arg_3 >= 1 and arg_3 <= midi_max_val+1 then
-														step[io_idx] = arg_3
-													end
-												end
-											end
-										end
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-	end
+                          end
+                        elseif io_type:sub(2,2)=="i" then
+                          if arg_3 >= 1 and arg_3 <= midi_max_val+1 then
+                            step[io_idx] = arg_3
+                          end
+                        end
+                      end
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+  end
 end
 
 --[[  midi editing function, applies to all midi related variables
