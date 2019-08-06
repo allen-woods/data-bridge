@@ -1310,7 +1310,9 @@ end
 
 --[[	End Reason Document		]]
 
+
 --[[	////////////////////	]]
+
 
 --[[	Begin Data network		]]
 
@@ -1612,9 +1614,12 @@ end
 
 --[[	End Data network		]]
 
+
 --[[	//////////////////	]]
 
+
 -- -- BEGIN MIDI CONTROLLER SECTION -- --
+
 
 --[[	LEGACY CODE
 function build_midi_decay()
