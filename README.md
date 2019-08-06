@@ -35,8 +35,8 @@ Applying MIDI data as a distributed network allows for unprecedented expressive 
 8. Navigate to **Preferences > Control Surfaces > Add** and confirm that `Raveshaper` appears as a manufacturer.
     * If this step fails, confirm folders were copied to the correct locations and restart **Reason**.
 9. Exit **Preferences**.
-10. Open the `Blank DataBridge Workspace` song project from the `Templates and Patches` folder in this package.
-11. Expand the contents of the **Combinator** to reveal the **External MIDI Instruments** (**EMI**) within the patch.
+10. Open the `Local Workspace` song project from the `Templates and Patches` folder in this package.
+11. Expand the contents of the `UI Device` **Combinator** to reveal the **External MIDI Instruments** (**EMI**) within the patch.
 12. Adjust the MIDI Port of all **EMI** units to reflect the physically looped port you attached in step 1.
     * NOTE: On **Mac**, select the port that does not contain the word _"virtual"_.
 13. Save the song project where you would like, then close the file and open a new blank project.
