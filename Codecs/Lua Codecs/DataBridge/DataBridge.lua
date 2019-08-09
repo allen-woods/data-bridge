@@ -988,20 +988,34 @@ function editing()
   end
 end
 
---  audio warp engine
+-- audio warp engine
 function warp(p,r)
+  -- Prepare the calculated value
   local px = nil
+  -- If pitchbend is between -8192 and 0
   if p <= warp_ls then
+    -- Calculate using the "left side" graph
     px = (p - warp_ls) * warp_ls_rat
+  -- Otherwise...
   elseif p > warp_ls then
+    -- Calculate using the "right side" graph
     px = (p - warp_ls) * warp_ls_rat
   end
+
+  -- Prepare the return value
   local output_data = nil
+
+  -- If the device is not a Combinator
   if warp_use_24 then
+    -- Enforce 24 semitones
     output_data = 4^(r * warp_24_rat * px)
+  -- Otherwise...
   else
+    -- Use 60 semitones / 10 octaves
     output_data = 4^(60 * warp_24_rat * px)
   end
+
+  -- Return the result
   return output_data
 end
 
@@ -1069,120 +1083,159 @@ function process_document(event)
 end
 
 function detect_warp_engine(i,j)
+  -- "i" argument = tempo bpm connected
+  -- "j" argument = tempo decimal connected
+
   local riie = remote.is_item_enabled
   local rgin = remote.get_item_name
   local rgiv = remote.get_item_value
   local warp_state = false
 
-  if i~=nil and j==nil then -- o_count is 1 only tempo bpm can be connected
-    if riie(i)==false or rgin(i)==nil then -- hard reset everything if data is completely detached
-      this[i] = nil
-      last[i] = nil
-      warp_from_bpm = nil
-      warp_from_dec = nil
-      warp_state = false
-    else
-      if last[i]==nil then -- if no record exists for pitch to tempo bpm
-        if device_type:find("combinator")~=nil then -- if this device can use 60 semitones pitch
-          if riie(i) and rgiv(i)~=32 then -- if the value of bpm is not 32
-            warp_from_bpm = 32 -- force 32 bpm
-          end
-        else -- if this device can only use 24 semitones pitch
-          if riie(i) and rgiv(i)<4 then
-            warp_from_bpm = 4 -- limit between 4 bpm...
-          elseif riie(i) and rgiv(i)>249 then
-            warp_from_bpm = 249 -- ...and 249 bpm
-          else
-            warp_from_bpm = rgiv(i) -- otherwise, allow values between those two tempos
-          end
-        end
-        warp_state = true -- let the system know that warping is connected
-        warp_from_dec = 0 -- assign zero to decimal because it doesn't exist
-      end
+  -- Start Rewrite
+
+  local bpm_connected = false
+  local dec_connected = false
+
+  if i~=nil then
+    if riie(i) and rgin(i)~=nil then
+      bpm_connected = true
     end
-  elseif i~=nil and j~=nil then -- o count is > 1 both tempo bpm and tempo decimal can be connected
-    if riie(i)==false or rgin(i)==nil and riie(j)==false or rgin(j)==nil then -- hard reset everything if data is completely detached
-      this[i] = nil
-      last[i] = nil
-      this[j] = nil
-      last[j] = nil
-      warp_from_bpm = nil
-      warp_from_dec = nil
-      warp_state = false
-    else
-      if last[i]==nil then -- if no record exists for pitch to tempo bpm, same as above
+  end
+
+  if j~=nil then
+    if riie(j) and rgin(j)~=nil then
+      dec_connected = true
+    end
+  end
+
+  -- If at least one connection is active
+  if bpm_connected or dec_connected then
+    if bpm_connected then
+      -- If there is no last bpm value
+      if last[i]==nil then
+        -- If device type is Combinator
         if device_type:find("combinator")~=nil then
-          if riie(i) and rgiv(i)~=32 then
+          -- If project bpm is not 32
+          if rgiv(i)~=32 then
+            -- Require project bpm to be 32
             warp_from_bpm = 32
           end
+        -- If device is not Combinator
         else
-          if riie(i) and rgiv(i)<4 then
+          -- If project bpm is < 4
+          if rgiv(i) < 4 then
+            -- Require minimum of 4 bpm
             warp_from_bpm = 4
-          elseif riie(i) and rgiv(i)>249 then
+          -- If project bpm is > 249
+          elseif rgiv(i) > 249 then
+            -- Require maximum of 249 bpm
             warp_from_bpm = 249
+          -- Otherwise...
+          else
+            -- Use current project bpm
+            warp_from_bpm = rgiv(i)
           end
         end
-        if warp_state~=true then
-          warp_state = true
-        end
-        if warp_from_dec==nil then
-          warp_from_dec = 0
-        end
+        -- Enable warp state
+        warp_state = true
       end
+    end
 
-      if last[j]==nil then -- if no record exists for pitch to tempo decimal
-        if device_type:find("combinator")~=nil then -- if this device can use 60 semitones pitch
-          if warp_from_dec~=0 then -- if tempo decimal has not been stored as zero
-            warp_from_dec = 0 -- force zero as the only legal value
-          end
-        else -- if this device can only use 24 semitones pitch
-          if warp_from_bpm==249 then -- if the tempo bpm is set to the max allowed
-            if riie(j) and rgiv(j)>749 then -- if the tempo decimal is greater than 749
-              warp_from_dec = 749 -- force 749 as max value allowed
-            else
-              warp_from_dec = rgiv(j) -- allow values below the amount of 749
+    if dec_connected then
+      -- If there is no last decimal value
+      if last[j]==nil then
+        -- If device is not a Combinator
+        if device_type:find("combinator")==nil then
+          -- If max bpm is applied
+          if warp_from_bpm==249 then
+            -- If decimal is > 749
+            if rgiv(j) > 749 then
+              -- Require maximum of 749
+              warp_from_dec = 749
             end
-          else -- if the tempo bpm is less than its max allowed
-            warp_from_dec = rgiv(j) -- go ahead with all values of tempo decimal
           end
+        -- Otherwise...
+        else
+          -- Allow any decimal value found
+          warp_from_dec = rgiv(j)
         end
-        if warp_state~=true then -- return true for warp_state of not already true
-          warp_state = true
-        end
-        if warp_from_bpm==nil then -- set tempo bpm to 120 (stock project default) if not hooked up
-          warp_from_bpm = 120
-        end
+        -- Enable warp state
+        warp_state = true
+      end
+    end
+  -- If no connection is active
+  else
+    -- Store the values of i and j in an array
+    local chk = [i,j]
+    -- Loop through the array
+    for ptr=1,2 do
+      -- If an item is not nil, reset all related data
+      if chk[ptr]~=nil then
+        this[chk[ptr]] = nil
+        last[chk[ptr]] = nil
+        warp_from_bpm = nil
+        warp_from_dec = nil
+        warp_state = false
       end
     end
   end
 
-  if warp_state==true then -- if warp_state was set to true
-    warp_from = (warp_from_bpm * 1000) + warp_from_dec-- calculate the warp_from value
-  else
-    warp_from = nil -- set the warp_from to nil
+  -- Prevent NaN for bpm
+  if warp_from_bpm==nil then
+    warp_from_bpm = 120
   end
 
-  return warp_state -- return true or false
+  -- Prevent NaN for decimal
+  if warp_from_dec==nil then
+    warp_from_dec = 0
+  end
+
+  -- If the warp state is enabled
+  if warp_state==true then
+    -- Calculate default transport speed
+    warp_from = (warp_from_bpm * 1000) + warp_from_dec
+  -- Otherwise...
+  else
+    -- Empty the value
+    warp_from = nil
+  end
+
+  -- Return true or false
+  return warp_state
 end
 
 --  checks to see if the device has a pitch bend parameter
 function warp_compatible()
+  -- Assume the device can't warp by default
   local can_warp = false
+
+  -- If device controls exist
   if (g_names~=nil) then
+    -- Search through the controls
     for i,v in ipairs(g_names) do
+      -- If we have found Pitch Bend
       if v:find("Pitch Bend")~=nil then
+        -- Confirm the device can warp
         can_warp = true
+        -- Stop searching
         break
       end
     end
+    -- If the device can warp
     if can_warp then
+      -- If this is a Combinator
       if device_type:find("combinator")~=nil then
+        -- Use 60 semitones
         warp_use_24 = false
+      -- Otherwise...
       else
+        -- Use 24 semitones
         warp_use_24 = true
       end
     end
   end
+
+  -- Return the result
   return can_warp
 end
 
