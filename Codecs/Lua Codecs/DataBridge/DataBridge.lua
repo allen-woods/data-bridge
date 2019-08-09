@@ -999,6 +999,7 @@ function warp(p,r)
   -- Otherwise...
   elseif p > warp_ls then
     -- Calculate using the "right side" graph
+    -- (The math turns out to be identical)
     px = (p - warp_ls) * warp_ls_rat
   end
 
@@ -1091,8 +1092,6 @@ function detect_warp_engine(i,j)
   local rgiv = remote.get_item_value
   local warp_state = false
 
-  -- Start Rewrite
-
   local bpm_connected = false
   local dec_connected = false
 
@@ -1112,7 +1111,7 @@ function detect_warp_engine(i,j)
   if bpm_connected or dec_connected then
     if bpm_connected then
       -- If there is no last bpm value
-      if last[i]==nil then
+      if warp_from_bpm==nil then
         -- If device type is Combinator
         if device_type:find("combinator")~=nil then
           -- If project bpm is not 32
@@ -1143,7 +1142,7 @@ function detect_warp_engine(i,j)
 
     if dec_connected then
       -- If there is no last decimal value
-      if last[j]==nil then
+      if warp_from_dec==nil then
         -- If device is not a Combinator
         if device_type:find("combinator")==nil then
           -- If max bpm is applied
@@ -1190,10 +1189,18 @@ function detect_warp_engine(i,j)
     warp_from_dec = 0
   end
 
+  -- Prevent halt condition
+  if warp_from~=nil then
+    warp_state = true
+  end
+
   -- If the warp state is enabled
   if warp_state==true then
     -- Calculate default transport speed
     warp_from = (warp_from_bpm * 1000) + warp_from_dec
+    
+    -- error("Proof of life: warp_state=" .. tostring(warp_state) .. ", warp_from=" .. tostring(warp_from))
+
   -- Otherwise...
   else
     -- Empty the value
@@ -1583,12 +1590,6 @@ function read_network(t)
             end
             warp_send_bpm = round(warp_output * 0.001, 0) --  format the bpm message as 1/1000th of the result given by warp()
             warp_send_dec = round(warp_output - (warp_send_bpm * 1000), 0) --  calculate the decimal message based on bpm
-
-            -- Latch the warp I/O to prevent errors
-            last[w1_idx] = 1
-            this[w1_idx] = 1
-            last[w2_idx] = 1
-            this[w2_idx] = 1
           end
         end
  -- generate batches from data sources
@@ -1636,9 +1637,17 @@ function batch_net(n)
           local dy2 = nil
 
           if w1_idx~=nil and o==w1_idx then
-            dy2 = warp_send_bpm~=nil and warp_send_bpm or dy1
+            if warp_send_bpm~=nil then
+              dy2 = warp_send_bpm
+            else
+              dy2 = dy1
+            end
           elseif w2_idx~=nil and o==w2_idx then
-            dy2 = warp_send_dec~=nil and warp_send_dec or dy1
+            if warp_send_dec~=nil then
+              dy2 = warp_send_dec
+            else
+              dy2 = dy1
+            end
           else
             if ui[18]==true then
               dy2 = floor(mid[o] + (float * (dlt[o] * 0.5)))
