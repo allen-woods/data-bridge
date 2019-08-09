@@ -1166,7 +1166,7 @@ function detect_warp_engine(i,j)
   -- If no connection is active
   else
     -- Store the values of i and j in an array
-    local chk = [i,j]
+    local chk = {i,j}
     -- Loop through the array
     for ptr=1,2 do
       -- If an item is not nil, reset all related data
@@ -1583,6 +1583,12 @@ function read_network(t)
             end
             warp_send_bpm = round(warp_output * 0.001, 0) --  format the bpm message as 1/1000th of the result given by warp()
             warp_send_dec = round(warp_output - (warp_send_bpm * 1000), 0) --  calculate the decimal message based on bpm
+
+            -- Latch the warp I/O to prevent errors
+            last[w1_idx] = 1
+            this[w1_idx] = 1
+            last[w2_idx] = 1
+            this[w2_idx] = 1
           end
         end
  -- generate batches from data sources
