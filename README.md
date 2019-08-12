@@ -1,50 +1,99 @@
 # Data Bridge
 
 ---
+## Contents
+
+  - [Overview](#overview)
+  - [Why Was This Made?](#why-was-this-made)
+  - [Disclaimers](#disclaimers)
+  - [Installation](#installation)
+      - [Quit Reason](#quit-reason)
+      - [Physical MIDI Port](#physical-midi-port)
+      - [Install Package Locally](#install-package-locally)
+      - [Install Files](#install-files)
+      - [Configure Workspace File](#configure-workspace-file) 
+  - [Basic Usage](#basic-usage)
 
 ## Overview
 
-Data Bridge is an advanced MIDI control surface designed to provide a scalable, modular network of responsive feedback connections between rack devices in Propellerhead Reason 7+.
+Data Bridge is an advanced MIDI control surface designed to provide a scalable, modular network of responsive connections between rack devices in Propellerhead Reason 7+.
 
-User feedback was made hardware agnostic wherever possible, allowing for both legacy and modern hardware to be used interchangeably.
+Support for MIDI input is included and was designed to be hardware agnostic wherever possible. This allows both legacy and modern hardware to be used interchangeably.
 
 ## Why Was This Made?
 
 The complexity of this design represents the best effort to facilitate solutions to the preference of creative spontaneity and immediacy of use that was at the forefront of discussion within the customer base of Reason 7 upon its release.
 
-The specific areas that were addressed were:
-- Cumbersome interaction with MIDI hardware
-- Lack of support for live performance
-- Inflexible automation
+| Specific issues addressed in this build: |
+| :--- |
+| Cumbersome interaction with MIDI hardware |
+| Lack of support for live performance |
+| Inflexible automation |
 
 Typical use of control surfaces in Reason involve binding a surface to a given device for the purpose of providing specific control.
 
-Data Bridge is so-named because it allows the state of a given device's control data (knob values, etc.) to be broadcast to additional devices.
+DataBridge is so-named because it allows the state of a given device's control data (knob values, etc.) to be broadcast to additional devices.
 
 Applying MIDI data as a distributed network allows for unprecedented expressive control, as well as organically random auto-modulation.
 
 ---
+## Disclaimers
+
+>This guide will present examples based on **MacOS Mojave 10.14** and a **Native-Instruments Maschine Mk2** as the connected MIDI device.
+>
+>Please substitute your MIDI hardware where applicable.
+>
+>This guide also assumes that **no other MIDI settings have already been specified** prior to the addition of these control surfaces.
+>
+>Additional troubleshooting may be required if you have a unique MIDI configuration already present in Reason.
+>
+>**Use of this system effectively removes Undo functionality from Reason while it is in operation. This change is not permanent and will not harm your install.**
+>
+>**This system is an imperfect design that is susceptible to the limitations of its host. It is provided open source as-is and without warranty.**
 
 ## Installation
 
-1. Attach a physical MIDI 5-pin In and Out port to your computer.
-2. Physically loop these ports with a MIDI cable (Out to In).
-3. If **Reason** is running, exit the program.
-4. Download this package locally.
-5. Move the `DataBridge` folder in `Codecs/Lua Codecs` to the local `Codecs/Lua Codecs` folder used by your install of **Reason**.
-6. Move the `DataBridge` folder in `Maps` to the local `Maps` folder used by your install of **Reason**.
-    * For Help with 3 and 4, Please See:
-    https://www.propellerheads.com/blog/control-remote
-7. Start **Reason**.
-8. Navigate to **Preferences > Control Surfaces > Add** and confirm that `DataBridge` appears as a manufacturer.
-    * If this step fails, confirm folders were copied to the correct locations and restart **Reason**.
-9. Exit **Preferences**.
-10. Open the `Local Workspace` song project from the `Templates and Patches` folder in this package.
-11. Expand the contents of the `UI Device` **Combinator** to reveal the **External MIDI Instruments** (**EMI**) within the patch.
-12. Adjust the MIDI Port of all **EMI** units to reflect the physically looped port you attached in step 1.
-    * NOTE: On **Mac**, select the port that does not contain the word _"virtual"_.
-13. Save the song project where you would like, then close the file and open a new blank project.
-14. Navigate to **Preferences > General** and set the template song project you saved in step 13 as your default template for new projects.
+1. #### Quit Reason
+   - This installation process requires Reason to be closed completely.
+
+2. #### Physical MIDI Port
+   - Attach a physical MIDI 5-pin In and Out port to your computer.
+   - Physically loop these ports with a male-male **MIDI loopback cable** (Out port to In port)
+> **NOTE: virtual ports like LoopBe1 will not work.**
+
+3. #### Install Package Locally
+   - **Download** this project as a zip file and extract it into a directory of your choice.
+   - You can also use `git clone` over **SSH** if you have `git` installed.
+   ![clone and download options](./images/db-download.png)
+
+4. #### Install Files
+   - Locate the `Codecs/Lua Codecs` folder in your local install of this project.
+   - Move the `DataBridge` folder into the `Codecs/Lua Codecs` folder used by your install of **Reason**.
+   - Locate the `Maps` folder in your local install of this project.
+   - Move the `DataBridge` folder into the `Maps` folder used by your install of **Reason**.
+> **For Help with Step 4, Please See:** [Control Remote](https://www.propellerheads.com/blog/control-remote)
+
+5. #### Configure Workspace File
+   - Start **Reason**.
+   - Navigate to the `Templates and Patches` folder in your local install of this project.
+   - Open the `Local Workspace.reason` file.
+   - Navigate to the **Options** menu and turn on **Enable Keyboard Control**.
+   ![enable keyboard control](./images/enable-kb-option.png)
+   - Locate the `DB Main` Combinator in the rack.
+   ![db main combinator](./images/db-console.png)
+   - Turn on **Show Devices** to reveal the patch contents.
+   - Configure the output port of each **External MIDI Instrument** (**EMI**)to use the Out port you looped in [step 2 of this section](#physical-midi-port), as shown in the example below.
+   ![db main patch](./images/db-console-patch.png)
+   - Locate the `DB Curve` Combinator in the rack.
+   ![db curve combinator](./images/db-curve.png)
+   - Configure its **EMI** outputs in the same manner as in the `DB Main` Combinator's patch.
+   ![db curve patch](./images/db-curve-patch.png)
+   - Save the song file somewhere official. This will be your song template going forward.
+   - Once `Local Workspace.reason` has been saved, close it.
+   - Navigate to **Preferences > General > Default Song > Template**.
+   - Set the `Local Workspace.reason` file as your new default song template as shown below.
+   ![default song template](./images/default-template.png)
+> **NOTE:** _You can rename this file to anything you prefer. File names remain standardized for the sake of readability._
 
 ---
 
