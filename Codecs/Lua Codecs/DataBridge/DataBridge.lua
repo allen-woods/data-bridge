@@ -1203,8 +1203,6 @@ function detect_warp_engine(i,j)
   if warp_state==true then
     -- Calculate default transport speed
     warp_from = (warp_from_bpm * 1000) + warp_from_dec
-    
-    -- error("Proof of life: warp_state=" .. tostring(warp_state) .. ", warp_from=" .. tostring(warp_from))
 
   -- Otherwise...
   else

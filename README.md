@@ -1,4 +1,4 @@
-# Data Bridge
+# DataBridge
 
 ---
 ## Contents
@@ -175,10 +175,41 @@ The following **Keyboard Controls** are embedded in the `Local Workspace.reason`
 
       <img src="./images/mixer-mono-kb-mapping.png" alt="mono mix stereo width" width="50">
 
-## Basic Usage
+## Hardware Setup
+
+**DataBridge** uses a select number of **MIDI Control Change** (**CC**) values to perform editing functions from hardware. These CC values effectively duplicate the Combinator buttons found on `DB Main` and `DB Curve` in the rack. This enables performers or producers to achieve the same results without having to stop using their controller.
+
+The following CC values are reserved by the DataBridge system:
+
+* ### Legend
+    - #### Surface: DataBridge MIDI Controller
+    
+      | Channel | CC Value | Action           |
+      | :-----: | :------: | :--------------- |
+      |    1    |    94    | System Panic     |
+      |    1    |    95    | Bipolar/Unipolar |
+      |    1    |    97    | Edit Curve       |
+      |    1    |    98    | Edit Step        |
+      |    1    |    99    | Navigate Layers  |
+      |    1    |   100    | Edit Min         |
+      |    1    |   101    | Edit Max         |
+      |    8    |   119    | Clock            |
+
+    - #### Surface: DataBridge MIDI Controller - Deck 2
+
+      | Channel | CC Value | Action           |
+      | :-----: | :------: | :--------------- |
+      |    9    |    94    | System Panic     |
+      |    9    |    95    | Bipolar/Unipolar |
+      |    9    |    97    | Edit Curve       |
+      |    9    |    98    | Edit Step        |
+      |    9    |    99    | Navigate Layers  |
+      |    9    |   100    | Edit Min         |
+      |    9    |   101    | Edit Max         |
+      |   16    |   119    | Clock            |
+
+## Getting Started
 
 1. #### Best Practice
 
     > The recommended best practice for using this system is to always have all of the `DB Main` and `DB Curve` Combinator buttons disabled and your MIDI controller(s) set to their initial state (all toggles off) when opening or closing a song project. This is important because the state of the system depends on that default scenario in order to calibrate itself during the process of loading the surfaces.
-    >
-    > With that in mind, let's walk through a simple setup using auto-modulation.
