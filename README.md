@@ -4,7 +4,13 @@
 ## Contents
 
   - [Overview](#overview)
+  - [Do I Need This](#do-i-need-this)
   - [Why Was This Made?](#why-was-this-made)
+  - [What Does This Do?](#what-does-this-do)
+      - [Deep MIDI Integration](#deep-midi-integration)
+      - [Support for Live Performance](#support-for-live-performance)
+      - [Auto-modulation](#auto-modulation)
+      - [Audio Warping](#audio-warping)
   - [Disclaimers](#disclaimers)
   - [Installation](#installation)
       - [Quit Reason](#quit-reason)
@@ -16,30 +22,47 @@
 
 ## Overview
 
-Data Bridge is an advanced MIDI control surface designed to provide a scalable, modular network of responsive connections between rack devices in Propellerhead Reason 7+.
+**DataBridge** is an advanced MIDI control surface designed to provide a scalable, modular network of responsive connections between rack devices in **Propellerhead Reason 7+**.
 
 Support for MIDI input is included and was designed to be hardware agnostic wherever possible. This allows both legacy and modern hardware to be used interchangeably.
 
+## Do I Need This?
+
+It depends whether you want to incorporate _organic sound design_ into your projects and/or _live performance capabilities_ into your workflows. If you prefer to be more scientific with all aspects of your work, this might not suit your tastes.
+
 ## Why Was This Made?
 
-The complexity of this design represents the best effort to facilitate solutions to the preference of creative spontaneity and immediacy of use that was at the forefront of discussion within the customer base of Reason 7 upon its release.
+This project represents the best efforts at answering the call for missing features within **Propellerhead Reason 7** upon its release by providing a strong and comprehensive implementation of MIDI response that allows for live performance and organic sound design.
 
-| Specific issues addressed in this build: |
-| :--- |
-| Cumbersome interaction with MIDI hardware |
-| Lack of support for live performance |
-| Inflexible automation |
+In short, it was made to redefine what is possible in **Reason**.
 
-Typical use of control surfaces in Reason involve binding a surface to a given device for the purpose of providing specific control.
+## What Does This Do?
 
-DataBridge is so-named because it allows the state of a given device's control data (knob values, etc.) to be broadcast to additional devices.
+* #### Deep MIDI Integration
 
-Applying MIDI data as a distributed network allows for unprecedented expressive control, as well as organically random auto-modulation.
+    - Interaction with MIDI is now hardware agnostic, allowing for easy setup of multiple simultaneously connected device types including TouchOSC.
+
+* #### Support for Live Performance
+
+    - Powerful implementation of chained control mappings allow for distributed networks of MIDI response whose expressive capabilities are only limited by one's own imagination and computer specs.
+    - This concept was taken even further with long live sets and duos in mind by wrapping support for distributed MIDI response inside a system of virtual layers; enabling the entire rack to be controlled using a scene/page system.
+
+* #### Auto Modulation
+
+    - An optional advanced feature allows for interpolation between values for knobs, sliders, and any other controls that can receive Remote Overrides.
+    - Smoothness can be controlled using a custom wave table and transition speed setting.
+    - Automation can even be automated to modulate itself, eliminating the need for automation lanes -- _and the CPU consumption caused by them._
+
+* #### Audio Warping
+
+    - A second optional advanced feature allows samples to be pitched in nonlinear ways while still preserving their original timing. Think of it as audio transpose with note glide.
+    - Different time-stretching algorithms will give different results, allowing audio captures through the technique to become metallic, robotic, or tonal
 
 ---
+
 ## Disclaimers
 
->This guide will present examples based on **MacOS Mojave 10.14** and a **Native-Instruments Maschine Mk2** as the connected MIDI device. _Please substitute your MIDI hardware where applicable._
+>This guide will show examples based on **MacOS Mojave 10.14** and a **Native-Instruments Maschine Mk2** as the connected MIDI device. _Please substitute your MIDI hardware where applicable._
 >
 >This guide also assumes that **no other MIDI settings have already been specified** prior to the addition of these control surfaces. Additional troubleshooting may be required if you have a unique MIDI configuration already present in Reason.
 
