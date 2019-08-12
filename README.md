@@ -39,17 +39,11 @@ Applying MIDI data as a distributed network allows for unprecedented expressive 
 ---
 ## Disclaimers
 
->This guide will present examples based on **MacOS Mojave 10.14** and a **Native-Instruments Maschine Mk2** as the connected MIDI device.
+>This guide will present examples based on **MacOS Mojave 10.14** and a **Native-Instruments Maschine Mk2** as the connected MIDI device. _Please substitute your MIDI hardware where applicable._
 >
->Please substitute your MIDI hardware where applicable.
->
->This guide also assumes that **no other MIDI settings have already been specified** prior to the addition of these control surfaces.
->
->Additional troubleshooting may be required if you have a unique MIDI configuration already present in Reason.
->
->**Use of this system effectively removes Undo functionality from Reason while it is in operation. This change is not permanent and will not harm your install.**
->
->**This system is an imperfect design that is susceptible to the limitations of its host. It is provided open source as-is and without warranty.**
+>This guide also assumes that **no other MIDI settings have already been specified** prior to the addition of these control surfaces. Additional troubleshooting may be required if you have a unique MIDI configuration already present in Reason.
+
+>**Use of this system effectively removes Undo functionality from Reason while it is in operation. _This change is not permanent and will not harm your install._ This system is provided open source as-is and without warranty.**
 
 ## Installation
 
@@ -64,7 +58,8 @@ Applying MIDI data as a distributed network allows for unprecedented expressive 
 3. #### Install Package Locally
    - **Download** this project as a zip file and extract it into a directory of your choice.
    - You can also use `git clone` over **SSH** if you have `git` installed.
-   ![clone and download options](./images/db-download.png)
+
+      <img src="./images/db-download.png" alt="clone and download options" width="400">
 
 4. #### Install Files
    - Locate the `Codecs/Lua Codecs` folder in your local install of this project.
@@ -78,22 +73,34 @@ Applying MIDI data as a distributed network allows for unprecedented expressive 
    - Navigate to the `Templates and Patches` folder in your local install of this project.
    - Open the `Local Workspace.reason` file.
    - Navigate to the **Options** menu and turn on **Enable Keyboard Control**.
-   ![enable keyboard control](./images/enable-kb-option.png)
+
+      <img src="./images/enable-kb-option.png" alt="enable keyboard control" width="400">
+
    - Locate the `DB Main` Combinator in the rack.
-   ![db main combinator](./images/db-console.png)
+
+      <img src="./images/db-console.png" alt="db main combinator" width="400">
+
    - Turn on **Show Devices** to reveal the patch contents.
    - Configure the output port of each **External MIDI Instrument** (**EMI**)to use the Out port you looped in [step 2 of this section](#physical-midi-port), as shown in the example below.
-   ![db main patch](./images/db-console-patch.png)
+
+      <img src="./images/db-console-patch.png" alt="db main patch" width="400">
+
    - Locate the `DB Curve` Combinator in the rack.
-   ![db curve combinator](./images/db-curve.png)
+
+      <img src="./images/db-curve.png" alt="db curve combinator" width="400">
+
    - Configure its **EMI** outputs in the same manner as in the `DB Main` Combinator's patch.
-   ![db curve patch](./images/db-curve-patch.png)
+
+      <img src="./images/db-curve-patch.png" alt="db curve patch" width="400">
+
    - Save the song file somewhere official. This will be your song template going forward.
    - Once `Local Workspace.reason` has been saved, close it.
    - Navigate to **Preferences > General > Default Song > Template**.
    - Set the `Local Workspace.reason` file as your new default song template as shown below.
-   ![default song template](./images/default-template.png)
-> **NOTE:** _You can rename this file to anything you prefer. File names remain standardized for the sake of readability._
+
+      <img src="./images/default-template.png" alt="default song template" width="400">
+
+> **NOTE:** _You can rename the `Local Workspace.reason` file to anything you prefer. File names remain standardized for the sake of readability._
 
 ---
 
