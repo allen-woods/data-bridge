@@ -182,21 +182,3 @@ The following **Keyboard Controls** are embedded in the `Local Workspace.reason`
     > The recommended best practice for using this system is to always have all of the `DB Main` and `DB Curve` Combinator buttons disabled and your MIDI controller(s) set to their initial state (all toggles off) when opening or closing a song project. This is important because the state of the system depends on that default scenario in order to calibrate itself during the process of loading the surfaces.
     >
     > With that in mind, let's walk through a simple setup using auto-modulation.
-Upon successful installation, simply load a stock device and lock its dedicated control surface to it from the `DataBridge` list of surfaces.
->**NOTE:** If the lock option isn't available, you will need to select _Disable Master Keyboard_ first.
-
-Once this initial surface is locked, you can bind its outputs to any other rack unit by selecting them from the list when assigning **Remote Overrides**.
-
-You can scale this process to create control chains of arbitrary length according to your computer's specs.
-
->**IMPORTANT:**
->- In order for data to propagate from one device to another, each device that is to send data out to a destination must have its own dedicated control surface locked to it.
->- A device receiving data from another device does not require a control surface by default.
-
-Once all **Remote Overrides** have been mapped, you must prime the system by disconnecting your looped MIDI port, then plugging it back in.
-
-Now simply activate the `Clock On/Off` button on the **Combinator** and adjust the control(s) whose outputs you mapped to a destination device.
-
-You should see both controls moving even though you have only selected one.
-
->**NOTE:** You can access items that cannot be controlled by external hardware as sources for outgoing data from a device, such as VU Meters, LEDs, and others.

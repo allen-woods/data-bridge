@@ -757,7 +757,12 @@ function architect(i_num, o_num, d_in, d_out, m_ch, m_ly)
   o_count = o_num
 
 --  Assign core globals for logic structure
-  midi_channel = m_ch~=nil and string.sub(hex(m_ch-1), -1) or "?"
+  midi_channel = "?"
+  
+  if m_ch~=nil and m_ch~="?" then
+    midi_channel = string.sub(hex(tonumber(m_ch,16)-1), -1)
+  end
+
   ly_address = m_ly~=nil and m_ly or nil
   bind_to_ly = ly_address~=nil and true or false
   ly_selected = bind_to_ly==true and 1 or nil
