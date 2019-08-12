@@ -17,7 +17,18 @@
       - [Physical MIDI Port](#physical-midi-port)
       - [Install Package Locally](#install-package-locally)
       - [Install Files](#install-files)
-      - [Configure Workspace File](#configure-workspace-file) 
+      - [Configure Workspace File](#configure-workspace-file)
+  - [Keyboard Controls](#keyboard-controls)
+      - [Standard Interface](#standard-interface) 
+          - [Clock On/Off](#clock-on-off)
+          - [Edit Min](#edit-min)
+          - [Edit Max](#edit-max)
+          - [Bipolar/Unipolar](#bipolar-unipolar)
+      - [Advanced Interface](#advanced-interface)
+          - [Edit Curve](#edit-curve)
+          - [Edit Step](#edit-step)
+      - [Master Mono Mix](#master-mono-mix)
+          - [Stereo Width](#stereo-width)  
   - [Basic Usage](#basic-usage)
 
 ## Overview
@@ -127,8 +138,50 @@ In short, it was made to redefine what is possible in **Reason**.
 
 ---
 
+## Keyboard Controls
+
+The following **Keyboard Controls** are embedded in the `Local Workspace.reason` template:
+
+* ### Legend
+    - #### Standard Interface
+
+      | DB Main                                        |                |
+      | :--------------------------------------------- | :------------- |
+      | <a id="clock-on-off">Clock On/Off</a>          | **Shift + /**  |
+      | <a id="edit-min"></a> Edit Min                 | **Shift + ,**  |
+      | <a id="edit-max"></a> Edit Max                 | **Shift + .**  |
+      | <a id="bipolar-unipolar"></a> Bipolar/Unipolar | **Shift + \\** |
+
+    - #### Advanced Interface
+
+      | DB Curve                           |               |
+      | :--------------------------------- | :------------ |
+      | <a id="edit-curve"></a> Edit Curve | **Shift + ;** |
+      | <a id="edit-step"></a> Edit Step   | **Shift + [** |
+
+    - Figure 1:
+    
+      <img src="./images/db-ui-kb-mappings.png" alt="keyboard controls" width="400">
+    
+    - #### Master Mono Mix
+      
+      **DataBridge** also includes a pre-configured **mastering suite** called `Send 10` that includes a master mono mix fader. The mastering suite can be deleted without compromising the functionality of DataBridge if you want to remove it.
+
+      | Mono Mix                              |               |
+      | :------------------------------------ | :------------ |
+      | <a id="stereo-width"></a>Stereo Width | **Shift + M** |
+
+    - Figure 2:
+
+      <img src="./images/mixer-mono-kb-mapping.png" alt="mono mix stereo width" width="50">
+
 ## Basic Usage
 
+1. #### Best Practice
+
+    > The recommended best practice for using this system is to always have all of the `DB Main` and `DB Curve` Combinator buttons disabled and your MIDI controller(s) set to their initial state (all toggles off) when opening or closing a song project. This is important because the state of the system depends on that default scenario in order to calibrate itself during the process of loading the surfaces.
+    >
+    > With that in mind, let's walk through a simple setup using auto-modulation.
 Upon successful installation, simply load a stock device and lock its dedicated control surface to it from the `DataBridge` list of surfaces.
 >**NOTE:** If the lock option isn't available, you will need to select _Disable Master Keyboard_ first.
 
