@@ -358,9 +358,64 @@ The following CC values are reserved by the DataBridge system:
 
        <img src="./images/surfaces-stack.png" alt="surface locking options" width="400">
 
-7. #### Mapping Connections in the Rack
+7. #### Understanding the Core Architecture
 
-This has been a lot of setup, but we have finally reached the main event for this implementation. Creating connections between front panel controls involves mapping Remote Overrides to knobs and other elements where links between rack units are desired. Before we proceed, let's develop a stronger understanding of the general structure of how the locked surfaces and Remote Overrides work in this system.
+We have laid the groundwork for being able to make connections between devices using their front panel controls, but first we should discuss the core architecture that we're using and how it actually works.
+
+<img id="midiDiagram" src="./images/db-midi-flow.png" alt="block diagram of global midi flow" width="355">
+<label for="midiDiagram"><br />Figure A</label>
+
+The implementation of the **Remote** protocol in **Reason** was designed to handle incoming MIDI data, so it is effectively blind to data changes within Reason because no incoming MIDI is received. To allow the locked surfaces of **DataBridge** to "see" data changes in the rack and read the values of those changes, we must send a pulse of MIDI into Reason (Clock On/Off button). Receiving this pulse triggers the following sequence of events as shown in the diagram:
+
+- ### MIDI Flow
+  1. MIDI pulse from `Clock` **EMI** inside `DB Main` is looped in
+  2. Control surface "stack" is iterated
+  3. Each surface fires "**remote_set_state**" MIDI handler
+  4. Value of all **Inputs** for the surface are read
+  5. **Input** values are stored in a global variable ("**g_batch**")
+  6. "**remote_process_midi**" fires to handle the incoming MIDI
+  7. Contents of "**g_batch**" array are written to the surface **Outputs**
+  8. Surface **Outputs** are the **Remote Overrides** we map to make connections
+  9. **Result:**
+     - changes in value on **Input(s)** are written as changes to mapped **Output(s)**
+
+Because we can make such a large volume of changes at once, it would be impossible to send a MIDI value specific to each connection between device controls. Instead, we send a single global pulse of MIDI through the Loopback Output and Loopback Input ports, then read input values directly from the rack in all the locked surfaces before writing new output values to all of the mapped Remote Overrides.
+
+This means that no MIDI data is being passed between devices when making changes. _All data is handled internally inside of all the locked surfaces_. Additionally, all unmapped Remote Overrides are ignored, reducing latency wherever possible.
+
+> It is worthy to note that much of the complexity of installation and latency encountered when putting this system into heavy use within a project could be eased by allowing Remote to directly query the rack using a scripted loop instead of strictly requiring incoming MIDI.
+
+Incoming MIDI information from either a controller or from the looped **EMI** signals found inside the `DB Main` and `DB Curve` **Combinators** (listed at top-left of diagram) are also handled in this same way, but since they are MIDI information themselves, they do not require a pulse from the `Clock` **EMI** to work.
+
+To simplify these concepts, you can think of these input messages from controllers and in-rack interfaces as being merged with the looped pulse that runs the data handling.
+
+8. #### Mapping Connections in the Rack
+
+This has been a lot of setup, but we have finally reached the main event. Creating connections between front panel controls! This involves mapping Remote Overrides to knobs and other elements where links between rack units are desired. Before we proceed, let's develop a stronger understanding of the general structure of how the locked surfaces and Remote Overrides work in this system.
+
+<img id="surfaceDiagram" src="./images/db-diagram.png" alt="block diagram of locked surface data flow" width="300">
+<label for="surfaceDiagram"><br />Figure B</label>
+
+When a **DataBridge** surface is locked to a device, all of the device's controls become bound to the default **Inputs** in the surface script. These are the values that DataBridge reads using **remote_set_state** as explained in _Figure A_ in the previous section.
+
+The locked surface then calculates a scalar value between 0 and 1 based on the data value for a given Input, as well as its associated minimum and maximum values, if any. This scalar value is then multiplied by the difference of the minimum and maximum values associated with each of the specific Remote Overrides that act as the "virtual outputs" for the given Input.
+
+The resulting products of these multiplications are then stored into a global array named **g_batch** until the contents of the array are written to the Remote Overrides the next time **remote_process_midi** fires.
+
+If the destination device where the Remote Overrides are mapped also has a DataBridge surface locked to it, a **modulation chain** can be established with more than one device connected in series.
+
+The first device in a modulation chain can be driven by automation changes or direct MIDI input as well as Remote Overrides from a MIDI Controller surface provided by DataBridge.
+
+> **NOTE:** Because Reason does not support instancing or concurrency of control surfaces, you must create a new surface for every device you want to control with this system. At this time, loading control surfaces in Reason does not afford any way of defining configurations for quick loading. If this feature becomes available in the future it would greatly reduce the pain point of manually loading individual surfaces.
+
+Now that we have covered how surfaces can be chained and the general functionality of how they handle data, you can begin creating connections between devices by mapping Remote Overrides however you would like.
+
+There is only one rule that you must follow when mapping Remote Overrides.
+
+- Remote Overrides must be mapped to another device, not the source device that is generating the Remote Overrides.
+- To put it more simply, devices must not map Remote Overrides back to themselves.
+
+While this won't break anything in a catastrophic way, the rule exists because any device that does map back to itself is not able to drive modulation chains. Some aspects of data handling may also behave unpredictably because the data is looping in on itself instead of broadcasting to an outer destination.
 
 TODO:
 
