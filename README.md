@@ -363,7 +363,8 @@ The following CC values are reserved by the DataBridge system:
 We have laid the groundwork for being able to make connections between devices using their front panel controls, but first we should discuss the core architecture that we're using and how it actually works.
 
 <img id="midiDiagram" src="./images/db-midi-flow.png" alt="block diagram of global midi flow" width="355">
-<label for="midiDiagram"><br />Figure A</label>
+
+_Figure A._
 
 The implementation of the **Remote** protocol in **Reason** was designed to handle incoming MIDI data, so it is effectively blind to data changes within Reason because no incoming MIDI is received. To allow the locked surfaces of **DataBridge** to "see" data changes in the rack and read the values of those changes, we must send a pulse of MIDI into Reason (Clock On/Off button). Receiving this pulse triggers the following sequence of events as shown in the diagram:
 
@@ -394,7 +395,8 @@ To simplify these concepts, you can think of these input messages from controlle
 This has been a lot of setup, but we have finally reached the main event. Creating connections between front panel controls! This involves mapping Remote Overrides to knobs and other elements where links between rack units are desired. Before we proceed, let's develop a stronger understanding of the general structure of how the locked surfaces and Remote Overrides work in this system.
 
 <img id="surfaceDiagram" src="./images/db-diagram.png" alt="block diagram of locked surface data flow" width="300">
-<label for="surfaceDiagram"><br />Figure B</label>
+
+_Figure B._
 
 When a **DataBridge** surface is locked to a device, all of the device's controls become bound to the default **Inputs** in the surface script. These are the values that DataBridge reads using **remote_set_state** as explained in _Figure A_ in the previous section.
 
