@@ -358,17 +358,15 @@ The following CC values are reserved by the DataBridge system:
 
        <img src="./images/surfaces-stack.png" alt="surface locking options" width="400">
 
-   > **TIP:**
-   >
-   > - It is a lot faster to assign surface locks inside the **Options > Surface Locking...** menu.
-   > - It's also a much more convenient way to see a list of all the surfaces that are currently loaded.
+7. #### Mapping Connections in the Rack
+
+This has been a lot of setup, but we have finally reached the main event for this implementation. Creating connections between front panel controls involves mapping Remote Overrides to knobs and other elements where links between rack units are desired. Before we proceed, let's develop a stronger understanding of the general structure of how the locked surfaces and Remote Overrides work in this system.
 
 TODO:
 
-7. #### Mapping Connections in the Rack
-8. #### Activating the DataBridge System
-9. #### Programming Custom Modulations
-10. #### Interpolating Modulations
-11. #### Persistence of State in Your Projects
-12. #### Warped Audio Resampling in the Sequencer
-13. #### Using the Command Terminal
+1. #### Activating the DataBridge System
+2. #### Programming Custom Modulations
+3. #### Interpolating Modulations
+4. #### Persistence of State in Your Projects
+5. #### Warped Audio Resampling in the Sequencer
+6. #### Using the Command Terminal
