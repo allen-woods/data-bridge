@@ -408,7 +408,7 @@ If the destination device where the Remote Overrides are mapped also has a DataB
 
 The first device in a modulation chain can be driven by automation changes or direct MIDI input as well as Remote Overrides from a MIDI Controller surface provided by DataBridge.
 
-> **NOTE:** Because Reason does not support instancing or concurrency of control surfaces, you must create a new surface for every device you want to control with this system. At this time, loading control surfaces in Reason does not afford any way of defining configurations for quick loading. If this feature becomes available in the future it would greatly reduce the pain point of manually loading individual surfaces.
+> **NOTE:** Because Reason does not support instancing or concurrency of control surfaces, you must create a new surface for every device you want to control with this system. At this time, loading control surfaces in Reason does not afford any way of defining "packaged" configurations for quick loading. If this feature becomes available in the future it would greatly reduce the pain point of manually loading individual surfaces.
 
 Now that we have covered how surfaces can be chained and the general functionality of how they handle data, you can begin creating connections between devices by mapping Remote Overrides however you would like.
 
@@ -419,11 +419,16 @@ There is only one rule that you must follow when mapping Remote Overrides.
 
 While this won't break anything in a catastrophic way, the rule exists because any device that does map back to itself is not able to drive modulation chains. Some aspects of data handling may also behave unpredictably because the data is looping in on itself instead of broadcasting to an outer destination.
 
+9. #### Activating the DataBridge System
+
+Activating the system is as simple as activating the `Clock On/Off` button on the `DB Main` Combinator. Once activated, all surfaces loaded into **Reason** will begin processing data as expected, according to the pulse rate setting of the `Clock Rate` rotary knob.
+
+> **WARNING:** It is absolutely imperative that you do not select or interact with any **External MIDI Instrument** (**EMI**) devices in the rack while the DataBridge system is activated. Doing so will create an endless loop of MIDI information inside of Reason that cannot be fixed without completely quitting the app and restarting it. This will cause all custom modulations in the open project to be lost.
+
 TODO:
 
-1. #### Activating the DataBridge System
-2. #### Programming Custom Modulations
-3. #### Interpolating Modulations
-4. #### Persistence of State in Your Projects
-5. #### Warped Audio Resampling in the Sequencer
-6. #### Using the Command Terminal
+1.  #### Programming Custom Modulations
+2.  #### Interpolating Modulations
+3.  #### Persistence of State in Your Projects
+4.  #### Warped Audio Resampling in the Sequencer
+5.  #### Using the Command Terminal
