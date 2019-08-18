@@ -425,10 +425,27 @@ Activating the system is as simple as activating the `Clock On/Off` button on th
 
 > **WARNING:** It is absolutely imperative that you do not select or interact with any **External MIDI Instrument** (**EMI**) devices in the rack while the DataBridge system is activated. Doing so will create an endless loop of MIDI information inside of Reason that cannot be fixed without completely quitting the app and restarting it. This will cause all custom modulations in the open project to be lost.
 
+10. #### Programming Custom Modulations
+
+Each device control that receives manipulations from a mapped "virtual output" Remote Override can be programmed to exhibit unique behavior as desired. All programming takes place where it is desired by manually adjusting affected controls. The basic adjustments that can be made are specifying minimum and maximum values.
+
+To change the minimum or maximum value, simply activate either the `Edit Min` or `Edit Max` button while the `Clock On/Off` button is active, then adjust the control you want to program changes into. Once the value has been set, deactivate the `Edit Min` or `Edit Max` button to write the value into the DataBridge system.
+
+If you activate both the `Edit Min` and `Edit Max` buttons at once, the device control will receive a static value that will not change in response to manipulations from hardware or automation clips.
+
+If you set a larger minimum value than a smaller maximum value, the polarity of the modulation will be reversed for that control.
+
+If no changes are applied, make sure you are adjusting a control that has a Remote Override supplied by a DataBridge surface mapped to it.
+
+You can make as many changes to mapped controls as you like without destructive results, meaning any controls that you do not adjust will remain unaltered in their expected behavior. There is only one exception to this, as follows:
+
+> If you activate `Edit Min` or `Edit Max` while utilizing automatic modulations as provided by the **BV512 Digital Vocoder**, the automatic adjustments will destructively reprogram all connections that are driven by the virtual outputs of the vocoder's DataBridge control surface.
+
+That said, in order to apply automatic modulations in response to audio, you can easily map the `Mod Level` outputs of the BV512 unit to automatically drive modulation chains. Just be careful when reprogramming.
+
 TODO:
 
-1.  #### Programming Custom Modulations
-2.  #### Interpolating Modulations
-3.  #### Persistence of State in Your Projects
-4.  #### Warped Audio Resampling in the Sequencer
-5.  #### Using the Command Terminal
+1.  #### Interpolating Modulations
+2.  #### Persistence of State in Your Projects
+3.  #### Warped Audio Resampling in the Sequencer
+4.  #### Using the Command Terminal
