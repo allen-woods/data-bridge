@@ -473,12 +473,47 @@ When `Edit Step` is activated, adjusting the value of a control will change the 
 | 0     | Slowest (127 pulses of `Clock` EMI in `DB Main`)       |
 | 127   | Fastest (1 pulse, effectively an "Instant" curve type) |
 
-The default setting is 127 ("Instant").
+The default setting is "Fastest".
 
-It is important to understand that editing the `Curve` and `Step` for a control will not destructively edit the minimum or maximum values for those same controls. Each control that is adjusted during any given edit mode is only updated with respect to the modes that are currently active. All other features that are not in use will not be affected.
+It is important to understand that editing the `Curve` and `Step` for a control will not destructively edit the minimum or maximum values for those same controls. Each control that is adjusted during any given edit mode is only updated with respect to the modes that are currently active (buttons toggled on). All other features that are not in use will not be affected.
 
-TODO:
+12. #### Warped Audio Resampling in the Sequencer
+
+DataBridge also includes support for an advanced method of warping audio. This is accomplished by applying a calculation that adjusts the BPM of the transport bar to match the playback speed of a sample, given an arbitrary pitch bend value.
+
+In short, it is possible to bind the recording speed of the song project to the pitch of a sample.
+
+The purpose behind this feature is to allow for nonlinear resampling where the pitch of a sampler and the recording speed of an audio track can be matched 1:1. The result, when played back at a fixed tempo using the time-stretch algorithms, is a "warped" version of the sample that exhibits nonlinear changes in pitch while preserving the original timing of the sample.
+
+This is in stark contrast to the fixed, global change in root semitone that occurs when applying transpose to an audio sample. Also, under normal conditions, pitched samples exhibit faster or slower playback speeds compared to the original recording.
+
+You can think of this as an abstract form of note glide, but for audio recordings.
+
+This advanced functionality is made available inside of the DataBridge surfaces designed for use with the Combinator and the stock instruments. The instrument surfaces allow for a maximum range of plus or minus 24 semitones and will respond to changes in pitch bend range. The Combinator surface allows for a maximum range of plus or minus 60 semitones and restricts the base tempo of the song project to 32 BPM while in use.
+
+The feature is activated by binding the `Pitch Bend - To Tempo BPM` and `Pitch Bend - To Tempo Decimal` Remote Overrides to their intended destinations on the transport bar. Please insure you have selected the correct surface if you have multiple instruments integrated into your DataBridge configuration.
+
+> **Note:** If adjustment of the pitch wheel does not succeed in adjusting the tempo settings on first use, follow these steps:
+>
+> - Open Preferences > Control Surfaces
+> - Deactivate the surface mapped to the transport controls
+> - Activate `Clock On/Off` on `DB Main`
+> - Reactivate the surface mapped to the transport controls
+> - Confirm tempo changes by adjusting pitch wheel
+
+In order to make practical use of this feature, you must activate the **Rec Output** option on the device whose pitch wheel is bound to the transport speed controls. Record the output of the device on a dedicated Audio Track in order to print a "warped" clip based on the original audio source.
+
+If you intend to use the Combinator surface with its larger plus or minus 60 semitone range, you must use a CV Spider Merger/Splitter to scale up the pitch wheel value to 2.5 times normal. This can be accomplished using three copies of the pitch from the splitter section passed through two values of 127 and one value of 63 for the three trim knobs on the merger section. Apply the final output of the spider's merger to the pitch input of the sampler or instrument you want to use.
+
+Once the audio has been warped by capturing to audio track, you can either clear the Remote Overrides from the tempo controls, or otherwise deactivate the surface related to those mappings before playing back the result at the desired BPM. Experiment with different stretch algorithms to hear different textural results.
+
+Be advised that warping upward will introduce a lot of harmonics because the playback speed will overtake the rate at which values of project tempo can be changed. In other words, the higher the pitch, the more chaos and imprecision the result will have.
+
+Generally speaking, use of the instrument surfaces will be more predictable and musical, while use of the Combinator surface is intended for extreme manipulations or avant-garde applications.
+
+The restriction of the project's working tempo to a setting of 32 BPM is a requirement imposed by the maximum pitch bend a sampler can achieve, which is roughly plus or minus 5 octaves (60 semitones). This is equivalent to a change in speed that ranges from one thirty-second (1/32) the original playback at its slowest, or a BPM of 1; and thirty-two (32) times the original playback at its fastest, or a BPM of 1024 (999 being maximum possible). This drastic range in possible speeds requires a baseline project speed of 32 BPM in order to maintain the preservation of original timing contained in the sample being warped.
+
+While samples were the original focus of this technique, you can also warp the standard output of instruments or effects to achieve unexpected results.
 
 1.  #### Persistence of State in Your Projects
-2.  #### Warped Audio Resampling in the Sequencer
-3.  #### Using the Command Terminal
+2.  #### Using the Command Terminal
