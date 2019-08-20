@@ -443,9 +443,42 @@ You can make as many changes to mapped controls as you like without destructive 
 
 That said, in order to apply automatic modulations in response to audio, you can easily map the `Mod Level` outputs of the BV512 unit to automatically drive modulation chains. Just be careful when reprogramming.
 
+11. #### Interpolating Modulations
+
+Support for nonlinear automation changes similar to curved automation is included in DataBridge as an optional feature. Activation of this advanced tool is at the user's discretion.
+
+To engage the optional interpolation of control changes, you must activate the `Edit Curve` or `Edit Step` buttons on the `DB Curve` Combinator in a very similar fashion to the way `Edit Min` and `Edit Max` are used to program custom modulations in the previous section.
+
+Once `Edit Curve` is activated, adjusting the value of a control will change the type of curve applied to smooth between its values. The curve types are effectively a smooth and continuous custom wave table whose unique values are as follows:
+
+| Value | Description                       |
+| :---- | :-------------------------------- |
+| 0     | Instant / On                      |
+| 18    | Reciprocal / Fast Attack          |
+| 36    | Logarithm / Ease-In               |
+| 54    | Sine / Ease-In-Out                |
+| 73    | Tangent / Hesitate                |
+| 91    | Inverse Logarithm / Ease-Out      |
+| 109   | Inverse Reciprocal / Fast Release |
+| 127   | Hard Delay / Off                  |
+
+The default setting is "Instant".
+
+> **Note:** If you are adjusting interpolation values for a control that involves settings outside the range of 0 to 127, you will have to calculate corresponding settings within that range of values. Each value is evenly spaced one seventh (1/7) of the total range of values for the given control being edited.
+
+When `Edit Step` is activated, adjusting the value of a control will change the speed of the interpolation between its values. The range of values varies as follows:
+
+| Value | Description                                            |
+| :---- | :----------------------------------------------------- |
+| 0     | Slowest (127 pulses of `Clock` EMI in `DB Main`)       |
+| 127   | Fastest (1 pulse, effectively an "Instant" curve type) |
+
+The default setting is 127 ("Instant").
+
+It is important to understand that editing the `Curve` and `Step` for a control will not destructively edit the minimum or maximum values for those same controls. Each control that is adjusted during any given edit mode is only updated with respect to the modes that are currently active. All other features that are not in use will not be affected.
+
 TODO:
 
-1.  #### Interpolating Modulations
-2.  #### Persistence of State in Your Projects
-3.  #### Warped Audio Resampling in the Sequencer
-4.  #### Using the Command Terminal
+1.  #### Persistence of State in Your Projects
+2.  #### Warped Audio Resampling in the Sequencer
+3.  #### Using the Command Terminal
