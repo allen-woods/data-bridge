@@ -574,7 +574,7 @@ Applies all parameter values across all inputs and outputs.
 | arg 2     | 0 to 127               | Varies, see details below                       |
 | arg 3     | 0 to 127               | Varies, see details below                       |
 
-<sub>1</sub> = Code String Legend
+Code String Legend
 
 | Code String | Arg 1 Val  | Arg 1 Desc                       | Arg 2 Val  | Arg 2 Desc                       | Arg 3 Val | Arg 3 Desc                      |
 | :---------: | :--------: | :------------------------------- | :--------: | :------------------------------- | :-------: | :------------------------------ |
