@@ -4,33 +4,22 @@
 
 ## Contents
 
-- [Overview](#overview)
-- [Do I Need This](#do-i-need-this)
-- [Why Was This Made?](#why-was-this-made)
-- [What Does This Do?](#what-does-this-do)
-  - [Deep MIDI Integration](#deep-midi-integration)
-  - [Support for Live Performance](#support-for-live-performance)
-  - [Auto-modulation](#auto-modulation)
-  - [Audio Warping](#audio-warping)
-- [Disclaimers](#disclaimers)
-- [Installation](#installation)
-  - [Quit Reason](#quit-reason)
-  - [Physical MIDI Port](#physical-midi-port)
-  - [Install Package Locally](#install-package-locally)
-  - [Install Files](#install-files)
-  - [Configure Workspace File](#configure-workspace-file)
-- [Keyboard Controls](#keyboard-controls)
-  - [Standard Interface](#standard-interface)
-    - [Clock On/Off](#clock-on-off)
-    - [Edit Min](#edit-min)
-    - [Edit Max](#edit-max)
-    - [Bipolar/Unipolar](#bipolar-unipolar)
-  - [Advanced Interface](#advanced-interface)
-    - [Edit Curve](#edit-curve)
-    - [Edit Step](#edit-step)
-  - [Master Mono Mix](#master-mono-mix)
-    - [Stereo Width](#stereo-width)
-- [Basic Usage](#basic-usage)
+- [DataBridge](#databridge)
+  - [Contents](#contents)
+  - [Overview](#overview)
+  - [Do I Need This?](#do-i-need-this)
+  - [Why Was This Made?](#why-was-this-made)
+  - [What Does This Do?](#what-does-this-do)
+  - [Disclaimers](#disclaimers)
+  - [Installation](#installation)
+  - [Keyboard Controls](#keyboard-controls)
+  - [Hardware Setup](#hardware-setup)
+  - [Getting Started](#getting-started)
+    - [Reset Surface](#reset-surface)
+    - [Global Edit of Surface](#global-edit-of-surface)
+    - [Parametric Edit of Surface](#parametric-edit-of-surface)
+    - [MIDI Edit of Surface](#midi-edit-of-surface)
+    - [Keyboard Edit of Surface](#keyboard-edit-of-surface)
 
 ## Overview
 
@@ -536,6 +525,98 @@ The final feature set provided is a command terminal bound to the `Device Name` 
 
 When using the `MIDI Controller` and `MIDI Controller - Deck 2` surfaces, you must configure them by temporarily locking them to any stock Reason device so that the command terminal can be accessed using the Device Name parameter. **It is important that you unlock them once they are configured.**
 
-Advanced settings that can be accessed include binding to a surface to a precise midi channel, unlocking the page/scene virtual layering system, and enabling variable speed sensitivity for compatibility with endless rotary encoders on modern hardware.
+Advanced settings that can be accessed include binding a surface to a precise midi channel, unlocking the page/scene virtual layering system, and enabling variable speed sensitivity for compatibility with endless rotary encoders on modern hardware.
 
-TODO: Add documentation of terminal commands
+### Reset Surface
+
+> **Syntax: \_r()**
+
+| Parameter | Values |
+| :-------- | :----- |
+| bool      | 1      |
+
+> **Example: \_r(1)**
+
+Resets the surface to its initial default state.
+
+### Global Edit of Surface
+
+> **Syntax: \_g()**
+
+| Parameter | Values                     | Description                |
+| :-------- | :------------------------- | :------------------------- |
+| channel   | 1 to 16                    | MIDI Channel               |
+| bind      | 0 (false), 1 (true)        | Bind to virtual layer      |
+| layer     | 1 to 8                     | Virtual layer address      |
+| dataType  | enc (endless), abs (fixed) | Knob type                  |
+| curve     | 1 to 128                   | Interpolation curve        |
+| step      | 1 to 128                   | Interpolation speed (step) |
+| inputMin  | 0 to 127                   | Input min value            |
+| inputMax  | 0 to 127                   | Input max value            |
+| outputMin | 0 to 127                   | Output min value           |
+| outputMax | 0 to 127                   | Output max value           |
+
+> **Example: \_g(16,1,128,enc,128,128,127,127,127,127)**
+
+Applies all parameter values across all inputs and outputs.
+
+### Parametric Edit of Surface
+
+> **Syntax: \_p()**
+
+| Parameter | Values                 | Description                                     |
+| :-------- | :--------------------- | :---------------------------------------------- |
+| name      | _text_                 | Name of data source                             |
+| type      | sv, si, st, ov, oi, ot | Code string describing what to edit (see below) |
+| arg 1     | 1 to 128               | Varies, see details below                       |
+| arg 2     | 0 to 127               | Varies, see details below                       |
+| arg 3     | 0 to 127               | Varies, see details below                       |
+
+<sub>1</sub> = Code String Legend
+
+| Code String | Arg 1 Val  | Arg 1 Desc                       | Arg 2 Val  | Arg 2 Desc                       | Arg 3 Val | Arg 3 Desc                      |
+| :---------: | :--------: | :------------------------------- | :--------: | :------------------------------- | :-------: | :------------------------------ |
+|   **sv**    |  0 to 127  | Edit min value of source (input) |  0 to 127  | Edit max value of source (input) |    N/A    | N/A                             |
+|   **st**    | abs or enc | Knob type                        |    N/A     | N/A                              |    N/A    | N/A                             |
+|   **ov**    |  1 to 128  | Virtual output address           |  0 to 127  | Edit min value of output         | 0 to 127  | Edit max value of output        |
+|   **oi**    |  1 to 128  | Virtual output address           |  1 to 128  | Edit interpolation curve         | 1 to 128  | Edit interpolation speed (step) |
+|   **ot**    |  1 to 128  | Virtual output address           | abs or enc | Knob type                        |    N/A    | N/A                             |
+
+> **Example: \_p(Target Track Enable Automation Recording,ov,128,127,127)**
+
+Provides a parametric editor for specific virtual outputs within the surface.
+
+### MIDI Edit of Surface
+
+> **Syntax: \_m()**
+
+| Parameter | Values              | Description                          |
+| :-------- | :------------------ | :----------------------------------- |
+| channel   | 1 to 16             | MIDI channel                         |
+| bind      | 0 (false), 1 (true) | Bind to virtual layer                |
+| layer     | 1 to 8              | Virtual layer address                |
+| keyboard  | 0 (false), 1 (true) | Enable/disable master keyboard input |
+| keyLo     | 0 to 127            | Lowest key in keyboard split **\***  |
+| keyHi     | 0 to 127            | Highest key in keyboard split **\*** |
+
+\* = If keyLo is higher than keyHi, the surface auto-corrects to compensate. The surface will ignore keys outside of the keyboard split's range.
+
+> **Example: \_m(16,1,128,1,0,127)**
+
+Provides MIDI editing for the given surface.
+
+### Keyboard Edit of Surface
+
+> **Syntax: \_k()**
+
+| Parameter | Values              | Description                          |
+| :-------- | :------------------ | :----------------------------------- |
+| keyboard  | 0 (false), 1 (true) | Enable/disable master keyboard input |
+| keyLo     | 0 to 127            | Lowest key in keyboard split **\***  |
+| keyHi     | 0 to 127            | Highest key in keyboard split **\*** |
+
+\* = If keyLo is higher than keyHi, the surface auto-corrects to compensate. The surface will ignore keys outside of the keyboard split's range.
+
+> **Example: \_k(1,0,127)**
+
+Provides MIDI editing specific to the master keyboard for the given surface.
