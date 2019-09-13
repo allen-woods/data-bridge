@@ -2,34 +2,33 @@
 
 ---
 
-## Contents
+## Index
 
-- [DataBridge](#databridge)
-  - [Contents](#contents)
-  - [Overview](#overview)
-  - [Do I Need This?](#do-i-need-this)
-  - [Why Was This Made?](#why-was-this-made)
-  - [What Does This Do?](#what-does-this-do)
-  - [Disclaimers](#disclaimers)
-  - [Installation](#installation)
-  - [Keyboard Controls](#keyboard-controls)
-  - [Hardware Setup](#hardware-setup)
-  - [Getting Started](#getting-started)
-    - [Reset Surface](#reset-surface)
-    - [Global Edit of Surface](#global-edit-of-surface)
-    - [Parametric Edit of Surface](#parametric-edit-of-surface)
-    - [MIDI Edit of Surface](#midi-edit-of-surface)
-    - [Keyboard Edit of Surface](#keyboard-edit-of-surface)
+- [Project Overview](#project-overview)
+- [Do I Need This?](#do-i-need-this)
+- [Why Was This Made?](#why-was-this-made)
+- [What Does This Do?](#what-does-this-do)
+- [Disclaimers](#disclaimers)
+- [Installation](#installation)
+- [Keyboard Controls](#keyboard-controls)
+- [Hardware Setup](#hardware-setup)
+- [Using the System](#using-the-system)
 
-## Overview
+## Project Overview
 
 **DataBridge** is an advanced MIDI control surface designed to provide a scalable, modular network of responsive connections between rack devices in **Propellerhead Reason 7+**.
 
-Support for MIDI input is included and was designed to be hardware agnostic wherever possible. This allows both legacy and modern hardware to be used interchangeably.
+In short, this system allows the user to make connections on the front of devices.
+
+Connections can be responsive to either MIDI input or the rack environment itself.
+
+Support for MIDI input was designed to be hardware agnostic wherever possible. This allows both legacy and modern hardware to be used interchangeably.
 
 ## Do I Need This?
 
-It depends whether you want to incorporate _organic sound design_ into your projects and/or _live performance capabilities_ into your workflows. If you prefer to be more scientific with all aspects of your work, this might not suit your tastes.
+This system is, at its heart, a gigantic workaround for many features that are still missing in Reason (to date). If you want to avoid workarounds, this will not be very much fun for you.
+
+That said, it depends whether you want to incorporate pseudo-random _organic sound design_ into your projects and/or _live performance capabilities_ into your workflows. If you prefer to retain control and be more scientific with all aspects of your work, this might not suit your tastes.
 
 ## Why Was This Made?
 
@@ -75,31 +74,41 @@ In short, it was made to redefine what is possible in **Reason**.
 
    - This installation process requires Reason to be closed completely.
 
-2. #### Physical MIDI Port
+2. #### Enable IAC Bus (Mac Only)
 
-   - Attach a physical MIDI 5-pin In and Out port to your computer.
+   - Press `Command + Space` and type `midi`.
+   - Double-click `Audio MIDI Setup` from the list of applications.
+   - Press `Command + 2` to open the MIDI Studio tab.
+   - Double-click the `IAC Driver`.
+   - Check the box marked **Device is online** to enable the driver.
+
+More information on this [here](https://re-compose.desk.com/customer/portal/articles/1382244-setting-up-the-iac-bus-on-a-mac)
+
+3. #### Physical MIDI Port (Windows, Mac Optional)
+
+   - You can alternatively drive the system by attaching USB hardware that has a physical MIDI 5-pin In and Out port to your computer.
    - Physically loop these ports with a male-male **MIDI loopback cable** (Out port to In port)
      > **NOTE:**
      >
      > - **MIDI over IP with CopperLAN has been tested and is supported by the system.**
-     > - **All other virtual ports like LoopBe1 will not work.**
+     > - **Unfortunately, LoopBe1 will not work.**
 
-3. #### Install Package Locally
+4. #### Install Package Locally
 
    - **Download** this project as a zip file and extract it into a directory of your choice.
    - You can also use `git clone` over **SSH** if you have `git` installed.
 
-      <img src="./images/db-download.png" alt="clone and download options" width="400">
+     <img src="./images/db-download.png" alt="clone and download options" width="400">
 
-4. #### Install Files
+5. #### Install Files
 
    - Locate the `Codecs/Lua Codecs` folder in your local install of this project.
    - Move the `DataBridge` folder into the `Codecs/Lua Codecs` folder used by your install of **Reason**.
    - Locate the `Maps` folder in your local install of this project.
    - Move the `DataBridge` folder into the `Maps` folder used by your install of **Reason**.
-     > **For Help with Step 4, Please See:** [Control Remote](https://www.propellerheads.com/blog/control-remote)
+     > **For Help with Step 5, Please See:** [Control Remote](https://www.propellerheads.com/blog/control-remote)
 
-5. #### Configure Workspace File
+6. #### Configure Workspace File
 
    - Start **Reason**.
    - Navigate to the `Templates and Patches` folder in your local install of this project.
@@ -113,7 +122,7 @@ In short, it was made to redefine what is possible in **Reason**.
       <img src="./images/db-console.png" alt="db main combinator" width="400">
 
    - Turn on **Show Devices** to reveal the patch contents.
-   - Configure the output port of each **External MIDI Instrument** (**EMI**)to use the Out port you looped in [step 2 of this section](#physical-midi-port), as shown in the example below.
+   - Configure the output port of each **External MIDI Instrument** (**EMI**)to use the Out port you looped in [step 2](#enable-iac-bus-mac-only) or [step 3](#physical-midi-port-windows-mac-optional) of this section, as shown in the example below.
 
       <img src="./images/db-console-patch.png" alt="db main patch" width="400">
 
@@ -146,7 +155,7 @@ The following **Keyboard Controls** are embedded in the `Local Workspace.reason`
 
     | DB Main                                        |                |
     | :--------------------------------------------- | :------------- |
-    | <a id="clock-on-off">Clock On/Off</a>          | **Shift + /**  |
+    | <a id="clock-on-off"></a>Clock On/Off          | **Shift + /**  |
     | <a id="edit-min"></a> Edit Min                 | **Shift + ,**  |
     | <a id="edit-max"></a> Edit Max                 | **Shift + .**  |
     | <a id="bipolar-unipolar"></a> Bipolar/Unipolar | **Shift + \\** |
@@ -216,7 +225,7 @@ The following CC values are reserved by the DataBridge system:
 
 > \*\* **Navigate Layers** allows the user to move up and down through the page/scene system of virtual layers. This CC is expected to be a **relative** type with polarity and a step of 1. The jog wheel on the Native-Instruments Maschine Mk2 is used for this in the provided demo materials.
 
-## Getting Started
+## Using the System
 
 1. #### Best Practice
 
@@ -233,7 +242,9 @@ The following CC values are reserved by the DataBridge system:
    >
    >   <img src="./images/db-learn-disabled.png" alt="make sure learn is turned off" width="400">
    >
-   >   This is a side effect of the current manner in which **Reason** manages application state regarding preferences. In the event that a way to persist the end user preference of not wanting to learn from control surfaces by default becomes available, this step will no longer be necessary.
+   >   This is a side effect of the current manner in which **Reason** manages application state regarding preferences.
+   >
+   >   In the event that a way to persist the end user preference of not wanting to learn from control surfaces by default becomes available, this step will no longer be necessary.
    >
    > **Trivia:**
    >
@@ -262,6 +273,10 @@ The following CC values are reserved by the DataBridge system:
     <img src="./images/db-midi-in-list.png" alt="select midi controller surface" width="200">
 
   - Mac Users:
+
+    If you have enabled the `IAC Bus` as described in [step 2 of Installation](#enable-iac-bus-mac-only), you can select the **IAC Bus Driver** option for both **Loopback Input** and **Loopback Output** for all control surfaces you load in.
+
+    Otherwise:
 
     - Select the **Loopback Input** port that does **not** contain the word _"virtual"_
     - Select the **Loopback Output** port that does **not** contain the word _"virtual"_
@@ -302,6 +317,7 @@ The following CC values are reserved by the DataBridge system:
     >
     > - The **Reason Main Mixer**
     >   - Loads _very slowly_.
+    >   - _**Not recommended for practical use.**_
     >   - Enables use of all functionality in the **Master Section** device in the rack.
     >   - Enables use of all functionality across up to **64 Mix Tracks** in the **Main Mixer**.
     >   - Can be extended using the **Mix Channel** surface in case _64 channels_ aren't enough.
@@ -325,7 +341,7 @@ The following CC values are reserved by the DataBridge system:
 
    - Assigning a **Master Keyboard** instructs **Reason** to disable certain MIDI connections internally in favor of others. This can result in undesired behavior inside of **DataBridge**.
 
-   - _**Be careful to check this each time you load a surface designed for an instrument.**_
+   - _**Be careful to check this each time you load a surface designed for an instrument. Reason currently does not have persisted state for this preference.**_
 
      <img src="./images/db-use-no-master-kb.png" alt="disable master keyboard" width="400">
 
@@ -349,15 +365,16 @@ The following CC values are reserved by the DataBridge system:
 
 7. #### Understanding the Core Architecture
 
-We have laid the groundwork for being able to make connections between devices using their front panel controls, but first we should discuss the core architecture that we're using and how it actually works.
+   We have laid the groundwork for being able to make connections between devices using their front panel controls, but first we should discuss the core architecture that we're using and how it actually works.
 
-<img id="midiDiagram" src="./images/db-midi-flow.png" alt="block diagram of global midi flow" width="355">
+   <img id="midiDiagram" src="./images/db-midi-flow.png" alt="block diagram of global midi flow" width="355">
 
-_Figure A._
+   _Figure A._
 
-The implementation of the **Remote** protocol in **Reason** was designed to handle incoming MIDI data, so it is effectively blind to data changes within Reason because no incoming MIDI is received. To allow the locked surfaces of **DataBridge** to "see" data changes in the rack and read the values of those changes, we must send a pulse of MIDI into Reason (Clock On/Off button). Receiving this pulse triggers the following sequence of events as shown in the diagram:
+   The implementation of the **Remote** protocol in **Reason** was designed to handle incoming MIDI data, so it is effectively blind to data changes within Reason because no incoming MIDI is received. To allow the locked surfaces of **DataBridge** to "see" data changes in the rack and read the values of those changes, we must send a pulse of MIDI into Reason (Clock On/Off button). Receiving this pulse triggers the following sequence of events as shown in the diagram:
 
 - ### MIDI Flow
+
   1. MIDI pulse from `Clock` **EMI** inside `DB Main` is looped in
   2. Control surface "stack" is iterated
   3. Each surface fires "**remote_set_state**" MIDI handler
@@ -369,165 +386,178 @@ The implementation of the **Remote** protocol in **Reason** was designed to hand
   9. **Result:**
      - changes in value on **Input(s)** are written as changes to mapped **Output(s)**
 
-Because we can make such a large volume of changes at once, it would be impossible to send a MIDI value specific to each connection between device controls. Instead, we send a single global pulse of MIDI through the Loopback Output and Loopback Input ports, then read input values directly from the rack in all the locked surfaces before writing new output values to all of the mapped Remote Overrides.
+  Because we can make such a large volume of changes at once, it would be impossible to send a MIDI value specific to each connection between device controls. Instead, we send a single global pulse of MIDI through the Loopback Output and Loopback Input ports, then read input values directly from the rack in all the locked surfaces before writing new output values to all of the mapped Remote Overrides.
 
-This means that no MIDI data is being passed between devices when making changes. _All data is handled internally inside of all the locked surfaces_. Additionally, all unmapped Remote Overrides are ignored, reducing latency wherever possible.
+  This means that no MIDI data is being passed between devices when making changes. _All data is handled internally inside of all the locked surfaces_. Additionally, all unmapped Remote Overrides are ignored, reducing latency wherever possible.
 
-> It is worthy to note that much of the complexity of installation and latency encountered when putting this system into heavy use within a project could be eased by allowing Remote to directly query the rack using a scripted loop instead of strictly requiring incoming MIDI.
+  > It is worthy to note that much of the complexity of installation and latency encountered when putting this system into heavy use within a project could be eased by allowing Remote to directly query the rack using a scripted loop instead of strictly requiring incoming MIDI.
 
-Incoming MIDI information from either a controller or from the looped **EMI** signals found inside the `DB Main` and `DB Curve` **Combinators** (listed at top-left of diagram) are also handled in this same way, but since they are MIDI information themselves, they do not require a pulse from the `Clock` **EMI** to work.
+  Incoming MIDI information from either a controller or from the looped **EMI** signals found inside the `DB Main` and `DB Curve` **Combinators** (listed at top-left of diagram) are also handled in this same way, but since they are MIDI information themselves, they do not require a pulse from the `Clock` **EMI** to work.
 
-To simplify these concepts, you can think of these input messages from controllers and in-rack interfaces as being merged with the looped pulse that runs the data handling.
+  To simplify these concepts, you can think of these input messages from controllers and in-rack interfaces as being merged with the looped pulse that runs the data handling.
 
 8. #### Mapping Connections in the Rack
 
-This has been a lot of setup, but we have finally reached the main event. Creating connections between front panel controls! This involves mapping Remote Overrides to knobs and other elements where links between rack units are desired. Before we proceed, let's develop a stronger understanding of the general structure of how the locked surfaces and Remote Overrides work in this system.
+   This has been a lot of setup, but we have finally reached the main event. Creating connections between front panel controls! This involves mapping Remote Overrides to knobs and other elements where links between rack units are desired. Before we proceed, let's develop a stronger understanding of the general structure of how the locked surfaces and Remote Overrides work in this system.
 
-<img id="surfaceDiagram" src="./images/db-diagram.png" alt="block diagram of locked surface data flow" width="300">
+   <img id="surfaceDiagram" src="./images/db-diagram.png" alt="block diagram of locked surface data flow" width="300">
 
-_Figure B._
+   _Figure B._
 
-When a **DataBridge** surface is locked to a device, all of the device's controls become bound to the default **Inputs** in the surface script. These are the values that DataBridge reads using **remote_set_state** as explained in _Figure A_ in the previous section.
+   When a **DataBridge** surface is locked to a device, all of the device's controls become bound to the default **Inputs** in the surface script. These are the values that DataBridge reads using **remote_set_state** as explained in _Figure A_ in the previous section.
 
-The locked surface then calculates a scalar value between 0 and 1 based on the data value for a given Input, as well as its associated minimum and maximum values, if any. This scalar value is then multiplied by the difference of the minimum and maximum values associated with each of the specific Remote Overrides that act as the "virtual outputs" for the given Input.
+   The locked surface then calculates a scalar value between 0 and 1 based on the data value for a given Input, as well as its associated minimum and maximum values as programmed by the user, if any.
 
-The resulting products of these multiplications are then stored into a global array named **g_batch** until the contents of the array are written to the Remote Overrides the next time **remote_process_midi** fires.
+   This scalar value is then multiplied by the difference of the minimum and maximum values associated with each of the specific Remote Overrides that act as the "virtual outputs" for the given Input.
 
-If the destination device where the Remote Overrides are mapped also has a DataBridge surface locked to it, a **modulation chain** can be established with more than one device connected in series.
+   The resulting products of these multiplications are then stored into a global array named **g_batch** until the contents of the array are written to the Remote Overrides the next time **remote_process_midi** fires.
 
-The first device in a modulation chain can be driven by automation changes or direct MIDI input as well as Remote Overrides from a MIDI Controller surface provided by DataBridge.
+   If the destination device where the Remote Overrides are mapped also has a DataBridge surface locked to it, a **modulation chain** can be established with more than one device connected in series.
 
-> **NOTE:** Because Reason does not support instancing or concurrency of control surfaces, you must create a new surface for every device you want to control with this system. At this time, loading control surfaces in Reason does not afford any way of defining "packaged" configurations for quick loading. If this feature becomes available in the future it would greatly reduce the pain point of manually loading individual surfaces.
+   The first device in a modulation chain can be driven by automation changes or direct MIDI input as well as Remote Overrides from a MIDI Controller surface provided by DataBridge.
 
-Now that we have covered how surfaces can be chained and the general functionality of how they handle data, you can begin creating connections between devices by mapping Remote Overrides however you would like.
+   > **NOTE:** Because Reason does not support instancing or concurrency of control surfaces, you must create a new surface for every device you want to control with this system. At this time, loading control surfaces in Reason does not afford any way of defining "packaged" configurations for quick loading. If this feature becomes available in the future it would greatly reduce the pain point of manually loading individual surfaces.
 
-There is only one rule that you must follow when mapping Remote Overrides.
+   Now that we have covered how surfaces can be chained and the general functionality of how they handle data, you can begin creating connections between devices by mapping Remote Overrides however you would like.
 
-- Remote Overrides must be mapped to another device, not the source device that is generating the Remote Overrides.
-- To put it more simply, devices must not map Remote Overrides back to themselves.
+   There is only one rule that you must follow when mapping Remote Overrides.
 
-While this won't break anything in a catastrophic way, the rule exists because any device that does map back to itself is not able to drive modulation chains. Some aspects of data handling may also behave unpredictably because the data is looping in on itself instead of broadcasting to an outer destination.
+   - Remote Overrides must be mapped to another device, not the source device that is generating the Remote Overrides.
+   - To put it more simply, devices must not map Remote Overrides back to themselves.
+
+   While this won't break anything in a catastrophic way, the rule exists because any device that does map back to itself is not able to drive modulation chains. Some aspects of data handling may also behave unpredictably because the data is looping in on itself instead of broadcasting to an outer destination.
 
 9. #### Activating the DataBridge System
 
-Activating the system is as simple as activating the `Clock On/Off` button on the `DB Main` Combinator. Once activated, all surfaces loaded into **Reason** will begin processing data as expected, according to the pulse rate setting of the `Clock Rate` rotary knob.
+   Activating the system is as simple as activating the `Clock On/Off` button on the `DB Main` Combinator. Once activated, all surfaces loaded into **Reason** will begin processing data as expected, according to the pulse rate setting of the `Clock Rate` rotary knob.
 
-> **WARNING:** It is absolutely imperative that you do not select or interact with any **External MIDI Instrument** (**EMI**) devices in the rack while the DataBridge system is activated. Doing so will create an endless loop of MIDI information inside of Reason that cannot be fixed without completely quitting the app and restarting it. This will cause all custom modulations in the open project to be lost.
+   > **WARNING:** It is absolutely imperative that you do not select or interact with any **External MIDI Instrument** (**EMI**) devices in the rack while the DataBridge system is activated. Doing so will create an endless loop of MIDI information inside of Reason that cannot be fixed without completely quitting the app and restarting it. This will cause all custom modulations in the open project to be lost.
 
 10. #### Programming Custom Modulations
 
-Each device control that receives manipulations from a mapped "virtual output" Remote Override can be programmed to exhibit unique behavior as desired. All programming takes place where it is desired by manually adjusting affected controls. The basic adjustments that can be made are specifying minimum and maximum values.
+    Each device control that receives manipulations from a mapped "virtual output" Remote Override can be programmed to exhibit unique behavior as desired. All programming takes place where it is desired by manually adjusting affected controls. The basic adjustments that can be made are specifying minimum and maximum values.
 
-To change the minimum or maximum value, simply activate either the `Edit Min` or `Edit Max` button while the `Clock On/Off` button is active, then adjust the control you want to program changes into. Once the value has been set, deactivate the `Edit Min` or `Edit Max` button to write the value into the DataBridge system.
+    To change the minimum or maximum value, simply activate either the `Edit Min` or `Edit Max` button while the `Clock On/Off` button is active, then adjust the control you want to program changes into. Once the value has been set, deactivate the `Edit Min` or `Edit Max` button to write the value into the DataBridge system.
 
-If you activate both the `Edit Min` and `Edit Max` buttons at once, the device control will receive a static value that will not change in response to manipulations from hardware or automation clips.
+    If you activate both the `Edit Min` and `Edit Max` buttons at once, the device control will receive a static value that will not change in response to manipulations from hardware or automation clips.
 
-If you set a larger minimum value than a smaller maximum value, the polarity of the modulation will be reversed for that control.
+    If you set a larger minimum value than a smaller maximum value, the polarity of the modulation will be reversed for that control.
 
-If no changes are applied, make sure you are adjusting a control that has a Remote Override supplied by a DataBridge surface mapped to it.
+    If no changes are applied, make sure you are adjusting a control that has a Remote Override supplied by a DataBridge surface mapped to it.
 
-You can make as many changes to mapped controls as you like without destructive results, meaning any controls that you do not adjust will remain unaltered in their expected behavior. There is only one exception to this, as follows:
+    You can make as many changes to mapped controls as you like without destructive results, meaning any controls that you do not adjust will remain unaltered in their expected behavior. There is only one exception to this, as follows:
 
-> If you activate `Edit Min` or `Edit Max` while utilizing automatic modulations as provided by the **BV512 Digital Vocoder**, the automatic adjustments will destructively reprogram all connections that are driven by the virtual outputs of the vocoder's DataBridge control surface.
+    > If you activate `Edit Min` or `Edit Max` while utilizing automatic modulations as provided by the **BV512 Digital Vocoder**, the automatic adjustments will destructively reprogram all connections that are driven by the virtual outputs of the vocoder's DataBridge control surface.
 
-That said, in order to apply automatic modulations in response to audio, you can easily map the `Mod Level` outputs of the BV512 unit to automatically drive modulation chains. Just be careful when reprogramming.
+    That said, in order to apply automatic modulations in response to audio, you can easily map the `Mod Level` outputs of the BV512 unit to automatically drive modulation chains. Just be careful when reprogramming.
 
 11. #### Interpolating Modulations
 
-Support for nonlinear automation changes similar to curved automation is included in DataBridge as an optional feature. Activation of this advanced tool is at the user's discretion.
+    Support for nonlinear automation changes similar to curved automation is included in DataBridge as an optional feature. Activation of this advanced tool is at the user's discretion.
 
-To engage the optional interpolation of control changes, you must activate the `Edit Curve` or `Edit Step` buttons on the `DB Curve` Combinator in a very similar fashion to the way `Edit Min` and `Edit Max` are used to program custom modulations in the previous section.
+    To engage the optional interpolation of control changes, you must activate the `Edit Curve` or `Edit Step` buttons on the `DB Curve` Combinator in a very similar fashion to the way `Edit Min` and `Edit Max` are used to program custom modulations in the previous section.
 
-Once `Edit Curve` is activated, adjusting the value of a control will change the type of curve applied to smooth between its values. The curve types are effectively a smooth and continuous custom wave table whose unique values are as follows:
+    Once `Edit Curve` is activated, adjusting the value of a control will change the type of curve applied to smooth between its values. The curve types are effectively a smooth and continuous custom wave table whose unique values are as follows:
 
-| Value | Description                       |
-| :---- | :-------------------------------- |
-| 0     | Instant / On                      |
-| 18    | Reciprocal / Fast Attack          |
-| 36    | Logarithm / Ease-In               |
-| 54    | Sine / Ease-In-Out                |
-| 73    | Tangent / Hesitate                |
-| 91    | Inverse Logarithm / Ease-Out      |
-| 109   | Inverse Reciprocal / Fast Release |
-| 127   | Hard Delay / Off                  |
+    | Value | Description                       |
+    | :---- | :-------------------------------- |
+    | 0     | Instant / On                      |
+    | 18    | Reciprocal / Fast Attack          |
+    | 36    | Logarithm / Ease-In               |
+    | 54    | Sine / Ease-In-Out                |
+    | 73    | Tangent / Hesitate                |
+    | 91    | Inverse Logarithm / Ease-Out      |
+    | 109   | Inverse Reciprocal / Fast Release |
+    | 127   | Hard Delay / Off                  |
 
-The default setting is "Instant".
+    The default setting is "Instant".
 
-> **Note:** If you are adjusting interpolation values for a control that involves settings outside the range of 0 to 127, you will have to calculate corresponding settings within that range of values. Each value is evenly spaced one seventh (1/7) of the total range of values for the given control being edited.
+    > **Note:** If you are adjusting interpolation values for a control that involves settings outside the range of 0 to 127, you will have to calculate corresponding settings within that range of values. Each value is evenly spaced one seventh (1/7) of the total range of values for the given control being edited.
 
-When `Edit Step` is activated, adjusting the value of a control will change the speed of the interpolation between its values. The range of values varies as follows:
+    When `Edit Step` is activated, adjusting the value of a control will change the speed of the interpolation between its values. The range of values varies as follows:
 
-| Value | Description                                            |
-| :---- | :----------------------------------------------------- |
-| 0     | Slowest (127 pulses of `Clock` EMI in `DB Main`)       |
-| 127   | Fastest (1 pulse, effectively an "Instant" curve type) |
+    | Value | Description                                            |
+    | :---- | :----------------------------------------------------- |
+    | 0     | Slowest (127 pulses of `Clock` EMI in `DB Main`)       |
+    | 127   | Fastest (1 pulse, effectively an "Instant" curve type) |
 
-The default setting is "Fastest".
+    The default setting is "Fastest".
 
-It is important to understand that editing the `Curve` and `Step` for a control will not destructively edit the minimum or maximum values for those same controls. Each control that is adjusted during any given edit mode is only updated with respect to the modes that are currently active (buttons toggled on). All other features that are not in use will not be affected.
+    It is important to understand that editing the `Curve` and `Step` for a control will not destructively edit the minimum or maximum values for those same controls. Each control that is adjusted during any given edit mode is only updated with respect to the modes that are currently active (buttons toggled on). All other features that are not in use will not be affected.
 
 12. #### Warped Audio Resampling in the Sequencer
 
-DataBridge also includes support for an advanced method of warping audio. This is accomplished by applying a calculation that adjusts the BPM of the transport bar to match the playback speed of a sample, given an arbitrary pitch bend value.
+    DataBridge also includes support for an advanced method of warping audio. This is accomplished by applying a calculation that adjusts the BPM of the transport bar to match the playback speed of a sample, given an arbitrary pitch bend value.
 
-In short, it is possible to bind the recording speed of the song project to the pitch of a sample.
+    In short, it is possible to bind the recording speed of the song project to the pitch of a sample.
 
-The purpose behind this feature is to allow for nonlinear resampling where the pitch of a sampler and the recording speed of an audio track can be matched 1:1. The result, when played back at a fixed tempo using the time-stretch algorithms, is a "warped" version of the sample that exhibits nonlinear changes in pitch while preserving the original timing of the sample.
+    The purpose behind this feature is to allow for nonlinear resampling where the pitch of a sampler and the recording speed of an audio track can be matched 1:1. The result, when played back at a fixed tempo using the time-stretch algorithms, is a "warped" version of the sample that exhibits nonlinear changes in pitch while preserving the original timing of the sample.
 
-This is in stark contrast to the fixed, global change in root semitone that occurs when applying transpose to an audio sample. Also, under normal conditions, pitched samples exhibit faster or slower playback speeds compared to the original recording.
+    This is in stark contrast to the fixed, global change in root semitone that occurs when applying transpose to an audio sample. Also, under normal conditions, pitched samples exhibit faster or slower playback speeds compared to the original recording.
 
-You can think of this as an abstract form of note glide, but for audio recordings.
+    You can think of this as an abstract form of note glide, but for audio recordings.
 
-This advanced functionality is made available inside of the DataBridge surfaces designed for use with the Combinator and the stock instruments. The instrument surfaces allow for a maximum range of plus or minus 24 semitones and will respond to changes in pitch bend range. The Combinator surface allows for a maximum range of plus or minus 60 semitones and restricts the base tempo of the song project to 32 BPM while in use.
+    This advanced functionality is made available inside of the DataBridge surfaces designed for use with the Combinator and the stock instruments. The instrument surfaces allow for a maximum range of plus or minus 24 semitones and will respond to changes in pitch bend range. The Combinator surface allows for a maximum range of plus or minus 60 semitones and restricts the base tempo of the song project to 32 BPM while in use.
 
-The feature is activated by binding the `Pitch Bend - To Tempo BPM` and `Pitch Bend - To Tempo Decimal` Remote Overrides to their intended destinations on the transport bar. Please insure you have selected the correct surface if you have multiple instruments integrated into your DataBridge configuration.
+    The feature is activated by binding the `Pitch Bend - To Tempo BPM` and `Pitch Bend - To Tempo Decimal` Remote Overrides to their intended destinations on the transport bar. Please insure you have selected the correct surface if you have multiple instruments integrated into your DataBridge configuration.
 
-> **Note:** If adjustment of the pitch wheel does not succeed in adjusting the tempo settings on first use, follow these steps:
->
-> - Open Preferences > Control Surfaces
-> - Deactivate the surface mapped to the transport controls
-> - Activate `Clock On/Off` on `DB Main`
-> - Reactivate the surface mapped to the transport controls
-> - Confirm tempo changes by adjusting pitch wheel
+    > **Note:** If adjustment of the pitch wheel does not succeed in adjusting the tempo settings on first use, follow these steps:
+    >
+    > - Open Preferences > Control Surfaces
+    > - Deactivate the surface mapped to the transport controls
+    > - Activate `Clock On/Off` on `DB Main`
+    > - Reactivate the surface mapped to the transport controls
+    > - Confirm tempo changes by adjusting pitch wheel
 
-In order to make practical use of this feature, you must activate the **Rec Output** option on the device whose pitch wheel is bound to the transport speed controls. Record the output of the device on a dedicated Audio Track in order to print a "warped" clip based on the original audio source.
+    In order to make practical use of this feature, you must activate the **Rec Output** option on the device whose pitch wheel is bound to the transport speed controls. Record the output of the device on a dedicated Audio Track in order to print a "warped" clip based on the original audio source.
 
-If you intend to use the Combinator surface with its larger plus or minus 60 semitone range, you must use a CV Spider Merger/Splitter to scale up the pitch wheel value to 2.5 times normal. This can be accomplished using three copies of the pitch from the splitter section passed through two values of 127 and one value of 63 for the three trim knobs on the merger section. Apply the final output of the spider's merger to the pitch input of the sampler or instrument you want to use.
+    If you intend to use the Combinator surface with its larger plus or minus 60 semitone range, you must use a CV Spider Merger/Splitter to scale up the pitch wheel value to 2.5 times normal. This can be accomplished using three copies of the pitch from the splitter section passed through two values of 127 and one value of 63 for the three trim knobs on the merger section. Apply the final output of the spider's merger to the pitch input of the sampler or instrument you want to use.
 
-Once the audio has been warped by capturing to audio track, you can either clear the Remote Overrides from the tempo controls, or otherwise deactivate the surface related to those mappings before playing back the result at the desired BPM. Experiment with different stretch algorithms to hear different textural results.
+    Once the audio has been warped by capturing to audio track, you can either clear the Remote Overrides from the tempo controls, or otherwise deactivate the surface related to those mappings before playing back the result at the desired BPM. Experiment with different stretch algorithms to hear different textural results.
 
-Be advised that warping upward will introduce a lot of harmonics because the playback speed will overtake the rate at which values of project tempo can be changed. In other words, the higher the pitch, the more chaos and imprecision the result will have.
+    Be advised that warping upward will introduce a lot of harmonics because the playback speed will overtake the rate at which values of project tempo can be changed. In other words, the higher the pitch, the more chaos and imprecision the result will have.
 
-Generally speaking, use of the instrument surfaces will be more predictable and musical, while use of the Combinator surface is intended for extreme manipulations or avant-garde applications.
+    Generally speaking, use of the instrument surfaces will be more predictable and musical, while use of the Combinator surface is intended for extreme manipulations or avant-garde applications.
 
-The restriction of the project's working tempo to a setting of 32 BPM is a requirement imposed by the maximum pitch bend a sampler can achieve, which is roughly plus or minus 5 octaves (60 semitones). This is equivalent to a change in speed that ranges from one thirty-second (1/32) the original playback at its slowest, or a BPM of 1; and thirty-two (32) times the original playback at its fastest, or a BPM of 1024 (999 being maximum possible). This drastic range in possible speeds requires a baseline project speed of 32 BPM in order to maintain the preservation of original timing contained in the sample being warped.
+    The restriction of the project's working tempo to a setting of 32 BPM is a requirement imposed by the maximum pitch bend a sampler can achieve, which is roughly plus or minus 5 octaves (60 semitones). This is equivalent to a change in speed that ranges from one thirty-second (1/32) the original playback at its slowest, or a BPM of 1; and thirty-two (32) times the original playback at its fastest, or a BPM of 1024 (999 being maximum possible). This drastic range in possible speeds requires a baseline project speed of 32 BPM in order to maintain the preservation of original timing contained in the sample being warped.
 
-While samples were the original focus of this technique, you can also warp the standard output of instruments or effects to achieve unexpected results.
+    While samples were the original focus of this technique, you can also warp the standard output of instruments or effects to achieve unexpected results.
 
 13. #### Persistence of State in Your Projects
 
-Unfortunately, there is no support for persistence of state within control surfaces inside of Reason as of the time of this release. This is a limitation of the software as it currently stands.
+    Unfortunately, there is no support for persistence of state within control surfaces inside of Reason as of the time of this release. This is a limitation of the software as it currently stands.
 
-_**All custom modulations and interpolation curve settings defined by the user will be lost under the following conditions:**_
+    _**All custom modulations and interpolation curve settings defined by the user will be lost under the following conditions:**_
 
-- **Looped MIDI port is disconnected from the host computer**
-- **Project is closed**
-- **Computer is hibernated**
-- **Computer is turned off**
+    - **Looped MIDI port is disconnected from the host computer**
+    - **Project is closed**
+    - **Computer is hibernated**
+    - **Computer is turned off**
+    - **User switches between accounts on same machine**
 
-If future versions of Reason implement a state management system for control surfaces with support for embedding control surface configurations and data into project files to address this shortcoming, this section can be disregarded. Until then, use of DataBridge must be treated as volatile and sensitive to the time and place where it is used.
+    If future versions of Reason implement a state management system for control surfaces with support for embedding control surface configurations and data into project files to address this shortcoming, this section can be disregarded. Until then, use of DataBridge must be treated as volatile and sensitive to the time and place where it is used.
 
-If you want to be able to recreate a sound that is generated by the system, you will need to develop strategies for independent documentation of all pertinent details relating to your use of DataBridge that resulted in the sound you wish to reproduce. Only through manual reconfiguration of these settings will you be able to approximate the sound. Even once you reproduce a given sound, please understand that all modulations in this system are pseudo-random. No two sounds will be precisely identical even from one note to the next.
+    > **Capture all critical modulations to Audio Track to prevent loss of sound designs!**
+
+    If you want to be able to recreate a sound that is generated by the system, you will need to develop strategies for independent documentation of all pertinent details relating to your use of DataBridge that resulted in the sound you wish to reproduce. Only through manual reconfiguration of these settings will you be able to approximate the sound. Even once you reproduce a given sound, please understand that all modulations in this system are pseudo-random. No two sounds will be precisely identical even from one note to the next.
 
 14. #### Using the Command Terminal
 
-The final feature set provided is a command terminal bound to the `Device Name` attribute of all surface types. Through this terminal, you can quickly setup the entire surface for immediate use, activate hidden options that allow for even more advanced control, or reset all custom modulations back to the default state when the surface was first loaded.
+    The final feature set provided is a command terminal bound to the `Device Name` attribute of all surface types. Through this terminal, you can quickly setup the entire surface for immediate use, activate hidden options that allow for even more advanced control, or reset all custom modulations back to the default state when the surface was first loaded.
 
-When using the `MIDI Controller` and `MIDI Controller - Deck 2` surfaces, you must configure them by temporarily locking them to any stock Reason device so that the command terminal can be accessed using the Device Name parameter. **It is important that you unlock them once they are configured.**
+    When using the `MIDI Controller` and `MIDI Controller - Deck 2` surfaces, you must configure them by temporarily locking them to any stock Reason device so that the command terminal can be accessed using the Device Name parameter.
 
-Advanced settings that can be accessed include binding a surface to a precise midi channel, unlocking the page/scene virtual layering system, and enabling variable speed sensitivity for compatibility with endless rotary encoders on modern hardware.
+    > **It is important that you unlock these MIDI Controller surfaces from any rack devices once they are configured using the command terminal.**
 
-To make use of the terminal, enter one of the supported commands into the `Device Name` attribute using the syntax detailed below, then press enter. You can enter multiple commands, then name the device as you desire once editing is complete.
+    Advanced settings that can be accessed include:
+
+    - Binding a surface to a precise midi channel.
+    - Unlocking the page/scene virtual layering system.
+    - Enabling variable speed sensitivity for compatibility with endless rotary encoders on modern hardware.
+
+    To make use of the terminal, enter one of the supported commands into the `Device Name` attribute using the syntax detailed below, then press `Enter`.
+
+    You can enter multiple commands, then name the device as you desire once programming is complete.
 
 ### Reset Surface
 
@@ -607,6 +637,8 @@ Provides a parametric editor for specific virtual outputs within the surface.
 
 Provides MIDI editing for the given surface.
 
+You can create keyboard splits that are assigned to different layers using this utility.
+
 ### Keyboard Edit of Surface
 
 > **Syntax: \_k()**
@@ -622,3 +654,5 @@ Provides MIDI editing for the given surface.
 > **Example: \_k(1,0,127)**
 
 Provides MIDI editing specific to the master keyboard for the given surface.
+
+This is a very fast way to define finely grained keyboard splits of as little as one semitone.
