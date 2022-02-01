@@ -1,7 +1,7 @@
 --[[  DataBridge  v5.0.0
       Author:     Allen Woods
 
-      Desc:       DataBridge is a collection of control surfaces whose architecture has been
+      Desc:       DataBridge is a collection of control surfaces whose Architecture has been
                   designed to operate as a unified, scalable, modular system that enables
                   real time dynamic modulations, advanced MIDI mappings, and unprecedented
                   live performance capabilities within Reason 7 or higher.
@@ -27,59 +27,59 @@
         * Very large numbers will cause a significant drop in performance.
 ]]
 
-_G["global_outputs"] = 2 -- data network (global)
+_G["Global_outputs"] = 2 -- data network (global)
 
-_G["midi_controller_outputs"] = nil -- midi controller (CC# messages)
+_G["Midi_controller_outputs"] = nil -- midi controller (CC# messages)
 
-_G["document_transport_outputs"] = nil -- reason UI application items
-_G["regroove_mixer_outputs"] = nil
-_G["master_section_outputs"] = nil
+_G["Document_transport_outputs"] = nil -- reason UI application items
+_G["Regroove_mixer_outputs"] = nil
+_G["Master_section_outputs"] = nil
 
-_G["kong_outputs"] = nil -- instruments
-_G["redrum_outputs"] = nil
-_G["thor_outputs"] = nil
-_G["subtractor_outputs"] = nil
-_G["malstrom_outputs"] = nil
-_G["id8_outputs"] = nil
-_G["dr_rex_outputs"] = nil
-_G["nn-xt_outputs"] = nil
-_G["nn19_outputs"] = nil
-_G["external_midi_outputs"] = nil
+_G["Kong_outputs"] = nil -- instruments
+_G["Redrum_outputs"] = nil
+_G["Thor_outputs"] = nil
+_G["Subtractor_outputs"] = nil
+_G["Malstrom_outputs"] = nil
+_G["Id8_outputs"] = nil
+_G["Dr_rex_outputs"] = nil
+_G["Nn-xt_outputs"] = nil
+_G["Nn19_outputs"] = nil
+_G["External_midi_outputs"] = nil
 
-_G["pulveriser_outputs"] = nil -- creative fx
-_G["the_echo_outputs"] = nil
-_G["alligator_outputs"] = nil
-_G["scream_4_outputs"] = nil
-_G["bv512_outputs"] = nil
+_G["Pulveriser_outputs"] = nil -- creative fx
+_G["The_echo_outputs"] = nil
+_G["Alligator_outputs"] = nil
+_G["Scream_4_outputs"] = nil
+_G["Bv512_outputs"] = nil
 
-_G["rv7000_outputs"] = nil -- studio fx
-_G["neptune_outputs"] = nil
-_G["mclass_equalizer_outputs"] = nil
-_G["mclass_compressor_outputs"] = nil
-_G["mclass_maximizer_outputs"] = nil
-_G["mclass_stereo_imager_outputs"] = nil
-_G["rv-7_outputs"] = nil
-_G["ddl-1_outputs"] = nil
-_G["d-11_outputs"] = nil
-_G["ecf-42_outputs"] = nil
-_G["cf-101_outputs"] = nil
-_G["ph-90_outputs"] = nil
-_G["un-16_outputs"] = nil
-_G["comp-01_outputs"] = nil
-_G["peq-2_outputs"] = nil
+_G["Rv7000_outputs"] = nil -- studio fx
+_G["Neptune_outputs"] = nil
+_G["Mclass_equalizer_outputs"] = nil
+_G["Mclass_compressor_outputs"] = nil
+_G["Mclass_maximizer_outputs"] = nil
+_G["Mclass_stereo_imager_outputs"] = nil
+_G["Rv-7_outputs"] = nil
+_G["Ddl-1_outputs"] = nil
+_G["D-11_outputs"] = nil
+_G["Ecf-42_outputs"] = nil
+_G["Cf-101_outputs"] = nil
+_G["Ph-90_outputs"] = nil
+_G["Un-16_outputs"] = nil
+_G["Comp-01_outputs"] = nil
+_G["Peq-2_outputs"] = nil
 
-_G["combinator_outputs"] = nil -- utilities
-_G["rpg-8_outputs"] = nil
-_G["matrix_outputs"] = nil
-_G["spider_audio_outputs"] = nil
-_G["spider_cv_outputs"] = nil
-_G["mixer_14-2_outputs"] = nil
-_G["line_mixer_6-2_outputs"] = nil
-_G["mix_channel_outputs"] = nil
+_G["Combinator_outputs"] = nil -- utilities
+_G["Rpg-8_outputs"] = nil
+_G["Matrix_outputs"] = nil
+_G["Spider_audio_outputs"] = nil
+_G["Spider_cv_outputs"] = nil
+_G["Mixer_14-2_outputs"] = nil
+_G["Line_mixer_6-2_outputs"] = nil
+_G["Mix_channel_outputs"] = nil
 
-_G["audiomatic_outputs"] = nil -- rack extensions (propellerheads)
-_G["pulsar_outputs"] = nil
-_G["synchronous_outputs"] = nil
+_G["Audiomatic_outputs"] = nil -- rack extensions (propellerheads)
+_G["Pulsar_outputs"] = nil
+_G["Synchronous_outputs"] = nil
 --[[  END: Virtual Output Counts  ]]
 
 --[[  BEGIN: Virtual Layer Structure
@@ -104,19 +104,19 @@ _G["synchronous_outputs"] = nil
           your computer can run.
 ]]
 
-_G["max_layer_count"] = 8
+_G["Max_layer_count"] = 8
 --[[  END: Virtual Layer Structure  ]]
 
 -- global name of the current device type, for use with warp function
-_G["device_type"] = nil
+_G["Device_type"] = nil
 
 -- global copy of names table; this is used by the command line editor to edit specific items
-_G["g_names"] = nil
+_G["G_names"] = nil
 
 
 --[[  Define User Interface ]]
 
-ui = { --  User Interface
+UI = { --  User Interface
   "b0 5e xx", --  CC 94:  Panic                       implemented
   "b0 5f xx", --  CC 95:  Relative                    implemented
   "b0 60 xx", --  CC 96:  Physics/Inertia             legacy (not currently used)
@@ -134,151 +134,151 @@ ui = { --  User Interface
 }
 
 --[[  Important globals           ]]
-reason_document = false --  the script uses this to respond uniquely to document scope
-midi_rat = 1 / 127 --  folded constant for ratios mased on midi values
-midi_controller = false --  the script uses this to respond to midi events
-midi_channel = "?" --  respond to all midi channels by default
-bind_to_ly = false --  boolean flag that tells this surface whether it is bound to a virtual layer
-ly_address = nil --  integer value pointing to the address of the virtual layer for this surface
-ly_selected = nil --  boolean flag that tells this surface what virtual layer is selected within the global system architecure
-deck_number = nil --  integer value describing the virtual deck for this surface (2 deck system on single midi port)
-deck_clock =	nil --  integer value describing the clock channel for this virtual deck
-clock_mask =	nil --  hexadecimal string that defines the pattern the system uses to look for clock data on this virtual deck
-kb_enabled = false --  boolean flag that tells this surface whether it has master keyboard input
-has_pitch_wheel = false --  boolean flag for whether this device has a pitch wheel or not.
-warp_from = nil --  integer value that defines the project tempo at the moment the warp engine feature is enabled
-warp_from_bpm = nil --  dedicated integer value for the project tempo in bpm
-warp_from_dec = nil --  dedicated integer value for the project tempo in beats, 16ths, and ticks
-warp_enabled = false --  boolean flag that tells this surface the warp engine feature is enabled
-last_warp_state = false --  boolean flag that stores the previous state of warp_enabled to allow for intelligent decoupling
-warp_use_24 = false --  boolean flag that tells this surface to constrain the warp engine feature to 24 semitones
-warp_24_rat = (1 / 24) --  folded constant of the ratio for the 24 semitones
-warp_ls = 8192 --  folded constant of the scalar value of the left side of the warp engine
-warp_ls_rat = (1 / warp_ls) --  folded constant of the ratio for the left side
-warp_rs = 8191 --  folded constant of the scalar value of the right side of the warp engine
-warp_rs_rat = (1 / warp_rs) --  folded constant of the ratio for the right side
-i_count = nil --  integer value for the number of inputs (data sources/device controls)
-o_count = nil --  integer value for the number of virtual outputs per input
-def_min = {} --  table of default minimum values
-def_max = {} --  table of default maximum values
-def_dlt = {} --  table of default delta values (max - min)
-noedit = {} --  table of "true" boolean values for every data source that can not be edited, enabled items equal nil
-min = {} --  table of min values
-max = {} --  table of max values
-dlt = {} --  table of delta values (max - min)
-mid = {} --  table of midpoints ((max - min) * 0.5) + min
-int = {} --  table of values ranging from 1 to 128, pointing to the specific interpolation curve variation for this virtual output
-step = {} --  table of values ranging from 1 to 128, indicating how many steps it takes to plot the graph of int[]
-rat = {} --  table of the ratios for these items (inputs and outputs)
-idx = {} --  table of integer values that point to the index of the inputs and virtual outputs
-odx = {} --  table of integer values that point to the index of the input these virtual outputs are branched from (reverse lookup)
-this = {} --  a record of the current changes
-last = {} --  a record of the previous changes
-min_ms = 25 --  BEGIN: variables used for the smooth response to endless rotary encoders
-max_ms = 175
-this_ms = {}
-last_ms = {}
-dlt_ms = {}
-enc_dir = {} -- END: endless rotary encoders
-g_batch = {} --  the batch of data that gets written to the rack using remote.handle_input()
+Is_reason_document = false --  the script uses this to respond uniquely to document scope
+Midi_val_to_unit_interval = 1 / 127 --  folded constant for ratios mased on midi values
+Is_midi_controller = false --  the script uses this to respond to midi events
+Midi_channel = "?" --  respond to all midi channels by default
+Bind_to_layer = false --  boolean flag that tells this surface whether it is bound to a virtual layer
+Layer_address = nil --  integer value pointing to the address of the virtual layer for this surface
+Layer_is_selected = nil --  boolean flag that tells this surface what virtual layer is selected within the global system architecure
+Deck_number = nil --  integer value describing the virtual deck for this surface (2 deck system on single midi port)
+Deck_clock =	nil --  integer value describing the clock channel for this virtual deck
+Clock_mask =	nil --  Hexadecimal string that defines the pattern the system uses to look for clock data on this virtual deck
+Keyboard_is_enabled = false --  boolean flag that tells this surface whether it has master keyboard input
+Has_pitch_wheel = false --  boolean flag for whether this device has a pitch wheel or not.
+Warp_from = nil --  integer value that defines the project tempo at the moment the warp engine feature is enabled
+Warp_from_bpm = nil --  dedicated integer value for the project tempo in bpm
+Warp_from_dec = nil --  dedicated integer value for the project tempo in beats, 16ths, and ticks
+Warp_is_enabled = false --  boolean flag that tells this surface the warp engine feature is enabled
+Last_warp_state = false --  boolean flag that stores the previous state of Warp_is_enabled to allow for intelligent decoupling
+Warp_use_24 = false --  boolean flag that tells this surface to constrain the warp engine feature to 24 semitones
+Warp_24_to_unit_interval = (1 / 24) --  folded constant of the ratio for the 24 semitones
+Warp_center_to_min = 8192 --  folded constant of the scalar value of the left side of the warp engine
+Warp_center_to_min_to_unit_interval = (1 / Warp_center_to_min) --  folded constant of the ratio for the left side
+Warp_center_to_max = 8191 --  folded constant of the scalar value of the right side of the warp engine
+Warp_center_to_max_to_unit_interval = (1 / Warp_center_to_max) --  folded constant of the ratio for the right side
+Surface_input_count = nil --  integer value for the number of inputs (data sources/device controls)
+Surface_output_count = nil --  integer value for the number of virtual outputs per input
+Default_minimum_values = {} --  table of default minimum values
+Default_maximum_values = {} --  table of default maximum values
+Default_delta_values = {} --  table of default delta values (max - min)
+Item_is_not_editable = {} --  table of "true" boolean values for every data source that can not be edited, enabled items equal nil
+User_defined_minimum_values = {} --  table of min values
+User_defined_maximum_values = {} --  table of max values
+User_defined_delta_values = {} --  table of delta values (max - min)
+Calculated_midpoint_values = {} --  table of midpoints ((max - min) * 0.5) + min
+Interpolation_curve_index = {} --  table of values ranging from 1 to 128, pointing to the specific interpolation curve variation for this virtual output
+Interpolation_curve_resolution = {} --  table of values ranging from 1 to 128, indicating how many steps it takes to plot the graph of Interpolation_curve_index[]
+Calculated_unit_interval_scalar_values = {} --  table of the ratios for these items (inputs and outputs)
+Input_or_virtual_output_index = {} --  table of integer values that point to the index of the inputs and virtual outputs
+Virtual_output_source_input_index = {} --  table of integer values that point to the index of the input these virtual outputs are branched from (reverse lookup)
+Current_state = {} --  a record of the current changes
+Last_state = {} --  a record of the previous changes
+Rotary_encoder_minimum_ms = 25 --  BEGIN: variables used for the smooth response to endless rotary encoders
+Rotary_encoder_maximum_ms = 175
+Rotary_encoder_now_ms = {}
+Rotary_encoder_last_ms = {}
+Rotary_encoder_delta_values_ms = {}
+Rotary_encoder_directional_data = {} -- END: endless rotary encoders
+Global_midi_batch = {} --  the batch of data that gets written to the rack using remote.handle_input()
 --  midi controller specific vars
-data_type = {} --  a table of strings indicating the type of controls mapped to the given midi message(s), such as rotary encoders, button, and knob
+Data_type = {} --  a table of strings indicating the type of controls mapped to the given midi message(s), such as rotary encoders, button, and knob
 
 -- special indexes
-terminal_idx = nil --  the index of the Device Name input, for command line editor functionality
-kb_idx = nil --  the index of the master keyboard
-pitch_idx = nil --  the index of the Pitch Bend input, for use with the warp engine function
-range_idx = nil --  the index of the Pitch Bend Range input, for use with the warp engine function
-mod_idx = nil --  BEGIN: index values for the common global MIDI performance controllers (Mod, Channel Pressure, Expression, Damper, Breath)
-pressure_idx = nil
-expression_idx = nil
-damper_idx = nil
-breath_idx = nil --  END: MIDI performance controllers
-midi_max_val = 127 --  the maximum midi value
-out_data_max = 4194048 --  the maximum value for unipolar data sent to virtual outputs
-out_data_rat = 1 / out_data_max --  the ratio of the max data value for virtual outputs
-entity_loaded = false --  boolean flag that tells this surface that its internal structure has been successfully initialized.
+Device_name_command_line_index = nil --  the index of the Device Name input, for command line editor functionality
+Keyboard_index = nil --  the index of the master keyboard
+Pitch_bend_index = nil --  the index of the Pitch Bend input, for use with the warp engine function
+Pitch_bend_range_index = nil --  the index of the Pitch Bend Range input, for use with the warp engine function
+Modulation_wheel_index = nil --  BEGIN: index values for the common global MIDI performance controllers (Mod, Channel Pressure, Expression, Damper, Breath)
+Channel_pressure_index = nil
+Expression_index = nil
+Damper_index = nil
+Breath_index = nil --  END: MIDI performance controllers
+Midi_max_val = 127 --  the maximum midi value
+Output_data_max_val = 4194048 --  the maximum value for unipolar data sent to virtual outputs
+Output_data_to_unit_interval = 1 / Output_data_max_val --  the ratio of the max data value for virtual outputs
+Surface_is_initialized = false --  boolean flag that tells this surface that its internal structure has been successfully initialized.
 
--- decimal to hex converter
+-- decimal to Hex converter
 -- written:	06/15/2016
-function hex(dec)
+function Hex(dec)
 	return string.format("%02x", dec)
 end
 
-function round(num, numDecimalPlaces)
+function Round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
   return math.floor(num * mult + 0.5) / mult
 end
 
-function build_terminal()
+function Build_terminal()
  -- might not need latch
-	_G["this_terminal"] = nil
-	_G["last_terminal"] = nil
- -- _G["terminal_latch"] = 0
-	_G["sys_resume_state"] = nil
+	_G["Current_terminal_state"] = nil
+	_G["Last_terminal_state"] = nil
+ -- _G["Terminal_latch"] = 0
+	_G["System_resume_state"] = nil
 end
 
 --[[	TERMINAL...
 
-      reset function for terminal, must receive "true" boolean value to execute
+      reset function For terminal, must receive "true" boolean value to execute
       SYNTAX:
 
-           _r(1)
+           _R(1)
 
       ARGUMENTS:
           b = 0 (false), 1 (true)
   ]]
 
-function _r(b)
+function _R(b)
 	if b==1 then
  -- store the state of the system
-		sys_resume_state = ui[17]
+		System_resume_state = UI[17]
  -- suspend user input
-		ui[17] = true
-		sys_suspend = true
+		UI[17] = true
+		Sys_suspend = true
  -- restore defaults
-		restore_defaults()
-    bind_to_ly = false
-    ly_address = nil
-    ly_selected = nil
-    midi_channel = "?"
+		Restore_defaults()
+    Bind_to_layer = false
+    Layer_address = nil
+    Layer_is_selected = nil
+    Midi_channel = "?"
 	end
 end
 
 -- default value restoration function
-function restore_defaults()
-	for d=1,#def_min do
-		min[d] = def_min[d]
-		max[d] = def_max[d]
-    mid[d] = min[d] + ((max[d] - min[d]) * 0.5)
-		dlt[d] = def_dlt[d]
-    rat[d] = (1 / dlt[d])
+function Restore_defaults()
+	for d=1,#Default_minimum_values do
+		User_defined_minimum_values[d] = Default_minimum_values[d]
+		User_defined_maximum_values[d] = Default_maximum_values[d]
+    Calculated_midpoint_values[d] = User_defined_minimum_values[d] + ((User_defined_maximum_values[d] - User_defined_minimum_values[d]) * 0.5)
+		User_defined_delta_values[d] = Default_delta_values[d]
+    Calculated_unit_interval_scalar_values[d] = (1 / User_defined_delta_values[d])
 	end
-  for dt=1,#data_type do
-    data_type[dt] = "abs"
+  for dt=1,#Data_type do
+    Data_type[dt] = "abs"
   end
-  if midi_controller then
-    for t=1,#this do
-      this[t] = 64
-      last[t] = 64
+  if Is_midi_controller then
+    for t=1,#Current_state do
+      Current_state[t] = 64
+      Last_state[t] = 64
     end
   else
-    for i=1,#int do
-      int[i] = 1
-      step[i] = 127
+    for i=1,#Interpolation_curve_index do
+      Interpolation_curve_index[i] = 1
+      Interpolation_curve_resolution[i] = 127
     end
   end
  -- restore the functional state of the system prior to suspension
-	if sys_resume_state==false then
-		ui[17] = sys_resume_state
+	if System_resume_state==false then
+		UI[17] = System_resume_state
 	end
-	sys_suspend = false
+	Sys_suspend = false
 end
 
 --[[  global editing function, applies inputs to entire device
       SYNTAX:
 
-           _g(16,1,128,enc,128,128,127,127,127,127)
+           _Gl(16,1,128,enc,128,128,127,127,127,127)
 
       ARGUMENTS:
           ch_n   :  1 to 16 --  midi channel
@@ -300,78 +300,78 @@ end
           o_max  :  0 to 127 --  virtual output max val
   ]]
 
-function _g(ch_n,bind_b,ly_n,d_type,int_c,int_s,i_min,i_max,o_min,o_max)
-	local io_n = i_count * o_count
+function _Gl(ch_n,bind_b,ly_n,d_type,int_c,int_s,i_min,i_max,o_min,o_max)
+	local io_n = Surface_input_count * Surface_output_count
 	if ch_n~=nil and ch_n > 0 and ch_n < 17 then
-		midi_channel = string.sub(hex(ch_n-1), -1)
+		Midi_channel = string.sub(Hex(ch_n-1), -1)
 	end
 	if bind_b~=nil then
 		if bind_b==1 then
-			bind_to_ly = true
-      ly_selected = 1
+			Bind_to_layer = true
+      Layer_is_selected = 1
 			if ly_n~=nil then
-				if ly_n >= 1 and ly_n <= max_layer_count then
-					ly_address = ly_n
+				if ly_n >= 1 and ly_n <= Max_layer_count then
+					Layer_address = ly_n
 				end
       else
  -- assign layer 1 if none provided
-        ly_address = 1
+        Layer_address = 1
 			end
 		elseif bind_b==0 then
-			bind_to_ly = false
+			Bind_to_layer = false
 		end
 	end
   if ly_n~=nil then
-		if ly_n >= 1 and ly_n <= max_layer_count then
-			ly_address = ly_n
+		if ly_n >= 1 and ly_n <= Max_layer_count then
+			Layer_address = ly_n
 		end
   else
-    ly_address = nil
-    ly_selected = nil
+    Layer_address = nil
+    Layer_is_selected = nil
 	end
 	if d_type~=nil then
 		if d_type=="enc" or d_type=="abs" then
-			for d=1,#data_type do
-				data_type[d] = d_type
+			for d=1,#Data_type do
+				Data_type[d] = d_type
 			end
 		end
 	end
 	if i_min~=nil then
 		local i_min_fmt = tonumber(i_min)
 		if type(i_min_fmt)=="number" then
-			for i=1,i_count do
-        if g_names[i]~="Keyboard" then
+			for i=1,Surface_input_count do
+        if G_names[i]~="Keyboard" then
  -- we assign the default minimum plus the percentage of the default delta value given by the multiplicand of i_min.
-  				min[io_n+3+i] = (i_min_fmt*midi_rat) * def_dlt[io_n+3+i]
-          dlt[io_n+3+i] = max[io_n+3+i] - min[io_n+3+i]
-          rat[io_n+3+i] = (1 / dlt[io_n+3+i])
+  				User_defined_minimum_values[io_n+3+i] = (i_min_fmt*Midi_val_to_unit_interval) * Default_delta_values[io_n+3+i]
+          User_defined_delta_values[io_n+3+i] = User_defined_maximum_values[io_n+3+i] - User_defined_minimum_values[io_n+3+i]
+          Calculated_unit_interval_scalar_values[io_n+3+i] = (1 / User_defined_delta_values[io_n+3+i])
         end
 			end
 		end
 	end
 	if i_max~=nil then
 		local i_max_fmt = tonumber(i_max)
-		if type(i_max_fmt)=="number" and g_names[i]~="Keyboard" then
-			for i=1,i_count do
-        if g_names[i]~="Keyboard" then
-  				max[io_n+3+i] = (i_max_fmt*midi_rat) * def_dlt[io_n+3+i]
-          dlt[io_n+3+i] = max[io_n+3+i] - min[io_n+3+i]
-          rat[io_n+3+i] = (1 / dlt[io_n+3+i])
+		if type(i_max_fmt)=="number" then
+			for i=1,Surface_input_count do
+        if G_names[i]~="Keyboard" then
+  				User_defined_maximum_values[io_n+3+i] = (i_max_fmt*Midi_val_to_unit_interval) * Default_delta_values[io_n+3+i]
+          User_defined_delta_values[io_n+3+i] = User_defined_maximum_values[io_n+3+i] - User_defined_minimum_values[io_n+3+i]
+          Calculated_unit_interval_scalar_values[io_n+3+i] = (1 / User_defined_delta_values[io_n+3+i])
         end
 			end
 		end
 	end
   if int_c~=nil then
-    if int_c >= 1 and int_c <= midi_max_val+1 then
+    if int_c >= 1 and int_c <= Midi_max_val+1 then
       for o=1,io_n do
-        int[o] = int_c
+        Interpolation_curve_index[o] = int_c
       end
     end
   end
   if int_s~=nil then
-    if int_s >= 1 and int_s <= midi_max_val+1 then
+    if int_s >= 1 and int_s <= Midi_max_val+1 then
       for o=1,io_n do
-        step[o] = int_s
+        Interpolation_curve_resolution[o] = int_s
       end
     end
   end
@@ -379,9 +379,9 @@ function _g(ch_n,bind_b,ly_n,d_type,int_c,int_s,i_min,i_max,o_min,o_max)
     local o_min_fmt = tonumber(o_min)
     if type(o_min_fmt)=="number" then
       for o=1,io_n do
-        min[o] = (o_min_fmt*midi_rat) * def_dlt[o]
-        dlt[o] = max[o] - min[o]
-        rat[o] = (1 / dlt[o])
+        User_defined_minimum_values[o] = (o_min_fmt*Midi_val_to_unit_interval) * Default_delta_values[o]
+        User_defined_delta_values[o] = User_defined_maximum_values[o] - User_defined_minimum_values[o]
+        Calculated_unit_interval_scalar_values[o] = (1 / User_defined_delta_values[o])
       end
     end
   end
@@ -389,9 +389,9 @@ function _g(ch_n,bind_b,ly_n,d_type,int_c,int_s,i_min,i_max,o_min,o_max)
     local o_max_fmt = tonumber(o_max)
     if type(o_max_fmt)=="number" then
       for o=1,io_n do
-        max[o] = def_min[o] + (o_max_fmt*midi_rat) * def_dlt[o]
-        dlt[o] = max[o] - min[o]
-        rat[o] = (1 / dlt[o])
+        User_defined_maximum_values[o] = Default_minimum_values[o] + (o_max_fmt*Midi_val_to_unit_interval) * Default_delta_values[o]
+        User_defined_delta_values[o] = User_defined_maximum_values[o] - User_defined_minimum_values[o]
+        Calculated_unit_interval_scalar_values[o] = (1 / User_defined_delta_values[o])
       end
     end
   end
@@ -400,10 +400,10 @@ end
 --[[  parameter editing function, applies only to the parameters specified
       SYNTAX:
 
-           _p("Target Track Enable Automation Recording","ov",128,127,127)
+           _P("Target Track Enable Automation Recording","ov",128,127,127)
 
       LEGEND:
-			     _p(<data src name>,<io type>,<arg 1>,<arg 2>,<arg 3>)
+			     _P(<data src name>,<io type>,<arg 1>,<arg 2>,<arg 3>)
       ARGUMENTS:
     			data src name : string, the data source to edit
     			io type : string, defines a two character code for the data source or output and its editing mode
@@ -418,21 +418,21 @@ end
     			arg 3 : edits max val (out) / step
   ]]
 
-function _p(d_src,io_type,arg_1,arg_2,arg_3)
-  local io_n = i_count * o_count
-  local o_n = o_count
+function _P(d_src,io_type,arg_1,arg_2,arg_3)
+  local io_n = Surface_input_count * Surface_output_count
+  -- local o_n = Surface_output_count
   local n_c = 3
   if d_src~=nil then
     if type(d_src)=="string" then
-      local io_n = i_count * o_count
+      io_n = Surface_input_count * Surface_output_count
       local io_idx = nil
-      for i,v in ipairs(g_names) do
+      for i,v in ipairs(G_names) do
         if v==d_src then
           io_idx = i
           break
         end
       end
-      if midi_controller then
+      if Is_midi_controller then
         n_c = 0
         io_idx = io_idx~=nil and (io_idx - n_c) or nil
       end
@@ -443,19 +443,19 @@ function _p(d_src,io_type,arg_1,arg_2,arg_3)
               if io_type:sub(2,2)=="v" then
                 if arg_1~=nil then
                   if type(arg_1)=="number" then
-                    if arg_1 >= 0 and arg_1 <= midi_max_val then
-                      min[io_n+n_c+io_idx] = (arg_1 * midi_rat) * def_dlt[io_n+n_c+io_idx]
-                      dlt[io_n+n_c+io_idx] = max[io_n+n_c+io_idx] - min[io_n+n_c+io_idx]
-                      rat[io_n+n_c+io_idx] = (1 / dlt[io_n+n_c+io_idx])
+                    if arg_1 >= 0 and arg_1 <= Midi_max_val then
+                      User_defined_minimum_values[io_n+n_c+io_idx] = (arg_1 * Midi_val_to_unit_interval) * Default_delta_values[io_n+n_c+io_idx]
+                      User_defined_delta_values[io_n+n_c+io_idx] = User_defined_maximum_values[io_n+n_c+io_idx] - User_defined_minimum_values[io_n+n_c+io_idx]
+                      Calculated_unit_interval_scalar_values[io_n+n_c+io_idx] = (1 / User_defined_delta_values[io_n+n_c+io_idx])
                     end
                   end
                 end
                 if arg_2~=nil then
                   if type(arg_2)=="number" then
-                    if arg_2 >= 0 and arg_2 <= midi_max_val then
-                      max[io_n+n_c+io_idx] = (arg_2 * midi_rat) * def_dlt[io_n+n_c+io_idx]
-                      dlt[io_n+n_c+io_idx] = max[io_n+n_c+io_idx] - min[io_n+n_c+io_idx]
-                      rat[io_n+n_c+io_idx] = (1 / dlt[io_n+n_c+io_idx])
+                    if arg_2 >= 0 and arg_2 <= Midi_max_val then
+                      User_defined_maximum_values[io_n+n_c+io_idx] = (arg_2 * Midi_val_to_unit_interval) * Default_delta_values[io_n+n_c+io_idx]
+                      User_defined_delta_values[io_n+n_c+io_idx] = User_defined_maximum_values[io_n+n_c+io_idx] - User_defined_minimum_values[io_n+n_c+io_idx]
+                      Calculated_unit_interval_scalar_values[io_n+n_c+io_idx] = (1 / User_defined_delta_values[io_n+n_c+io_idx])
                     end
                   end
                 end
@@ -463,7 +463,7 @@ function _p(d_src,io_type,arg_1,arg_2,arg_3)
                 if arg_1~=nil then
                   if type(arg_1)=="string" then
                     if arg_1=="abs" or arg_1=="enc" then
-                      data_type[io_n+n_c+io_idx] = arg_1
+                      Data_type[io_n+n_c+io_idx] = arg_1
                     end
                   end
                 end
@@ -471,25 +471,25 @@ function _p(d_src,io_type,arg_1,arg_2,arg_3)
             elseif io_type:sub(1,1)=="o" then
               if arg_1~=nil then
                 if type(arg_1)=="number" then
-                  if arg_1 >= 1 and arg_1 <= o_count then
-                    io_idx = ((io_idx - 1)*o_count) + arg_1
+                  if arg_1 >= 1 and arg_1 <= Surface_output_count then
+                    io_idx = ((io_idx - 1)*Surface_output_count) + arg_1
                     if arg_2~=nil then
                       if type(arg_2)=="number" then
                         if io_type:sub(2,2)=="v" then
-                          if arg_2 >= 0 and arg_2 <= midi_max_val then
-                            min[io_idx] = (arg_2 * midi_rat) * def_dlt[io_idx]
-                            dlt[io_idx] = max[io_idx] - min[io_idx]
-                            rat[io_idx] = (1 / dlt[io_idx])
+                          if arg_2 >= 0 and arg_2 <= Midi_max_val then
+                            User_defined_minimum_values[io_idx] = (arg_2 * Midi_val_to_unit_interval) * Default_delta_values[io_idx]
+                            User_defined_delta_values[io_idx] = User_defined_maximum_values[io_idx] - User_defined_minimum_values[io_idx]
+                            Calculated_unit_interval_scalar_values[io_idx] = (1 / User_defined_delta_values[io_idx])
                           end
                         elseif io_type:sub(2,2)=="i" then
-                          if arg_2 >= 1 and arg_2 <= midi_max_val+1 then
-                            int[io_idx] = arg_2
+                          if arg_2 >= 1 and arg_2 <= Midi_max_val+1 then
+                            Interpolation_curve_index[io_idx] = arg_2
                           end
                         end
                       elseif type(arg_2)=="string" then
                         if io_type:sub(2,2)=="t" then
                           if arg_2=="abs" or arg_2=="enc" then
-                            data_type[io_idx] = arg_2
+                            Data_type[io_idx] = arg_2
                           end
                         end
                       end
@@ -497,14 +497,14 @@ function _p(d_src,io_type,arg_1,arg_2,arg_3)
                     if arg_3~=nil then
                       if type(arg_3)=="number" then
                         if io_type:sub(2,2)=="v" then
-                          if arg_3 >= 0 and arg_2 <= midi_max_val then
-                            max[io_idx] = (arg_3 * midi_rat) * def_dlt[io_idx]
-                            dlt[io_idx] = max[io_idx] - min[io_idx]
-                            rat[io_idx] = (1 / dlt[io_idx])
+                          if arg_3 >= 0 and arg_2 <= Midi_max_val then
+                            User_defined_maximum_values[io_idx] = (arg_3 * Midi_val_to_unit_interval) * Default_delta_values[io_idx]
+                            User_defined_delta_values[io_idx] = User_defined_maximum_values[io_idx] - User_defined_minimum_values[io_idx]
+                            Calculated_unit_interval_scalar_values[io_idx] = (1 / User_defined_delta_values[io_idx])
                           end
                         elseif io_type:sub(2,2)=="i" then
-                          if arg_3 >= 1 and arg_3 <= midi_max_val+1 then
-                            step[io_idx] = arg_3
+                          if arg_3 >= 1 and arg_3 <= Midi_max_val+1 then
+                            Interpolation_curve_resolution[io_idx] = arg_3
                           end
                         end
                       end
@@ -523,7 +523,7 @@ end
 --[[  midi editing function, applies to all midi related variables
       SYNTAX:
 
-          _m(16,1,128,1,0,127)
+          _M(16,1,128,1,0,127)
 
       ARGUMENTS:
           ch_n    :  1 to 16 --  midi channel
@@ -538,49 +538,49 @@ end
           k_hi    :  0 to 127 --  define the highest key of the keyboard split for this device
   ]]
 
-function _m(ch_n,bind_b,ly_n,k_state,k_lo,k_hi)
+function _M(ch_n,bind_b,ly_n,k_state,k_lo,k_hi)
   if ch_n~=nil and ch_n > 0 and ch_n < 17 then
-    midi_channel = string.sub(hex(ch_n-1), -1)
+    Midi_channel = string.sub(Hex(ch_n-1), -1)
   end
   if bind_b~=nil then
     if bind_b==1 then
-      bind_to_ly = true
-      ly_selected = 1
+      Bind_to_layer = true
+      Layer_is_selected = 1
  -- if there is no address, look for an assignment
-      if ly_address==nil then
+      if Layer_address==nil then
         if ly_n~=nil then
-          if ly_n >= 1 and ly_n <= max_layer_count then
-            ly_address = ly_n
+          if ly_n >= 1 and ly_n <= Max_layer_count then
+            Layer_address = ly_n
           else
  -- assign layer 1 if none provided
-            ly_address = 1
+            Layer_address = 1
           end
         end
       end
     elseif bind_b==0 then
-      bind_to_ly = false
+      Bind_to_layer = false
     end
   end
   if ly_n~=nil then
-    if ly_n >= 1 and ly_n <= max_layer_count then
-      ly_address = ly_n
+    if ly_n >= 1 and ly_n <= Max_layer_count then
+      Layer_address = ly_n
     end
   end
   if k_state~=nil then
     if k_state==1 then
-      kb_enabled = true
+      Keyboard_is_enabled = true
     elseif k_state==0 then
-      kb_enabled = false
+      Keyboard_is_enabled = false
     end
   end
   if k_lo~=nil then
-    if k_lo >= 0 and k_lo <= midi_max_val then
-      min[kb_idx] = k_lo
+    if k_lo >= 0 and k_lo <= Midi_max_val then
+      User_defined_minimum_values[Keyboard_index] = k_lo
     end
   end
   if k_hi~=nil then
-    if k_hi >= 0 and k_hi <= midi_max_val then
-      max[kb_idx] = k_hi
+    if k_hi >= 0 and k_hi <= Midi_max_val then
+      User_defined_maximum_values[Keyboard_index] = k_hi
     end
   end
 end
@@ -588,7 +588,7 @@ end
 --[[  keyboard editing function, applies to all keyboard related variables
       SYNTAX:
 
-          _k(1,0,127)
+          _K(1,0,127)
 
       ARGUMENTS:
           k_state :  0 (false), 1 (true) --  enable or disable the master keyboard for this device
@@ -600,35 +600,35 @@ end
           k_hi    :  0 to 127 --  highest key for the keyboard split of this device
   ]]
 
-function _k(k_state,k_lo,k_hi)
+function _K(k_state,k_lo,k_hi)
   if k_state~=nil then
     if k_state==1 then
-      kb_enabled = true
+      Keyboard_is_enabled = true
     elseif k_state==0 then
-      kb_enabled = false
+      Keyboard_is_enabled = false
     end
   end
   if k_lo~=nil then
-    if k_lo >= 0 and k_lo <= midi_max_val then
-      min[kb_idx] = k_lo
+    if k_lo >= 0 and k_lo <= Midi_max_val then
+      User_defined_minimum_values[Keyboard_index] = k_lo
     end
   end
   if k_hi~=nil then
-    if k_hi >= 0 and k_hi <= midi_max_val then
-      max[kb_idx] = k_hi
+    if k_hi >= 0 and k_hi <= Midi_max_val then
+      User_defined_maximum_values[Keyboard_index] = k_hi
     end
   end
 end
 
-function terminal()
+function Terminal()
  -- this is where the parsing happens
  -- no data checking, but pre-formatting
   local rgitv = remote.get_item_text_value
-  last_terminal = this_terminal
-  this_terminal = rgitv(terminal_idx)
-  if this_terminal~=last_terminal then
+  Last_terminal_state = Current_terminal_state
+  Current_terminal_state = rgitv(Device_name_command_line_index)
+  if Current_terminal_state~=Last_terminal_state then
     local find_func = function(t)
-      local func = {"_r", "_g", "_p", "_m", "_k"}
+      local func = {"_R", "_Gl", "_P", "_M", "_K"}
       local f_str = nil
       local f_bool = false
       for f=1,#func do
@@ -650,13 +650,14 @@ function terminal()
         return nil,nil
       end
     end
-    local f_type = find_func(this_terminal)
+    local f_type = find_func(Current_terminal_state)
     if f_type~=nil then
-      local seek_a,seek_b = find_pars(this_terminal)
+      local seek_a,seek_b = find_pars(Current_terminal_state)
       if seek_a~=nil and seek_b~=nil then
-        local arg_str = this_terminal:sub(seek_a,seek_b)
+        local arg_str = Current_terminal_state:sub(seek_a,seek_b)
         if arg_str:len() >= 1 then
  -- dynamically run the command
+---@diagnostic disable-next-line: deprecated
           assert(loadstring(f_type.."("..arg_str..")"))()
         end
       end
@@ -669,7 +670,7 @@ end
 --[[ BEGIN: Interpolation Engine  ]]
 
 -- ported from Javascript
-function create_shapes()
+function Create_shapes()
   local log = math.log
   local sin = math.sin
   local pi = math.pi
@@ -713,7 +714,7 @@ function create_shapes()
 end
 
 -- ported from Javascript
-function create_blends(sh)
+function Create_blends(sh)
   local b_array = {}
   for b=1,7 do
     local b_data = {}
@@ -726,9 +727,9 @@ function create_blends(sh)
 end
 
 --  ported from Javascript
-function build_interp_table()
-  local s_obj = create_shapes()
-  local b_obj = create_blends(s_obj)
+function Build_interpolation_table()
+  local s_obj = Create_shapes()
+  local b_obj = Create_blends(s_obj)
   local floor = math.floor
   local i_data = {}
   for my_pointer=0,127 do
@@ -750,43 +751,43 @@ end
 --[[  CONSTRUCTOR   ]]
 --  written:  10/03/16
 
-function architect(i_num, o_num, d_in, d_out, m_ch, m_ly)
+function Architect(i_num, o_num, d_in, d_out, m_ch, m_ly)
   local floor = math.floor
   local io_n = i_num * o_num
-  i_count = i_num
-  o_count = o_num
+  Surface_input_count = i_num
+  Surface_output_count = o_num
 
 --  Assign core globals for logic structure
-  midi_channel = "?"
+  Midi_channel = "?"
   
   if m_ch~=nil and m_ch~="?" then
-    midi_channel = string.sub(hex(tonumber(m_ch,16)-1), -1)
+    Midi_channel = string.sub(Hex(tonumber(m_ch,16)-1), -1)
   end
 
-  ly_address = m_ly~=nil and m_ly or nil
-  bind_to_ly = ly_address~=nil and true or false
-  ly_selected = bind_to_ly==true and 1 or nil
+  Layer_address = m_ly~=nil and m_ly or nil
+  Bind_to_layer = Layer_address~=nil and true or false
+  Layer_is_selected = Bind_to_layer==true and 1 or nil
 
-  if midi_controller then
+  if Is_midi_controller then
  --[[	BUILD MIDI CONTROLLER		]]
  --  Build data structures for virtual outs [1, io_n]
     for vo=1,io_n do
-      min[#min+1] = d_out[1]
-      def_min[#def_min+1] = d_out[1]
-      max[#max+1] = d_out[2]
-      def_max[#def_max+1] = d_out[2]
-      dlt[#dlt+1] = d_out[2] - d_out[1]
-      def_dlt[#def_dlt+1] = d_out[2] - d_out[1]
-      mid[#mid+1] = floor((d_out[2] - d_out[1]) * 0.5)
-      rat[#rat+1] =	1
-      noedit[#noedit+1] = false
-      this[#this+1] = nil
-      last[#last+1] = nil
-      data_type[#data_type+1] = "abs"
-      this_ms[#this_ms+1] = nil
-      last_ms[#last_ms+1] = nil
-      dlt_ms[#dlt_ms+1] = nil
-      enc_dir[#enc_dir+1] = nil
+      User_defined_minimum_values[#User_defined_minimum_values+1] = d_out[1]
+      Default_minimum_values[#Default_minimum_values+1] = d_out[1]
+      User_defined_maximum_values[#User_defined_maximum_values+1] = d_out[2]
+      Default_maximum_values[#Default_maximum_values+1] = d_out[2]
+      User_defined_delta_values[#User_defined_delta_values+1] = d_out[2] - d_out[1]
+      Default_delta_values[#Default_delta_values+1] = d_out[2] - d_out[1]
+      Calculated_midpoint_values[#Calculated_midpoint_values+1] = floor((d_out[2] - d_out[1]) * 0.5)
+      Calculated_unit_interval_scalar_values[#Calculated_unit_interval_scalar_values+1] =	1
+      Item_is_not_editable[#Item_is_not_editable+1] = false
+      Current_state[#Current_state+1] = nil
+      Last_state[#Last_state+1] = nil
+      Data_type[#Data_type+1] = "abs"
+      Rotary_encoder_now_ms[#Rotary_encoder_now_ms+1] = nil
+      Rotary_encoder_last_ms[#Rotary_encoder_last_ms+1] = nil
+      Rotary_encoder_delta_values_ms[#Rotary_encoder_delta_values_ms+1] = nil
+      Rotary_encoder_directional_data[#Rotary_encoder_directional_data+1] = nil
     end
 
     local idx_offset = 1
@@ -795,173 +796,173 @@ function architect(i_num, o_num, d_in, d_out, m_ch, m_ly)
     for i=1,379 do
       if i==1 then
  -- pitch bend
-        table.insert(idx, "e"..midi_channel.." xx yy")
-        idx["e"..midi_channel.." xx yy"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, "e"..Midi_channel.." xx yy")
+        Input_or_virtual_output_index["e"..Midi_channel.." xx yy"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif i==2 then
  -- mod Wheel
-        table.insert(idx, "b"..midi_channel.." 01 xx")
-        idx["b"..midi_channel.." 01 xx"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, "b"..Midi_channel.." 01 xx")
+        Input_or_virtual_output_index["b"..Midi_channel.." 01 xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif i==3 then
- -- expression_idx
-        table.insert(idx, "b"..midi_channel.." 0b xx")
-        idx["b"..midi_channel.." 0b xx"] = io_n + idx_offset
+ -- Expression_index
+        table.insert(Input_or_virtual_output_index, "b"..Midi_channel.." 0b xx")
+        Input_or_virtual_output_index["b"..Midi_channel.." 0b xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif i==4 then
  -- damper Pedal
-        table.insert(idx, "b"..midi_channel.." 40 xx")
-        idx["b"..midi_channel.." 40 xx"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, "b"..Midi_channel.." 40 xx")
+        Input_or_virtual_output_index["b"..Midi_channel.." 40 xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif i==5 then
  -- breath
-        table.insert(idx, "b"..midi_channel.." 02 xx")
-        idx["b"..midi_channel.." 02 xx"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, "b"..Midi_channel.." 02 xx")
+        Input_or_virtual_output_index["b"..Midi_channel.." 02 xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif (i > 5 and i <= 99) or (i > 107 and i <= 123) then
  -- cc values
-        table.insert(idx, "b"..midi_channel.." "..hex(i-6).." xx")
-        idx["b"..midi_channel.." "..hex(i-6).." xx"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, "b"..Midi_channel.." "..Hex(i-6).." xx")
+        Input_or_virtual_output_index["b"..Midi_channel.." "..Hex(i-6).." xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif i > 123 and i <= 251 then
  -- note velocity
-        table.insert(idx, "9"..midi_channel.." "..hex(i-124).." xx")
-        idx["9"..midi_channel.." "..hex(i-124).." xx"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, "9"..Midi_channel.." "..Hex(i-124).." xx")
+        Input_or_virtual_output_index["9"..Midi_channel.." "..Hex(i-124).." xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       elseif i > 251 and i <= 379 then
  -- note aftertouch
-        table.insert(idx, tostring("a"..midi_channel.." "..hex(i-252).." xx"))
-        idx["a"..midi_channel.." "..hex(i-252).." xx"] = io_n + idx_offset
+        table.insert(Input_or_virtual_output_index, tostring("a"..Midi_channel.." "..Hex(i-252).." xx"))
+        Input_or_virtual_output_index["a"..Midi_channel.." "..Hex(i-252).." xx"] = io_n + idx_offset
         idx_offset = idx_offset + 1
       end
-      min[#min+1] = d_in[i].min
-      def_min[#def_min+1] = d_in[i].min
-      max[#max+1] = d_in[i].max
-      def_max[#def_max+1] = d_in[i].max
-      dlt[#dlt+1] = d_in[i].max - d_in[i].min
-      def_dlt[#def_dlt+1] = d_in[i].max - d_in[i].min
-      mid[#mid+1] = floor((d_in[i].max - d_in[i].min) * 0.5)
-      rat[#rat+1] = 1 / (d_in[i].max - d_in[i].min)
-      noedit[#noedit+1] = false
-      this[#this+1] = 64
-      last[#last+1] = 64
+      User_defined_minimum_values[#User_defined_minimum_values+1] = d_in[i].min
+      Default_minimum_values[#Default_minimum_values+1] = d_in[i].min
+      User_defined_maximum_values[#User_defined_maximum_values+1] = d_in[i].max
+      Default_maximum_values[#Default_maximum_values+1] = d_in[i].max
+      User_defined_delta_values[#User_defined_delta_values+1] = d_in[i].max - d_in[i].min
+      Default_delta_values[#Default_delta_values+1] = d_in[i].max - d_in[i].min
+      Calculated_midpoint_values[#Calculated_midpoint_values+1] = floor((d_in[i].max - d_in[i].min) * 0.5)
+      Calculated_unit_interval_scalar_values[#Calculated_unit_interval_scalar_values+1] = 1 / (d_in[i].max - d_in[i].min)
+      Item_is_not_editable[#Item_is_not_editable+1] = false
+      Current_state[#Current_state+1] = 64
+      Last_state[#Last_state+1] = 64
 
-      data_type[#data_type+1] = "abs"
-      this_ms[#this_ms+1] = 0
-      last_ms[#last_ms+1] = 0
-      dlt_ms[#dlt_ms+1] = 0
-      enc_dir[#enc_dir+1] = nil
+      Data_type[#Data_type+1] = "abs"
+      Rotary_encoder_now_ms[#Rotary_encoder_now_ms+1] = 0
+      Rotary_encoder_last_ms[#Rotary_encoder_last_ms+1] = 0
+      Rotary_encoder_delta_values_ms[#Rotary_encoder_delta_values_ms+1] = 0
+      Rotary_encoder_directional_data[#Rotary_encoder_directional_data+1] = nil
     end
   else
  --[[	BUILD DEVICE						]]
  --  Build data structures for virtual outs [1, io_n]
     for vo=1,io_n do
-      min[#min+1] = d_out[1]
-      def_min[#def_min+1] = d_out[1]
-      max[#max+1] = d_out[2]
-      def_max[#def_max+1] = d_out[2]
-      dlt[#dlt+1] = d_out[2] - d_out[1]
-      def_dlt[#def_dlt+1] = d_out[2] - d_out[1]
-      mid[#mid+1] = floor((d_out[2] - d_out[1]) * 0.5)
-      int[#int+1] = 1
-      step[#step+1] = 127
-      rat[#rat+1] = 0 -- blanks, for proper indexing.
-      noedit[#noedit+1] = false
-      this[#this+1] = nil
-      last[#last+1] = nil
+      User_defined_minimum_values[#User_defined_minimum_values+1] = d_out[1]
+      Default_minimum_values[#Default_minimum_values+1] = d_out[1]
+      User_defined_maximum_values[#User_defined_maximum_values+1] = d_out[2]
+      Default_maximum_values[#Default_maximum_values+1] = d_out[2]
+      User_defined_delta_values[#User_defined_delta_values+1] = d_out[2] - d_out[1]
+      Default_delta_values[#Default_delta_values+1] = d_out[2] - d_out[1]
+      Calculated_midpoint_values[#Calculated_midpoint_values+1] = floor((d_out[2] - d_out[1]) * 0.5)
+      Interpolation_curve_index[#Interpolation_curve_index+1] = 1
+      Interpolation_curve_resolution[#Interpolation_curve_resolution+1] = 127
+      Calculated_unit_interval_scalar_values[#Calculated_unit_interval_scalar_values+1] = 0 -- blanks, for proper indexing.
+      Item_is_not_editable[#Item_is_not_editable+1] = false
+      Current_state[#Current_state+1] = nil
+      Last_state[#Last_state+1] = nil
     end
 
  --  Insert blanks for warning message/null items (preserves correct addressing)
     for xx=1,3 do
-      min[#min+1] = 0
-      def_min[#def_min+1] = 0
-      max[#max+1] = 0
-      def_max[#def_max+1] = 0
-      dlt[#dlt+1] = 0
-      def_dlt[#def_dlt+1] = 0
-      mid[#mid+1] = 0
-      int[#int+1] = 1
-      step[#step+1] = 128 --  stop creating these here, only needed for VO's.
-      rat[#rat+1] = 0
-      noedit[#noedit+1] = false
-      this[#this+1] = nil
-      last[#last+1] = nil
+      User_defined_minimum_values[#User_defined_minimum_values+1] = 0
+      Default_minimum_values[#Default_minimum_values+1] = 0
+      User_defined_maximum_values[#User_defined_maximum_values+1] = 0
+      Default_maximum_values[#Default_maximum_values+1] = 0
+      User_defined_delta_values[#User_defined_delta_values+1] = 0
+      Default_delta_values[#Default_delta_values+1] = 0
+      Calculated_midpoint_values[#Calculated_midpoint_values+1] = 0
+      Interpolation_curve_index[#Interpolation_curve_index+1] = 1
+      Interpolation_curve_resolution[#Interpolation_curve_resolution+1] = 128 --  stop creating these here, only needed for VO's.
+      Calculated_unit_interval_scalar_values[#Calculated_unit_interval_scalar_values+1] = 0
+      Item_is_not_editable[#Item_is_not_editable+1] = false
+      Current_state[#Current_state+1] = nil
+      Last_state[#Last_state+1] = nil
     end
 
  --  Build data structures for data sources [io_n+4, io_n+i_num]
     for i=1,i_num do
-      min[#min+1] = d_in[i].min
-      def_min[#def_min+1] = d_in[i].min
-      max[#max+1] = d_in[i].max
-      def_max[#def_max+1] = d_in[i].max
-      dlt[#dlt+1] = d_in[i].max - d_in[i].min
-      def_dlt[#def_dlt+1] = d_in[i].max - d_in[i].min
-      mid[#mid+1] = d_in[i].min + floor((d_in[i].max - d_in[i].min) * 0.5)
-      rat[#rat+1] = 1 / (d_in[i].max - d_in[i].min)
-      noedit[#noedit+1] = false
-      this[#this+1] = nil
-      last[#last+1] = nil
+      User_defined_minimum_values[#User_defined_minimum_values+1] = d_in[i].min
+      Default_minimum_values[#Default_minimum_values+1] = d_in[i].min
+      User_defined_maximum_values[#User_defined_maximum_values+1] = d_in[i].max
+      Default_maximum_values[#Default_maximum_values+1] = d_in[i].max
+      User_defined_delta_values[#User_defined_delta_values+1] = d_in[i].max - d_in[i].min
+      Default_delta_values[#Default_delta_values+1] = d_in[i].max - d_in[i].min
+      Calculated_midpoint_values[#Calculated_midpoint_values+1] = d_in[i].min + floor((d_in[i].max - d_in[i].min) * 0.5)
+      Calculated_unit_interval_scalar_values[#Calculated_unit_interval_scalar_values+1] = 1 / (d_in[i].max - d_in[i].min)
+      Item_is_not_editable[#Item_is_not_editable+1] = false
+      Current_state[#Current_state+1] = nil
+      Last_state[#Last_state+1] = nil
     end
 
  --  Build reverse-lookup table to data sources from VO's
  --  Build output indexes relative to data source
     for i=1,i_num do
       for o=1,o_num do
-        idx[#idx+1] = io_n+3+i
-        odx[#odx+1] = o
+        Input_or_virtual_output_index[#Input_or_virtual_output_index+1] = io_n+3+i
+        Virtual_output_source_input_index[#Virtual_output_source_input_index+1] = o
       end
     end
 
  --[[  Define Interpolation Data   ]]
-    interp_table = build_interp_table()
+    Interp_table = Build_interpolation_table()
   end
 
 --  Tell the script the entity loaded properly
-  entity_loaded = true
+  Surface_is_initialized = true
 end
 
 -- user input, receives event, last known good (toggle button support)
-function user_input(e)
+function User_input(e)
   local rmm=remote.match_midi --  local references to globals
   for m=1,8 do --  look through the possible user input events
-    local ui_event=rmm(ui[m], e)
+    local ui_event=rmm(UI[m], e)
     if ui_event~=nil then --  if we find a match
-      if m==6 and ui_event.x==midi_max_val then --  if this is navigate layers (down)
-        if ly_selected~=nil then
-          ly_selected = ly_selected-1 --  decrement selected layer
+      if m==6 and ui_event.x==Midi_max_val then --  if this is navigate layers (down)
+        if Layer_is_selected~=nil then
+          Layer_is_selected = Layer_is_selected-1 --  decrement selected layer
         end
 --[[  NOTE: m==6 is an exception to all other user input variations.
                     no latches or states are toggled. ]]
       elseif m==6 and ui_event.x==1 then --  if this is navigate layers (up)
-        if ly_selected~=nil then
-          ly_selected = ly_selected+1 --  increment selected layer
+        if Layer_is_selected~=nil then
+          Layer_is_selected = Layer_is_selected+1 --  increment selected layer
         end
       else
-        if ui[m+8]==0 then --  if the latch is open
-          ui[m+16] = not ui[m+16] --  toggle the state
-          ui[m+8] = 1 --  close the latch to prevent strobing
+        if UI[m+8]==0 then --  if the latch is open
+          UI[m+16] = not UI[m+16] --  toggle the state
+          UI[m+8] = 1 --  close the latch to prevent strobing
         end
       end
     else
-      if ui[m+8]==1 then --  if the latch is closed
-        ui[m+8] = 0 --  open the latch
+      if UI[m+8]==1 then --  if the latch is closed
+        UI[m+8] = 0 --  open the latch
       end
     end
   end
 end
 
 --  user input, receives event, expects midi gate (except navigate layers)
---[=[function user_input(e)
+--[=[function User_input(e)
   local rmm=remote.match_midi --  local references to globals
   for m=1,8 do --  look through the possible user input events
-    local ui_event=rmm(ui[m], e)
+    local ui_event=rmm(UI[m], e)
     if ui_event~=nil then --  if we find a match
-      if ly_selected~=nil then --  if we are bound to a layer
+      if Layer_is_selected~=nil then --  if we are bound to a layer
         if m==6 then --  if we have detected the layer navigator
           if ui_event.x > 0 then --  if the data contains "1" (counter-clockwise turn)
-            ly_selected = ly_selected-1 --  decrement selected layer
+            Layer_is_selected = Layer_is_selected-1 --  decrement selected layer
           elseif ui_event.x < 1 then --  if the data contains "0" (clockwise turn)
-            ly_selected = ly_selected+1 --  increment selected layer
+            Layer_is_selected = Layer_is_selected+1 --  increment selected layer
           end
 --[[  NOTE: m==6 (navigate layers) is an exception to all other user input variations.
                       No latches or states are toggled.     ]]
@@ -969,14 +970,14 @@ end
       end
       if m~=6 then --  if this is anything other than navigate layers...
         if ui_event.x > 0 then --  if the data contains "1" or higher
-          if ui[m+8]==0 then --  if the latch is open
-            ui[m+16] = true --  toggle this state to "on"
-            ui[m+8] = 1 --  close the latch
+          if UI[m+8]==0 then --  if the latch is open
+            UI[m+16] = true --  toggle this state to "on"
+            UI[m+8] = 1 --  close the latch
           end
         else ui_event.x==0 then --  if the data contains "0"
-          if ui[m+8]==1 then --  if the latch is closed
-            ui[m+16] = false --  toggle this state to "off"
-            ui[m+8] = 0 --  open the latch
+          if UI[m+8]==1 then --  if the latch is closed
+            UI[m+16] = false --  toggle this state to "off"
+            UI[m+8] = 0 --  open the latch
           end
         end
       end
@@ -985,8 +986,8 @@ end
 end]=]
 
 --  check to see if we are editing
-function editing()
-  if ui[20]==true or ui[21]==true or ui[23]==true or ui[24]==true then --  if any of the editing states are toggled "on"
+function Editing()
+  if UI[20]==true or UI[21]==true or UI[23]==true or UI[24]==true then --  if any of the editing states are toggled "on"
     return true --  say "yes"
   else --  otherwise...
     return false --  say "no"
@@ -994,31 +995,31 @@ function editing()
 end
 
 -- audio warp engine
-function warp(p,r)
+function Warp(p,r)
   -- Prepare the calculated value
   local px = nil
   -- If pitchbend is between -8192 and 0
-  if p <= warp_ls then
+  if p <= Warp_center_to_min then
     -- Calculate using the "left side" graph
-    px = (p - warp_ls) * warp_ls_rat
+    px = (p - Warp_center_to_min) * Warp_center_to_min_to_unit_interval
   -- Otherwise...
-  elseif p > warp_ls then
+  elseif p > Warp_center_to_min then
     -- Calculate using the "right side" graph
     -- (The math turns out to be identical)
-    px = (p - warp_ls) * warp_ls_rat
+    px = (p - Warp_center_to_min) * Warp_center_to_min_to_unit_interval
   end
 
   -- Prepare the return value
   local output_data = nil
 
   -- If the device is not a Combinator
-  if warp_use_24 then
+  if Warp_use_24 then
     -- Enforce 24 semitones
-    output_data = 4^(r * warp_24_rat * px)
+    output_data = 4^(r * Warp_24_to_unit_interval * px)
   -- Otherwise...
   else
     -- Use 60 semitones / 10 octaves
-    output_data = 4^(60 * warp_24_rat * px)
+    output_data = 4^(60 * Warp_24_to_unit_interval * px)
   end
 
   -- Return the result
@@ -1026,9 +1027,9 @@ function warp(p,r)
 end
 
 -- ignore kb vars, these are data sources that can only update via midi
-function ignore(num)
-  if kb_enabled and kb_idx~=nil then
-    if num==kb_idx or num==pressure_idx or num==expression_idx or num==damper_idx or num==breath_idx then
+function Ignore(num)
+  if Keyboard_is_enabled and Keyboard_index~=nil then
+    if num==Keyboard_index or num==Channel_pressure_index or num==Expression_index or num==Damper_index or num==Breath_index then
       return true
     else
       return false
@@ -1037,12 +1038,12 @@ function ignore(num)
 end
 
 --  allow editing and data flow on certain conditions
-function surface_active()
-  if bind_to_ly==true then
-    if ly_selected~=nil and ly_address~=nil then
-      if ly_selected~=ly_address then
+function Surface_active()
+  if Bind_to_layer==true then
+    if Layer_is_selected~=nil and Layer_address~=nil then
+      if Layer_is_selected~=Layer_address then
         return false
-      elseif ly_selected==ly_address then
+      elseif Layer_is_selected==Layer_address then
         return true
       end
     end
@@ -1054,19 +1055,19 @@ end
 --[[	Universal Data Write 		]]
 
 -- data write algorithm, receives event
-function write_to_rack(e)
+function Write_to_rack(e)
   local rhi=remote.handle_input --  local references to globals
-  for i,v in ipairs(g_batch) do --  look through the contents of g_batch
+  for i,v in ipairs(Global_midi_batch) do --  look through the contents of Global_midi_batch
     local v_num = tonumber(v) -- convert k to a number so rhi can use it
-    local n = g_batch[v][1] --  retrieve the first LIFO order interpolation value stored in g_batch for virtual out "k"
+    local n = Global_midi_batch[v][1] --  retrieve the first LIFO order interpolation value stored in Global_midi_batch for virtual out "k"
     local write_msg = { --  create a data write message to be sent to the rack
       item = v_num, --  apply key "k" as item index
-      value = g_batch[v][n], --  apply retrieved interpolation value as the value for virtual out "k"
+      value = Global_midi_batch[v][n], --  apply retrieved interpolation value as the value for virtual out "k"
       time_stamp = e.time_stamp --  apply event.time_stamp as passed via param "e"
     }
     rhi(write_msg) --  write message to the rack
-    if g_batch[v][1] > 2 then
-      g_batch[v][1] = g_batch[v][1] - 1
+    if Global_midi_batch[v][1] > 2 then
+      Global_midi_batch[v][1] = Global_midi_batch[v][1] - 1
     end
   end
 end
@@ -1074,21 +1075,21 @@ end
 --[[	Begin Reason Document		]]
 
 -- reason document write function
-function process_document(event)
-  user_input(event) --  process user input first, all processes internal
-  if ui[17]==false and surface_active() then --  if the system has not panicked and the layer is active
+function Process_document(event)
+  User_input(event) --  process user input first, all processes internal
+  if UI[17]==false and Surface_active() then --  if the system has not panicked and the layer is active
  -- if we are editing
-    if not editing() then --  only write to the rack if we are not editing
+    if not Editing() then --  only write to the rack if we are not editing
 -- handle note input before any data
-      if #g_batch>0 then --  only proceed if there is anything to process
-        write_to_rack(event) --  write data to the rack
+      if #Global_midi_batch>0 then --  only proceed if there is anything to process
+        Write_to_rack(event) --  write data to the rack
         return true --  tell Reason the events have been used
       end
     end
   end
 end
 
-function detect_warp_engine(i,j)
+function Detect_warp_engine(i,j)
   -- "i" argument = tempo bpm connected
   -- "j" argument = tempo decimal connected
 
@@ -1116,28 +1117,28 @@ function detect_warp_engine(i,j)
   if bpm_connected or dec_connected then
     if bpm_connected then
       -- If there is no last bpm value
-      if warp_from_bpm==nil then
+      if Warp_from_bpm==nil then
         -- If device type is Combinator
-        if device_type:find("combinator")~=nil then
+        if Device_type:find("combinator")~=nil then
           -- If project bpm is not 32
           if rgiv(i)~=32 then
             -- Require project bpm to be 32
-            warp_from_bpm = 32
+            Warp_from_bpm = 32
           end
         -- If device is not Combinator
         else
           -- If project bpm is < 4
           if rgiv(i) < 4 then
             -- Require minimum of 4 bpm
-            warp_from_bpm = 4
+            Warp_from_bpm = 4
           -- If project bpm is > 249
           elseif rgiv(i) > 249 then
             -- Require maximum of 249 bpm
-            warp_from_bpm = 249
+            Warp_from_bpm = 249
           -- Otherwise...
           else
             -- Use current project bpm
-            warp_from_bpm = rgiv(i)
+            Warp_from_bpm = rgiv(i)
           end
         end
         -- Enable warp state
@@ -1147,21 +1148,21 @@ function detect_warp_engine(i,j)
 
     if dec_connected then
       -- If there is no last decimal value
-      if warp_from_dec==nil then
+      if Warp_from_dec==nil then
         -- If device is not a Combinator
-        if device_type:find("combinator")==nil then
+        if Device_type:find("combinator")==nil then
           -- If max bpm is applied
-          if warp_from_bpm==249 then
+          if Warp_from_bpm==249 then
             -- If decimal is > 749
             if rgiv(j) > 749 then
               -- Require maximum of 749
-              warp_from_dec = 749
+              Warp_from_dec = 749
             end
           end
         -- Otherwise...
         else
           -- Allow any decimal value found
-          warp_from_dec = rgiv(j)
+          Warp_from_dec = rgiv(j)
         end
         -- Enable warp state
         warp_state = true
@@ -1175,39 +1176,39 @@ function detect_warp_engine(i,j)
     for ptr=1,2 do
       -- If an item is not nil, reset all related data
       if chk[ptr]~=nil then
-        this[chk[ptr]] = nil
-        last[chk[ptr]] = nil
-        warp_from_bpm = nil
-        warp_from_dec = nil
+        Current_state[chk[ptr]] = nil
+        Last_state[chk[ptr]] = nil
+        Warp_from_bpm = nil
+        Warp_from_dec = nil
         warp_state = false
       end
     end
   end
 
   -- Prevent NaN for bpm
-  if warp_from_bpm==nil then
-    warp_from_bpm = 120
+  if Warp_from_bpm==nil then
+    Warp_from_bpm = 120
   end
 
   -- Prevent NaN for decimal
-  if warp_from_dec==nil then
-    warp_from_dec = 0
+  if Warp_from_dec==nil then
+    Warp_from_dec = 0
   end
 
   -- Prevent halt condition
-  if warp_from~=nil then
+  if Warp_from~=nil then
     warp_state = true
   end
 
   -- If the warp state is enabled
   if warp_state==true then
     -- Calculate default transport speed
-    warp_from = (warp_from_bpm * 1000) + warp_from_dec
+    Warp_from = (Warp_from_bpm * 1000) + Warp_from_dec
 
   -- Otherwise...
   else
     -- Empty the value
-    warp_from = nil
+    Warp_from = nil
   end
 
   -- Return true or false
@@ -1215,14 +1216,14 @@ function detect_warp_engine(i,j)
 end
 
 --  checks to see if the device has a pitch bend parameter
-function warp_compatible()
+function Warp_compatible()
   -- Assume the device can't warp by default
   local can_warp = false
 
   -- If device controls exist
-  if (g_names~=nil) then
+  if (G_names~=nil) then
     -- Search through the controls
-    for i,v in ipairs(g_names) do
+    for i,v in ipairs(G_names) do
       -- If we have found Pitch Bend
       if v:find("Pitch Bend")~=nil then
         -- Confirm the device can warp
@@ -1234,13 +1235,13 @@ function warp_compatible()
     -- If the device can warp
     if can_warp then
       -- If this is a Combinator
-      if device_type:find("combinator")~=nil then
+      if Device_type:find("combinator")~=nil then
         -- Use 60 semitones
-        warp_use_24 = false
+        Warp_use_24 = false
       -- Otherwise...
       else
         -- Use 24 semitones
-        warp_use_24 = true
+        Warp_use_24 = true
       end
     end
   end
@@ -1250,82 +1251,82 @@ function warp_compatible()
 end
 
 --  data read algorithm, receives table "changed_items"
-function read_document(t)
-  local riie = remote.is_item_enabled
+function Read_document(t)
+  -- local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
-  local rgin = remote.get_item_name
+  -- local rgin = remote.get_item_name
   local floor = math.floor
-  local o_n = o_count
-  local io_n = i_count * o_count
+  -- local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
 
  -- look through changed events
   for i=1,#t do
  -- create local pointer
     local n=t[i]
  -- if we are editing
-    if editing() then
-      this[n] = rgiv(n)
-      if this[n]~=last[n] then
-        if noedit[n]==false then
-          if ui[23]==true then -- min
-            min[n] = rgiv(n)
-            dlt[n] = max[n] - min[n]
-            mid[n] = min[n] + floor(min[n] + (dlt[n] * 0.5))
+    if Editing() then
+      Current_state[n] = rgiv(n)
+      if Current_state[n]~=Last_state[n] then
+        if Item_is_not_editable[n]==false then
+          if UI[23]==true then -- min
+            User_defined_minimum_values[n] = rgiv(n)
+            User_defined_delta_values[n] = User_defined_maximum_values[n] - User_defined_minimum_values[n]
+            Calculated_midpoint_values[n] = User_defined_minimum_values[n] + floor(User_defined_minimum_values[n] + (User_defined_delta_values[n] * 0.5))
           end
-          if ui[24]==true then -- max
-            max[n] = rgiv(n)
-            dlt[n] = max[n] - min[n]
-            mid[n] = min[n] + floor(min[n] + (dlt[n] * 0.5))
+          if UI[24]==true then -- max
+            User_defined_maximum_values[n] = rgiv(n)
+            User_defined_delta_values[n] = User_defined_maximum_values[n] - User_defined_minimum_values[n]
+            Calculated_midpoint_values[n] = User_defined_minimum_values[n] + floor(User_defined_minimum_values[n] + (User_defined_delta_values[n] * 0.5))
           end
         end
-        last[n] = this[n]
+        Last_state[n] = Current_state[n]
       end
       if n>(io_n+3) then --  ratios for data sources only
-        if noedit[n]==false then
-          rat[n] = 1 / dlt[n]
+        if Item_is_not_editable[n]==false then
+          Calculated_unit_interval_scalar_values[n] = 1 / User_defined_delta_values[n]
         end
       elseif n<=io_n then
-        if ui[20]==true then --  curve edit
-          local c_val = floor((rgiv(n)-min[n])*rat[n])
-          int[n] = floor(c_val * midi_max_val)+1
+        if UI[20]==true then --  curve edit
+          local c_val = floor((rgiv(n)-User_defined_minimum_values[n])*Calculated_unit_interval_scalar_values[n])
+          Interpolation_curve_index[n] = floor(c_val * Midi_max_val)+1
         end
-        if ui[21]==true then --  step edit
-          local s_val = floor((rgiv(n)-min[n])*rat[n])
-          step[n] = floor(s_val * midi_max_val)+1
+        if UI[21]==true then --  step edit
+          local s_val = floor((rgiv(n)-User_defined_minimum_values[n])*Calculated_unit_interval_scalar_values[n])
+          Interpolation_curve_resolution[n] = floor(s_val * Midi_max_val)+1
         end
       end
  -- if we are not editing
     else
  -- default behavior
       if n>(io_n+3) then
-        batch_doc(n)
+        Batch_doc(n)
       end
     end
   end
 end
 
-function batch_doc(n)
+function Batch_doc(n)
   local floor = math.floor
   local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
-  local rgin = remote.get_item_name
-  local ignore = ignore
-  local o_n = o_count
-  local io_n = i_count * o_count
+  -- local rgin = remote.get_item_name
+  -- local ignore = Ignore
+  local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
 
   if riie(n) then --  only proceed if surface is locked
     local float = nil
-    if ui[18]==true then --  if we are in bipolar mode
-      float = (rgiv(n) - mid[n]) * (rat[n] * 0.5) --  precalculate the float value in the range [-1,	1]
+    if UI[18]==true then --  if we are in bipolar mode
+      float = (rgiv(n) - Calculated_midpoint_values[n]) * (Calculated_unit_interval_scalar_values[n] * 0.5) --  precalculate the float value in the range [-1,	1]
       float = float >= -1 and float or -1 --  conditionally constrain the floor of the float value to -1
       float = float <= 1 and float or 1 --  conditionally constrain the ceiling of the float value to 1
     else --  if we are in unipolar mode
-      float = (rgiv(n) - min[n]) * rat[n] --  precalculate the float value in the range [0,		1]
+      float = (rgiv(n) - User_defined_minimum_values[n]) * Calculated_unit_interval_scalar_values[n] --  precalculate the float value in the range [0,		1]
       float = float >= 0 and float or 0 --  conditionally constrain the floor of the float value to 0
       float = float <= 1 and float or 1 --  conditionally constrain the ceiling of the float value to 1
     end
 
-    n2 = n - (io_n+3) --  reformat n to point to the virtual outs of the data source
+    local n2 = n - (io_n+3) --  reformat n to point to the virtual outs of the data source
 
     local o1=((n2-1)*o_n)+1 --  create the lower bound of the virtual outs
     local o2=(n2*o_n) --  create the upper bound of the virtual outs
@@ -1333,27 +1334,27 @@ function batch_doc(n)
     for o=o1,o2 do
       if riie(o) then -- only proceed if the output is connected
         local o_str = tostring(o)
-        if g_batch[o_str] == nil then table.insert(g_batch, o_str) end
+        if Global_midi_batch[o_str] == nil then table.insert(Global_midi_batch, o_str) end
 
-        g_batch[o_str] = {2}
+        Global_midi_batch[o_str] = {2}
 
         local dy1 = rgiv(o) --  extract the current position of virtual out "o"
         local dy2 = nil
 
-        if ui[18]==true then
-          dy2 = floor(mid[o] + (float * (dlt[o] * 0.5)))
+        if UI[18]==true then
+          dy2 = floor(Calculated_midpoint_values[o] + (float * (User_defined_delta_values[o] * 0.5)))
         else
-          dy2 = floor(min[o] + (float * dlt[o]))
+          dy2 = floor(User_defined_minimum_values[o] + (float * User_defined_delta_values[o]))
         end
 
         local dy = dy2 - dy1 --  store the difference between the two positions
-        local px = int[o] * (midi_max_val+1) --  create a pointer to the interpolation curve variation
+        local px = Interpolation_curve_index[o] * (Midi_max_val+1) --  create a pointer to the interpolation curve variation
 
-        for cr=midi_max_val+1, step[o], -step[o] do --  retrieve data entries stored within curve "px"
-          g_batch[o_str][#g_batch[o_str]+1] = floor(dy1 + (interp_table[px+cr] * dy)) --  store the curve data in reverse order
+        for cr=Midi_max_val+1, Interpolation_curve_resolution[o], -Interpolation_curve_resolution[o] do --  retrieve data entries stored within curve "px"
+          Global_midi_batch[o_str][#Global_midi_batch[o_str]+1] = floor(dy1 + (Interp_table[px+cr] * dy)) --  store the curve data in reverse order
         end
 
-        g_batch[o_str][1] = #g_batch[o_str]
+        Global_midi_batch[o_str][1] = #Global_midi_batch[o_str]
 
       end
     end
@@ -1361,11 +1362,11 @@ function batch_doc(n)
 end
 
 -- reason document set state
-function set_document(changed_items)
-  if ui[17]==false and surface_active() then
+function Set_document(changed_items)
+  if UI[17]==false and Surface_active() then
     if type(changed_items)=="table" then
       if #changed_items>0 then
-        read_document(changed_items)
+        Read_document(changed_items)
       end
     end
   end
@@ -1380,38 +1381,38 @@ end
 --[[	Begin Data network		]]
 
 -- data network write function
-function process_network(event)
+function Process_network(event)
   local rmm = remote.match_midi
   local rhi = remote.handle_input
   local format = string.format
 
-  user_input(event) --  process user input first, all processes internal
-  if ui[17]==false and surface_active() then --  if the system has not panicked and the layer is active
+  User_input(event) --  process user input first, all processes internal
+  if UI[17]==false and Surface_active() then --  if the system has not panicked and the layer is active
  -- if we are editing
-    if editing() then
+    if Editing() then
  -- if the keyboard is enabled
-      if kb_enabled and kb_idx~=nil then
-        local ne_fmt = midi_channel~="?" and format("%x",(midi_channel-1)) or midi_channel
+      if Keyboard_is_enabled and Keyboard_index~=nil then
+        local ne_fmt = Midi_channel~="?" and format("%x",(Midi_channel-1)) or Midi_channel
         local ne_event = rmm("<100x>"..ne_fmt.." yy zz", event)
  -- if a note has been detected
         if ne_event~=nil then
  -- edit lo key
-          if ui[23] then
+          if UI[23] then
  -- only apply edits when keys are pressed
             if ne_event.x > 0 then
-              min[kb_idx] = ne_event.y
+              User_defined_minimum_values[Keyboard_index] = ne_event.y
  -- auto-correct keyboard splits
-              if min[kb_idx] > max[kb_idx] then
-                local temp_hi = max[kb_idx]
-                min[kb_idx] = max[kb_idx]
-                max[kb_idx] = temp_hi
+              if User_defined_minimum_values[Keyboard_index] > User_defined_maximum_values[Keyboard_index] then
+                local temp_hi = User_defined_maximum_values[Keyboard_index]
+                User_defined_minimum_values[Keyboard_index] = User_defined_maximum_values[Keyboard_index]
+                User_defined_maximum_values[Keyboard_index] = temp_hi
               end
-              dlt[kb_idx] = max[kb_idx] - min[kb_idx]
-              rat[kb_idx] = 1 / dlt[kb_idx]
+              User_defined_delta_values[Keyboard_index] = User_defined_maximum_values[Keyboard_index] - User_defined_minimum_values[Keyboard_index]
+              Calculated_unit_interval_scalar_values[Keyboard_index] = 1 / User_defined_delta_values[Keyboard_index]
             end
  -- play the note to allow for user confirmation by ear
             local lo_msg = {
-              item = kb_idx,
+              item = Keyboard_index,
               value = ne_event.x,
               note = ne_event.y,
               velocity = ne_event.z,
@@ -1420,19 +1421,19 @@ function process_network(event)
             rhi(lo_msg)
           end
  -- edit hi key
-          if ui[24] then
+          if UI[24] then
             if ne_event.x > 0 then
-              max[kb_idx] = ne_event.y
-              if max[kb_idx] < min[kb_idx] then
-                local temp_lo = min[kb_idx]
-                max[kb_idx] = min[kb_idx]
-                min[kb_idx] = temp_lo
+              User_defined_maximum_values[Keyboard_index] = ne_event.y
+              if User_defined_maximum_values[Keyboard_index] < User_defined_minimum_values[Keyboard_index] then
+                local temp_lo = User_defined_minimum_values[Keyboard_index]
+                User_defined_maximum_values[Keyboard_index] = User_defined_minimum_values[Keyboard_index]
+                User_defined_minimum_values[Keyboard_index] = temp_lo
               end
-              dlt[kb_idx] = max[kb_idx] - min[kb_idx]
-              rat[kb_idx] = 1 / dlt[kb_idx]
+              User_defined_delta_values[Keyboard_index] = User_defined_maximum_values[Keyboard_index] - User_defined_minimum_values[Keyboard_index]
+              Calculated_unit_interval_scalar_values[Keyboard_index] = 1 / User_defined_delta_values[Keyboard_index]
             end
             local hi_msg = {
-              item = kb_idx,
+              item = Keyboard_index,
               value = ne_event.x,
               note = ne_event.y,
               velocity = ne_event.z,
@@ -1444,13 +1445,13 @@ function process_network(event)
       end
     else --  only write to the rack if we are not editing
 -- handle note input before any data
-      if kb_enabled and kb_idx~=nil then
-        local ch_fmt = midi_channel~="?" and format("%x",midi_channel) or midi_channel
+      if Keyboard_is_enabled and Keyboard_index~=nil then
+        local ch_fmt = Midi_channel~="?" and format("%x",Midi_channel) or Midi_channel
         local nt_event = rmm("<100x>"..ch_fmt.." yy zz", event)
         if nt_event~=nil then
-          if nt_event.y >= min[kb_idx] and nt_event.y <= max[kb_idx] then
+          if nt_event.y >= User_defined_minimum_values[Keyboard_index] and nt_event.y <= User_defined_maximum_values[Keyboard_index] then
             local nt_msg = {
-              item = kb_idx,
+              item = Keyboard_index,
               value = nt_event.x,
               note = nt_event.y,
               velocity = nt_event.z,
@@ -1458,24 +1459,24 @@ function process_network(event)
             }
 
             rhi(nt_msg)
-            batch_midi(nt_event.y, kb_idx)
+            Batch_midi(nt_event.y, Keyboard_index)
           end
         end
         local pb_event = rmm("e"..ch_fmt.." xx yy", event)
         if pb_event~=nil then
           local pb_msg = {
-            item = pitch_idx,
+            item = Pitch_bend_index,
             value = pb_event.y*128+pb_event.x,
             time_stamp= event.time_stamp
           }
           rhi(pb_msg)
- --batch_midi(pb_msg.value, pitch_idx) --  this is causing a problem with the warp engine
+ --batch_midi(pb_msg.value, Pitch_bend_index) --  this is causing a problem with the warp engine
         end
 --[[
         local md_event = rmm("b"..ch_fmt.." 01 xx", event)
         if md_event~=nil then
           local md_msg = {
-            item = mod_idx,
+            item = Modulation_wheel_index,
             value = md_event.x,
             time_stamp= event.time_stamp
           }
@@ -1484,46 +1485,46 @@ function process_network(event)
         local ch_event = rmm("d"..ch_fmt.." xx", event)
         if ch_event~=nil then
           local ch_msg = {
-            item = pressure_idx,
+            item = Channel_pressure_index,
             value = ch_event.x,
             time_stamp= event.time_stamp
           }
           rhi(ch_msg)
-          batch_midi(ch_event.x, pressure_idx)
+          batch_midi(ch_event.x, Channel_pressure_index)
         end
         local ex_event = rmm("b"..ch_fmt.." 0b xx", event)
         if ex_event~=nil then
           local ex_msg = {
-            item = expression_idx,
+            item = Expression_index,
             value = ex_event.x,
             time_stamp= event.time_stamp
           }
           rhi(ex_msg)
-          batch_midi(ex_event.x, expression_idx)
+          batch_midi(ex_event.x, Expression_index)
         end
         local dp_event = rmm("b"..ch_fmt.." 40 xx", event)
         if dp_event~=nil then
           local dp_msg = {
-            item = damper_idx,
+            item = Damper_index,
             value = dp_event.x,
             time_stamp= event.time_stamp
           }
           rhi(dp_msg)
-          batch_midi(dp_event.x, damper_idx)
+          batch_midi(dp_event.x, Damper_index)
         end
         local br_event = rmm("b"..ch_fmt.." 02 xx", event)
         if br_event~=nil then
           local br_msg = {
-            item = breath_idx,
+            item = Breath_index,
             value = br_event.x,
             time_stamp= event.time_stamp
           }
           rhi(br_msg)
-          batch_midi(br_event.x, breath_idx)
+          batch_midi(br_event.x, Breath_index)
         end]]
       end
-      if #g_batch>0 then --  only proceed if there is anything to process
-        write_to_rack(event) --  write data to the rack
+      if #Global_midi_batch>0 then --  only proceed if there is anything to process
+        Write_to_rack(event) --  write data to the rack
         return true --  tell Reason the events have been used
       end
     end
@@ -1531,73 +1532,73 @@ function process_network(event)
 end
 
 --  data read algorithm, receives table "changed_items"
-function read_network(t)
+function Read_network(t)
   local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
   local rgin = remote.get_item_name
   local floor = math.floor
-  local o_n = o_count
-  local io_n = i_count * o_count
+  local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
 
   for i=1,#t do
     local n=t[i]
-    if n==terminal_idx then
-      terminal()
+    if n==Device_name_command_line_index then
+      Terminal()
     else
 --  if we are editing
-      if editing() then
-        this[n] = rgiv(n)
-        if this[n]~=last[n] then
-          if noedit[n]==false then
-            if ui[23]==true then
-              min[n] = rgiv(n)
-              dlt[n] = max[n] - min[n]
-              mid[n] = min[n] + floor(min[n] + (dlt[n] * 0.5))
+      if Editing() then
+        Current_state[n] = rgiv(n)
+        if Current_state[n]~=Last_state[n] then
+          if Item_is_not_editable[n]==false then
+            if UI[23]==true then
+              User_defined_minimum_values[n] = rgiv(n)
+              User_defined_delta_values[n] = User_defined_maximum_values[n] - User_defined_minimum_values[n]
+              Calculated_midpoint_values[n] = User_defined_minimum_values[n] + floor(User_defined_minimum_values[n] + (User_defined_delta_values[n] * 0.5))
             end
-            if ui[24]==true then
-              max[n] = rgiv(n)
-              dlt[n] = max[n] - min[n]
-              mid[n] = min[n] + floor(min[n] + (dlt[n] * 0.5))
+            if UI[24]==true then
+              User_defined_maximum_values[n] = rgiv(n)
+              User_defined_delta_values[n] = User_defined_maximum_values[n] - User_defined_minimum_values[n]
+              Calculated_midpoint_values[n] = User_defined_minimum_values[n] + floor(User_defined_minimum_values[n] + (User_defined_delta_values[n] * 0.5))
             end
           end
           if n>(io_n+3) then --  ratios for data sources only
-            if noedit[n]==false then
-              rat[n] = 1 / dlt[n]
+            if Item_is_not_editable[n]==false then
+              Calculated_unit_interval_scalar_values[n] = 1 / User_defined_delta_values[n]
             end
           elseif n<=io_n then
-            if ui[20]==true then --  curve edit
-              local c_val = floor((rgiv(n)-min[n])*rat[n])
-              int[n] = floor(c_val * midi_max_val)+1
+            if UI[20]==true then --  curve edit
+              local c_val = floor((rgiv(n)-User_defined_minimum_values[n])*Calculated_unit_interval_scalar_values[n])
+              Interpolation_curve_index[n] = floor(c_val * Midi_max_val)+1
             end
-            if ui[21]==true then --  step edit
-              local s_val = floor((rgiv(n)-min[n])*rat[n])
-              step[n] = floor(s_val * midi_max_val)+1
+            if UI[21]==true then --  step edit
+              local s_val = floor((rgiv(n)-User_defined_minimum_values[n])*Calculated_unit_interval_scalar_values[n])
+              Interpolation_curve_resolution[n] = floor(s_val * Midi_max_val)+1
             end
           end
-          last[n] = this[n]
+          Last_state[n] = Current_state[n]
         end
 --  if we are not editing
       else
-        if has_pitch_wheel then --  if this device contains pitch bend
-          if w1_idx~=nil or w2_idx~=nil then
-            warp_enabled = detect_warp_engine(w1_idx, w2_idx) --  enable warp calculations if either or both of the bpm/decimal outputs are connected
+        if Has_pitch_wheel then --  if this device contains pitch bend
+          if W1_index~=nil or W2_index~=nil then
+            Warp_is_enabled = Detect_warp_engine(W1_index, W2_index) --  enable warp calculations if either or both of the bpm/decimal outputs are connected
           end
         end
-        if warp_enabled then --  if the warp calculations are enabled
-          if warp_from~=nil then --  double check to make sure warp_from exists
+        if Warp_is_enabled then --  if the warp calculations are enabled
+          if Warp_from~=nil then --  double check to make sure Warp_from exists
             local warp_output = nil --  create placeholder for the warp output
-            if warp_use_24 then --  if we are using 24 semitones from an instrument
-              warp_output = (warp(rgiv(pitch_idx), rgiv(range_idx)) * warp_from) --  calculate using pitch bend and pitch bend range
+            if Warp_use_24 then --  if we are using 24 semitones from an instrument
+              warp_output = (Warp(rgiv(Pitch_bend_index), rgiv(Pitch_bend_range_index)) * Warp_from) --  calculate using pitch bend and pitch bend range
             else
-              warp_output = (warp(rgiv(pitch_idx), nil) * warp_from) --  otherwise, calculate using only pitch
+              warp_output = (Warp(rgiv(Pitch_bend_index), nil) * Warp_from) --  otherwise, calculate using only pitch
             end
-            warp_send_bpm = round(warp_output * 0.001, 0) --  format the bpm message as 1/1000th of the result given by warp()
-            warp_send_dec = round(warp_output - (warp_send_bpm * 1000), 0) --  calculate the decimal message based on bpm
+            Warp_send_bpm = Round(warp_output * 0.001, 0) --  format the bpm message as 1/1000th of the result given by warp()
+            Warp_send_dec = Round(warp_output - (Warp_send_bpm * 1000), 0) --  calculate the decimal message based on bpm
           end
         end
  -- generate batches from data sources
         if n>(io_n+3) then
-          batch_net(n)
+          Batch_net(n)
         end
       end
     end
@@ -1605,67 +1606,67 @@ function read_network(t)
 end
 
 -- read the value of a parameter and generate an interpolation batch
-function batch_net(n)
+function Batch_net(n)
   local floor = math.floor
   local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
   local rgin = remote.get_item_name
-  local ignore = ignore
-  local o_n = o_count
-  local io_n = i_count * o_count
+  local ignore = Ignore
+  local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
 
   if riie(n) then --  only proceed if surface is locked
     if not ignore(n) then -- only proceed if this is not an item that requires midi input to function
       local float = nil
-      if ui[18]==true then --  if we are in bipolar mode
-        float = (rgiv(n) - mid[n]) * (rat[n] * 0.5) --  precalculate the float value in the range [-1,	1]
+      if UI[18]==true then --  if we are in bipolar mode
+        float = (rgiv(n) - Calculated_midpoint_values[n]) * (Calculated_unit_interval_scalar_values[n] * 0.5) --  precalculate the float value in the range [-1,	1]
         float = float >= -1 and float or -1 --  conditionally constrain the floor of the float value to -1
         float = float <= 1 and float or 1 --  conditionally constrain the ceiling of the float value to 1
       else --  if we are in unipolar mode
-        float = (rgiv(n) - min[n]) * rat[n] --  precalculate the float value in the range [0,		1]
+        float = (rgiv(n) - User_defined_minimum_values[n]) * Calculated_unit_interval_scalar_values[n] --  precalculate the float value in the range [0,		1]
         float = float >= 0 and float or 0 --  conditionally constrain the floor of the float value to 0
         float = float <= 1 and float or 1 --  conditionally constrain the ceiling of the float value to 1
       end
 
-      n2 = n - (io_n+3) --  reformat n to point to the virtual outs of the data source
+      local n2 = n - (io_n+3) --  reformat n to point to the virtual outs of the data source
 
       local o1=((n2-1)*o_n)+1 --  create the lower bound of the virtual outs
       local o2=(n2*o_n) --  create the upper bound of the virtual outs
       for o=o1,o2 do
         if riie(o) then
           local o_str = tostring(o)
-          if g_batch[o_str] == nil then table.insert(g_batch, o_str) end
-          g_batch[o_str] = {2}
+          if Global_midi_batch[o_str] == nil then table.insert(Global_midi_batch, o_str) end
+          Global_midi_batch[o_str] = {2}
           local dy1 = rgiv(o) --  extract the current position of virtual out "o"
           local dy2 = nil
 
-          if w1_idx~=nil and o==w1_idx then
-            if warp_send_bpm~=nil then
-              dy2 = warp_send_bpm
+          if W1_index~=nil and o==W1_index then
+            if Warp_send_bpm~=nil then
+              dy2 = Warp_send_bpm
             else
               dy2 = dy1
             end
-          elseif w2_idx~=nil and o==w2_idx then
-            if warp_send_dec~=nil then
-              dy2 = warp_send_dec
+          elseif W2_index~=nil and o==W2_index then
+            if Warp_send_dec~=nil then
+              dy2 = Warp_send_dec
             else
               dy2 = dy1
             end
           else
-            if ui[18]==true then
-              dy2 = floor(mid[o] + (float * (dlt[o] * 0.5)))
+            if UI[18]==true then
+              dy2 = floor(Calculated_midpoint_values[o] + (float * (User_defined_delta_values[o] * 0.5)))
             else
-              dy2 = floor(min[o] + (float * dlt[o]))
+              dy2 = floor(User_defined_minimum_values[o] + (float * User_defined_delta_values[o]))
             end
           end
 
           local dy = dy2 - dy1 --  store the difference between the two positions
-          local px = int[o] * (midi_max_val+1) --  create a pointer to the interpolation curve variation (i think this is correct)
+          local px = Interpolation_curve_index[o] * (Midi_max_val+1) --  create a pointer to the interpolation curve variation (i think this is correct)
 
-          for cr=midi_max_val+1, step[o], -step[o] do --  retrieve data entries stored within curve "px"
-            g_batch[o_str][#g_batch[o_str]+1] = floor(dy1 + (interp_table[px+cr] * dy)) --  store the curve data in reverse order
+          for cr=Midi_max_val+1, Interpolation_curve_resolution[o], -Interpolation_curve_resolution[o] do --  retrieve data entries stored within curve "px"
+            Global_midi_batch[o_str][#Global_midi_batch[o_str]+1] = floor(dy1 + (Interp_table[px+cr] * dy)) --  store the curve data in reverse order
           end
-          g_batch[o_str][1] = #g_batch[o_str]
+          Global_midi_batch[o_str][1] = #Global_midi_batch[o_str]
         end
       end
     end
@@ -1673,11 +1674,11 @@ function batch_net(n)
 end
 
 -- data network set state
-function set_network(changed_items)
-  if ui[17]==false and surface_active() then --  if the system has not panicked
+function Set_network(changed_items)
+  if UI[17]==false and Surface_active() then --  if the system has not panicked
     if type(changed_items)=="table" then
       if #changed_items>0 then --  only proceed if there is something to process
-        read_network(changed_items) --  read from the changed items, for loop internal
+        Read_network(changed_items) --  read from the changed items, for loop internal
       end
     end
   end
@@ -1693,7 +1694,7 @@ end
 
 
 --[[	LEGACY CODE
-function build_midi_decay()
+function Build_midi_decay()
   local log = math.log
   local huge = math.huge
   local x = 0
@@ -1735,44 +1736,44 @@ end
 
 -- variable speed response for rotary encoders, output ranging from 127 to 1.
 -- output will return a negative value within the given range if dir = 1
-function rotary_speed(ms, dir)
+function Rotary_speed(ms, dir)
   local floor = math.floor -- local refs to globals
-  local min_ms = min_ms
-  local max_ms = max_ms
+  local Rotary_encoder_minimum_ms = Rotary_encoder_minimum_ms
+  local Rotary_encoder_maximum_ms = Rotary_encoder_maximum_ms
   local rs_a = 0.00220482283294 -- folded constant, 127 / 57601
-  ms = ms < min_ms and min_ms or ms
-  ms = ms > max_ms and max_ms or ms
-  local rate = math.floor(rs_a * ((ms-max_ms)*(ms-max_ms)) + 1)
+  ms = ms < Rotary_encoder_minimum_ms and Rotary_encoder_minimum_ms or ms
+  ms = ms > Rotary_encoder_maximum_ms and Rotary_encoder_maximum_ms or ms
+  local rate = math.floor(rs_a * ((ms-Rotary_encoder_maximum_ms)*(ms-Rotary_encoder_maximum_ms)) + 1)
   rate = (dir>0) and (rate*(-1)) or rate
   return rate
 end
 
-function process_controller(event)
+function Process_controller(event)
   local rmm = remote.match_midi
   local rhi = remote.handle_input
   local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
   local rgtm = remote.get_time_ms
   local format = string.format
-  local o_n = o_count
-  local io_n = i_count * o_count
+  local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
 
  -- handle user inputs first above anything else
-  user_input(event)
+  User_input(event)
 
  -- detect midi handling exception(s) that may vary over time
   local do_midi = true
-  if bind_to_ly==true then
-    if ly_selected~=nil and ly_address~=nil then
-      if ly_selected~=ly_address then
+  if Bind_to_layer==true then
+    if Layer_is_selected~=nil and Layer_address~=nil then
+      if Layer_is_selected~=Layer_address then
         do_midi = false
       end
     end
   end
  -- if we are able to proceed, get on with it
-  if ui[17]==false and do_midi then
+  if UI[17]==false and do_midi then
  -- look for the clock signal
-    local _clock = rmm(clock_mask, event)
+    local _clock = rmm(Clock_mask, event)
  -- if this is something other than clock signal
     if _clock==nil then
  -- find out what it is
@@ -1782,41 +1783,41 @@ function process_controller(event)
  -- create a placeholder for the index pointer
         local idx_n = nil
 
- -- extract and convert numbers to hex
-        local x_byte = hex(m_event.x)
-        local y_byte = hex(m_event.y)
-        local ctrl_fmt = midi_channel~="?" and format("%x", (midi_channel-1)) or midi_channel
+ -- extract and convert numbers to Hex
+        local x_byte = Hex(m_event.x)
+        local y_byte = Hex(m_event.y)
+        local ctrl_fmt = Midi_channel~="?" and format("%x", (Midi_channel-1)) or Midi_channel
 
         local is_pitch = false
         if m_event.x > 143 and m_event.x <= 159 then -- look for "90" thru "9f"
           x_byte = x_byte:sub(1,1).."?"
-          idx_n = idx[x_byte.." "..y_byte.." xx"]
+          idx_n = Input_or_virtual_output_index[x_byte.." "..y_byte.." xx"]
         elseif m_event.x > 159 and m_event.x <= 175 then -- look for "a0" thru "af"
           x_byte = x_byte:sub(1,1).."?"
-          idx_n = idx[x_byte.." "..y_byte.." xx"]
+          idx_n = Input_or_virtual_output_index[x_byte.." "..y_byte.." xx"]
         elseif m_event.x > 175 and m_event.x <= 191 then -- look for "b0" thru "bf"
           x_byte = x_byte:sub(1,1).."?"
-          idx_n = idx[x_byte.." "..y_byte.." xx"]
+          idx_n = Input_or_virtual_output_index[x_byte.." "..y_byte.." xx"]
         elseif m_event.x > 223 and m_event.x <= 239 then -- look for "e0" thru "ef"
  -- ignore y because this is a pitch bend
-          idx_n = idx[x_byte.." xx yy"]
+          idx_n = Input_or_virtual_output_index[x_byte.." xx yy"]
         end
  -- if we have found an index we can use for this data
         if idx_n~=nil then
           local m_data = 0 -- placeholders
           local is_encoder = false
-          if idx_n==pitch_idx then
+          if idx_n==Pitch_bend_index then
  -- create pitch bend data
-            m_data = -8192+((m_event.z*(midi_max_val+1))+m_event.y)
+            m_data = -8192+((m_event.z*(Midi_max_val+1))+m_event.y)
             is_pitch = true
           else
-            if data_type[idx_n]=="enc" then
+            if Data_type[idx_n]=="enc" then
               local enc_data = rmm(x_byte:sub(1,1)..ctrl_fmt.." "..y_byte.." <???y>x", event)
               if enc_data~=nil then
-                last_ms[idx_n] = this_ms[idx_n]
-                this_ms[idx_n] = rgtm()
-                dlt_ms[idx_n] = last_ms[idx_n]==nil and max_ms or this_ms[idx_n] - last_ms[idx_n]
-                enc_dir[idx_n] = enc_data.y
+                Rotary_encoder_last_ms[idx_n] = Rotary_encoder_now_ms[idx_n]
+                Rotary_encoder_now_ms[idx_n] = rgtm()
+                Rotary_encoder_delta_values_ms[idx_n] = Rotary_encoder_last_ms[idx_n]==nil and Rotary_encoder_maximum_ms or Rotary_encoder_now_ms[idx_n] - Rotary_encoder_last_ms[idx_n]
+                Rotary_encoder_directional_data[idx_n] = enc_data.y
                 is_encoder = true
               end
             else
@@ -1825,23 +1826,23 @@ function process_controller(event)
             end
           end
  -- process rotary encoders
-          if is_encoder and idx_n~=nil and this[idx_n]~=nil then
+          if is_encoder and idx_n~=nil and Current_state[idx_n]~=nil then
  -- process data flow
  -- define changed state
-            last[idx_n] = this[idx_n]
-            this[idx_n] = (this[idx_n] + rotary_speed(dlt_ms[idx_n], enc_dir[idx_n]))
-            this[idx_n] = this[idx_n] < 0 and 0 or this[idx_n]
-            this[idx_n] = this[idx_n] > midi_max_val and midi_max_val or this[idx_n]
+            Last_state[idx_n] = Current_state[idx_n]
+            Current_state[idx_n] = (Current_state[idx_n] + Rotary_speed(Rotary_encoder_delta_values_ms[idx_n], Rotary_encoder_directional_data[idx_n]))
+            Current_state[idx_n] = Current_state[idx_n] < 0 and 0 or Current_state[idx_n]
+            Current_state[idx_n] = Current_state[idx_n] > Midi_max_val and Midi_max_val or Current_state[idx_n]
 
  -- only if something has changed for this input do we proceed
-            if this[idx_n]~=last[idx_n] then
+            if Current_state[idx_n]~=Last_state[idx_n] then
  -- define float
               local e_float=nil
 
-              if editing() then
-                e_float = ((this[idx_n] - def_min[idx_n])*(1 / def_dlt[idx_n]))
+              if Editing() then
+                e_float = ((Current_state[idx_n] - Default_minimum_values[idx_n])*(1 / Default_delta_values[idx_n]))
               else
-                e_float = ((this[idx_n] - min[idx_n])*rat[idx_n])
+                e_float = ((Current_state[idx_n] - User_defined_minimum_values[idx_n])*Calculated_unit_interval_scalar_values[idx_n])
               end
 
  -- constrain to unit interval [0,1]
@@ -1856,10 +1857,10 @@ function process_controller(event)
                 if riie(eo) then
                   local eo_data = nil
 
-                  if editing() then
-                    eo_data = def_min[eo] + (e_float * def_dlt[eo])
+                  if Editing() then
+                    eo_data = Default_minimum_values[eo] + (e_float * Default_delta_values[eo])
                   else
-                    eo_data = min[eo] + (e_float * dlt[eo])
+                    eo_data = User_defined_minimum_values[eo] + (e_float * User_defined_delta_values[eo])
                   end
 
                   local eo_packet = {
@@ -1876,19 +1877,19 @@ function process_controller(event)
           else
  -- process data flow
  -- define changed state
-            last[idx_n] = this[idx_n]
-            this[idx_n] = m_data
-            this[idx_n] = (this[idx_n] < 0) and 0 or this[idx_n]
-            this[idx_n] = (this[idx_n] > midi_max_val) and midi_max_val or this[idx_n]
+            Last_state[idx_n] = Current_state[idx_n]
+            Current_state[idx_n] = m_data
+            Current_state[idx_n] = (Current_state[idx_n] < 0) and 0 or Current_state[idx_n]
+            Current_state[idx_n] = (Current_state[idx_n] > Midi_max_val) and Midi_max_val or Current_state[idx_n]
  -- only if something has changed do we proceed
-            if this[idx_n]~=last[idx_n] then
+            if Current_state[idx_n]~=Last_state[idx_n] then
  -- define float
               local float = nil
 
-              if editing() then
-                float = (m_data - def_min[idx_n])*(1 / def_dlt[idx_n])
+              if Editing() then
+                float = (m_data - Default_minimum_values[idx_n])*(1 / Default_delta_values[idx_n])
               else
-                float = (m_data - min[idx_n])*rat[idx_n]
+                float = (m_data - User_defined_minimum_values[idx_n])*Calculated_unit_interval_scalar_values[idx_n]
               end
 
  -- constrain to unit interval [0,1]
@@ -1903,10 +1904,10 @@ function process_controller(event)
  -- apply manipulations to them
                   local o_data = nil
 
-                  if editing() then
-                    o_data = def_min[o] + (float * def_dlt[o])
+                  if Editing() then
+                    o_data = Default_minimum_values[o] + (float * Default_delta_values[o])
                   else
-                    o_data = min[o] + (float * dlt[o])
+                    o_data = User_defined_minimum_values[o] + (float * User_defined_delta_values[o])
                   end
 
                   local o_packet = {
@@ -1927,20 +1928,20 @@ function process_controller(event)
 end
 
 -- read a midi value and generate an interpolation batch
-function batch_midi(h, n)
+function Batch_midi(h, n)
   local floor = math.floor
   local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
-  local o_n = o_count
-  local io_n = i_count * o_count
+  local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
 
   local float = nil
-  if ui[18]==true then --  if we are in bipolar mode
-    float = (h - mid[n]) * (rat[n] * 0.5) --  precalculate the float value in the range [-1,	1]
+  if UI[18]==true then --  if we are in bipolar mode
+    float = (h - Calculated_midpoint_values[n]) * (Calculated_unit_interval_scalar_values[n] * 0.5) --  precalculate the float value in the range [-1,	1]
     float = float >= -1 and float or -1 --  conditionally constrain the floor of the float value to -1
     float = float <= 1 and float or 1 --  conditionally constrain the ceiling of the float value to 1
   else --  if we are in unipolar mode
-    float = (h - min[n]) * rat[n] --  precalculate the float value in the range [0,		1]
+    float = (h - User_defined_minimum_values[n]) * Calculated_unit_interval_scalar_values[n] --  precalculate the float value in the range [0,		1]
     float = float >= 0 and float or 0 --  conditionally constrain the floor of the float value to 0
     float = float <= 1 and float or 1 --  conditionally constrain the ceiling of the float value to 1
   end
@@ -1951,62 +1952,62 @@ function batch_midi(h, n)
   local o2=(n2*o_n) --  create the upper bound of the virtual outs
   for o=o1,o2 do
     local o_str = tostring(o)
-    if g_batch[o_str] == nil then table.insert(g_batch, o_str) end
-    g_batch[o_str] = {2}
+    if Global_midi_batch[o_str] == nil then table.insert(Global_midi_batch, o_str) end
+    Global_midi_batch[o_str] = {2}
     local dy1 = rgiv(o) --  extract the current position of virtual out "o"
     local dy2 = nil
-    if ui[18]==true then
-      dy2 = floor(mid[o] + (float * (dlt[o] * 0.5)))
+    if UI[18]==true then
+      dy2 = floor(Calculated_midpoint_values[o] + (float * (User_defined_delta_values[o] * 0.5)))
     else
-      dy2 = floor(min[o] + (float * dlt[o]))
+      dy2 = floor(User_defined_minimum_values[o] + (float * User_defined_delta_values[o]))
     end
     local dy = dy2 - dy1 --  store the difference between the two positions
-    local px = int[o] * (midi_max_val+1) --  create a pointer to the interpolation curve variation (i think this is correct)
-    for cr=midi_max_val+1, step[o], -step[o] do --  retrieve data entries stored within curve "px"
-      g_batch[o_str][#g_batch[o_str]+1] = floor(dy1 + (interp_table[px+cr] * dy)) --  store the curve data in reverse order
+    local px = Interpolation_curve_index[o] * (Midi_max_val+1) --  create a pointer to the interpolation curve variation (i think this is correct)
+    for cr=Midi_max_val+1, Interpolation_curve_resolution[o], -Interpolation_curve_resolution[o] do --  retrieve data entries stored within curve "px"
+      Global_midi_batch[o_str][#Global_midi_batch[o_str]+1] = floor(dy1 + (Interp_table[px+cr] * dy)) --  store the curve data in reverse order
     end
-    g_batch[o_str][1] = #g_batch[o_str]
+    Global_midi_batch[o_str][1] = #Global_midi_batch[o_str]
   end
 end
 
 -- midi controller set state
-function set_controller(changed_items)
-  if ui[17]==false and surface_active() then
+function Set_controller(changed_items)
+  if UI[17]==false and Surface_active() then
     if type(changed_items)=="table" then
       if #changed_items>0 then
-        read_controller(changed_items)
+        Read_controller(changed_items)
       end
     end
   end
 end
 
-function read_controller(t)
+function Read_controller(t)
   local riie = remote.is_item_enabled
   local rgiv = remote.get_item_value
   local floor = math.floor
-  local o_n = o_count
-  local io_n = i_count * o_count
+  local o_n = Surface_output_count
+  local io_n = Surface_input_count * Surface_output_count
   for i=1,#t do
     local n=t[i]
     if riie(n) then
-      if n==terminal_idx then
-        terminal()
+      if n==Device_name_command_line_index then
+        Terminal()
       elseif n<=io_n then
  --  if we are editing
-        if editing() then
-          this[n] = rgiv(n)
-          if this[n]~=last[n] then
-            if ui[23]==true then
-              min[n] = rgiv(n)
-              dlt[n] = max[n] - min[n]
-              mid[n] = min[n] + floor(min[n] + (dlt[n] * 0.5))
+        if Editing() then
+          Current_state[n] = rgiv(n)
+          if Current_state[n]~=Last_state[n] then
+            if UI[23]==true then
+              User_defined_minimum_values[n] = rgiv(n)
+              User_defined_delta_values[n] = User_defined_maximum_values[n] - User_defined_minimum_values[n]
+              Calculated_midpoint_values[n] = User_defined_minimum_values[n] + floor(User_defined_minimum_values[n] + (User_defined_delta_values[n] * 0.5))
             end
-            if ui[24]==true then
-              max[n] = rgiv(n)
-              dlt[n] = max[n] - min[n]
-              mid[n] = min[n] + floor(min[n] + (dlt[n] * 0.5))
+            if UI[24]==true then
+              User_defined_maximum_values[n] = rgiv(n)
+              User_defined_delta_values[n] = User_defined_maximum_values[n] - User_defined_minimum_values[n]
+              Calculated_midpoint_values[n] = User_defined_minimum_values[n] + floor(User_defined_minimum_values[n] + (User_defined_delta_values[n] * 0.5))
             end
-            last[n] = this[n]
+            Last_state[n] = Current_state[n]
           end
         end
       end
@@ -2015,7 +2016,7 @@ function read_controller(t)
 end
 
 -- -- END MIDI CONTROLLER SECTION  -- --
-_G["define_reason_master_section"] = function()
+_G["Define_reason_master_section"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -2072,7 +2073,7 @@ _G["define_reason_master_section"] = function()
   names[#names+1] = "Remote Base Channel"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=1} -- inserts pre
   data[#data+1] = {min=0, max=127} -- rotary 1 - 4
@@ -2120,22 +2121,22 @@ _G["define_reason_master_section"] = function()
   data[#data+1] = {min=1, max=128} -- remote base channel
 
 -- if we want this device type to have its own output count
-  if (_G["master_section_outputs"]~=nil) and (_G["master_section_outputs"]>=1) then
+  if (_G["Master_section_outputs"]~=nil) and (_G["Master_section_outputs"]>=1) then
 -- assign it here
-    out_count = _G["master_section_outputs"]
+    out_count = _G["Master_section_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -2177,21 +2178,21 @@ _G["define_reason_master_section"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
-    has_pitch_wheel = warp_compatible()
+    Has_pitch_wheel = Warp_compatible()
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_reason_main_mixer"] = function()
+_G["Define_reason_main_mixer"] = function()
   local rdi = remote.define_items
   local out_data = {0, 4194048}
   local in_count = nil
@@ -2316,7 +2317,7 @@ _G["define_reason_main_mixer"] = function()
   end
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=1} -- inserts pre
   data[#data+1] = {min=0, max=127} -- rotary 1 - 4
@@ -2434,22 +2435,22 @@ _G["define_reason_main_mixer"] = function()
   end
 
 -- if we want this device type to have its own output count
-  if (_G["master_section_outputs"]~=nil) and (_G["master_section_outputs"]>=1) then
+  if (_G["Master_section_outputs"]~=nil) and (_G["Master_section_outputs"]>=1) then
 -- assign it here
-    out_count = _G["master_section_outputs"]
+    out_count = _G["Master_section_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -2491,21 +2492,21 @@ _G["define_reason_main_mixer"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_kong_drum_designer"] = function()
+_G["Define_kong_drum_designer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -2581,7 +2582,7 @@ _G["define_kong_drum_designer"] = function()
   names[#names+1] = "Set all Mutes and Solos to Off"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -2647,22 +2648,22 @@ _G["define_kong_drum_designer"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["kong_outputs"]~=nil) and (_G["kong_outputs"]>=1) then
+  if (_G["Kong_outputs"]~=nil) and (_G["Kong_outputs"]>=1) then
 -- assign it here
-    out_count = _G["kong_outputs"]
+    out_count = _G["Kong_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -2670,7 +2671,7 @@ _G["define_kong_drum_designer"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -2678,10 +2679,10 @@ _G["define_kong_drum_designer"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -2701,8 +2702,8 @@ _G["define_kong_drum_designer"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -2727,38 +2728,38 @@ _G["define_kong_drum_designer"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_redrum_drum_computer"] = function()
+_G["Define_redrum_drum_computer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -2871,7 +2872,7 @@ _G["define_redrum_drum_computer"] = function()
   names[#names+1] = "Next 16 Remote Start Step"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -2974,22 +2975,22 @@ _G["define_redrum_drum_computer"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["redrum_outputs"]~=nil) and (_G["redrum_outputs"]>=1) then
+  if (_G["Redrum_outputs"]~=nil) and (_G["Redrum_outputs"]>=1) then
 -- assign it here
-    out_count = _G["redrum_outputs"]
+    out_count = _G["Redrum_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -3011,8 +3012,8 @@ _G["define_redrum_drum_computer"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -3037,38 +3038,38 @@ _G["define_redrum_drum_computer"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_thor_polysonic_synthesizer"] = function()
+_G["Define_thor_polysonic_synthesizer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -3252,7 +3253,7 @@ _G["define_thor_polysonic_synthesizer"] = function()
   end
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
  -- DATA
   data[#data+1] = {min=0, max=127}
@@ -3428,22 +3429,22 @@ _G["define_thor_polysonic_synthesizer"] = function()
   end
 
  -- if we want this device type to have its own output count
-  if (_G["thor_outputs"]~=nil) and (_G["thor_outputs"]>=1) then
+  if (_G["Thor_outputs"]~=nil) and (_G["Thor_outputs"]>=1) then
 -- assign it here
-    out_count = _G["thor_outputs"]
+    out_count = _G["Thor_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
--- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+-- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -3451,7 +3452,7 @@ _G["define_thor_polysonic_synthesizer"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -3459,10 +3460,10 @@ _G["define_thor_polysonic_synthesizer"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -3482,8 +3483,8 @@ _G["define_thor_polysonic_synthesizer"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -3508,38 +3509,38 @@ _G["define_thor_polysonic_synthesizer"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_subtractor_analog_synthesizer"] = function()
+_G["Define_subtractor_analog_synthesizer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -3642,7 +3643,7 @@ _G["define_subtractor_analog_synthesizer"] = function()
   names[#names+1] = "Note On Indicator"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127} -- keyboard
   data[#data+1] = {min=0, max=16383} -- pitch bend
@@ -3736,22 +3737,22 @@ _G["define_subtractor_analog_synthesizer"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["subtractor_outputs"]~=nil) and (_G["subtractor_outputs"]>=1) then
+  if (_G["Subtractor_outputs"]~=nil) and (_G["Subtractor_outputs"]>=1) then
 -- assign it here
-    out_count = _G["subtractor_outputs"]
+    out_count = _G["Subtractor_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -3759,7 +3760,7 @@ _G["define_subtractor_analog_synthesizer"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -3767,10 +3768,10 @@ _G["define_subtractor_analog_synthesizer"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -3790,8 +3791,8 @@ _G["define_subtractor_analog_synthesizer"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -3816,38 +3817,38 @@ _G["define_subtractor_analog_synthesizer"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_malstrom_graintable_synthesizer"] = function()
+_G["Define_malstrom_graintable_synthesizer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -3945,7 +3946,7 @@ _G["define_malstrom_graintable_synthesizer"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -4034,22 +4035,22 @@ _G["define_malstrom_graintable_synthesizer"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["malstrom_outputs"]~=nil) and (_G["malstrom_outputs"]>=1) then
+  if (_G["Malstrom_outputs"]~=nil) and (_G["Malstrom_outputs"]>=1) then
 -- assign it here
-    out_count = _G["malstrom_outputs"]
+    out_count = _G["Malstrom_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -4057,7 +4058,7 @@ _G["define_malstrom_graintable_synthesizer"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -4065,10 +4066,10 @@ _G["define_malstrom_graintable_synthesizer"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -4088,8 +4089,8 @@ _G["define_malstrom_graintable_synthesizer"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -4114,38 +4115,38 @@ _G["define_malstrom_graintable_synthesizer"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_id8_instrument_device"] = function()
+_G["Define_id8_instrument_device"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -4177,7 +4178,7 @@ _G["define_id8_instrument_device"] = function()
   names[#names+1] = "Preset"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -4200,22 +4201,22 @@ _G["define_id8_instrument_device"] = function()
   data[#data+1] = {min=0, max=35}
 
  -- if we want this device type to have its own output count
-  if (_G["id8_outputs"]~=nil) and (_G["id8_outputs"]>=1) then
+  if (_G["Id8_outputs"]~=nil) and (_G["Id8_outputs"]>=1) then
 -- assign it here
-    out_count = _G["id8_outputs"]
+    out_count = _G["Id8_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -4223,7 +4224,7 @@ _G["define_id8_instrument_device"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -4231,10 +4232,10 @@ _G["define_id8_instrument_device"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -4254,8 +4255,8 @@ _G["define_id8_instrument_device"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -4280,38 +4281,38 @@ _G["define_id8_instrument_device"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_dr_rex_loop_player"] = function()
+_G["Define_dr_rex_loop_player"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -4381,7 +4382,7 @@ _G["define_dr_rex_loop_player"] = function()
   names[#names+1] = "Pitch Bend Range"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -4442,22 +4443,22 @@ _G["define_dr_rex_loop_player"] = function()
   data[#data+1] = {min=0, max=24}
 
  -- if we want this device type to have its own output count
-  if (_G["dr_rex_outputs"]~=nil) and (_G["dr_rex_outputs"]>=1) then
+  if (_G["Dr_rex_outputs"]~=nil) and (_G["Dr_rex_outputs"]>=1) then
 -- assign it here
-    out_count = _G["dr_rex_outputs"]
+    out_count = _G["Dr_rex_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -4465,7 +4466,7 @@ _G["define_dr_rex_loop_player"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -4473,10 +4474,10 @@ _G["define_dr_rex_loop_player"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -4496,8 +4497,8 @@ _G["define_dr_rex_loop_player"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -4522,38 +4523,38 @@ _G["define_dr_rex_loop_player"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_nn_xt_advanced_sampler"] = function()
+_G["Define_nn_xt_advanced_sampler"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -4586,7 +4587,7 @@ _G["define_nn_xt_advanced_sampler"] = function()
   names[#names+1] = "Sample"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -4610,22 +4611,22 @@ _G["define_nn_xt_advanced_sampler"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["nn-xt_outputs"]~=nil) and (_G["nn-xt_outputs"]>=1) then
+  if (_G["Nn-xt_outputs"]~=nil) and (_G["Nn-xt_outputs"]>=1) then
 -- assign it here
-    out_count = _G["nn-xt_outputs"]
+    out_count = _G["Nn-xt_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -4633,7 +4634,7 @@ _G["define_nn_xt_advanced_sampler"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -4641,10 +4642,10 @@ _G["define_nn_xt_advanced_sampler"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -4664,8 +4665,8 @@ _G["define_nn_xt_advanced_sampler"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -4690,38 +4691,38 @@ _G["define_nn_xt_advanced_sampler"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_nn19_digital_sampler"] = function()
+_G["Define_nn19_digital_sampler"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -4794,7 +4795,7 @@ _G["define_nn19_digital_sampler"] = function()
   names[#names+1] = "Pitch Bend Range"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -4858,22 +4859,22 @@ _G["define_nn19_digital_sampler"] = function()
   data[#data+1] = {min=0, max=24}
 
  -- if we want this device type to have its own output count
-  if (_G["nn19_outputs"]~=nil) and (_G["nn19_outputs"]>=1) then
+  if (_G["Nn19_outputs"]~=nil) and (_G["Nn19_outputs"]>=1) then
 -- assign it here
-    out_count = _G["nn19_outputs"]
+    out_count = _G["Nn19_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -4881,7 +4882,7 @@ _G["define_nn19_digital_sampler"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -4889,10 +4890,10 @@ _G["define_nn19_digital_sampler"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -4912,8 +4913,8 @@ _G["define_nn19_digital_sampler"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -4938,38 +4939,38 @@ _G["define_nn19_digital_sampler"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
-      has_pitch_wheel = warp_compatible()
+      Has_pitch_wheel = Warp_compatible()
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_scream_4_distortion"] = function()
+_G["Define_scream_4_distortion"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -4999,7 +5000,7 @@ _G["define_scream_4_distortion"] = function()
   names[#names+1] = "Input Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=1}
@@ -5020,22 +5021,22 @@ _G["define_scream_4_distortion"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["scream_4_outputs"]~=nil) and (_G["scream_4_outputs"]>=1) then
+  if (_G["Scream_4_outputs"]~=nil) and (_G["Scream_4_outputs"]>=1) then
 -- assign it here
-    out_count = _G["scream_4_outputs"]
+    out_count = _G["Scream_4_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5077,21 +5078,21 @@ _G["define_scream_4_distortion"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
-    has_pitch_wheel = warp_compatible()
+    Has_pitch_wheel = Warp_compatible()
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 
-_G["define_bv512_digital_vocoder"] = function()
+_G["Define_bv512_digital_vocoder"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5121,7 +5122,7 @@ _G["define_bv512_digital_vocoder"] = function()
   names[#names+1] = "Modulator Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=4}
@@ -5142,22 +5143,22 @@ _G["define_bv512_digital_vocoder"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["bv512_outputs"]~=nil) and (_G["bv512_outputs"]>=1) then
+  if (_G["Bv512_outputs"]~=nil) and (_G["Bv512_outputs"]>=1) then
 -- assign it here
-    out_count = _G["bv512_outputs"]
+    out_count = _G["Bv512_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5199,21 +5200,21 @@ _G["define_bv512_digital_vocoder"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_rv7000_advanced_reverb"] = function()
+_G["Define_rv7000_advanced_reverb"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5239,7 +5240,7 @@ _G["define_rv7000_advanced_reverb"] = function()
   names[#names+1] = "Input Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -5256,22 +5257,22 @@ _G["define_rv7000_advanced_reverb"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["rv7000_outputs"]~=nil) and (_G["rv7000_outputs"]>=1) then
+  if (_G["Rv7000_outputs"]~=nil) and (_G["Rv7000_outputs"]>=1) then
 -- assign it here
-    out_count = _G["rv7000_outputs"]
+    out_count = _G["Rv7000_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5313,21 +5314,21 @@ _G["define_rv7000_advanced_reverb"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_neptune_pitch_adjuster"] = function()
+_G["Define_neptune_pitch_adjuster"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5370,7 +5371,7 @@ _G["define_neptune_pitch_adjuster"] = function()
   names[#names+1] = "Target Note"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -5404,22 +5405,22 @@ _G["define_neptune_pitch_adjuster"] = function()
   data[#data+1] = {min=0, max=11}
 
  -- if we want this device type to have its own output count
-  if (_G["neptune_outputs"]~=nil) and (_G["neptune_outputs"]>=1) then
+  if (_G["Neptune_outputs"]~=nil) and (_G["Neptune_outputs"]>=1) then
 -- assign it here
-    out_count = _G["neptune_outputs"]
+    out_count = _G["Neptune_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5427,7 +5428,7 @@ _G["define_neptune_pitch_adjuster"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -5435,10 +5436,10 @@ _G["define_neptune_pitch_adjuster"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -5458,8 +5459,8 @@ _G["define_neptune_pitch_adjuster"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -5484,38 +5485,38 @@ _G["define_neptune_pitch_adjuster"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_mclass_equalizer"] = function()
+_G["Define_mclass_equalizer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5547,7 +5548,7 @@ _G["define_mclass_equalizer"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=1}
@@ -5570,22 +5571,22 @@ _G["define_mclass_equalizer"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["mclass_equalizer_outputs"]~=nil) and (_G["mclass_equalizer_outputs"]>=1) then
+  if (_G["Mclass_equalizer_outputs"]~=nil) and (_G["Mclass_equalizer_outputs"]>=1) then
 -- assign it here
-    out_count = _G["mclass_equalizer_outputs"]
+    out_count = _G["Mclass_equalizer_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5627,21 +5628,21 @@ _G["define_mclass_equalizer"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_mclass_compressor"] = function()
+_G["Define_mclass_compressor"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5667,7 +5668,7 @@ _G["define_mclass_compressor"] = function()
   names[#names+1] = "Gain Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -5684,22 +5685,22 @@ _G["define_mclass_compressor"] = function()
   data[#data+1] = {min=0, max=11}
 
  -- if we want this device type to have its own output count
-  if (_G["mclass_compressor_outputs"]~=nil) and (_G["mclass_compressor_outputs"]>=1) then
+  if (_G["Mclass_compressor_outputs"]~=nil) and (_G["Mclass_compressor_outputs"]>=1) then
 -- assign it here
-    out_count = _G["mclass_compressor_outputs"]
+    out_count = _G["Mclass_compressor_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5741,21 +5742,21 @@ _G["define_mclass_compressor"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_mclass_maximizer"] = function()
+_G["Define_mclass_maximizer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5782,7 +5783,7 @@ _G["define_mclass_maximizer"] = function()
   names[#names+1] = "Output Level Right"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -5800,22 +5801,22 @@ _G["define_mclass_maximizer"] = function()
   data[#data+1] = {min=0, max=25}
 
  -- if we want this device type to have its own output count
-  if (_G["mclass_maximizer_outputs"]~=nil) and (_G["mclass_maximizer_outputs"]>=1) then
+  if (_G["Mclass_maximizer_outputs"]~=nil) and (_G["Mclass_maximizer_outputs"]>=1) then
 -- assign it here
-    out_count = _G["mclass_maximizer_outputs"]
+    out_count = _G["Mclass_maximizer_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5857,21 +5858,21 @@ _G["define_mclass_maximizer"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_mclass_stereo_imager"] = function()
+_G["Define_mclass_stereo_imager"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -5895,7 +5896,7 @@ _G["define_mclass_stereo_imager"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=-64, max=63}
@@ -5910,22 +5911,22 @@ _G["define_mclass_stereo_imager"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["mclass_stereo_imager_outputs"]~=nil) and (_G["mclass_stereo_imager_outputs"]>=1) then
+  if (_G["Mclass_stereo_imager_outputs"]~=nil) and (_G["Mclass_stereo_imager_outputs"]>=1) then
 -- assign it here
-    out_count = _G["mclass_stereo_imager_outputs"]
+    out_count = _G["Mclass_stereo_imager_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -5967,21 +5968,21 @@ _G["define_mclass_stereo_imager"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_rv_7_digital_reverb"] = function()
+_G["Define_rv_7_digital_reverb"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6001,7 +6002,7 @@ _G["define_rv_7_digital_reverb"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=-64, max=63}
@@ -6012,22 +6013,22 @@ _G["define_rv_7_digital_reverb"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["rv-7_outputs"]~=nil) and (_G["rv-7_outputs"]>=1) then
+  if (_G["Rv-7_outputs"]~=nil) and (_G["Rv-7_outputs"]>=1) then
 -- assign it here
-    out_count = _G["rv-7_outputs"]
+    out_count = _G["Rv-7_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6069,21 +6070,21 @@ _G["define_rv_7_digital_reverb"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_ddl_1_digital_delay_line"] = function()
+_G["Define_ddl_1_digital_delay_line"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6105,7 +6106,7 @@ _G["define_ddl_1_digital_delay_line"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=1}
@@ -6118,22 +6119,22 @@ _G["define_ddl_1_digital_delay_line"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["ddl-1_outputs"]~=nil) and (_G["ddl-1_outputs"]>=1) then
+  if (_G["Ddl-1_outputs"]~=nil) and (_G["Ddl-1_outputs"]>=1) then
 -- assign it here
-    out_count = _G["ddl-1_outputs"]
+    out_count = _G["Ddl-1_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6175,21 +6176,21 @@ _G["define_ddl_1_digital_delay_line"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_d_11_foldback_distortion"] = function()
+_G["Define_d_11_foldback_distortion"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6206,7 +6207,7 @@ _G["define_d_11_foldback_distortion"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -6214,22 +6215,22 @@ _G["define_d_11_foldback_distortion"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["d-11_outputs"]~=nil) and (_G["d-11_outputs"]>=1) then
+  if (_G["D-11_outputs"]~=nil) and (_G["D-11_outputs"]>=1) then
 -- assign it here
-    out_count = _G["d-11_outputs"]
+    out_count = _G["D-11_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6271,21 +6272,21 @@ _G["define_d_11_foldback_distortion"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_ecf_42_envelope_controlled_filter"] = function()
+_G["Define_ecf_42_envelope_controlled_filter"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6310,7 +6311,7 @@ _G["define_ecf_42_envelope_controlled_filter"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -6326,22 +6327,22 @@ _G["define_ecf_42_envelope_controlled_filter"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["ecf-42_outputs"]~=nil) and (_G["ecf-42_outputs"]>=1) then
+  if (_G["Ecf-42_outputs"]~=nil) and (_G["Ecf-42_outputs"]>=1) then
 -- assign it here
-    out_count = _G["ecf-42_outputs"]
+    out_count = _G["Ecf-42_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6383,21 +6384,21 @@ _G["define_ecf_42_envelope_controlled_filter"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_cf_101_chorus_flanger"] = function()
+_G["Define_cf_101_chorus_flanger"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6418,7 +6419,7 @@ _G["define_cf_101_chorus_flanger"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -6430,22 +6431,22 @@ _G["define_cf_101_chorus_flanger"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["cf-101_outputs"]~=nil) and (_G["cf-101_outputs"]>=1) then
+  if (_G["Cf-101_outputs"]~=nil) and (_G["Cf-101_outputs"]>=1) then
 -- assign it here
-    out_count = _G["cf-101_outputs"]
+    out_count = _G["Cf-101_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6487,21 +6488,21 @@ _G["define_cf_101_chorus_flanger"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_ph_90_phaser"] = function()
+_G["Define_ph_90_phaser"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6523,7 +6524,7 @@ _G["define_ph_90_phaser"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -6536,22 +6537,22 @@ _G["define_ph_90_phaser"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["ph-90_outputs"]~=nil) and (_G["ph-90_outputs"]>=1) then
+  if (_G["Ph-90_outputs"]~=nil) and (_G["Ph-90_outputs"]>=1) then
 -- assign it here
-    out_count = _G["ph-90_outputs"]
+    out_count = _G["Ph-90_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6593,21 +6594,21 @@ _G["define_ph_90_phaser"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_un_16_unison"] = function()
+_G["Define_un_16_unison"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6625,7 +6626,7 @@ _G["define_un_16_unison"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=2}
@@ -6634,22 +6635,22 @@ _G["define_un_16_unison"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["un-16_outputs"]~=nil) and (_G["un-16_outputs"]>=1) then
+  if (_G["Un-16_outputs"]~=nil) and (_G["Un-16_outputs"]>=1) then
 -- assign it here
-    out_count = _G["un-16_outputs"]
+    out_count = _G["Un-16_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6691,21 +6692,21 @@ _G["define_un_16_unison"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_comp_01_compressor_limiter"] = function()
+_G["Define_comp_01_compressor_limiter"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6725,7 +6726,7 @@ _G["define_comp_01_compressor_limiter"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -6736,22 +6737,22 @@ _G["define_comp_01_compressor_limiter"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["comp-01_outputs"]~=nil) and (_G["comp-01_outputs"]>=1) then
+  if (_G["Comp-01_outputs"]~=nil) and (_G["Comp-01_outputs"]>=1) then
 -- assign it here
-    out_count = _G["comp-01_outputs"]
+    out_count = _G["Comp-01_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6793,21 +6794,21 @@ _G["define_comp_01_compressor_limiter"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_peq_2_two_band_parametric_eq"] = function()
+_G["Define_peq_2_two_band_parametric_eq"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6829,7 +6830,7 @@ _G["define_peq_2_two_band_parametric_eq"] = function()
   names[#names+1] = "Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -6842,22 +6843,22 @@ _G["define_peq_2_two_band_parametric_eq"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["peq-2_outputs"]~=nil) and (_G["peq-2_outputs"]>=1) then
+  if (_G["Peq-2_outputs"]~=nil) and (_G["Peq-2_outputs"]>=1) then
 -- assign it here
-    out_count = _G["peq-2_outputs"]
+    out_count = _G["Peq-2_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -6899,21 +6900,21 @@ _G["define_peq_2_two_band_parametric_eq"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_rpg_8_monophonic_arpeggiator"] = function()
+_G["Define_rpg_8_monophonic_arpeggiator"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -6967,7 +6968,7 @@ _G["define_rpg_8_monophonic_arpeggiator"] = function()
   names[#names+1] = "Pattern Length Down"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -7012,22 +7013,22 @@ _G["define_rpg_8_monophonic_arpeggiator"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["rpg-8_outputs"]~=nil) and (_G["rpg-8_outputs"]>=1) then
+  if (_G["Rpg-8_outputs"]~=nil) and (_G["Rpg-8_outputs"]>=1) then
 -- assign it here
-    out_count = _G["rpg-8_outputs"]
+    out_count = _G["Rpg-8_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7049,8 +7050,8 @@ _G["define_rpg_8_monophonic_arpeggiator"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -7075,38 +7076,38 @@ _G["define_rpg_8_monophonic_arpeggiator"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_matrix_pattern_sequencer"] = function()
+_G["Define_matrix_pattern_sequencer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7132,7 +7133,7 @@ _G["define_matrix_pattern_sequencer"] = function()
   names[#names+1] = "Resolution"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=1}
   data[#data+1] = {min=-1, max=31}
@@ -7148,22 +7149,22 @@ _G["define_matrix_pattern_sequencer"] = function()
   data[#data+1] = {min=0, max=8}
 
  -- if we want this device type to have its own output count
-  if (_G["matrix_outputs"]~=nil) and (_G["matrix_outputs"]>=1) then
+  if (_G["Matrix_outputs"]~=nil) and (_G["Matrix_outputs"]>=1) then
 -- assign it here
-    out_count = _G["matrix_outputs"]
+    out_count = _G["Matrix_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7205,21 +7206,21 @@ _G["define_matrix_pattern_sequencer"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_combinator"] = function()
+_G["Define_combinator"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7252,7 +7253,7 @@ _G["define_combinator"] = function()
   names[#names+1] = "Audio Out Indicator"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -7276,22 +7277,22 @@ _G["define_combinator"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["combinator_outputs"]~=nil) and (_G["combinator_outputs"]>=1) then
+  if (_G["Combinator_outputs"]~=nil) and (_G["Combinator_outputs"]>=1) then
 -- assign it here
-    out_count = _G["combinator_outputs"]
+    out_count = _G["Combinator_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7299,7 +7300,7 @@ _G["define_combinator"] = function()
       if (out_count==1) then
         if names[i]=="Pitch Bend" then
           items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-          w1_idx = #items
+          W1_index = #items
         else
           items[#items+1] = {name=names[i].." - Output", input="value", min=out_data[1], max=out_data[2], output="value"}
         end
@@ -7307,10 +7308,10 @@ _G["define_combinator"] = function()
         if names[i]=="Pitch Bend" then
           if o==1 then
             items[#items+1] = {name=names[i].." - To Tempo BPM", input="value", min=1, max=999, output="value"}
-            w1_idx = #items
+            W1_index = #items
           elseif o==2 then
             items[#items+1] = {name=names[i].." - To Tempo Decimal", input="value", min=0, max=999, output="value"}
-            w2_idx = #items
+            W2_index = #items
           elseif o>2 then
             items[#items+1] = {name=names[i].." - Output "..(o-2), input="value", min=out_data[1], max=out_data[2], output="value"}
           end
@@ -7330,8 +7331,8 @@ _G["define_combinator"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
@@ -7356,38 +7357,38 @@ _G["define_combinator"] = function()
       }
       for dis=1,#disallow do
         if string.lower(names[i]):find(disallow[dis])~=nil then
-          noedit[#items] = true
+          Item_is_not_editable[#items] = true
         end
       end
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Pitch Bend Range" then
-        range_idx = #items
+        Pitch_bend_range_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_spider_audio_merger_splitter"] = function()
+_G["Define_spider_audio_merger_splitter"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7408,7 +7409,7 @@ _G["define_spider_audio_merger_splitter"] = function()
   names[#names+1] = "Split Input Right Activity"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   for l=1,4 do
     data[#data+1] = {min=0, max=1}
@@ -7420,22 +7421,22 @@ _G["define_spider_audio_merger_splitter"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["spider_audio_outputs"]~=nil) and (_G["spider_audio_outputs"]>=1) then
+  if (_G["Spider_audio_outputs"]~=nil) and (_G["Spider_audio_outputs"]>=1) then
 -- assign it here
-    out_count = _G["spider_audio_outputs"]
+    out_count = _G["Spider_audio_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7477,21 +7478,21 @@ _G["define_spider_audio_merger_splitter"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_spider_cv_merger_splitter"] = function()
+_G["Define_spider_cv_merger_splitter"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7509,7 +7510,7 @@ _G["define_spider_cv_merger_splitter"] = function()
   names[#names+1] = "Split B Input Activity"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   for m=1,4 do
     data[#data+1] = {min=0, max=1}
@@ -7518,22 +7519,22 @@ _G["define_spider_cv_merger_splitter"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["spider_cv_outputs"]~=nil) and (_G["spider_cv_outputs"]>=1) then
+  if (_G["Spider_cv_outputs"]~=nil) and (_G["Spider_cv_outputs"]>=1) then
 -- assign it here
-    out_count = _G["spider_cv_outputs"]
+    out_count = _G["Spider_cv_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7575,21 +7576,21 @@ _G["define_spider_cv_merger_splitter"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_mixer_14_2"] = function()
+_G["Define_mixer_14_2"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7624,7 +7625,7 @@ _G["define_mixer_14_2"] = function()
   end
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=20}
@@ -7650,22 +7651,22 @@ _G["define_mixer_14_2"] = function()
   end
 
  -- if we want this device type to have its own output count
-  if (_G["mixer_14-2_outputs"]~=nil) and (_G["mixer_14-2_outputs"]>=1) then
+  if (_G["Mixer_14-2_outputs"]~=nil) and (_G["Mixer_14-2_outputs"]>=1) then
 -- assign it here
-    out_count = _G["mixer_14-2_outputs"]
+    out_count = _G["Mixer_14-2_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7707,21 +7708,21 @@ _G["define_mixer_14_2"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_line_mixer_6_2"] = function()
+_G["Define_line_mixer_6_2"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7747,7 +7748,7 @@ _G["define_line_mixer_6_2"] = function()
   names[#names+1] = "Master Right Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   for c=1,6 do
@@ -7764,22 +7765,22 @@ _G["define_line_mixer_6_2"] = function()
   data[#data+1] = {min=0, max=20}
 
  -- if we want this device type to have its own output count
-  if (_G["line_mixer_6-2_outputs"]~=nil) and (_G["line_mixer_6-2_outputs"]>=1) then
+  if (_G["Line_mixer_6-2_outputs"]~=nil) and (_G["Line_mixer_6-2_outputs"]>=1) then
 -- assign it here
-    out_count = _G["line_mixer_6-2_outputs"]
+    out_count = _G["Line_mixer_6-2_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -7821,21 +7822,21 @@ _G["define_line_mixer_6_2"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_mix_channel"] = function()
+_G["Define_mix_channel"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -7914,7 +7915,7 @@ _G["define_mix_channel"] = function()
   names[#names+1] = "VU Meter R"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=1000}
   data[#data+1] = {min=-100, max=100}
@@ -7984,22 +7985,22 @@ _G["define_mix_channel"] = function()
   data[#data+1] = {min=0, max=32}
 
  -- if we want this device type to have its own output count
-  if (_G["mix_channel_outputs"]~=nil) and (_G["mix_channel_outputs"]>=1) then
+  if (_G["Mix_channel_outputs"]~=nil) and (_G["Mix_channel_outputs"]>=1) then
 -- assign it here
-    out_count = _G["mix_channel_outputs"]
+    out_count = _G["Mix_channel_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -8041,18 +8042,18 @@ _G["define_mix_channel"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
 --[[  DEVELOPER'S NOTE:
@@ -8065,7 +8066,7 @@ end
 ]]
 
 --[=[
-_G["define_external_midi_instrument"] = function()
+_G["Define_external_midi_instrument"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -8100,7 +8101,7 @@ _G["define_external_midi_instrument"] = function()
   names[#names+1] = "Next MIDI Program"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   data[#data+1] = {min=0, max=16383}
@@ -8126,22 +8127,22 @@ _G["define_external_midi_instrument"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["external_midi_outputs"]~=nil) and (_G["external_midi_outputs"]>=1) then
+  if (_G["External_midi_outputs"]~=nil) and (_G["External_midi_outputs"]>=1) then
 -- assign it here
-    out_count = _G["external_midi_outputs"]
+    out_count = _G["External_midi_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -8163,38 +8164,38 @@ _G["define_external_midi_instrument"] = function()
   for i=1,in_count do
     if names[i]=="Keyboard" then
       items[#items+1] = {name=names[i], input="keyboard"}
-      kb_idx = #items
-      kb_enabled = true
+      Keyboard_index = #items
+      Keyboard_is_enabled = true
     else
 
       items[#items+1] = {name=names[i], input="value", min=data[i].min, max=data[i].max, output="value"}
 
       if names[i]=="Pitch Bend" then
-        pitch_idx = #items
+        Pitch_bend_index = #items
       elseif names[i]=="Mod Wheel" then
-        mod_idx = #items
+        Modulation_wheel_index = #items
       elseif names[i]=="Channel Pressure" then
-        pressure_idx = #items
+        Channel_pressure_index = #items
       elseif names[i]=="Expression" then
-        expression_idx = #items
+        Expression_index = #items
       elseif names[i]=="Damper Pedal" then
-        damper_idx = #items
+        Damper_index = #items
       elseif names[i]=="Breath" then
-        breath_idx = #items
+        Breath_index = #items
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 end
 ]=]
 
-_G["define_pulveriser"] = function()
+_G["Define_pulveriser"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -8233,7 +8234,7 @@ _G["define_pulveriser"] = function()
   names[#names+1] = "Input Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -8263,22 +8264,22 @@ _G["define_pulveriser"] = function()
   data[#data+1] = {min=0, max=7}
 
  -- if we want this device type to have its own output count
-  if (_G["pulveriser_outputs"]~=nil) and (_G["pulveriser_outputs"]>=1) then
+  if (_G["Pulveriser_outputs"]~=nil) and (_G["Pulveriser_outputs"]>=1) then
 -- assign it here
-    out_count = _G["pulveriser_outputs"]
+    out_count = _G["Pulveriser_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -8319,21 +8320,21 @@ _G["define_pulveriser"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_the_echo"] = function()
+_G["Define_the_echo"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -8373,7 +8374,7 @@ _G["define_the_echo"] = function()
   names[#names+1] = "Input Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=127}
@@ -8404,22 +8405,22 @@ _G["define_the_echo"] = function()
   data[#data+1] = {min=0, max=3}
 
  -- if we want this device type to have its own output count
-  if (_G["the_echo_outputs"]~=nil) and (_G["the_echo_outputs"]>=1) then
+  if (_G["The_echo_outputs"]~=nil) and (_G["The_echo_outputs"]>=1) then
 -- assign it here
-    out_count = _G["the_echo_outputs"]
+    out_count = _G["The_echo_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -8461,21 +8462,21 @@ _G["define_the_echo"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_alligator"] = function()
+_G["Define_alligator"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -8550,7 +8551,7 @@ _G["define_alligator"] = function()
   names[#names+1] = "Input Peak Meter"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=2}
   data[#data+1] = {min=0, max=1}
@@ -8616,22 +8617,22 @@ _G["define_alligator"] = function()
   data[#data+1] = {min=0, max=3}
 
  -- if we want this device type to have its own output count
-  if (_G["alligator_outputs"]~=nil) and (_G["alligator_outputs"]>=1) then
+  if (_G["Alligator_outputs"]~=nil) and (_G["Alligator_outputs"]>=1) then
 -- assign it here
-    out_count = _G["alligator_outputs"]
+    out_count = _G["Alligator_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -8673,21 +8674,21 @@ _G["define_alligator"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil or string.lower(names[i])=="pattern" then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_regroove_mixer"] = function()
+_G["Define_regroove_mixer"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -8712,7 +8713,7 @@ _G["define_regroove_mixer"] = function()
   end
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=127}
   for b=1,4 do
@@ -8727,22 +8728,22 @@ _G["define_regroove_mixer"] = function()
   end
 
  -- if we want this device type to have its own output count
-  if (_G["regroove_mixer_outputs"]~=nil) and (_G["regroove_mixer_outputs"]>=1) then
+  if (_G["Regroove_mixer_outputs"]~=nil) and (_G["Regroove_mixer_outputs"]>=1) then
 -- assign it here
-    out_count = _G["regroove_mixer_outputs"]
+    out_count = _G["Regroove_mixer_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -8784,15 +8785,15 @@ _G["define_regroove_mixer"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_reason_document"] = function()
+_G["Define_Is_reason_document"] = function()
   local rdi = remote.define_items
 
   local out_data = {0, 4194048}
@@ -8874,7 +8875,7 @@ _G["define_reason_document"] = function()
   names[#names+1] = "Send All Notes Off"
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
   data[#data+1] = {min=0, max=1}
   data[#data+1] = {min=0, max=127}
@@ -8947,24 +8948,24 @@ _G["define_reason_document"] = function()
   data[#data+1] = {min=0, max=1}
 
  -- if we want this device type to have its own output count
-  if (_G["document_transport_outputs"]~=nil) and (_G["document_transport_outputs"]>=1) then
+  if (_G["Document_transport_outputs"]~=nil) and (_G["Document_transport_outputs"]>=1) then
 -- assign it here
-    out_count = _G["document_transport_outputs"]
+    out_count = _G["Document_transport_outputs"]
   else
 -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
 -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
 -- otherwise default to an output count of 1
       out_count = 1
     end
   end
 
-  reason_document = true
+  Is_reason_document = true
 
--- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data)
+-- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -9006,15 +9007,15 @@ _G["define_reason_document"] = function()
     }
     for dis=1,#disallow do
       if string.lower(names[i]):find(disallow[dis])~=nil then
-        noedit[#items] = true
+        Item_is_not_editable[#items] = true
       end
     end
   end
   rdi(items)
-  has_pitch_wheel = warp_compatible()
+  Has_pitch_wheel = Warp_compatible()
 end
 
-_G["define_midi_controller"] = function(ch,ly)
+_G["Define_midi_controller"] = function(ch,ly)
   local rdi = remote.define_items
   local out_data = {0, 4194048}
   local in_count = nil
@@ -9186,7 +9187,7 @@ _G["define_midi_controller"] = function(ch,ly)
   end
 
   in_count = #names
-  _G["g_names"] = names
+  _G["G_names"] = names
 
  --[[NOTE:	the last two arguments define channel and layer.]]
 
@@ -9201,14 +9202,14 @@ _G["define_midi_controller"] = function(ch,ly)
   end
 
  -- if we want this device type to have its own output count
-  if (_G["midi_controller_outputs"]~=nil) and (_G["midi_controller_outputs"]>=1) then
+  if (_G["Midi_controller_outputs"]~=nil) and (_G["Midi_controller_outputs"]>=1) then
  -- assign it here
-    out_count = _G["midi_controller_outputs"]
+    out_count = _G["Midi_controller_outputs"]
   else
  -- if we want to follow a global output count
-    if (_G["global_outputs"]~=nil) and (_G["global_outputs"]>=1) then
+    if (_G["Global_outputs"]~=nil) and (_G["Global_outputs"]>=1) then
  -- assign it here
-      out_count = _G["global_outputs"]
+      out_count = _G["Global_outputs"]
     else
  -- otherwise default to an output count of 1
       out_count = 1
@@ -9216,11 +9217,11 @@ _G["define_midi_controller"] = function(ch,ly)
   end
 
  -- tell the script it's a controller and not a device
-  midi_controller = true
-  pitch_idx = (in_count * out_count) + 1 --380
+  Is_midi_controller = true
+  Pitch_bend_index = (in_count * out_count) + 1 --380
 
- -- build the architecture to fit this device
-  architect(in_count, out_count, data, out_data, ch, ly)
+ -- build the Architecture to fit this device
+  Architect(in_count, out_count, data, out_data, ch, ly)
 
 -- create the virtual outputs
   for i=1,in_count do
@@ -9240,21 +9241,21 @@ _G["define_midi_controller"] = function(ch,ly)
 
  -- define the data terminal
   items[#items+1] = {name="Data Terminal", input="noinput", output="text"}
-  terminal_idx = #items
+  Device_name_command_line_index = #items
  -- define the internals of the terminal
-  build_terminal()
+  Build_terminal()
   rdi(items)
 --error('in_count='..in_count..", out_count="..out_count..", in_count * out_count="..in_count*out_count..", and yet somehow #items="..#items)
 end
 
 -- constructor
 -- written:  06/04/2016
-function remote_init(manufacturer, model)
+function Remote_init(manufacturer, model)
   assert(manufacturer=="DataBridge")
   local model_fmt=string.lower(model)
   local model_prs={}
   local model_fnc="define"
-  device_type = model_fmt -- store a copy of the raw device type
+  Device_type = model_fmt -- store a copy of the raw device type
   
   local i, j = string.find(model_fmt, "midi controller") -- detect midi controller
   if (i~=nil) and (j~=nil) then -- if we found one
@@ -9263,37 +9264,37 @@ function remote_init(manufacturer, model)
 
     midi_str = string.sub(model_fmt, i, j) -- extract a copy of the string "midi controller"
     if j==model_fmt:len() then
-      deck_number = 1
-      deck_clock = 176 + ((deck_number*8)-1)
+      Deck_number = 1
+      Deck_clock = 176 + ((Deck_number*8)-1)
     else
       if model_fmt:sub(-1)=="2" then
-        deck_number = 2
-        deck_clock = 176 + ((deck_number*8)-1)
+        Deck_number = 2
+        Deck_clock = 176 + ((Deck_number*8)-1)
       end
     end
 
-    clock_mask = hex(deck_clock).."77 7f" -- generate clock_mask
+    Clock_mask = Hex(Deck_clock).."77 7f" -- generate Clock_mask
 
     for midi in midi_str:gmatch("%w+") do table.insert(midi_prs, midi) end -- parse "midi controller" into two words in a table
-    for m=1,#midi_prs do model_fnc = model_fnc .. "_" .. midi_prs[m] end -- create the string for referencing the global function in _G[]
-    if (type(_G[model_fnc])=="function") then -- if the function exists
+    for m=1,#midi_prs do model_fnc = model_fnc .. "_" .. midi_prs[m] end -- create the string for referencing the global function In _G[]
+    if (type(_G[model_fnc])=="function") then -- if the function Exists
       _G[model_fnc]("?", nil) -- pass channel agnostic wildcard "?" and nil for no layers
     end
   else -- if this is a device
-    for word in model_fmt:gmatch("%w+") do table.insert(model_prs, word) end -- define a dynamic function based on model name
-    for w=1,table.getn(model_prs) do model_fnc = model_fnc .. "_" .. model_prs[w] end
+    for word in model_fmt:gmatch("%w+") do table.insert(model_prs, word) end -- define a dynamic function Based on model name
+    for w=1,#model_prs do model_fnc = model_fnc .. "_" .. model_prs[w] end
     if (type(_G[model_fnc])=="function") then _G[model_fnc]() end -- call the dynamic function
   end
 end
 
 -- remote data write
 -- written: 04/05/2016
-function remote_process_midi(event)
-  if entity_loaded then
-    if reason_document then
-      process_document(event)
-    elseif midi_controller then
-      process_controller(event)
+function Remote_process_midi(event)
+  if Surface_is_initialized then
+    if Is_reason_document then
+      Process_document(event)
+    elseif Is_midi_controller then
+      Process_controller(event)
     else
       process_network(event)
     end
@@ -9302,19 +9303,19 @@ end
 
 -- remote data read
 -- written: 06/05/2016
-function remote_set_state(changed_items)
-  if entity_loaded then
-    if reason_document then
-      set_document(changed_items)
-    elseif midi_controller then
-      set_controller(changed_items)
+function Remote_set_state(changed_items)
+  if Surface_is_initialized then
+    if Is_reason_document then
+      Set_document(changed_items)
+    elseif Is_midi_controller then
+      Set_controller(changed_items)
     else
       set_network(changed_items)
     end
   end
 end
 
-lua = {
+Lua = {
   mod = function (a, b)
     local out = a - math.floor(a/b) * b
     return out
@@ -9354,7 +9355,7 @@ lua = {
 
 --CODES = [[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=]]
 --[[
-function decode(s)
+function Decode(s)
   if (lua.mod(s:len(), 4)~=0) then error("Invalid or Corrupted Base64 Input") end
   local decoded = ""
   local c={}
@@ -9374,7 +9375,7 @@ function decode(s)
   return decoded
 end
 
-function encode(s)
+function Encode(s)
   if (s~=nil) then
     local b = nil
     local out = ""
